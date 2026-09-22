@@ -1,3 +1,5 @@
+[<- Отладка](docs/scripting/debug.md) <right>[Симуляция ->](docs/unlocks/simulation.md)
+---
 # Время
 Чтобы максимально оптимизировать методы работы, нужно понять, как измеряется время в игре. С этим как раз поможет данная технология.
 
@@ -9,6 +11,31 @@
 `get_tick_count()` возвращает количество тиков, прошедших с начала выполнения кода.
 
 Эти две функции, а также `quick_print()`, ничего не стоят. И операция вызова тоже!
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
 
 ## Детали выполнения
 
@@ -32,3 +59,8 @@
 Индексация в структуре данных занимает 1 тик для оператора индексации, а в случае со словарем или множеством может потребовать больше тиков в зависимости от размера ключа.
 
 Количество тиков, которое занимают встроенные функции, задокументировано отдельно для каждой функции.
+---
+
+[Отладка](docs/scripting/debug.md)      [Симуляция](docs/unlocks/simulation.md)      [Рейтинг](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

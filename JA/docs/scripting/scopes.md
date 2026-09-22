@@ -1,3 +1,5 @@
+[<- 関数](docs/scripting/functions.md)
+---
 # 名前スコープ
 スコープは、どの変数がどこからアクセスできるかを決定します。スコープは基本的に名前から値へのマッピングです。
 これらは基本的にPythonと同じように機能します。
@@ -22,30 +24,70 @@
 グローバルスコープから `f` に格納されている関数を取得して呼び出します。
 
 `print(y)`
-このグローバルスコープでのprint文はエラーを発生させます。なぜなら `y` はグローバルスコープで宣言されたことがなく、ここで読み取ることができないからです。
+このグローバルスコープでの `print` 文はエラーを発生させます。なぜなら `y` はグローバルスコープで宣言されたことがなく、ここで読み取ることができないからです。
 それは `f` のローカルスコープにのみ存在していました。
 
 ## globalキーワード
 デフォルトでは、関数内のすべての変数は、同じ名前の変数がグローバルスコープに存在する場合でも、ローカルスコープにバインドされます。
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 このコードは `0` を表示します。なぜなら、`f` 内のローカルな `x` はグローバルな `x` と同じ変数ではないため、グローバルな `x` は変更されないままです。これは重要です。そうでなければ、関数呼び出しが、たまたまその関数のローカル変数と同じ名前を持つグローバル変数を誤って上書きしてしまう可能性があるからです。
 
 グローバル変数に書き込みたい場合は、`global` キーワードを使用して明示的に行う必要があります。
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 この例では、`global x` は `x` をその上で定義されたグローバル変数 `x` にバインドします。これにより `1` が表示されるようになります。
 グローバル変数の変更は、通常、プログラムのあらゆる部分が他のあらゆる部分に影響を与えるスパゲッティコードへの第一歩であるため、使いすぎないように注意してください。
@@ -53,8 +95,32 @@ print(x)`
 ## ループと分岐
 ループと分岐は独自のスコープを作成しないため、その中で宣言されたものは外部でも使用できます。
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
 `for` ループの最後の反復で `i` に `2` が割り当てられたため、これは `2` を表示します。
+
+---
+
+[変数](docs/scripting/variables.md)      [関数](docs/scripting/functions.md)      [インポート](docs/scripting/import.md)      [メガファーム](docs/unlocks/megafarm.md)

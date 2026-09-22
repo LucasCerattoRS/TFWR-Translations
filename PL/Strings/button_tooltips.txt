@@ -10,6 +10,8 @@
 @button_tooltip_delete = Trwale usuń ten plik.
 @button_tooltip_close_docs = Zamknij to okno.
 @button_tooltip_table_of_contents = Spis treści
+@button_tooltip_docs_home = Przejdź do strony głównej dokumentacji.
+@button_tooltip_docs_back = Przejdź do poprzednio odwiedzonej strony dokumentacji.
 @button_tooltip_new_game = Stwórz nowy zapis.
 @button_tooltip_open_folder = Otwórz folder zapisu w eksploratorze plików.
 @button_tooltip_toggle_search_docs = Przełącza, czy wyszukiwanie ma obejmować okna dokumentacji.
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = Twój kod wywołał ostrzeżenie. Kliknij ikonę, aby zobaczyć szczegóły w oknie wyjściowym.
 @option_tooltip_graphics = Wpływa na różne ustawienia potoku renderowania, takie jak cienie, okluzja otoczenia i bloom.
 @option_tooltip_vfx_limit = Ogranicza liczbę efektów wizualnych, które mogą być odtwarzane na sekundę.
+@option_tooltip_avalanche_particles = Wyłącz cząsteczki powstające podczas zawałów.
 @option_tooltip_volume = Dostosuj głośność wszystkich dźwięków.
 @option_tooltip_music_volume = Dostosuj głośność muzyki.
 @option_tooltip_drone_volume = Dostosuj głośność brzęczenia drona.
@@ -29,7 +32,7 @@
 @option_tooltip_ambience_volume = Dostosuj głośność dźwięków otoczenia, takich jak wiatr i ptaki.
 @option_tooltip_volume_damping = Głośność jest mnożona przez ten współczynnik dla każdego jednocześnie odtwarzanego efektu dźwiękowego, aby twoje uszy nie eksplodowały przy dużych prędkościach drona.
 @option_tooltip_sfx_limit = Ogranicza liczbę dźwięków, które mogą być odtwarzane na sekundę.
-@option_tooltip_autosave = Automatycznie zapisuje kod co 30s, gdy jest włączone. Nie można włączyć, gdy włączony jest file watcher.
+@option_tooltip_autosave = Automatycznie zapisuje kod co 30s, gdy jest włączone. Nie można włączyć, gdy włączony jest Obserwator plików.
 @option_tooltip_autosave_progress = Automatycznie zapisuje postęp w grze co 30s, gdy jest włączone.
 @option_tooltip_file_watcher = Automatycznie stosuje zmiany dokonane w plikach z kodem w folderze zapisu, co pozwala na korzystanie z zewnętrznego edytora kodu. Nie można włączyć, gdy włączone są autozapisy.
 @option_tooltip_frames = Ogranicz liczbę klatek na sekundę (fps) w grze. Vsync synchronizuje fps z częstotliwością odświeżania twojego monitora.

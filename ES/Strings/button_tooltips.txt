@@ -10,6 +10,8 @@
 @button_tooltip_delete = Elimina este archivo permanentemente.
 @button_tooltip_close_docs = Cierra esta ventana.
 @button_tooltip_table_of_contents = Tabla de Contenidos
+@button_tooltip_docs_home = Ir a la página de inicio de la documentación.
+@button_tooltip_docs_back = Volver a la página de documentación visitada anteriormente.
 @button_tooltip_new_game = Crea una nueva partida guardada.
 @button_tooltip_open_folder = Abre la carpeta de guardado en el explorador de archivos.
 @button_tooltip_toggle_search_docs = Activa o desactiva si la búsqueda debe incluir las ventanas de documentación.
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = Tu código generó una advertencia. Haz clic en el ícono para ver los detalles en la ventana de Salida.
 @option_tooltip_graphics = Afecta varias configuraciones del renderizado como sombras, oclusión ambiental y bloom.
 @option_tooltip_vfx_limit = Limita el número de efectos visuales que se pueden reproducir por segundo.
+@option_tooltip_avalanche_particles = Desactiva las partículas creadas por los derrumbes.
 @option_tooltip_volume = Ajusta el volumen de todo el audio.
 @option_tooltip_music_volume = Ajusta el volumen de la música.
 @option_tooltip_drone_volume = Ajusta el volumen del zumbido de los drones.

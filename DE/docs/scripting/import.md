@@ -1,8 +1,10 @@
+[<- Funktionen](docs/scripting/functions.md)
+---
 # Import
 Deinen ganzen Code in eine einzige Datei zu packen, wird schnell unübersichtlich. 
 `import`-Anweisungen ermöglichen es dir, Funktionen und globale Variablen aus einer anderen Datei zu importieren.
 So funktioniert's in einem Screenshot:
-![](ImportsInOnePicture400)
+![|x400](ImportsInOnePicture)
 
 Hier führt `import module2` die Datei namens `module2` aus und gibt dir Zugriff auf all ihre globalen Variablen.
 Du kannst dann mit dem `.`-Operator auf Variablen und Funktionen innerhalb des importierten Moduls zugreifen.
@@ -28,14 +30,14 @@ Diese Form des Imports wird normalerweise nicht empfohlen, da sie nicht gut funk
 
 # Wie es wirklich funktioniert
 
-## TLDR
+## Kurzfassung
 Imports können ziemlich unintuitiv sein, aber die meisten Probleme lassen sich vermeiden, indem man sich an die `import file`-Syntax anstatt `from file import` hält und alles, was keine globale Definition ist, in
 `if __name__ == "__main__":`
 packt.
 
 ## Nebenwirkungen von Imports
-Wenn du eine Datei zum ersten Mal importierst, wird die gesamte Datei ausgeführt und du erhältst Zugriff auf alle Variablen, die während der Ausführung definiert wurden.
-Wenn du dieselbe Datei erneut importierst, wird sie einfach das zwischengespeicherte Modul vom ersten Mal zurückgeben.
+Wenn du eine Datei zum ersten Mal importierst, führt das Spiel die gesamte Datei aus. Anschließend erhältst du Zugriff auf alle Variablen, die während dieser Ausführung definiert wurden.
+Wenn du dieselbe Datei erneut importierst, wird das beim ersten Import zwischengespeicherte Modul zurückgegeben.
 
 Das bedeutet, dass `import`-Anweisungen Nebenwirkungen haben können. Wenn du eine Datei importierst, die `harvest()` aufruft, wird während des Imports tatsächlich geerntet. Aber wenn du sie erneut importierst, wird nicht erneut geerntet, weil die Datei nur einmal ausgeführt wird.
 
@@ -48,7 +50,7 @@ Eine übliche Dateistruktur in Python ist es, den Code, der beim Ausführen der 
 
 def main():
     a_local_variable = "local"
-    # do things
+    # Dinge erledigen
 
 if __name__ == "__main__":
     main()`
@@ -67,12 +69,12 @@ def f():
 
 Das wird gut funktionieren. Nehmen wir an, keine der beiden Dateien ist bereits geladen und jemand führt `import a` aus.
 
--`a` wird bis zur Zeile `import b` ausgeführt.
--`b` wird bis zur Zeile `import a` ausgeführt.
--Das Modul `a` existiert bereits, enthält aber `x` noch nicht, da es erst die Zeile `import b` erreicht hat.
--`b` speichert eine Referenz auf das halb geladene Modul `a` in einer Variable namens `a`.
--`b` führt die `def`-Anweisung aus und speichert die Funktion `f()`.
--`a` wird weiter ausgeführt und initialisiert `x`.
+- `a` wird bis zur Zeile `import b` ausgeführt.
+- `b` wird bis zur Zeile `import a` ausgeführt.
+- Das Modul `a` existiert bereits, enthält aber `x` noch nicht, da es erst die Zeile `import b` erreicht hat.
+- `b` speichert eine Referenz auf das halb geladene Modul `a` in einer Variable namens `a`.
+- `b` führt die `def`-Anweisung aus und speichert die Funktion `f()`.
+- `a` wird weiter ausgeführt und initialisiert `x`.
 
 Wenn jemand `b.f()` aufruft, wird korrekterweise `0` ausgegeben, da das Modul `a`, auf das `b` eine Referenz hat, nun vollständig geladen ist.
 
@@ -87,11 +89,15 @@ Datei `b`:
 def f():
     print(x)`
 
--`a` wird bis zur Zeile `from b import *` ausgeführt.
--`b` wird bis zur Zeile `from a import *` ausgeführt.
--Das Modul `a` existiert bereits, wurde aber noch nicht vollständig ausgeführt.
--`b` entpackt alles, was sich derzeit in `a` befindet, in seinen eigenen globalen Geltungsbereich. Zu diesem Zeitpunkt enthält `a` noch nichts, da es die Zeile `x = 0` noch nicht erreicht hat, also wird nichts importiert.
--`b` führt die `def`-Anweisung aus und speichert die Funktion `f()`.
--`a` wird weiter ausgeführt und initialisiert `x`.
+- `a` wird bis zur Zeile `from b import *` ausgeführt.
+- `b` wird bis zur Zeile `from a import *` ausgeführt.
+- Das Modul `a` existiert bereits, wurde aber noch nicht vollständig ausgeführt.
+- `b` entpackt alles, was sich derzeit in `a` befindet, in seinen eigenen globalen Geltungsbereich. Zu diesem Zeitpunkt enthält `a` noch nichts, da es die Zeile `x = 0` noch nicht erreicht hat, also wird nichts importiert.
+- `b` führt die `def`-Anweisung aus und speichert die Funktion `f()`.
+- `a` wird weiter ausgeführt und initialisiert `x`.
 
 Wenn jetzt jemand `b.f()` aufruft, erhält er einen Fehler, dass `x` im aktuellen Geltungsbereich nicht existiert. Das liegt daran, dass `b` dieses Mal keine Referenz auf das noch ladende `a` hat und Definitionen nicht sieht, die nach dem Import hinzugefügt wurden.
+
+---
+
+[Funktionen](docs/scripting/functions.md)      [Geltungsbereiche](docs/scripting/scopes.md)

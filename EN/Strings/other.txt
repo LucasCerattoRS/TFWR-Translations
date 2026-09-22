@@ -6,13 +6,12 @@
 @average_text2 = {0} Runs Completed
 {1}
 @unlocked_in = For more related information see: [{0}]({1})
-@table_of_contents_section_general_info = General Info
-@table_of_contents_section_programming = Programming
-@table_of_contents_section_unlocks = Unlocks
-@table_of_contents_section_builtins = Built-in Functions
-@table_of_contents_section_items = Items
-@table_of_contents_section_entities = Entities
-@table_of_contents_section_grounds = Grounds
 @new_hat_unlocked = ## New Hat Unlocked
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- right click for more information --
+@missing_unlock_page = You need to unlock {0} in the [tech tree](tech_tree) before you can see this page.
+
+---
+
+{1}
+@latest_news = Latest News

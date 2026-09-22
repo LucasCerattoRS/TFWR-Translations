@@ -5,10 +5,16 @@ Gra zapisuje wszystkie pliki z kodem jako pliki .py, więc możesz je edytować 
 Zauważ, że jest to tylko dla wygody. Język w grze nie jest w rzeczywistości Pythonem, ale jest na tyle bliski, że IntelliSense Pythona działa na nim całkiem dobrze.
 Pliki można znaleźć w [folderze zapisu](persistent_data_path/Saves).
 
-Każdy zapis zawiera również plik `__builtins__.py`, który zawiera wbudowane definicje Pythona pasujące do wbudowanych funkcji w grze, aby umożliwić działanie IntelliSense. 
-VS Code jest w stanie automatycznie wykryć `__builtins__.py`, ale niektóre edytory mogą działać tylko, jeśli wykonasz `from __builtins__ import *`.
+Folder danych trwałych znajduje się tutaj:
 
-Aby zobaczyć zewnętrzne zmiany w grze bez konieczności ponownego wczytywania zapisu, musisz włączyć opcję "File Watcher". Jeśli tworzysz lub usuwasz pliki zewnętrznie, nadal będziesz musiał ponownie wczytać zapis, aby je zobaczyć.
+- Windows: `%USERPROFILE%\AppData\LocalLow\TheFarmerWasReplaced\TheFarmerWasReplaced`
+- macOS: `~/Library/Application Support/com.TheFarmerWasReplaced.TheFarmerWasReplaced`
+- Linux (Steam/Proton): `~/.steam/steam/steamapps/compatdata/2060160/pfx/drive_c/users/steamuser/AppData/LocalLow/TheFarmerWasReplaced/TheFarmerWasReplaced`
+
+Każdy zapis zawiera również plik `__builtins__.py`, który zawiera wbudowane definicje Pythona pasujące do wbudowanych funkcji w grze, aby umożliwić działanie IntelliSense. 
+VS Code jest w stanie automatycznie wykryć `__builtins__.py`, ale niektóre edytory mogą działać tylko, jeśli dodasz `from __builtins__ import *`.
+
+Aby zobaczyć zewnętrzne zmiany w grze bez konieczności ponownego wczytywania zapisu, musisz włączyć opcję „Obserwator plików”. Jeśli tworzysz lub usuwasz pliki zewnętrznie, nadal będziesz musiał ponownie wczytać zapis, aby je zobaczyć.
 
 ## Używanie VS Code
 Visual Studio Code to zalecany edytor kodu do użytku z The Farmer Was Replaced.
@@ -19,6 +25,9 @@ Po pobraniu zainstaluj rozszerzenie Python w VS Code.
 
 Gdy już to zrobisz, otwórz [folder](persistent_data_path/Saves), w którym znajdują się twoje pliki `.py` w VS Code. Upewnij się, że otwierasz cały folder, a nie tylko pojedyncze pliki, w przeciwnym razie plik `__builtins__.py` nie zadziała.
 
-W grze upewnij się, że masz włączoną opcję "File Watcher". Teraz za każdym razem, gdy zapiszesz w VS Code, zmiany automatycznie pojawią się w grze.
+W grze upewnij się, że masz włączoną opcję „Obserwator plików”. Teraz za każdym razem, gdy zapiszesz w VS Code, zmiany automatycznie pojawią się w grze.
 
 To wszystko! Teraz możesz pisać swój kod w profesjonalnym edytorze kodu!
+---
+
+[Pierwszy program](docs/first_program.md)      [Wczytywanie kopii zapasowych](docs/backup.md)

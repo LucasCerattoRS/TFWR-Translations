@@ -6,13 +6,12 @@
 @average_text2 = {0} 完了
 {1}
 @unlocked_in = 関連情報については、[{0}]({1}) を参照してください。
-@table_of_contents_section_general_info = 一般情報
-@table_of_contents_section_programming = プログラミング
-@table_of_contents_section_unlocks = アンロック
-@table_of_contents_section_builtins = 組み込み関数
-@table_of_contents_section_items = アイテム
-@table_of_contents_section_entities = エンティティ
-@table_of_contents_section_grounds = 地面
 @new_hat_unlocked = ## 新しい帽子がアンロックされました
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- 詳細については右クリック --
+@missing_unlock_page = このページを見るには、[アンロックツリー](tech_tree)で {0} をアンロックする必要があります。
+
+---
+
+{1}
+@latest_news = 最新ニュース

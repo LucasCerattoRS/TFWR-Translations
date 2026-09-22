@@ -1,3 +1,6 @@
+[<- Zanahorias](docs/unlocks/carrots.md) <right>[Fertilizante ->](docs/unlocks/fertilizer.md)
+<right>[Girasoles ->](docs/unlocks/sunflowers.md)
+---
 # Riego
 Las plantas crecen más rápido cuando se riegan. El suelo tiene un nivel de agua que va de `0` a `1`.
 La función `get_water()` devuelve el nivel de agua del suelo sobre el que se encuentra.
@@ -13,3 +16,43 @@ Mejorar `Unlocks.Watering` duplicará la cantidad de agua que obtienes cada 10 s
 Un tanque contiene `0.25` de agua.
 
 Llama a `use_item(Items.Water)` sobre cualquier suelo para regar el terreno.
+{{codeexample 
+{
+    "camera_position": {"x": -4, "y": 1, "z": 6},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "water", "n": 10}],
+    "world_size": {"x": 9, "y": 1},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+for _ in range(9):
+    till()
+    move(East)
+#CODE
+for i in range(5):
+    if i > 0:
+        use_item(Items.Water, i)
+    plant(Entities.Tree)
+    print(get_water())
+	move(East)
+	move(East)
+}}
+
+---
+
+[Fertilizante](docs/unlocks/fertilizer.md)
+
+[use_item()](functions/use_item)      [get_water()](functions/get_water)

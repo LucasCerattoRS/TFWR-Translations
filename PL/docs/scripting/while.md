@@ -1,3 +1,5 @@
+[<- Pierwszy program](docs/first_program.md) <right>[Ulepszenie prędkości ->](docs/unlocks/speed.md)
+---
 # Pętla While
 Odblokowałeś pętlę `while` oraz wartości `True` i `False`. Pętla `while` wykonuje swoje ciało tak długo, jak warunek jest `True`.
 
@@ -9,10 +11,34 @@ Nie martw się o tworzenie pętli nieskończonych. Opóźnienia w wykonywaniu pr
 ## Dla początkujących
 Być może próbowałeś już umieścić kilka wywołań `harvest()` pod rząd:
 
-`harvest()
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
 harvest()
-harvest()`
-
+harvest()
+harvest()
+}}
 Pozwala to na zebranie plonów kilka razy w jednym uruchomieniu programu. 
 Jednakże, dobrze byłoby zebrać więcej niż trzy razy, a pisanie tego samego kodu wielokrotnie jest złą praktyką. 
 Rozwiązaniem jest pętla. 
@@ -33,24 +59,102 @@ Gdzie musisz zastąpić „warunek” wartością boolowską, a „#ciało pętl
 
 Dostępne są dwie stałe wartości boolowskie. Stałe to wartości, które nigdy się nie zmieniają w trakcie programu.
 
-Aby stworzyć stałą wartość boolowską, która jest zawsze `True`, możesz po prostu napisać `True`. Napisz `False` dla stałej wartości boolowskiej, która zawsze będzie `False`.
-Więc możesz napisać albo
+Aby utworzyć stałą wartość logiczną, po prostu wpisz `True` lub `False`.
+Możesz więc napisać:
 
-
-`while False:
-	do_a_flip()`
-
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while False:
+	do_a_flip()
+}}
 albo
 
-`while True:
-	do_a_flip()`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+}}
+Pierwsza pętla nigdy nie wykona obrotu, a druga będzie wykonywać obroty bez końca (pętla nieskończona).
 
-Pierwsza nigdy nie wykona obrotu, a druga będzie je wykonywać w nieskończoność (pętla nieskończona). 
+Zwykle tworzenie pętli nieskończonej jest złym pomysłem, ponieważ zawiesza program. W tej grze występują jednak opóźnienia między iteracjami, więc dron będzie wykonywał obroty, dopóki nie zatrzymasz go ręcznie, ponownie naciskając przycisk Wykonaj.
 
-Zwykle tworzenie pętli nieskończonej jest złym pomysłem, ponieważ zawiesi program, ale w tej grze są opóźnienia między każdą iteracją pętli, więc dron będzie wykonywał obroty, dopóki ręcznie go nie zatrzymasz, ponownie naciskając przycisk wykonania.
+Zauważ, że wiersz po dwukropku ma wcięcie. Takie wcięcia służą do oddzielania bloków kodu.
+Naciśnij Tab, aby dodać wcięcie, i Shift + Tab (lub Backspace), aby je usunąć. Jeśli zaznaczonych jest kilka wierszy, Tab i Shift + Tab zastosują zmianę do wszystkich.
 
-Zauważ, że linia po dwukropku ma wcięcie. Wcięcia takie jak to są używane do oddzielania bloków kodu.
-Po prostu naciśnij Tab, aby dodać wcięcie, i Shift + Tab (lub Backspace), aby je usunąć.
+Uwaga: jeśli grasz przez Steam, naciśnięcie Shift + Tab otworzy nakładkę Steam. Skrót do zmniejszania wcięcia możesz zmienić w opcjach gry, a skrót nakładki — w jej ustawieniach.
 
-Pętla będzie powtarzać wszystkie instrukcje z wcięciem po dwukropku.
-Instrukcje po bloku z wcięciem zostaną wykonane po zakończeniu pętli.
+Tutaj `do_a_flip()` i `pet_the_piggy()` są wywoływane wielokrotnie, ponieważ znajdują się wewnątrz bloku `while` z wcięciem. `harvest()` nigdy się jednak nie uruchomi, ponieważ znajduje się po tym bloku.
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+	pet_the_piggy()
+harvest()
+}}
+
+---
+
+[Pętla For](docs/scripting/for.md)      [If](docs/scripting/if.md)      [Break](docs/scripting/break.md)      [Continue](docs/scripting/continue.md)      [Zewnętrzny edytor](docs/external_editor.md)

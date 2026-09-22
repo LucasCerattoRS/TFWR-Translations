@@ -1,7 +1,18 @@
-# Debug 2
-Quando seu drone fica muito rápido e a grade muito grande, pode ser difícil ver o que está acontecendo.
+[<- Depuração](docs/scripting/debug.md)
 
-Por essa razão, existem as funções `set_execution_speed()` e `set_world_size()`.
-Elas permitem que você reduza a velocidade de execução e o tamanho da fazenda. 
+---
+
+# Depuração 2
+
+Quando o drone fica rápido demais e a grade cresce muito, pode ser difícil enxergar o que está acontecendo.
+
+Por isso, você pode usar as funções `set_execution_speed()` e `set_world_size()`.
+Elas permitem reduzir a velocidade de execução e o tamanho da fazenda.
 
 O tamanho da fazenda e a velocidade de execução serão redefinidos para os valores padrão no final da execução.
+
+---
+
+[Depuração](docs/scripting/debug.md)      [Saída](docs/output.md)      [Colocando Blocos para Depurar](docs/unlocks/debug_place.md)      [Cronometragem](docs/unlocks/timing.md)      [Simulação](docs/unlocks/simulation.md)
+
+[set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

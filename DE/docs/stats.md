@@ -1,5 +1,9 @@
 # Statistiken
 
-In den letzten 60s hast du gefarmt: {{itemblock stats_sum}}
+In den letzten 60 Sekunden hast du Folgendes geerntet: {{itemblock stats_sum}}
 
-Deine persönliche Bestleistung pro Ressource ist: {{itemblock stats_best}}
+Deine persönlichen Bestleistungen nach Ressource: {{itemblock stats_best}}
+
+---
+
+[Bestenlisten](docs/unlocks/leaderboard.md)      [Zeitmessung](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)

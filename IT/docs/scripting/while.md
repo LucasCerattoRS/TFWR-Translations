@@ -1,3 +1,5 @@
+[<- Primo Programma](docs/first_program.md) <right>[Potenziamento Velocità ->](docs/unlocks/speed.md)
+---
 # Ciclo While
 Hai sbloccato il ciclo `while` e i valori `True` e `False`. Il ciclo `while` continua a eseguire il corpo del ciclo finché la condizione è `True`.
 
@@ -9,13 +11,37 @@ Non preoccuparti di creare cicli infiniti. I ritardi nell'esecuzione impediranno
 ## Per Principianti
 Forse hai già provato a mettere diverse chiamate `harvest()` di seguito:
 
-`harvest()
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
 harvest()
-harvest()`
-
-Questo ti permette di raccogliere più volte in una singola esecuzione del programma. 
-Tuttavia, sarebbe bello raccogliere più di tre volte, e scrivere lo stesso codice più volte è una cattiva pratica. 
-La soluzione è un ciclo. 
+harvest()
+harvest()
+}}
+Questo ti permette di raccogliere più volte durante una singola esecuzione del programma.
+Sarebbe però utile raccogliere più di tre volte, e ripetere lo stesso codice non è una buona pratica.
+La soluzione è un ciclo.
 Un ciclo ti permette di eseguire lo stesso codice più volte.
 
 Il ciclo while prende una condizione, che è un valore logico che può trovarsi solo in uno di due stati: `True` o `False`. 
@@ -33,24 +59,102 @@ Dove devi sostituire "condition" con un valore booleano e `#corpo del ciclo` con
 
 Ci sono due valori booleani costanti disponibili. Le costanti sono valori che non cambiano mai durante il programma.
 
-Per creare un valore booleano costante che sia sempre `True`, puoi semplicemente scrivere `True`. Scrivi `False` per un valore booleano costante che sarà sempre `False`.
+Per creare un valore booleano costante, basta scrivere `True` o `False`.
 Quindi potresti scrivere o
 
-
-`while False:
-	do_a_flip()`
-
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while False:
+	do_a_flip()
+}}
 o
 
-`while True:
-	do_a_flip()`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+}}
+Il primo non eseguirà mai un flip, mentre il secondo continuerà a eseguirne per sempre (un ciclo infinito).
 
-Il primo non farà mai una capriola e il secondo farà capriole per sempre (un ciclo infinito). 
-
-Normalmente creare un ciclo infinito è una cattiva idea perché bloccherà il programma, ma in questo gioco ci sono ritardi tra ogni iterazione del ciclo, quindi farà sì che il drone continui a fare capriole finché non lo fermerai manualmente premendo di nuovo il pulsante di esecuzione.
+Di norma creare un ciclo infinito è una cattiva idea perché blocca il programma. In questo gioco, però, ci sono dei ritardi tra le iterazioni, quindi il drone continuerà a eseguire flip finché non lo fermerai manualmente premendo di nuovo il pulsante Esegui.
 
 Nota come la riga dopo i due punti sia indentata. L'indentazione come questa viene usata per separare i blocchi di codice.
-Basta premere Tab per aggiungere indentazione e Shift + Tab (o Backspace) per rimuoverla.
+Premi Tab per aggiungere l'indentazione e Shift + Tab (o Backspace) per rimuoverla. Se sono selezionate più righe, Tab e Shift + Tab verranno applicati a tutte.
 
-Il ciclo ripeterà tutte le istruzioni indentate dopo i due punti.
-Le istruzioni dopo il blocco indentato saranno eseguite dopo che il ciclo è terminato.
+Nota: se giochi tramite Steam, premendo Shift + Tab si aprirà invece l'overlay di Steam. Puoi riassegnare la scorciatoia per rimuovere l'indentazione nelle opzioni del gioco oppure quella dell'overlay nelle opzioni di Steam.
+
+Qui `do_a_flip()` e `pet_the_piggy()` vengono chiamate ripetutamente perché si trovano nel blocco `while` indentato. `harvest()`, invece, non viene mai eseguita perché si trova dopo quel blocco.
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+	pet_the_piggy()
+harvest()
+}}
+
+---
+
+[Ciclo For](docs/scripting/for.md)      [If](docs/scripting/if.md)      [Break](docs/scripting/break.md)      [Continue](docs/scripting/continue.md)      [Editor Esterno](docs/external_editor.md)

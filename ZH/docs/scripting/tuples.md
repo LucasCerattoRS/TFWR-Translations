@@ -1,33 +1,139 @@
+[<- 函数](docs/scripting/functions.md)
+---
 # 元组
 元组是将多个值合并为单一值的好方法。
 要创建一个元组，只需用逗号分隔值：
 
-`tuple = 1, 2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+tuple = 1, 2
+print(tuple)
+}}
 
-你也可以将它们再次解包到多个变量中。在下面的代码中，元组 `(1,2)` 被解包到 2 个变量 `a` 和 `b` 中。
+你也可以将它们再次解包到多个变量中。在下面的代码中，元组 `(1, 2)` 被解包到 2 个变量 `a` 和 `b` 中。
 
-`a, b = 1, 2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+a, b = 1, 2
+print(a)
+a, b = b, a
+print(a)
+}}
 
 元组可以像列表一样进行索引，但它们是不可变的，创建后不能更改。
 
-`tuple = 1, 2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+tuple = 1, 2
+print(tuple[1])
 
-`print(tuple[1])`
-打印 `2`
-
-`tuple[0] = 3`
-抛出错误
+tuple[0] = 3
+}}
 <unlock=dicts>
-与列表不同的是，元组可以被作为字典中的`key`进行使用。
+与列表不同的是，元组可以被用作字典中的键。
 
-`d = {(1,2):(4,5)}
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+d = {(1,2):(4,5)}
 
-print(d[(1,2)])`
-打印 `(4,5)`</unlock>
+print(d[(1,2)])
+}}</unlock>
 
 元组也可用于在函数中返回多个值。
 
-`def f():
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def f():
     return 1, 2
 
-a, b = f()`
+a, b = f()
+}}
+
+---
+
+[列表](docs/scripting/lists.md)      [字典](docs/scripting/dicts.md)      [函数](docs/scripting/functions.md)

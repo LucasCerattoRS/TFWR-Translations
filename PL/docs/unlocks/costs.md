@@ -1,19 +1,86 @@
+[<- Słowniki](docs/scripting/dicts.md) <right>[Automatyczne odblokowania ->](docs/unlocks/auto_unlock.md)
+---
 # Koszty
 Każdy koszt można przedstawić jako słownik, który mapuje przedmioty na liczby.
 
 Funkcja `get_cost()` zwraca taki słownik. Zwraca koszt rośliny lub odblokowania.
 
-`get_cost(Entities.Pumpkin)`
-zwraca `{Items.Carrot:1}`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+print(get_cost(Entities.Pumpkin))
+}}
 
-W przypadku odblokowań, można przekazać opcjonalny drugi argument dla poziomu odblokowania, dla którego chcesz uzyskać koszt. Domyślnie jest to bieżący poziom odblokowania.
+W przypadku odblokowań możesz przekazać opcjonalny drugi argument określający poziom odblokowania, którego koszt chcesz poznać. Domyślnie używany jest bieżący poziom.
 
-`get_cost(Unlocks.Loops, 0)`
-zwraca `{Items.Hay:5}`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+print(get_cost(Unlocks.Loops, 0))
+print(get_cost(Unlocks.Loops, 1))
+}}
 
-Dla odblokowań, które są już na maksymalnym poziomie, `get_cost()` zwróci `None`.
+W przypadku odblokowań, które osiągnęły już maksymalny poziom, `get_cost()` zwraca pusty słownik.
 
-Można go używać w ten sposób:
-`cost = get_cost(coś)
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+cost = get_cost(Entities.Carrot)
 for item in cost:
-	potrzebna_ilość_tego_przedmiotu = cost[item]`
+	if num_items(item) < cost[item]:
+		print("brakuje", cost[item] - num_items(item), item)
+}}
+
+---
+
+[Słowniki](docs/scripting/dicts.md)      [Automatyczne odblokowania](docs/unlocks/auto_unlock.md)      [Tabele wyników](docs/unlocks/leaderboard.md)
+
+[get_cost()](functions/get_cost)

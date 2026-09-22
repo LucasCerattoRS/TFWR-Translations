@@ -1,4 +1,5 @@
 # Carregando Backups
+
 Infelizmente, às vezes um arquivo de salvamento é corrompido ou você perde alguns arquivos de código. Se isso acontecer com você, pode tentar carregar um backup. Se acontecer regularmente, tente desativar a Nuvem Steam.
 
 Um backup é feito toda vez que o jogo é salvo, e um pequeno número de backups é mantido caso você precise restaurar algo.
@@ -7,3 +8,7 @@ A maneira mais fácil de carregar um backup é copiar a pasta do backup específ
 
 Um salvamento é uma pasta com um arquivo `save.json` e vários arquivos `.py`.
 Se você perdeu apenas alguns arquivos de código, ou os arquivos de código ainda estão lá, mas o arquivo `save.json` está corrompido, você também pode substituir apenas as partes corrompidas pelos arquivos correspondentes do backup.
+
+---
+
+[Editor Externo](docs/external_editor.md)      [Primeiros Passos](docs/getting_started.md)

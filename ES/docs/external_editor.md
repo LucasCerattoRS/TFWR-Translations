@@ -5,8 +5,14 @@ El juego guarda todos los archivos de código como archivos .py, por lo que pued
 Ten en cuenta que esto es solo por conveniencia. El lenguaje del juego no es realmente Python, pero es lo suficientemente parecido como para que Python IntelliSense funcione decentemente.
 Puedes encontrar los archivos en la [carpeta de guardado](persistent_data_path/Saves).
 
+La carpeta de datos persistentes se encuentra en:
+
+- Windows: `%USERPROFILE%\AppData\LocalLow\TheFarmerWasReplaced\TheFarmerWasReplaced`
+- macOS: `~/Library/Application Support/com.TheFarmerWasReplaced.TheFarmerWasReplaced`
+- Linux (Steam/Proton): `~/.steam/steam/steamapps/compatdata/2060160/pfx/drive_c/users/steamuser/AppData/LocalLow/TheFarmerWasReplaced/TheFarmerWasReplaced`
+
 Cada guardado también contiene un archivo `__builtins__.py`, que contiene definiciones integradas de Python que coinciden con las integradas del juego para habilitar IntelliSense. 
-VS Code puede detectar `__builtins__.py` automáticamente, pero algunos editores pueden funcionar solo si haces `from __builtins__ import *`.
+VS Code puede detectar `__builtins__.py` automáticamente, pero algunos editores pueden funcionar solo si añades `from __builtins__ import *`.
 
 Para ver los cambios externos en el juego sin tener que recargar el guardado, debes habilitar la opción "File Watcher". Si creas o eliminas archivos externamente, aún necesitarás recargar el guardado para verlos.
 
@@ -22,3 +28,7 @@ Una vez que la tengas, abre la [carpeta](persistent_data_path/Saves) que contien
 En el juego, asegúrate de tener activada la opción "File Watcher". Ahora, cada vez que guardes en VS Code, los cambios aparecerán automáticamente en el juego.
 
 ¡Eso es todo! ¡Ahora puedes escribir tu código en un editor de código profesional!
+
+---
+
+[Primer programa](docs/first_program.md)      [Cargar copias de seguridad](docs/backup.md)

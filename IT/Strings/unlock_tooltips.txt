@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Costo Sblocco {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Requisiti di sblocco
+Lo sblocco {0} deve essere al livello {1} o superiore.
 @unlock_descr_trees = Sblocca gli alberi.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = È proprio come il grano, se il grano crescesse sull'argilla.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Usa le liste per memorizzare molti valori.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -107,8 +113,41 @@ other_file.function()`
 @unlock_descr_megafarm = Più droni!
 
 `spawn_drone(task)`
+@unlock_descr_mining = Dà al drone una trivella. E un casco da minatore.
+
+`dig()`
+@unlock_descr_coal = Nel sottosuolo compaiono giacimenti di carbone.
+@unlock_descr_iron = Nel sottosuolo compaiono vene di minerale di ferro.
+@unlock_descr_pyramid = Nel sottosuolo compaiono antiche strutture di arenaria.
+@unlock_descr_quartz = Nel sottosuolo compaiono aghi di quarzo.
+@unlock_descr_ore_boost = Raddoppia la resa del carbone. Raddoppia le dimensioni delle vene di ferro e quarzo.
+@unlock_descr_jump = Permette al drone di saltare verso il basso.
+@unlock_descr_prospecting = Usa il carbone per cercare il ferro!
+
+`prospect_iron()`
+@unlock_descr_drill = Migliora la potenza della trivella.
+@unlock_descr_debug_place = Posiziona blocchi colorati.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Sensori del drone per interagire con le caselle sotterranee
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Nel sottosuolo compaiono zucche fossilizzate.
+@unlock_descr_special_soils = Scopri strati di terriccio e perlite per aumentare la resa delle piante.
+@unlock_descr_bamboo = Pianta il bambù e guardalo crescere.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Trova e usa la dinamite per far saltare tutto in aria.
+@unlock_descr_treasure_map = Vai a caccia di tesori nascosti nelle profondità.
+@unlock_descr_mushrooms = Trova e raccogli i funghi sotterranei abbinando quelli dello stesso tipo.
 @multi_unlock_descr_expand = Espande la fattoria. Questo pulisce anche la fattoria.
 @multi_unlock_descr_carrots = Aumenta la resa e il costo delle carote.
+@multi_unlock_descr_rice = Aumenta la resa e il costo delle piante di riso.
 @multi_unlock_descr_trees = Aumenta la resa di cespugli e alberi.
 @multi_unlock_descr_pumpkins = Aumenta la resa e il costo delle zucche.
 @multi_unlock_descr_mazes = Aumenta l'oro nei forzieri e la quantità di sostanza strana necessaria per generare un labirinto.
@@ -119,9 +158,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Ricevi più acqua.
 @multi_unlock_descr_fertilizer = Ricevi più fertilizzante.
 @multi_unlock_descr_megafarm = Aumenta ulteriormente il numero di droni.
+@multi_unlock_descr_drill = Aumenta la velocità di perforazione.
+@multi_unlock_descr_coal = Nel sottosuolo compaiono più strati di carbone.
+@multi_unlock_descr_iron = Aumenta la resa dei minerali di ferro.
+@multi_unlock_descr_pyramid = Aumenta l'energia ottenuta restaurando le piramidi.
+@multi_unlock_descr_quartz = Aumenta la resa dei minerali di quarzo.
+@multi_unlock_descr_petrified_pumpkins = Aumenta la resa delle zucche pietrificate.
+@multi_unlock_descr_dynamite = Aumenta la resa della dinamite e l'energia delle esplosioni.
+@multi_unlock_descr_treasure_map = Aumenta la profondità del percorso del tesoro e quindi la quantità d'oro ottenuta dal tesoro.
+@multi_unlock_descr_ore_boost = Aumenta ulteriormente la resa del carbone. Aumenta ulteriormente le dimensioni delle vene di ferro e quarzo.
+@multi_unlock_descr_bamboo = Aumenta la resa e il costo del bambù.
+@multi_unlock_descr_mushrooms = Aumenta la resa dei blocchi di funghi dello stesso tipo.
 @auto_unlock = Sblocco Automatico
 @cactus = Cactus
 @carrots = Carote
+@rice = Riso
 @costs = Costi
 @debug = Debug
 @debug_2 = Debug_2
@@ -144,6 +195,8 @@ other_file.function()`
 @polyculture = Policoltura
 @pumpkins = Zucche
 @senses = Sensi
+@underground_senses = Sensi Sotterranei
+@debug_place = Blocchi Colorati
 @simulation = Simulazione
 @speed = Velocità
 @sunflowers = Girasoli
@@ -154,3 +207,18 @@ other_file.function()`
 @utilities = Utilità
 @variables = Variabili
 @watering = Annaffiatura
+@iron = Ferro
+@pyramid = Piramidi
+@ore_boost = Potenziamento Minerali
+@petrified_pumpkins = Zucche Pietrificate
+@special_soils = Terreni Speciali
+@mining = Estrazione
+@coal = Carbone
+@drill = Trivella
+@quartz = Quarzo
+@prospecting = Prospezione del Ferro
+@dynamite = Dinamite
+@bamboo = Bambù
+@treasure_map = Mappa del Tesoro
+@mushrooms = Funghi
+@jump = Salto

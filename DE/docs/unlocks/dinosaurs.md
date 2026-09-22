@@ -1,3 +1,5 @@
+[<- Kakteen](docs/unlocks/cactus.md)
+---
 # Dinosaurier
 Dinosaurier sind uralte, majestätische Kreaturen, die für uralte Knochen gefarmt werden können.
 
@@ -21,6 +23,38 @@ Die Verwendung von `measure()` auf einem Apfel gibt die Position des nächsten A
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 Wenn der Hut wieder abgelegt wird, indem ein anderer Hut ausgerüstet wird, wird der Schwanz geerntet.
 Du erhältst Knochen in Höhe der Schwanzlänge zum Quadrat. Für einen Schwanz der Länge `n` erhältst du also `n**2` `Items.Bone`.
 Zum Beispiel:
@@ -35,12 +69,39 @@ Der Dinosaurier-Hut ist sehr schwer. Wenn du ihn ausrüstest, dauert `move()` 40
 
 Die folgende Schleife gibt die Anzahl der von `move()` verwendeten Ticks nach einer beliebigen Anzahl von Äpfeln aus:
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("ticks nach ", i, " Äpfeln: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("Ticks nach ", i, " Äpfeln: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 Du hast nur einen Dinosaurier-Hut, also kann ihn nur eine Drohne tragen.
 
-<spoiler=zeige Hinweis 1>Wenn du dich immer auf demselben Pfad bewegst, der das gesamte Feld abdeckt, kannst du leicht eine Schlange bekommen, die jedes Mal das gesamte Feld bedeckt. Es ist nicht sehr effizient, aber es funktioniert.
-Das vollständige Durchqueren einer sehr großen Farm kann lange dauern, und möglicherweise benötigst du gar nicht so viele Knochen. Du kannst `set_world_size()` verwenden, um die Größe der Farm auf etwas Praktischeres zu ändern.</spoiler>
+<spoiler=zeige Hinweis 1>
+Wenn du dich immer auf demselben Pfad bewegst, der das gesamte Feld abdeckt, kannst du leicht eine Schlange bekommen, die jedes Mal das gesamte Feld bedeckt. Es ist nicht sehr effizient, aber es funktioniert.
+Eine sehr große Farm vollständig zu durchqueren kann lange dauern, und vielleicht brauchst du gar nicht so viele Knochen. Mit `set_world_size()` kannst du die Farm auf eine passendere Größe einstellen.</spoiler>
+
+---
+
+[Statistiken](docs/stats.md)      [Tupel](docs/scripting/tuples.md)      [Listen](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

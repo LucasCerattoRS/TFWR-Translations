@@ -1,4 +1,6 @@
-# 命名作用域
+[<- 函数](docs/scripting/functions.md)
+---
+# 名称作用域
 作用域决定了哪些变量可以从哪里访问。简单来说，作用域就是一个从名称到值的映射。
 其工作方式与 Python 中的基本相同。
 
@@ -22,30 +24,70 @@
 从全局作用域中检索存储在 `f` 中的函数并调用它。
 
 `print(y)`
-这个在全局作用域中的 print 语句会抛出一个错误，因为 `y` 从未在全局作用域中声明，所以无法在这里读取它。
+这个在全局作用域中的 `print` 语句会抛出一个错误，因为 `y` 从未在全局作用域中声明，所以无法在这里读取它。
 它只存在于 `f` 的局部作用域中。
 
 ## global 关键字
 默认情况下，函数中的所有变量都绑定到局部作用域，即使全局作用域中存在同名变量。
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 这段代码会打印 `0`，因为 `f` 内部的局部 `x` 与全局 `x` 不是同一个变量，所以全局 `x` 保持不变。这一点很重要，否则函数调用可能会意外覆盖一个恰好与该函数局部变量同名的全局变量。
 
 如果想写入一个全局变量，则必须使用 `global` 关键字来明确表示。
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 在这个例子中，`global x` 将 `x` 绑定到上面定义的全局变量 `x`。现在打印的会是 `1`。
 注意，改变全局变量通常是走向面条式代码（难以维护的代码）的第一步，导致程序的每个部分都会影响其他所有部分，所以请勿过度使用。
@@ -53,8 +95,32 @@ print(x)`
 ## 循环和分支
 循环和分支不会创建自己的作用域，因此，在其内部声明的一切都仍然可以在外部使用。
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
 这将打印 `2`，因为 `for` 循环的最后一次迭代将 `2` 赋给了 `i`。
+
+---
+
+[变量](docs/scripting/variables.md)      [函数](docs/scripting/functions.md)      [导入](docs/scripting/import.md)      [巨型农场](docs/unlocks/megafarm.md)

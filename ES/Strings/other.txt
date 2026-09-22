@@ -6,13 +6,12 @@
 @average_text2 = {0} carreras completadas
 {1}
 @unlocked_in = Para más información relacionada, consulta: [{0}]({1})
-@table_of_contents_section_general_info = Información general
-@table_of_contents_section_programming = Programación
-@table_of_contents_section_unlocks = Desbloqueos
-@table_of_contents_section_builtins = Funciones integradas
-@table_of_contents_section_items = Ítems
-@table_of_contents_section_entities = Entidades
-@table_of_contents_section_grounds = Terrenos
 @new_hat_unlocked = ## Nuevo Sombrero Desbloqueado
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- clic derecho para más información --
+@missing_unlock_page = Tienes que desbloquear {0} en el [árbol tecnológico](tech_tree) antes de poder ver esta página.
+
+---
+
+{1}
+@latest_news = Últimas noticias

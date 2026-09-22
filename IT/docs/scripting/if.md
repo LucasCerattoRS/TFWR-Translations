@@ -1,31 +1,111 @@
+[<- Potenziamento Velocità](docs/unlocks/speed.md)
+---
 # If
-Puoi usare if, elif e else per eseguire codice condizionalmente.
+Puoi usare `if`, `elif` ed `else` per eseguire il codice in modo condizionale.
 
-`if condizione1:
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+condition1 = False
+condition2 = False
+condition3 = True
+
+if condition1:
 	do_a_flip()
-elif condizione2:
+elif condition2:
 	harvest()
 else:
 	do_a_flip()
-	harvest()`
+	harvest()
+}}
 
 ## Sintassi
-Gli `if` ti permettono di eseguire codice solo se una certa condizione è `True`. Sono come un ciclo `while` che non si ripete.
-L'`if` prende una condizione proprio come il ciclo `while` ed esegue il blocco di codice dell'if se la condizione restituisce `True`:
+Le istruzioni `if` permettono di eseguire il codice solo se una condizione è `True`. Sono come un ciclo `while` che non si ripete.
+Un'istruzione `if` accetta una condizione, proprio come un ciclo `while`, ed esegue il proprio blocco di codice se la condizione restituisce `True`:
 
-`#fai un flip se la condizione è True
-if condizione:
-	do_a_flip()`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+condition = True
 
-Puoi anche aggiungere un `else` dopo l'if che definisce il codice da eseguire se la condizione restituisce `False`.
+if condition:
+	do_a_flip()
+}}
 
-Fai un flip se `condizione` è True, altrimenti raccogli.
-`if condizione:
+Puoi anche aggiungere un blocco `else` dopo il blocco `if`. Il blocco `else` viene eseguito se la condizione restituisce `False`.
+
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+condition = False
+
+if condition:
 	do_a_flip()
 else:
-	harvest()`
+	harvest()
+}}
 
-`elif` è l'abbreviazione di else if.
+`elif` è l'abbreviazione di "else if".
 
 `if condizione1:
 	#a
@@ -43,3 +123,7 @@ elif condizione2:
 	#b
 else:
 	#c`
+
+---
+
+[Ciclo While](docs/scripting/while.md)      [Operatori](docs/scripting/operators.md)      [Sensi](docs/unlocks/senses.md)

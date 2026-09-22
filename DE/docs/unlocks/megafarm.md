@@ -1,16 +1,94 @@
+[<- Labyrinthe](docs/unlocks/mazes.md)
+---
 # Mega-Farm
 Diese unglaublich mächtige Freischaltung gibt dir Zugriff auf mehrere Drohnen.
+{{codeexample 
+{
+    "camera_position": {"x": -3, "y": 2.1, "z": 7},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [],
+    "world_size": {"x": 7, "y": 7},
+    "execution_speed": 21,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(North)
+move(North)
+move(North)
+move(East)
+move(East)
+move(East)
+change_hat(Hats.Wizard_Hat)
+#CODE
+def harvest_spiral(radius):
+    for i in range(1, radius, 2):
+        harvest()
+        move(West)
+        for j in range(i):
+            harvest()
+            move(South)
+        for j in range(i+1):
+            harvest()
+            move(East)
+        for j in range(i+1):
+            harvest()
+            move(North)
+        for j in range(i+1):
+            harvest()
+            move(West)
+
+while True:
+    spawn_drone(harvest_spiral, 7)
+    do_a_flip()
+}}
 
 Wie zuvor startest du immer noch mit nur einer Drohne. Zusätzliche Drohnen müssen zuerst gespawnt werden und verschwinden nach Beendigung des Programms.
 Jede Drohne führt ihr eigenes separates Programm aus. Neue Drohnen können mit der Funktion `spawn_drone(function)` gespawnt werden.
 
-`def drone_function():
-    move(North)
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def drone_function():
+    move(East)
     do_a_flip()
 
-spawn_drone(drone_function)`
+spawn_drone(drone_function)
+do_a_flip()
+}}
 
-Dies spawnt eine neue Drohne an derselben Position wie die Drohne, die den Befehl `spawn_drone(function)` ausgeführt hat. Die neue Drohne beginnt dann mit der Ausführung der angegebenen Funktion. Nachdem sie fertig ist, verschwindet sie automatisch.
+Dadurch erscheint eine neue Drohne an derselben Position wie die Drohne, die den Befehl `spawn_drone(function)` ausgeführt hat. Die neue Drohne beginnt dann mit der Ausführung der angegebenen Funktion. Sobald sie fertig ist, verschwindet sie automatisch – außer sie ist die letzte vorhandene Drohne.
 
 Drohnen kollidieren nicht miteinander.
 
@@ -18,33 +96,107 @@ Verwende `max_drones()`, um die maximale Anzahl von Drohnen zu erhalten, die gle
 Verwende `num_drones()`, um die Anzahl der Drohnen zu erhalten, die sich bereits auf der Farm befinden.
 
 
-## Beispiel:
-`def harvest_column():
+## Beispiel
+{{codeexample 
+{
+    "camera_position": {"x": -1.5, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def harvest_column():
     for _ in range(get_world_size()):
         harvest()
         move(North)
 
 while True:
     if spawn_drone(harvest_column):
-        move(East)`
+        move(East)
+}}
 
 Dies bewirkt, dass deine erste Drohne sich horizontal bewegt und weitere Drohnen spawnt. Die gespawnten Drohnen bewegen sich dann vertikal und ernten alles auf ihrem Weg.
 
 Wenn alle verfügbaren Drohnen bereits gespawnt wurden, tut `spawn_drone()` nichts und gibt `None` zurück.
 
 Hier ist ein weiteres Beispiel, das jeder Drohne eine andere Richtung übergibt.
-`for dir in [North, East, South, West]:
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(North)
+move(East)
+#CODE
+for dir in [North, East, South, West]:
     def task():
         move(dir)
         do_a_flip()
-    spawn_drone(task)`
+    spawn_drone(task)
+}}
 
 ## Alle Drohnen sind gleich
 Es gibt keine spezielle „Hauptdrohne“. Alle Drohnen können andere Drohnen spawnen, und alle zählen für das Drohnenlimit. Alle Drohnen verschwinden, wenn ihr Programm endet. Wenn die erste Drohne ihr Programm frühzeitig beendet, übernimmt eine andere Drohne die Visualisierung mit Code-Hervorhebungen. Alle Drohnen können Breakpoints auslösen, und wenn eine Drohne einen Breakpoint auslöst, wechselt die Code-Hervorhebung zu dieser Drohne.
 
-<spoiler=zeige Hinweis> Schau dir diese super nützliche parallele `for_all`-Funktion an, die eine beliebige Funktion nimmt und sie auf jedem Farmfeld ausführt. Sie nutzt alle verfügbaren Drohnen dafür.
+<spoiler=zeige Hinweis> 
+Schau dir diese super nützliche parallele `for_all`-Funktion an, die eine beliebige Funktion nimmt und sie auf jedem Farmfeld ausführt. Sie nutzt alle verfügbaren Drohnen dafür.
 
-`def for_all(f):
+{{codeexample 
+{
+    "camera_position": {"x": -1.5, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def for_all(f):
 	def row():
 		for _ in range(get_world_size()-1):
 			f()
@@ -55,7 +207,8 @@ Es gibt keine spezielle „Hauptdrohne“. Alle Drohnen können andere Drohnen s
 			row()
 		move(North)
 
-for_all(harvest)`
+for_all(harvest)
+}}
 
 Ein besonders nützliches Muster ist es, eine Drohne zu spawnen, wenn eine verfügbar ist, und es andernfalls selbst zu tun.
 
@@ -67,14 +220,39 @@ Ein besonders nützliches Muster ist es, eine Drohne zu spawnen, wenn eine verf�
 Verwende die Funktion `wait_for(drone)`, um auf das Ende einer anderen Drohne zu warten. Du erhältst das `drone`-Handle, wenn du die Drohne spawnst.
 `wait_for(drone)` gibt den Rückgabewert der Funktion zurück, die die andere Drohne ausgeführt hat.
 
-`def get_entity_type_in_direction(dir):
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Tree)
+move(West)
+#CODE
+def get_entity_type_in_direction(dir):
     move(dir)
     return get_entity_type()
 
-def zero_arg_wrapper():
-    return get_entity_type_in_direction(North)
-drone = spawn_drone(zero_arg_wrapper)
-print(wait_for(drone))`
+drone = spawn_drone(get_entity_type_in_direction, East)
+print(wait_for(drone))
+}}
 
 Beachte, dass das Spawnen von Drohnen Zeit braucht, daher ist es keine gute Idee, für jede Kleinigkeit eine neue Drohne zu spawnen.
 
@@ -83,48 +261,78 @@ Du kannst `has_finished(drone)` benutzen, um zu checken, ob die Drohne fertig is
 ## Kein gemeinsamer Speicher
 Jede Drohne hat ihren eigenen Speicher und kann nicht direkt die globalen Variablen einer anderen Drohne lesen oder schreiben.
 
-`x = 0
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": false,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def increment():
     global x
     x += 1
 
 wait_for(spawn_drone(increment))
-print(x)`
+print(x)
+}}
 
 Dies wird `0` ausgeben, da die neue Drohne ihre eigene Kopie des globalen `x` erhöht hat, was das `x` der ersten Drohne nicht beeinflusst.
 
 ## Argumente übergeben
 
-`spawn_drone` akzeptiert weitere optionale Argumente, die an die aufgerufene Funktion übergeben werden:
+`spawn_drone()` akzeptiert weitere optionale Argumente, die an die aufgerufene Funktion übergeben werden:
 
-`def harvest_spiral(radius):
-    for i in range(0, radius, 2):
-        for j in range(i):
-            harvest()
-            move(West)
-        for j in range(i):
-            harvest()
-            move(South)
-        for j in range(i+1):
-            harvest()
-            move(East)
-        for j in range(i+1):
-            harvest()
-            move(North)
+Beachte, dass die Regel zum nicht gemeinsam genutzten Speicher weiterhin gilt. Die aufgerufene Funktion arbeitet also mit einer Kopie der Argumente:
 
-wait_for(spawn_drone(harvest_spiral, 6))`
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": false,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def modify(list):
+	list.append('grün')
+	print(list)
 
-Beachte, dass die Klausel „Kein gemeinsamer Speicher“ weiterhin gilt. Das bedeutet, dass die aufgerufene Funktion mit einer Kopie der Argumente arbeitet:
-
-`def modify(list):
-	move(North)
-	list.append('green')
-	print(list) # gibt ['red', 'green'] aus
-
-l = ['red']
+l = ['rot']
 wait_for(spawn_drone(modify, l))
-print(l) # gibt ['red'] aus`
+print(l)
+}}
 
 ## Race Conditions
 Mehrere Drohnen können gleichzeitig mit demselben Farmfeld interagieren. Wenn zwei Drohnen während desselben Ticks mit demselben Feld interagieren, finden beide Interaktionen statt, aber die Ergebnisse können je nach Reihenfolge der Interaktionen unterschiedlich sein.
@@ -143,4 +351,10 @@ Hier ist eine weitere problematische Situation, die auftreten kann, wenn mehrere
     use_item(Items.Water)`
 
 Wenn mehrere Drohnen dies gleichzeitig ausführen, werden sie alle die erste Zeile ausführen, was sie in den `if`-Block bringt. Dann werden sie alle Wasser verwenden und viel davon verschwenden.
-Bis eine Drohne die zweite Zeile erreicht, könnte `get_water()` nicht mehr kleiner als `0.5` sein, weil eine andere Drohne das Feld in der Zwischenzeit bewässert hat.
+Bis eine Drohne die zweite Zeile erreicht, könnte `get_water()` bereits nicht mehr kleiner als `0.5` sein, weil eine andere Drohne das Feld inzwischen bewässert hat.
+
+---
+
+[Funktionen](docs/scripting/functions.md)      [Geltungsbereiche](docs/scripting/scopes.md)      [Simulation](docs/unlocks/simulation.md)
+
+[spawn_drone()](functions/spawn_drone)      [num_drones()](functions/num_drones)      [max_drones()](functions/max_drones)      [wait_for()](functions/wait_for)      [has_finished()](functions/has_finished)

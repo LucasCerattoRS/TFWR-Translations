@@ -1,3 +1,5 @@
+[<- 선인장](docs/unlocks/cactus.md)
+---
 # 공룡
 공룡은 고대 뼈를 얻기 위해 기를 수 있는 고대의, 장엄한 생물이에요.
 
@@ -21,6 +23,38 @@
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 다른 모자를 장착하여 모자를 다시 벗으면, 꼬리가 수확돼요.
 꼬리 길이의 제곱만큼 뼈를 받게 돼요. 따라서 길이가 `n`인 꼬리는 `n**2`개의 `Items.Bone`을 받게 돼요.
 예시:
@@ -35,12 +69,39 @@
 
 다음 루프는 사과를 몇 개든 집은 후 `move()`가 사용하는 틱 수를 출력해요:
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("사과 ", i, "개 후의 틱 수: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("사과 ", i, "개 후의 틱 수: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 공룡 모자는 하나뿐이므로, 한 드론만 쓸 수 있어요.
 
-<spoiler=힌트 1 보기>밭 전체를 덮는 같은 경로를 계속 따라 움직이면, 매번 밭 전체를 덮는 뱀을 쉽게 만들 수 있어요. 아주 효율적이진 않지만, 작동은 해요.
+<spoiler=힌트 1 보기>
+밭 전체를 덮는 같은 경로를 계속 따라 움직이면, 매번 밭 전체를 덮는 뱀을 쉽게 만들 수 있어요. 아주 효율적이진 않지만, 작동은 해요.
 매우 큰 농장을 완전히 순회하는 데는 오랜 시간이 걸릴 수 있고, 실제로 그렇게 많은 뼈가 필요하지 않을 수도 있어요. `set_world_size()`를 자유롭게 사용하여 농장 크기를 더 편리한 것으로 바꾸세요.</spoiler>
+
+---
+
+[통계](docs/stats.md)      [튜플](docs/scripting/tuples.md)      [리스트](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

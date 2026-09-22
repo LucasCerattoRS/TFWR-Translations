@@ -12,6 +12,7 @@
 @low = Bajo
 @sfx limit = Límite SFX
 @vfx limit = Límite VFX
+@avalanche particles = Partículas de derrumbe
 @volume damping = Atenuación de volumen
 @volume = Volumen
 @music volume = Volumen de la música

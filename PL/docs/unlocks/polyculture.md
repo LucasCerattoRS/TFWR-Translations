@@ -1,13 +1,52 @@
+[<- Dynie](docs/unlocks/pumpkins.md)
+---
 # Uprawa współrzędna
-Być może już zauważyłeś, że czasami rośliny dają większy plon, gdy są sadzone razem.
-Trawa, krzaki, drzewa i marchewki dają większy plon, gdy mają odpowiedniego towarzysza. Preferencje towarzysza są różne dla każdej pojedynczej rośliny i nie można ich przewidzieć. Na szczęście preferencje towarzysza rośliny pod dronem można zmierzyć za pomocą `get_companion()`. Zwraca ona krotkę, gdzie pierwszy element to typ rośliny, którą chce jako towarzysza, a drugi element to pozycja, w której chce swojego towarzysza.
+Być może zauważyłeś już, że czasami rośliny dają większy plon, gdy są sadzone razem.
+Trawa, krzaki, drzewa i marchewki dają większy plon, gdy mają odpowiedniego towarzysza. Preferencja towarzysza jest inna dla każdej rośliny i nie da się jej przewidzieć. Na szczęście preferencję rośliny pod dronem można sprawdzić za pomocą `get_companion()`. Funkcja zwraca krotkę, której pierwszy element to rodzaj pożądanej rośliny towarzyszącej, a drugi — jej pozycja. Towarzysz nie musi być w pełni wyrośnięty, aby zapewnić premię do plonu.
 
-`plant_type, (x, y) = get_companion()`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 20,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+plant_type, (x, y) = get_companion()
+print(plant_type, (x, y))
+move(East)
+move(South)
+plant(plant_type)
+move(West)
+move(North)
+do_a_flip()
+harvest()
+}}
 
-Na przykład, jeśli posadzisz krzak, a następnie wywołasz `get_companion()`, zwróci coś w stylu `(Entities.Carrot, (3, 5))`. Oznacza to, że ten krzak chciałby mieć marchewki na pozycji `(3,5)`. Więc jeśli posadzisz marchewki na `(3,5)`, a następnie zbierzesz krzak, da on więcej drewna. Etap wzrostu marchewki nie ma znaczenia.
+Preferowanym towarzyszem rośliny może być `Entities.Grass`, `Entities.Bush`, `Entities.Tree` lub `Entities.Carrot`. Każda roślina wybiera go losowo, ale zawsze będzie to inny rodzaj rośliny niż ona sama. Pozycja może znajdować się w dowolnym miejscu w odległości do 3 ruchów od rośliny, z wyjątkiem jej własnej pozycji.
 
-Preferencje towarzysza rośliny mogą być `Entities.Grass`, `Entities.Bush`, `Entities.Tree` lub `Entities.Carrot`. Każda roślina wybiera to losowo, ale zawsze wybierze inną roślinę niż ona sama. Pozycja może być również dowolną pozycją w odległości do 3 ruchów od rośliny, z wyjątkiem pozycji samej rośliny.
+Jeśli pod dronem nie ma rośliny z preferencją towarzysza, `get_companion()` zwraca `None`.
 
-Jeśli pod dronem nie ma rośliny, która ma preferencje towarzysza, `get_companion()` zwróci `None`.
+Po pierwszym odblokowaniu uprawy współrzędnej mnożnik plonu wynosi `5`. Podwaja się przy każdym ulepszeniu.
 
-Zanim uprawa współrzędna zostanie odblokowana, mnożnik plonu wynosi `5`. Podwaja się za każdym razem, gdy go ulepszysz.
+---
+
+[Statystyki](docs/stats.md)      [Krotki](docs/scripting/tuples.md)      [Słowniki](docs/scripting/dicts.md)      [Zmysły](docs/unlocks/senses.md)      [Sadzenie](docs/unlocks/plant.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

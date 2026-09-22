@@ -1,13 +1,55 @@
+[<- Abóboras](docs/unlocks/pumpkins.md)
+
+---
+
 # Policultura
-Você já deve ter notado que, às vezes, as plantas rendem mais quando plantadas juntas.
-Grama, arbustos, árvores e cenouras rendem mais quando têm a companhia de planta certa. A preferência de companhia é diferente para cada planta individual e não pode ser prevista. Felizmente, a preferência de companhia da planta sob o drone pode ser medida usando `get_companion()`. Ela retorna uma tupla onde o primeiro elemento é o tipo de planta que ela quer como sua companheira e o segundo elemento é a posição onde ela quer sua companheira.
 
-`plant_type, (x, y) = get_companion()`
+Talvez você já tenha percebido que, às vezes, as plantas rendem mais quando são plantadas juntas.
+Grama, arbustos, árvores e cenouras rendem mais quando têm a planta companheira correta. A preferência de companhia é diferente para cada planta e não pode ser prevista. Felizmente, a preferência da planta sob o drone pode ser medida usando `get_companion()`. Ela retorna uma tupla em que o primeiro elemento é o tipo de planta desejado como companheira e o segundo é a posição onde a companheira deve ficar. A planta companheira não precisa estar totalmente crescida para conceder o bônus de rendimento.
 
-Por exemplo, se você plantar um arbusto e depois chamar `get_companion()`, ele retornará algo como `(Entities.Carrot, (3, 5))`. Isso significa que este arbusto gostaria de ter cenouras na posição `(3,5)`. Então, se você plantar cenouras em `(3,5)` e depois colher o arbusto, ele renderá mais madeira. O estágio de crescimento da cenoura não importa.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 20,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+plant_type, (x, y) = get_companion()
+print(plant_type, (x, y))
+move(East)
+move(South)
+plant(plant_type)
+move(West)
+move(North)
+do_a_flip()
+harvest()
+}}
 
-A preferência de companhia de uma planta pode ser `Entities.Grass`, `Entities.Bush`, `Entities.Tree` ou `Entities.Carrot`. Cada planta escolhe isso aleatoriamente, mas sempre escolherá uma planta diferente de si mesma. A posição também pode ser qualquer posição a até 3 movimentos da planta, exceto a posição da própria planta.
+A preferência de companhia de uma planta pode ser `Entities.Grass`, `Entities.Bush`, `Entities.Tree` ou `Entities.Carrot`. Cada planta escolhe aleatoriamente, mas sempre escolherá um tipo diferente do próprio. A posição pode estar em qualquer lugar a até 3 movimentos da planta, exceto na posição da própria planta.
 
-Se não houver nenhuma planta sob o drone que tenha preferência por companhia, `get_companion()` retornará `None`.
+Se não houver uma planta com preferência de companhia sob o drone, `get_companion()` retornará `None`.
 
-Antes de a policultura ser desbloqueada, o multiplicador de produção é `5`. Ele dobra a cada vez que você o melhora.
+Quando a policultura é desbloqueada pela primeira vez, o multiplicador de rendimento é `5`. Ele dobra a cada melhoria.
+
+---
+
+[Estatísticas](docs/stats.md)      [Tuplas](docs/scripting/tuples.md)      [Dicionários](docs/scripting/dicts.md)      [Sentidos](docs/unlocks/senses.md)      [Plantio](docs/unlocks/plant.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

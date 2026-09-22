@@ -1,5 +1,9 @@
 # Stats
 
-Over the last 60s you farmed: {{itemblock stats_sum}}
+Over the last 60 seconds, you farmed: {{itemblock stats_sum}}
 
-Your personal best per resource is: {{itemblock stats_best}}
+Your personal bests by resource are: {{itemblock stats_best}}
+
+---
+
+[Leaderboards](docs/unlocks/leaderboard.md)      [Timing](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)

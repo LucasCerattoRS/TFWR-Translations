@@ -1,5 +1,6 @@
 @item_tooltip_template_amount = Du hast {0}
 @item_descr_carrot = Erhältlich durch das Ernten von Karotten.
+@item_descr_rice = Wird durch das Ernten von Reis gewonnen.
 @item_descr_fertilizer = Rufe `use_item(Items.Fertilizer)` auf, um sofort 2s von der verbleibenden Wachstumszeit der Pflanzen zu entfernen.
 @item_descr_weird_substance = Rufe `use_item(Items.Weird_Substance)` bei einem Busch auf, um ein Labyrinth wachsen zu lassen, oder bei anderen Pflanzen, um ihren Infektionsstatus umzuschalten. Erhältlich von infizierten Pflanzen. Das Düngen von Pflanzen infiziert sie.
 @item_descr_gold = Gefunden in Schatztruhen in Labyrinthen.
@@ -12,3 +13,10 @@
 @item_descr_cactus = Erhältlich durch das Ernten von sortierten Kakteen.
 @item_descr_cactus_seed = Dieses Item wurde aus dem Spiel entfernt.
 @item_descr_bone = Die Knochen einer uralten Kreatur.
+@item_descr_block = Ein Block, den du beim Graben erhältst.
+@item_descr_coal = Wird beim Abbau unterirdischer Kohle gewonnen. Kohlevorkommen bilden flache Schichten.
+@item_descr_iron = Wird durch den Abbau von Eisen unter Tage gewonnen.
+@item_descr_quartz = Wird beim Abbau von Quarzadern gewonnen. Diese wachsen in nadelförmigen Strukturen.
+@item_descr_dynamite = Wird durch das Graben in Dynamitboden gewonnen.
+@item_descr_bamboo = Wird durch das Ernten von Bambus gewonnen.
+@item_descr_mushroom = Wird durch das Stapeln von Pilzblöcken gewonnen.

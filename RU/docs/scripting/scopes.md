@@ -1,3 +1,5 @@
+[<- Функции](docs/scripting/functions.md)
+---
 # Области видимости имен
 Область видимости определяет, к каким переменным можно получить доступ и откуда. По сути, она сопоставляет имена со значениями.
 Область видимости действует в игре практически так же, как и в Python.
@@ -22,30 +24,70 @@
 Извлекает функцию, хранящуюся в `f` из глобальной области видимости, и вызывает ее.
 
 `print(y)`
-Эта инструкция вывода в глобальной области видимости вызывает ошибку, поскольку `y` никогда не объявлялась в глобальной области видимости и мы не можем ее здесь прочитать.
+Эта инструкция `print` в глобальной области видимости вызывает ошибку, потому что `y` никогда не объявлялась в глобальной области, поэтому прочитать ее здесь нельзя.
 Она существовала только в локальной области видимости `f`.
 
 ## Ключевое слово global
 По умолчанию все переменные в функциях привязываются к локальной области видимости, даже если переменная с таким же именем существует в глобальной области видимости.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 Этот код выводит `0`, потому что локальная `x` внутри `f` — это не та же переменная, что и глобальная `x`, и глобальная `x` остается неизменной. Это важно, потому что в противном случае вызов функции мог бы случайно перезаписать глобальную переменную с тем же именем, что и локальная переменная функции.
 
 Если ты хочешь записать значение в глобальную переменную, это нужно специально указать, используя ключевое слово `global`.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 В этом примере `global x` привязывает `x` к глобальной переменной `x`, определенной выше. Теперь будет выведено `1`.
 Обрати внимание, что изменение глобальных переменных зачастую первый шаг к получению спагетти-кода, где каждая часть программы влияет на какую-то другую часть программы. Этим лучше не злоупотреблять.
@@ -53,8 +95,31 @@ print(x)`
 ## Циклы и ветвления
 Циклы и ветвления не создают собственных областей видимости, поэтому все, что объявлено в них, можно использовать за их пределами.
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
 Такой код выведет `2`, потому что последняя итерация цикла `for` присвоила `2` переменной `i`.
+---
+
+[Переменные](docs/scripting/variables.md)      [Функции](docs/scripting/functions.md)      [Импорт](docs/scripting/import.md)      [Мегаферма](docs/unlocks/megafarm.md)

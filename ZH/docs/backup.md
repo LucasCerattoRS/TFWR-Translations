@@ -7,3 +7,7 @@
 
 存档是包含 1 个 `save.json` 文件和 1 堆 `.py` 文件的文件夹。
 如果只丢失了几个代码文件，或者代码文件还在但 `save.json` 文件损坏，也可以只用备份中对应的文件替换损坏的文件。
+
+---
+
+[外部编辑器](docs/external_editor.md)      [入门指南](docs/getting_started.md)

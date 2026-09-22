@@ -1,24 +1,57 @@
+[<- Bucle while](docs/scripting/while.md) <right>[Expandir 1 ->](docs/unlocks/expand_1.md)
+<right>[Plantar ->](docs/unlocks/plant.md)
+---
 # Mejora de Velocidad
-La velocidad de ejecución se ha duplicado. El problema es que ahora el dron cosecha más rápido de lo que la hierba puede crecer, lo que resulta en que no haya cosecha en absoluto. Para solucionar esto, ahora se han desbloqueado las ramificaciones [if](docs/scripting/if.md) y la función [can_harvest](functions/can_harvest).
+La velocidad de ejecución se ha duplicado. El problema es que ahora el dron cosecha más rápido de lo que crece la hierba, por lo que no obtiene ningún rendimiento. Para solucionarlo, se han desbloqueado las ramificaciones [if](docs/scripting/if.md) y la función [can_harvest()](functions/can_harvest).
 
 ## Comprobando Antes de Cosechar
-Hasta ahora solo teníamos `True` y `False` como condiciones, lo que por supuesto no es muy útil con `if`. 
+Una instrucción `if` ejecuta su bloque de código una vez si la condición indicada es `True`.
 
-La nueva función `can_harvest()` proporciona una mejor condición. `can_harvest()` devuelve `True` si la planta debajo del dron se puede cosechar y `False` en caso contrario.
+La nueva función `can_harvest()` proporciona una condición útil. `can_harvest()` devuelve `True` si se puede cosechar la planta que hay debajo del dron y `False` en caso contrario.
 
-`if can_harvest():
-	#hacer algo`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+if can_harvest():
+	do_a_flip()
+}}
 
-La razón por la que puedes usar esta función como condición de esta manera es porque devuelve un valor booleano.
-
-Un valor de retorno significa esencialmente que después de que se ejecute la funcionalidad, la expresión de la llamada a la función se evalúa al valor devuelto.
+Puedes imaginar un valor de retorno de este tipo como si, al evaluar el `if`, la expresión de llamada `can_harvest()` se sustituyera por el valor devuelto `True`.
 
 Lo que sucede cuando el código anterior se ejecuta:
-	-el `if` se ejecuta
-	-se llama a `can_harvest()`
-	-`can_harvest()` hace lo suyo
-	-`can_harvest()` devuelve `True` o `False`
-	-la instrucción ahora es `if True:` o `if False:`
-	-el bloque de código solo se ejecuta si se puede cosechar
+- Se ejecuta la instrucción `if`.
+- Se llama a `can_harvest()`.
+- `can_harvest()` devuelve `True` porque la hierba ha crecido por completo.
+- La instrucción pasa a ser `if True:`.
+- La ramificación se ejecuta porque el valor es `True`.
+
+Si la hierba no hubiera crecido por completo, no haría una voltereta.
 
 Ahora podemos usar `if` para evitar que el dron coseche demasiado pronto.
+
+---
+
+[If](docs/scripting/if.md)      [Bucle while](docs/scripting/while.md)
+
+[harvest()](functions/harvest)      [can_harvest()](functions/can_harvest)

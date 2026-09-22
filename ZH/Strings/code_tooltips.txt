@@ -110,6 +110,16 @@ y 坐标从南边的 `0` 开始，向北递增。
 
 示例：
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+获取无人机当前的 z 坐标。
+z 坐标从 `0` 开始，向下挖掘时递减。
+
+返回一个表示无人机当前 z 坐标的数字。
+
+需要 `1` tick 执行。
+
+示例：
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 获取农场的当前大小。
 
@@ -140,6 +150,26 @@ y 坐标从南边的 `0` 开始，向北递增。
 示例：
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+获取无人机下方地块的硬度。
+
+返回无人机下方地块的硬度。
+
+需要 `1` tick 执行。
+
+示例：
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+获取无人机下方地块的稳定度。
+
+返回无人机下方地块的稳定度。
+
+需要 `1` tick 执行。
+
+示例：
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 获取当前游戏时间。
 
@@ -212,7 +242,7 @@ print(get_tick_count())`
 需要 1 秒执行。
 
 示例：
-`print("ground:", get_ground_type())`
+`print("地块：", get_ground_type())`
 @code_tooltip_len = `len(collection)` 
 获取列表、集合、字典或元组中的元素数量。
 
@@ -342,7 +372,7 @@ for item in cost:
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("伴生植物：", plant_type, "位置", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)` 
 效果与在科技树中点击对应 `unlock` 的按钮完全相同。
 
@@ -632,3 +662,59 @@ list.insert(0, 0)`
 @code_tooltip_or = 对第一个操作数求值。若结果为真值（除了 `False`、`0` 和空集合之外的任何值），则立即返回该值（短路求值），否则，对第二个操作数求值并返回相应值。
 @code_tooltip_return = 用于从函数中返回值。
 @code_tooltip_pass = 什么也不做。由于不允许空代码块，因此必要时可用它进行填充。
+@code_tooltip_dig = `dig()`
+向下挖掘一格。
+
+挖掘速度取决于地块的硬度和无人机的钻头强度。
+
+示例：
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+消耗煤炭探查铁矿。
+
+如果附近有铁矿，返回前往最近铁矿的方向（`North`、`East`、`South` 或 `West`）。如果附近没有铁矿、煤炭不足，或者无人机已在铁矿正上方，则返回 `None`。
+
+执行需消耗 1 份煤炭。
+
+示例：
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+消耗铁矿探查石英。
+
+返回无人机到下一个石英地块的欧几里得距离（三维距离）；如果附近没有石英，则返回 `None`。
+
+执行需消耗 1 份铁矿。
+
+示例：
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+放置地块。
+
+你可以指定要放置的地块，但只能放置没有特殊功能的地块。例如，你可以使用 `place(Grounds.Rock)`，却不能使用 `place(Grounds.Clay)`。
+
+示例：
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+推动无人机下方的蘑菇地块。
+
+不能将地块向上推动。
+
+如果成功推动地块，则返回 `True`，否则返回 `False`。
+
+示例：
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+检查无人机下方的地块能否被推动。
+
+如果可以推动，则返回 `True`，否则返回 `False`。
+
+示例：
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+跳转到与 `unlock` 关联的地下地点。
+
+每次运行程序只能执行一次 `jump`。
+
+示例：
+`jump(Unlocks.Iron)`

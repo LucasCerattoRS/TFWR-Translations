@@ -1,3 +1,5 @@
+[<- Cactus](docs/unlocks/cactus.md)
+---
 # Dinosaures
 Les dinosaures sont d'anciennes créatures majestueuses que l'on peut élever pour obtenir des os anciens.
 
@@ -21,6 +23,38 @@ Utiliser `measure()` sur une pomme renverra la position de la prochaine pomme so
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 Lorsque le chapeau est de nouveau retiré en équipant un chapeau différent, la queue sera récoltée.
 Tu recevras un nombre d'os égal au carré de la longueur de la queue. Donc pour une queue de longueur `n`, tu recevras `n**2` `Items.Bone`. 
 Par Exemple :
@@ -35,12 +69,39 @@ Le Chapeau de Dinosaure est très lourd, donc si tu l'équipes, `move()` prendra
 
 La boucle suivante affiche le nombre de ticks utilisés par `move()` après n'importe quel nombre de pommes :
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("ticks après ", i, " pommes : ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("ticks après ", i, " pommes : ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 Tu n'as qu'un seul chapeau de dinosaure, donc un seul drone peut le porter.
 
-<spoiler=montrer l'indice 1>Si tu continues à te déplacer sur le même chemin qui couvre tout le champ, tu peux facilement obtenir un serpent qui couvre tout le champ à chaque fois. Ce n'est pas très efficace, mais ça marche.
-Traverser entièrement une très grande ferme peut prendre beaucoup de temps et tu n'as peut-être pas besoin d'autant d'os. N'hésite pas à utiliser `set_world_size()` pour changer la taille de la ferme en quelque chose de plus pratique.</spoiler>
+<spoiler=afficher l’indice 1>
+Si tu suis toujours le même trajet couvrant tout le champ, tu peux facilement obtenir à chaque fois un serpent qui remplit toute la ferme. Ce n’est pas très efficace, mais ça fonctionne.
+Parcourir entièrement une très grande ferme peut prendre beaucoup de temps, et tu n’as peut-être pas besoin d’autant d’os. N’hésite pas à utiliser `set_world_size()` pour choisir une taille de ferme plus pratique.</spoiler>
+
+---
+
+[Statistiques](docs/stats.md)      [Tuples](docs/scripting/tuples.md)      [Listes](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

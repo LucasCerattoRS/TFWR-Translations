@@ -1,3 +1,5 @@
+[<- Simulation](docs/unlocks/simulation.md)
+---
 # Classement
 Si tu es arrivé jusqu'ici, tu as surmonté de nombreux défis. Mais les as-tu résolus efficacement ? 
 Tu peux rivaliser avec d'autres joueurs sur divers classements pour les méthodes agricoles les plus efficaces.
@@ -10,17 +12,19 @@ La course de classement réussit si la condition de succès est `True` lorsque l
 La simulation ne se terminera PAS automatiquement lorsque l'objectif est atteint. Tu dois t'assurer que le programme se termine.
 Si la course est réussie, ton temps sera ajouté au classement.
 
-Pour réduire la variance, toutes les courses doivent durer au moins 2 heures (tu peux l'accélérer, donc ça ne prendra pas si longtemps). Si une course est terminée plus tôt, elle sera répétée jusqu'à ce qu'un temps total de 2 heures soit atteint. La moyenne de toutes les courses est ensuite téléchargée comme ton score.
+Pour réduire la variance, toutes les courses doivent couvrir au moins 2 heures de temps simulé. Tu peux accélérer la simulation, cela ne prendra donc pas autant de temps réel. Si une course se termine plus tôt, elle est répétée jusqu’à atteindre 2 heures simulées au total. La moyenne de toutes les courses est alors envoyée comme score.
 
-Voici un exemple de configuration qui te placera dans le classement du foin.
-![](LeaderboardSetup400)
+Voici un exemple de configuration qui te permettra d’entrer au classement du foin.
+![|x400](LeaderboardSetup)
 
 ## Réinitialisation la Plus Rapide
-La réinitialisation la plus rapide est la catégorie la plus prestigieuse. Automatise complètement le jeu, d'une seule parcelle de ferme jusqu'au déblocage à nouveau des classements.
+La réinitialisation la plus rapide est la catégorie la plus prestigieuse. Tu dois automatiser entièrement le jeu, depuis une unique parcelle jusqu’au nouveau déblocage des classements.
 
 Tu n'as pas à tout débloquer, essaie juste de débloquer `Unlocks.Leaderboard` aussi vite que possible.
 
 Rappelle-toi que tu peux utiliser `num_unlocked(unlock) > 0` pour vérifier si quelque chose est débloqué et tu peux utiliser `get_cost()` sur les déblocages pour voir ce qu'ils coûtent afin de pouvoir cultiver automatiquement les bons objets.
+
+`unlock()` ne tient pas compte des dépendances de l’arbre technologique. Il est par exemple possible de débloquer `Unlocks.Fertilizer` avant `Unlocks.Water`.
 
 Appel de fonction :
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -127,3 +131,8 @@ Condition de succès : `num_items(Items.Carrot) >= 100000000`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 Condition de succès : `num_items(Items.Hay) >= 100000000`
+---
+
+[Simulation](docs/unlocks/simulation.md)      [Chronométrage](docs/unlocks/timing.md)      [Déblocages automatiques](docs/unlocks/auto_unlock.md)      [Coûts](docs/unlocks/costs.md)      [Statistiques](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

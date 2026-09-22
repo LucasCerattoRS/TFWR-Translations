@@ -1,28 +1,62 @@
+[<- Cactus](docs/unlocks/cactus.md)
+---
 # Dinosaurios
 Los dinosaurios son criaturas antiguas y majestuosas que pueden ser criadas para obtener huesos antiguos.
 
-Desafortunadamente, los dinosaurios se extinguieron hace mucho tiempo, así que lo mejor que podemos hacer ahora es disfrazarnos de uno.
-Para este propósito, has recibido el nuevo sombrero de dinosaurio.
+Por desgracia, los dinosaurios se extinguieron hace mucho tiempo, así que lo mejor que podemos hacer es disfrazarnos de uno.
+Para ello, has recibido el nuevo sombrero de dinosaurio.
 
 El sombrero se puede equipar con
 `change_hat(Hats.Dinosaur_Hat)`
 
-Lamentablemente, no se ve como en el anuncio...
+Por desgracia, no se parece mucho al del anuncio...
 
 Si equipas el sombrero de dinosaurio y tienes suficientes cactus, se comprará automáticamente una [manzana](objects/apple) y se colocará debajo del dron.
 Cuando el dron está sobre una manzana y se mueve de nuevo, se comerá la manzana y su cola crecerá en uno. Si puedes permitírtelo, se comprará una nueva manzana y se colocará en una ubicación aleatoria.
 La manzana no puede aparecer si hay algo más plantado donde quiere estar.
 
-La cola del dinosaurio se arrastrará detrás del dron, llenando las casillas anteriores por las que se movió el dron. Si un dron intenta moverse encima de la cola, `move()` fallará y devolverá `False`. 
-El último segmento de la cola se apartará durante el movimiento, por lo que puedes moverte sobre él. Sin embargo, si la serpiente llena toda la granja, ya no podrás moverte. Así que puedes comprobar si la serpiente ha crecido completamente verificando si ya no puedes moverte.
+La cola del dinosaurio se arrastra detrás del dron y llena las casillas por las que este ha pasado. Si el dron intenta moverse sobre su cola, `move()` fallará y devolverá `False`.
+El último segmento de la cola se apartará durante un movimiento, así que puedes moverte sobre él. Sin embargo, si la serpiente llena toda la granja, ya no podrás moverte. Por tanto, puedes comprobar si ha crecido por completo comprobando si todavía puedes moverte.
 Mientras llevas el sombrero de dinosaurio, el dron no puede moverse por el borde de la granja para llegar al otro lado.
 
 Usar `measure()` en una manzana devolverá la posición de la siguiente manzana como una tupla.
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 Cuando se vuelve a quitar el sombrero equipando uno diferente, la cola se cosechará.
-Recibirás huesos iguales a la longitud de la cola al cuadrado. Así, para una cola de longitud `n`, recibirás `n**2` `Items.Bone`. 
+Recibirás una cantidad de huesos igual al cuadrado de la longitud de la cola. Para una cola de longitud `n`, recibirás `n**2` `Items.Bone`.
 Por ejemplo:
 longitud 1 => 1 hueso
 longitud 2 => 4 huesos
@@ -35,12 +69,39 @@ El Sombrero de Dinosaurio es muy pesado, así que si lo equipas, hará que `move
 
 El siguiente bucle imprime el número de ticks utilizados por `move()` después de cualquier número de manzanas:
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("ticks después de ", i, " manzanas: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("ticks después de ", i, " manzanas: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 Solo tienes un sombrero de dinosaurio, así que solo un dron puede llevarlo.
 
-<spoiler=show hint 1>Si sigues moviéndote por el mismo camino que cubre todo el campo, puedes conseguir fácilmente una serpiente que cubra todo el campo cada vez. No es muy eficiente, pero funciona.
-Recorrer completamente una granja muy grande puede llevar mucho tiempo y es posible que no necesites tantos huesos. Siéntete libre de usar `set_world_size()` para cambiar el tamaño de la granja a algo más conveniente.</spoiler>
+<spoiler=mostrar pista 1>
+Si sigues moviéndote por el mismo camino que cubre todo el campo, podrás conseguir fácilmente una serpiente que cubra el campo entero cada vez. No es muy eficiente, pero funciona.
+Recorrer por completo una granja muy grande puede llevar mucho tiempo y quizá no necesites tantos huesos. Puedes usar `set_world_size()` para cambiar el tamaño de la granja por otro más práctico.</spoiler>
+
+---
+
+[Estadísticas](docs/stats.md)      [Tuplas](docs/scripting/tuples.md)      [Listas](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

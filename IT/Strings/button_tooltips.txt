@@ -10,6 +10,8 @@
 @button_tooltip_delete = Elimina definitivamente questo file.
 @button_tooltip_close_docs = Chiudi questa finestra.
 @button_tooltip_table_of_contents = Indice
+@button_tooltip_docs_home = Vai alla pagina iniziale della documentazione.
+@button_tooltip_docs_back = Vai alla pagina della documentazione visitata in precedenza.
 @button_tooltip_new_game = Crea un nuovo salvataggio.
 @button_tooltip_open_folder = Apri la cartella dei salvataggi nell'explorer dei file.
 @button_tooltip_toggle_search_docs = Attiva o disattiva l'inclusione delle finestre di docs nella ricerca.
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = Il tuo codice ha generato un warning. Clicca l'icona per vedere i dettagli nella finestra di Output.
 @option_tooltip_graphics = Influenza varie impostazioni del render pipeline, come ombre, occlusione ambientale e bloom.
 @option_tooltip_vfx_limit = Limita il numero di effetti visivi che possono essere riprodotti al secondo.
+@option_tooltip_avalanche_particles = Disabilita le particelle generate dai crolli.
 @option_tooltip_volume = Regola il volume di tutto l'audio.
 @option_tooltip_music_volume = Regola il volume della musica.
 @option_tooltip_drone_volume = Regola il volume del ronzio del drone.

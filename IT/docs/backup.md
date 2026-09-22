@@ -7,3 +7,7 @@ Il modo più semplice per caricare un backup è copiare la cartella del backup s
 
 Un salvataggio è una cartella con un file `save.json` e un gruppo di file `.py`.
 Se hai perso solo alcuni file di codice, o i file di codice ci sono ancora ma il file `save.json` è corrotto, puoi anche sostituire solo le parti corrotte con i file corrispondenti dal backup.
+
+---
+
+[Editor Esterno](docs/external_editor.md)      [Primi Passi](docs/getting_started.md)

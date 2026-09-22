@@ -1,19 +1,89 @@
+[<- Dicionários](docs/scripting/dicts.md) <right>[Desbloqueios Automáticos ->](docs/unlocks/auto_unlock.md)
+
+---
+
 # Custos
+
 Qualquer custo pode ser representado como um dicionário que mapeia itens para números.
 
 A função `get_cost()` retorna tal dicionário. Ela retorna o custo de uma planta ou de um desbloqueio.
 
-`get_cost(Entities.Pumpkin)`
-retorna `{Items.Carrot:1}`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+print(get_cost(Entities.Pumpkin))
+}}
 
-Para desbloqueios, um segundo argumento opcional pode ser passado para o nível de desbloqueio para o qual você deseja obter o custo. Por padrão, é o nível de desbloqueio atual.
+Para desbloqueios, você pode passar um segundo argumento opcional que especifica o nível de desbloqueio cujo custo deseja consultar. Por padrão, é usado o nível de desbloqueio atual.
 
-`get_cost(Unlocks.Loops, 0)`
-retorna `{Items.Hay:5}`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+print(get_cost(Unlocks.Loops, 0))
+print(get_cost(Unlocks.Loops, 1))
+}}
 
-Para desbloqueios que já estão no nível máximo, `get_cost()` retornará `None`.
+Para desbloqueios que já estão no nível máximo, `get_cost()` retorna um dicionário vazio.
 
-Pode ser usado assim:
-`cost = get_cost(something)
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+cost = get_cost(Entities.Carrot)
 for item in cost:
-	amount_of_this_item_needed = cost[item]`
+	if num_items(item) < cost[item]:
+		print("faltam", cost[item] - num_items(item), item)
+}}
+
+---
+
+[Dicionários](docs/scripting/dicts.md)      [Desbloqueios Automáticos](docs/unlocks/auto_unlock.md)      [Placares de Líderes](docs/unlocks/leaderboard.md)
+
+[get_cost()](functions/get_cost)

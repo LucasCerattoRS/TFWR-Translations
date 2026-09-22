@@ -1,3 +1,5 @@
+[<- Kürbisse](docs/unlocks/pumpkins.md) <right>[Dinosaurier ->](docs/unlocks/dinosaurs.md)
+---
 # Kaktus
 Wie andere Pflanzen können [Kakteen](objects/cactus) auf Ackerboden angebaut und wie gewohnt geerntet werden.
 
@@ -22,7 +24,64 @@ Du kannst auch eine Richtung an `measure(direction)` übergeben, um das benachba
 Du kannst einen Kaktus mit seinem Nachbarn in jede Richtung mit dem `swap()`-Befehl tauschen.
 `swap(direction)` tauscht das Objekt unter der Drohne mit dem Objekt ein Feld in `direction` der Drohne.
 
-## Beispiele
+{{codeexample 
+{
+    "camera_position": {"x": -1.5, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "pumpkin", "n": 32}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+for _ in range(4):
+    for _ in range(4):
+        till()
+        plant(Entities.Cactus)
+        move(East)
+    move(North)
+for _ in range(4):
+    for _ in range(4):
+        for _ in range(4):
+            x,y = get_pos_x(), get_pos_y()
+            if x > 0 and measure(West) > measure():
+                swap(West)
+            if y > 0 and measure(South) > measure():
+                swap(South)
+            if x < 3 and measure(East) < measure():
+                swap(East)
+            if y < 3 and measure(North) < measure():
+                swap(North)
+            move(East)
+        move(North)
+move(East)
+move(North)
+move(North)
+swap(West)
+swap(South)
+swap(East)
+swap(North)
+#CODE
+swap(North)
+swap(East)
+swap(South)
+swap(West)
+harvest()
+}}
+
+## Zahlenbeispiele
 In jedem dieser Gitter sind alle Kakteen in sortierter Reihenfolge und die Ernte wird sich über das gesamte Feld ausbreiten:
 `3 4 5    3 3 3    1 2 3    1 5 9
 2 3 4    2 2 2    1 2 3    1 3 8
@@ -34,8 +93,58 @@ In diesem Gitter ist nur der Kaktus unten links in sortierter Reihenfolge, was n
 3 3 2`
 
 <spoiler=zeige Hinweis 1>
-Wenn die Zeilen bereits sortiert sind, wird das Sortieren der Spalten die Zeilen nicht durcheinander bringen.
+Wenn jede Zeile bereits unabhängig sortiert ist, wird das unabhängige Sortieren jeder Spalte die Zeilen nicht unsortieren.
 </spoiler>
 <spoiler=zeige Hinweis 2>
-Wenn du mit Sortieralgorithmen nicht vertraut bist, solltest du sie vielleicht online nachschlagen und überlegen, welche für dieses Problem angepasst werden könnten. Bedenke, dass nicht alle von ihnen funktionieren, da du nur benachbarte Kakteen tauschen kannst.
+Es gibt viele ausgeklügelte, bekannte Sortieralgorithmen. Wenn du sie noch nicht kennst, kannst du sie recherchieren und überlegen, welche sich an dieses Problem anpassen lassen. Beachte, dass hier nicht alle funktionieren, da du nur benachbarte Kakteen vertauschen kannst.
 </spoiler>
+<spoiler=zeige Hinweis 3>
+„Bubble Sort“ ist wahrscheinlich der einfachste Sortieralgorithmus. Dabei gehst du wiederholt alle Elemente durch und vertauschst benachbarte Elemente in der falschen Reihenfolge, bis keine mehr übrig sind.
+
+So sieht das mit Kakteen aus:
+{{codeexample 
+{
+    "camera_position": {"x": -4, "y": 1, "z": 6},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [{"item": "pumpkin", "n": 18}],
+    "world_size": {"x": 9, "y": 1},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for _ in range(9):
+    till()
+    plant(Entities.Cactus)
+    move(East)
+sorted = False
+while not sorted:
+    sorted = True
+    for _ in range(9):
+        move(East)
+        if get_pos_x() > 0 and measure(West) > measure():
+            swap(West)
+            sorted = False
+harvest()
+}}
+Natürlich gibt es viele Möglichkeiten, diese Strategie zu verbessern!
+Sobald du eine einzelne Zeile sortieren kannst, kannst du mit Hinweis 1 das gesamte Feld sortieren.
+</spoiler>
+
+---
+
+[Statistiken](docs/stats.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [swap()](functions/swap)      [measure()](functions/measure)

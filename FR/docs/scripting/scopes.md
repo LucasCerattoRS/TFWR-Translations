@@ -1,3 +1,5 @@
+[<- Fonctions](docs/scripting/functions.md)
+---
 # Portées des Noms
 Les portées déterminent quelles variables peuvent être accédées et d'où. Une portée est essentiellement une correspondance entre des noms et des valeurs.
 Elles fonctionnent essentiellement de la même manière qu'en Python.
@@ -22,30 +24,70 @@ Cette instruction `def` assigne une fonction au nom `f` dans la portée globale.
 Récupère la fonction stockée dans `f` depuis la portée globale et l'appelle.
 
 `print(y)`
-Cette instruction print dans la portée globale lève une erreur car `y` n'a jamais été déclaré dans la portée globale, donc nous ne pouvons pas le lire ici.
+Cette instruction `print` dans la portée globale lève une erreur car `y` n'a jamais été déclaré dans la portée globale, donc nous ne pouvons pas le lire ici.
 Il n'existait que dans la portée locale de `f`.
 
 ## Le mot-clé `global`
 Par défaut, toutes les variables dans les fonctions se lient à la portée locale, même si une variable du même nom existe dans la portée globale.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 Ce code affiche `0` car le `x` local à l'intérieur de `f` n'est pas la même variable que le `x` global, donc le `x` global reste inchangé. C'est important car sinon un appel de fonction pourrait accidentellement écraser une variable globale qui se trouve avoir le même nom qu'une variable locale de cette fonction.
 
 Si tu veux écrire dans une variable globale, tu dois le faire explicitement en utilisant le mot-clé `global`.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 Dans cet exemple, `global x` lie `x` à la variable globale `x` définie au-dessus. Cela affichera maintenant `1`.
 Note que la modification des variables globales est généralement le premier pas vers le "code spaghetti", où chaque partie du programme affecte toutes les autres parties, alors n'en abuse pas.
@@ -53,8 +95,31 @@ Note que la modification des variables globales est généralement le premier pa
 ## Boucles et branchements
 Les boucles et les branchements ne créent pas leurs propres portées, donc tout ce qui est déclaré à l'intérieur peut toujours être utilisé à l'extérieur.
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
 Cela affichera `2` car la dernière itération de la boucle `for` a assigné `2` à `i`.
+---
+
+[Variables](docs/scripting/variables.md)      [Fonctions](docs/scripting/functions.md)      [Importation](docs/scripting/import.md)      [Mégaferme](docs/unlocks/megafarm.md)

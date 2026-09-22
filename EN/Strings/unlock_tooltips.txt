@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Unlock Cost {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Unlock requirements
+The {0} unlock must be on level {1} or higher.
 @unlock_descr_trees = Unlocks trees.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = It's just like wheat, if wheat grew on clay.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Use lists to store lots of values.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -107,8 +113,41 @@ other_file.function()`
 @unlock_descr_megafarm = More drones!
 
 `spawn_drone(task)`
+@unlock_descr_mining = Gives the drone a drill. And a mining hat.
+
+`dig()`
+@unlock_descr_coal = Coal deposits spawn underground.
+@unlock_descr_iron = Iron ore veins spawn underground.
+@unlock_descr_pyramid = Ancient sandstone structures spawn underground.
+@unlock_descr_quartz = Quartz needles spawn underground.
+@unlock_descr_ore_boost = Doubles coal yield. Doubles iron and quartz vein size.
+@unlock_descr_jump = Allows your drone to jump downward.
+@unlock_descr_prospecting = Use coal to look for iron!
+
+`prospect_iron()`
+@unlock_descr_drill = Improves drill strength.
+@unlock_descr_debug_place = Place colorful blocks.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Drone sensors to interact with underground tiles
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Fossilized pumpkins spawn underground.
+@unlock_descr_special_soils = Discover loam and perlite layers to boost plant yield.
+@unlock_descr_bamboo = Plant bamboo and watch it grow.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Find and use dynamite to blow stuff up.
+@unlock_descr_treasure_map = Hunt for treasure hidden deep below.
+@unlock_descr_mushrooms = Find and harvest underground mushrooms by matching the mushroom type.
 @multi_unlock_descr_expand = Expands the farm. This also clears the farm.
 @multi_unlock_descr_carrots = Increases the yield and cost of carrots.
+@multi_unlock_descr_rice = Increases the yield and cost of rice plants.
 @multi_unlock_descr_trees = Increases the yield of bushes and trees.
 @multi_unlock_descr_pumpkins = Increases the yield and cost of pumpkins.
 @multi_unlock_descr_mazes = Increases the gold in treasure chests and the amount of weird substance needed to spawn a maze.
@@ -119,9 +158,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Receive more water.
 @multi_unlock_descr_fertilizer = Receive more fertilizer.
 @multi_unlock_descr_megafarm = Increase drone count further.
+@multi_unlock_descr_drill = Increases drill speed.
+@multi_unlock_descr_coal = More coal sheets spawn underground.
+@multi_unlock_descr_iron = Increases the yield of iron ores.
+@multi_unlock_descr_pyramid = Increases the power gained from restoring pyramids.
+@multi_unlock_descr_quartz = Increases the yield of quartz ores.
+@multi_unlock_descr_petrified_pumpkins = Increases the yield of petrified pumpkins.
+@multi_unlock_descr_dynamite = Increase the yield of dynamite and the energy of explosions.
+@multi_unlock_descr_treasure_map = Increases the depth of the treasure path and therefore the amount of gold you get from the treasure.
+@multi_unlock_descr_ore_boost = Further increases coal yield. Further increases iron and quartz vein size.
+@multi_unlock_descr_bamboo = Increases the yield and cost of bamboo.
+@multi_unlock_descr_mushrooms = Increases the yield of matching mushroom blocks.
 @auto_unlock = Auto Unlock
 @cactus = Cactus
 @carrots = Carrots
+@rice = Rice
 @costs = Costs
 @debug = Debug
 @debug_2 = Debug_2
@@ -144,6 +195,8 @@ other_file.function()`
 @polyculture = Polyculture
 @pumpkins = Pumpkins
 @senses = Senses
+@underground_senses = Underground Senses
+@debug_place = Colorful Blocks
 @simulation = Simulation
 @speed = Speed
 @sunflowers = Sunflowers
@@ -154,3 +207,18 @@ other_file.function()`
 @utilities = Utilities
 @variables = Variables
 @watering = Watering
+@iron = Iron
+@pyramid = Pyramids
+@ore_boost = Ore Boost
+@petrified_pumpkins = Petrified Pumpkins
+@special_soils = Special Soils
+@mining = Mining
+@coal = Coal
+@drill = Drill
+@quartz = Quartz
+@prospecting = Iron Prospecting
+@dynamite = Dynamite
+@bamboo = Bamboo
+@treasure_map = Treasure Map
+@mushrooms = Mushroom
+@jump = Jump

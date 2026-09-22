@@ -1,12 +1,42 @@
+[<- Potenziamento Velocità](docs/unlocks/speed.md) <right>[Espandi 2 ->](docs/unlocks/expand_2.md)
+<right>[Estrazione ->](docs/unlocks/mining.md)
+---
 # Espansione 1
-<unlock=for>Vedi anche [Expand_2](docs/unlocks/expand_2.md)
-
-</unlock>La tua fattoria è cresciuta! Questo spazio non è molto utile se non puoi muovere il drone, quindi c'è una nuova funzione `move()` che muove il drone. `move()` richiede che tu specifichi la direzione in cui vuoi che il drone si muova. Ci sono quattro nuove costanti per questo: `North, East, South, West`
+La tua fattoria è cresciuta! Lo spazio serve a poco se non puoi muovere il drone, quindi ora c'è una nuova funzione, `move()`, che sposta il drone. `move()` richiede di specificare la direzione in cui vuoi spostarlo. Ci sono quattro nuove costanti: `North, East, South, West`
 
 Ad esempio, `move(North)` muoverà il drone di una casella a nord.
 
-Se ti muovi oltre il bordo della fattoria, il drone verrà spostato dall'altro lato.
-Il seguente codice di esempio continuerà a muovere il drone verso nord e tornerà all'inizio quando raggiungerà il bordo della fattoria:
+Se superi il bordo della fattoria, il drone riapparirà dal lato opposto.
 
-`while True:
-	move(North)`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 3},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	move(North)
+}}
+
+---
+
+[Ciclo While](docs/scripting/while.md)      [Operatori](docs/scripting/operators.md)      [Espandi 2](docs/unlocks/expand_2.md)
+
+[move()](functions/move)

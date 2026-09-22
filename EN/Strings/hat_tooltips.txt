@@ -18,3 +18,8 @@
 @hat_descr_gold_trophy_hat = Only for the best farmer.
 @hat_descr_silver_trophy_hat = For the second best farmer.
 @hat_descr_wood_trophy_hat = For the third best farmer.
+@hat_descr_dynamite_hat = Hat for the chief blaster. Every dig explodes and costs one dynamite. There can only be one chief blaster drone.
+@hat_descr_golden_cactus_hat = A golden version of the cactus hat.
+@hat_descr_golden_pumpkin_hat = A golden version of the pumpkin hat.
+@hat_descr_golden_sunflower_hat = A golden version of the sunflower hat.
+@hat_descr_the_farmers_remains = What happened?

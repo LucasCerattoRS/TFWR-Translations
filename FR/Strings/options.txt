@@ -12,6 +12,7 @@
 @low = Faible
 @sfx limit = Limite SFX
 @vfx limit = Limite VFX
+@avalanche particles = Particules d’effondrement
 @volume damping = Atténuation volume
 @volume = Volume
 @music volume = Volume Musique
@@ -31,7 +32,7 @@
 @1/4 vsync = Vsync (1/4)
 @viewport sliding = Défilement de la vue
 @UI size = Taille UI
-@file watcher = File Watcher
+@file watcher = Surveillance des fichiers
 @indent selection = Indenter la sélection
 @menu = Menu
 @move down = Vers le bas

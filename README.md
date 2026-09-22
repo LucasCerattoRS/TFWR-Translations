@@ -19,7 +19,9 @@ In both markdown files and string files you may find things enclosed in curly br
 These are placeholders and will be replaced at runtime.
 
 # Translation Guidelines
-Some parts of the game cannot be translated because they are part of the code you write, and obviously it doesn't make sense to break code when switching languages. So in general, code shouldn't be translated.
+Some parts of the game cannot be translated because they are part of the code you write, and obviously it doesn't make sense to break code when switching languages. So in general, executable syntax and identifiers shouldn't be translated.
+
+Human-readable string literals in code examples should be translated when that makes the example clearer. Keep the quote delimiters and valid escaping or interpolation syntax intact. Machine-significant strings such as paths, filenames, import names, lookup keys, and protocol tokens should remain unchanged.
 
 For consistency, code elements such as "dictionary" and "while" should also not be translated, even if they are referenced outside of code blocks.
 

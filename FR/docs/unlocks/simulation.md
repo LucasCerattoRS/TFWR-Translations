@@ -1,3 +1,5 @@
+[<- Chronométrage](docs/unlocks/timing.md) <right>[Classement ->](docs/unlocks/leaderboard.md)
+---
 # Simulation
 
 Les simulations te permettent de tester rapidement du code sans changer l'état de la vraie ferme.
@@ -29,10 +31,10 @@ lancer la simulation
 La fonction `simulate()` renvoie le temps, en secondes, qu'il a fallu pour simuler le fichier de départ donné.
 
 ### Nom du fichier
-Le premier argument de la fonction `simulate` est le nom du fichier. C'est le nom qui est affiché en haut de la fenêtre de code. La simulation exécutera le fichier spécifié comme si tu avais cliqué sur le bouton Exécuter.
+Le premier argument de la fonction `simulate()` est le nom du fichier. C'est le nom qui est affiché en haut de la fenêtre de code. La simulation exécutera le fichier spécifié comme si tu avais cliqué sur le bouton Exécuter.
 
 ### Déblocages de départ
-Toutes les fonctionnalités de programmation comme les boucles, les instructions if, les listes, les dictionnaires,... resteront toujours débloquées.
+Toutes les fonctionnalités de programmation comme les boucles, les instructions `if`, les listes, les dictionnaires,... resteront toujours débloquées.
 
 Le deuxième argument te permet de spécifier avec quels déblocages/améliorations la simulation doit commencer en plus des fonctionnalités de programmation. Cela doit être une séquence de déblocages. La simulation commencera avec tous les déblocages de la séquence améliorés à leur niveau maximum.
 
@@ -56,3 +58,8 @@ La graine aléatoire affecte tout, des temps de croissance des plantes à la dis
 Le sixième argument est l'accélération de départ de la simulation. Cela te permet de tester les choses rapidement. Si le jeu n'arrive pas à suivre la vitesse définie, il ralentira automatiquement.
 
 L'accélération n'affecte en rien le résultat de la simulation. Elle n'existe que pour réduire le temps d'attente.
+---
+
+[Dictionnaires](docs/scripting/dicts.md)      [Chronométrage](docs/unlocks/timing.md)      [Débogage](docs/scripting/debug.md)      [Classements](docs/unlocks/leaderboard.md)
+
+[simulate()](functions/simulate)

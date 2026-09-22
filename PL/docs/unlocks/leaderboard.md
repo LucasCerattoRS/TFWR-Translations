@@ -1,26 +1,30 @@
+[<- Symulacja](docs/unlocks/simulation.md)
+---
 # Tabela wyników
-Jeśli dotarłeś tak daleko, pokonałeś wiele wyzwań. Ale czy rozwiązałeś je wydajnie? 
+Jeśli dotarłeś tak daleko, pokonałeś wiele wyzwań. Ale czy rozwiązałeś je wydajnie?
 Możesz konkurować z innymi graczami w różnych tabelach wyników o najbardziej wydajne metody uprawy.
 
 Możesz rozpocząć próbę w tabeli wyników, wywołując `leaderboard_run(leaderboard, filename, speedup)`.
 Rozpoczyna to [symulację](docs/unlocks/simulation.md) podobną do `simulate()`, z tym wyjątkiem, że warunki początkowe są stałe. Każda kategoria tabeli wyników ma inne warunki początkowe i warunki powodzenia.
 
-Próba w tabeli wyników kończy się sukcesem, jeśli warunek powodzenia jest `True`, gdy symulacja się kończy. 
+Próba w tabeli wyników kończy się sukcesem, jeśli warunek powodzenia jest `True`, gdy symulacja się kończy.
 
 Symulacja NIE zakończy się automatycznie po osiągnięciu celu. Musisz upewnić się, że program zakończy działanie.
 Jeśli próba się powiedzie, twój czas zostanie dodany do tabeli wyników.
 
-Aby zmniejszyć wariancję, wszystkie próby muszą trwać co najmniej 2 godziny (możesz to przyspieszyć, więc nie potrwa to tak długo). Jeśli próba zostanie ukończona wcześniej, będzie powtarzana, aż do osiągnięcia łącznego czasu 2 godzin. Średnia ze wszystkich prób jest następnie przesyłana jako twój wynik.
+Aby zmniejszyć wariancję, wszystkie próby muszą obejmować co najmniej 2 godziny symulowanego czasu. Symulację można przyspieszyć, więc w rzeczywistości nie potrwa to tak długo. Jeśli próba zakończy się wcześniej, będzie powtarzana, aż łączny symulowany czas osiągnie 2 godziny. Jako twój wynik zostanie przesłany średni czas ze wszystkich prób.
 
 Oto przykładowa konfiguracja, która pozwoli ci znaleźć się w tabeli wyników siana.
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## Najszybszy reset
-Najszybszy reset to najbardziej prestiżowa kategoria. Całkowicie zautomatyzuj grę od jednego poletka do ponownego odblokowania tabel wyników.
+Najszybszy reset to najbardziej prestiżowa kategoria. W tej kategorii całkowicie automatyzujesz grę, zaczynając od jednego pola farmy i kończąc po ponownym odblokowaniu tabel wyników.
 
-Nie musisz wszystkiego odblokowywać, po prostu spróbuj jak najszybciej odblokować `Unlocks.Leaderboard`.
+Nie musisz wszystkiego odblokowywać. Po prostu spróbuj jak najszybciej odblokować `Unlocks.Leaderboard`.
 
-Pamiętaj, że możesz użyć `num_unlocked(unlock) > 0`, aby sprawdzić, czy coś jest odblokowane, i możesz użyć `get_cost()` na odblokowaniach, aby zobaczyć, ile kosztują, dzięki czemu możesz automatycznie uprawiać odpowiednie przedmioty.
+Pamiętaj, że za pomocą `num_unlocked(unlock) > 0` możesz sprawdzić, czy coś jest odblokowane. Możesz też użyć `get_cost()` na odblokowaniach, aby poznać ich koszt i automatycznie zdobywać odpowiednie przedmioty.
+
+`unlock()` nie uwzględnia zależności w drzewku technologii. Można na przykład odblokować `Unlocks.Fertilizer` przed `Unlocks.Water`.
 
 Wywołanie funkcji:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -29,7 +33,7 @@ Równoważna symulacja:
 `unlocks = {}
 items = {}
 globals = {}
-#ujemna wartość seed oznacza losowy seed
+#ujemna wartość zmiennej seed oznacza losowe ziarno
 seed = -1
 simulate(filename, unlocks, items, globals, seed, speedup)`
 
@@ -68,10 +72,10 @@ simulate(filename, unlocks, items, globals, seed, speedup)`
 Warunek powodzenia:
 `num_items(Items.Bone) >= 33488928`
 
-## Inne tabele wyników zasobów
-Każda roślina ma swoją własną tabelę wyników za jak najszybsze uprawianie tej konkretnej rośliny. Zaczynasz z wszystkimi odblokowaniami, zasobami potrzebnymi do uprawy rośliny i dużą ilością energii. Celem jest zebranie określonej ilości zasobu produkowanego przez roślinę.
+## Pozostałe tabele wyników zasobów
+Każda roślina ma własną tabelę wyników dotyczącą jak najszybszej uprawy. Zaczynasz ze wszystkimi odblokowaniami, zasobami potrzebnymi do wzrostu rośliny i dużym zapasem energii. Celem jest zebranie określonej ilości wytwarzanego przez nią zasobu.
 
-Jak zawsze, musisz upewnić się, że twój program zakończy działanie po osiągnięciu celu. Próba nie jest zakończona, dopóki program nie zakończy swojego działania, nawet jeśli cel został osiągnięty.
+Jak zawsze musisz upewnić się, że program zakończy działanie po osiągnięciu celu. Próba nie kończy się, dopóki program nie przestanie działać, nawet jeśli cel został już osiągnięty.
 
 ### `Leaderboards.Cactus`
 `leaderboard_run(Leaderboards.Cactus, filename, speedup)`
@@ -97,8 +101,8 @@ Warunek powodzenia: `num_items(Items.Carrot) >= 2000000000`
 `leaderboard_run(Leaderboards.Hay, filename, speedup)`
 Warunek powodzenia: `num_items(Items.Hay) >= 2000000000`
 
-## Tabele wyników dla jednego drona
-Istnieją również tabele wyników dla uprawy przy użyciu jednego drona. Otrzymujesz tylko jednego drona i farmę 8x8, i musisz jak najszybciej zebrać określoną ilość zasobów.
+## Tabele wyników jednego drona
+Istnieją również tabele wyników dla uprawy jednym dronem. Otrzymujesz tylko jednego drona i farmę 8x8, a twoim zadaniem jest jak najszybsze zebranie określonej ilości zasobów.
 
 ### `Leaderboards.Maze_Single`
 `leaderboard_run(Leaderboards.Maze_Single, filename, speedup)`
@@ -127,3 +131,9 @@ Warunek powodzenia: `num_items(Items.Carrot) >= 100000000`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 Warunek powodzenia: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[Symulacja](docs/unlocks/simulation.md)      [Czas](docs/unlocks/timing.md)      [Automatyczne odblokowania](docs/unlocks/auto_unlock.md)      [Koszty](docs/unlocks/costs.md)      [Statystyki](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

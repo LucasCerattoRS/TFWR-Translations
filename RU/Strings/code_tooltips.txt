@@ -110,6 +110,16 @@ for i in range(10, 0, -1):
 
 Пример:
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+Получает текущую позицию дрона по оси Z.
+Значение позиции Z начинается с `0` и уменьшается при бурении вниз.
+
+Возвращает число, представляющее текущую координату Z дрона.
+
+Выполнение занимает `1` tick.
+
+Пример:
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()`
 Получает текущий размер фермы.
 
@@ -140,6 +150,26 @@ for i in range(10, 0, -1):
 Пример:
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+Определяет твердость грунта под дроном.
+
+Возвращает твердость грунта под дроном.
+
+Выполнение занимает `1` tick.
+
+Пример:
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+Определяет устойчивость грунта под дроном.
+
+Возвращает устойчивость грунта под дроном.
+
+Выполнение занимает `1` tick.
+
+Пример:
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 Получает текущее время в игре.
 
@@ -342,7 +372,7 @@ for item in cost:
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("Компаньон:", plant_type, "в", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)`
 Имеет тот же эффект, что и нажатие кнопки, соответствующей `unlock` («Разблокировать») в дереве технологий.
 
@@ -455,7 +485,6 @@ def zero_arg_wrapper():
     return get_entity_type_in_direction(North)
 handle = spawn_drone(zero_arg_wrapper)
 print(wait_for(handle))`
-
 @code_tooltip_has_finished = `has_finished(drone)`
 Проверяет, завершил ли работу указанный дрон `drone`.
 
@@ -468,7 +497,6 @@ print(wait_for(handle))`
 while not has_finished(drone):
     do_something_else()
 result = wait_for(drone)`
-
 @code_tooltip_max_drones = `max_drones()`
 
 Возвращает максимальное количество дронов, которое может быть на ферме.
@@ -479,7 +507,6 @@ result = wait_for(drone)`
 `while num_drones() < max_drones():
     spawn_drone("название_файла")
     move(East)`
-
 @code_tooltip_num_drones = `num_drones()`
 
 Возвращает текущее количество дронов на ферме.
@@ -490,7 +517,6 @@ result = wait_for(drone)`
 `while num_drones() < max_drones():
     spawn_drone(task)
     move(East)`
-
 @code_tooltip_quick_print = `quick_print(*args)`
 Выводит значение так же, как `print(*args)`, но не останавливается, чтобы написать его в воздухе. Значение можно увидеть только на странице вывода.
 
@@ -509,7 +535,6 @@ result = wait_for(drone)`
 
 Пример:
 `change_hat(Hats.Dinosaur_Hat)`
-
 @code_tooltip_max = `max(*args)`
 Находит наибольшее значение в последовательности элементов или среди нескольких переданных аргументов.
 Можно использовать с числами и строками.
@@ -631,3 +656,59 @@ list.insert(0, 0)`
 @code_tooltip_or = Вычисляет первый операнд. Если он истинный (все, кроме `False`, `0` и пустых коллекций), немедленно возвращает это значение (сокращенное вычисление), в противном случае — вычисляет и возвращает второй операнд.
 @code_tooltip_return = Используется для возврата значения из функции.
 @code_tooltip_pass = Ничего не делает. Может пригодиться, так как пустые блоки кода не допускаются.
+@code_tooltip_dig = `dig()`
+Пробуривает клетку вниз.
+
+Скорость бурения зависит от твердости блока и мощности бура дрона.
+
+Пример:
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+Использует уголь для поиска железа.
+
+Возвращает направление к ближайшей железной руде (`North`, `East`, `South` или `West`), если она поблизости. Возвращает `None`, если поблизости нет железа, не хватает угля или дрон уже находится над железом.
+
+Выполнение стоит 1 единицу угля.
+
+Пример:
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+Использует железо для поиска кварца.
+
+Возвращает евклидово расстояние (расстояние в трех измерениях) от дрона до ближайшего блока кварца или `None`, если поблизости нет кварца.
+
+Выполнение стоит 1 единицу железа.
+
+Пример:
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+Устанавливает блоки.
+
+Можно указать устанавливаемый блок. Устанавливать можно только блоки без особых функций. Например, можно выполнить `place(Grounds.Rock)`, но нельзя выполнить `place(Grounds.Clay)`.
+
+Пример:
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+Толкает блок гриба под дроном.
+
+Блоки нельзя толкать вверх.
+
+Возвращает `True`, если блок удалось толкнуть, в противном случае — `False`.
+
+Пример:
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+Проверяет, можно ли толкнуть блок под дроном.
+
+Возвращает `True`, если блок под дроном можно толкнуть, в противном случае — `False`.
+
+Пример:
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+Переносит к подземной области, связанной с технологией `unlock`.
+
+За один запуск программы `jump` можно выполнить только один раз.
+
+Пример:
+`jump(Unlocks.Iron)`

@@ -1,6 +1,7 @@
+[<- Debuggen](docs/scripting/debug.md) <right>[Simulation ->](docs/unlocks/simulation.md)
+---
 # Zeitmessung
 Wenn du deine Methoden wirklich optimieren willst, musst du verstehen, wie die Zeit in diesem Spiel gemessen wird. Darum geht es bei dieser Freischaltung.
-
 ## Neue Funktionen
 Es gibt zwei nützliche Funktionen, um zu messen, wie lange Dinge dauern:
 
@@ -8,7 +9,32 @@ Es gibt zwei nützliche Funktionen, um zu messen, wie lange Dinge dauern:
 
 `get_tick_count()` gibt die Anzahl der Ticks seit dem Start der Ausführung zurück.
 
-Diese beiden Funktionen sowie `quick_print()` sind komplett kostenlos. Sogar der Aufruf selbst ist für sie kostenlos.
+Diese beiden Funktionen sind genau wie `quick_print()` vollständig kostenlos. Selbst der Aufrufvorgang kostet bei ihnen nichts.
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
 
 ## Laufzeitdetails
 
@@ -18,7 +44,6 @@ Das wird dich wahrscheinlich nur interessieren, wenn du deinen Code hyper-optimi
 
 
 Die grundlegende Zeiteinheit für die Code-Ausführung wird "Tick" genannt. Ohne Geschwindigkeits-Upgrades und Energie läuft die Ausführung mit einer Rate von `400` Ticks pro Sekunde.
-
 Im Allgemeinen dauern Operationen, die zwei Werte kombinieren, wie `+, -, *, /, //, %, and, or, ...`, einen Tick.
 Ein-Wert-Operationen `-` und `not` sind kostenlos.
 Eine `if`-Verzweigung dauert ebenfalls einen Tick (zusätzlich zur Zeit, die für die Auswertung des Bedingungsausdrucks benötigt wird).
@@ -31,4 +56,10 @@ Wenn eine Funktion oder ein Modul über Argumente oder Variablenzuweisungen übe
 `pass` dauert einen Tick, sodass es verwendet werden kann, um präzise Verzögerungen zu erzeugen.
 Die Indizierung in eine Datenstruktur dauert einen Tick für den Index-Operator und, im Falle eines Dictionaries oder Sets, zusätzliche Ticks abhängig von der Größe des Schlüssels.
 
-Die Anzahl der Ticks, die eingebaute Funktionen zur Ausführung benötigen, ist in der Dokumentation jeder Funktion einzeln dokumentiert.
+Die Anzahl der Ticks, welche die Ausführung eingebauter Funktionen benötigt, ist auf der jeweiligen Funktionsseite dokumentiert.
+
+---
+
+[Debuggen](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Bestenlisten](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

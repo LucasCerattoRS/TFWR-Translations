@@ -1,3 +1,5 @@
+[<- Funciones](docs/scripting/functions.md)
+---
 # Ámbitos de Nombres
 Los ámbitos determinan qué variables se pueden acceder y desde dónde. Un ámbito es básicamente una correspondencia de nombres a valores.
 Funcionan básicamente igual que en Python.
@@ -28,24 +30,64 @@ Solo existía en el ámbito local de `f`.
 ## La palabra clave global
 Por defecto, todas las variables en las funciones se vinculan al ámbito local, incluso si existe una variable con el mismo nombre en el ámbito global.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 Este código imprime `0` porque la `x` local dentro de `f` no es la misma variable que la `x` global, por lo que la `x` global permanece sin cambios. Esto es importante porque, de lo contrario, una llamada a función podría sobrescribir accidentalmente una variable global que simplemente tiene el mismo nombre que una variable local de esa función.
 
 Si quieres escribir en una variable global, debes hacerlo explícitamente usando la palabra clave `global`.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 En este ejemplo, `global x` vincula `x` a la variable global `x` definida encima de ella. Esto ahora imprimirá `1`.
 Ten en cuenta que cambiar variables globales suele ser el primer paso hacia el código espagueti, donde cada parte del programa afecta a todas las demás, así que no abuses de ello.
@@ -53,8 +95,32 @@ Ten en cuenta que cambiar variables globales suele ser el primer paso hacia el c
 ## Bucles y Ramificaciones
 Los bucles y las ramificaciones no crean sus propios ámbitos, por lo que cualquier cosa declarada dentro de ellos todavía se puede usar fuera.
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
 Esto imprimirá `2` porque la última iteración del bucle `for` asignó `2` a `i`.
+
+---
+
+[Variables](docs/scripting/variables.md)      [Funciones](docs/scripting/functions.md)      [Importar](docs/scripting/import.md)      [Megagranja](docs/unlocks/megafarm.md)

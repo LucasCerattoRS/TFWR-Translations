@@ -1,8 +1,10 @@
+[<- Fonctions](docs/scripting/functions.md)
+---
 # Importation
 Mettre tout ton code dans un seul fichier devient vite ingérable.
 Les instructions `import` te permettent d'importer des fonctions et des variables globales d'un autre fichier.
 Comment ça marche en une capture d'écran :
-![](ImportsInOnePicture400)
+![](ImportsInOnePicture)
 
 Ici, `import module2` exécute le fichier nommé `module2` et te donne accès à toutes ses variables globales.
 Tu peux ensuite accéder aux variables et fonctions du module importé en utilisant l'opérateur `.`.
@@ -46,7 +48,7 @@ Une structure de fichier courante en Python consiste à mettre le code qui doit 
 
 def main():
     a_local_variable = "local"
-    # do things
+    # faire des choses
 
 if __name__ == "__main__":
     main()`
@@ -65,12 +67,12 @@ def f():
 
 Cela fonctionnera très bien. Disons qu'aucun des deux fichiers n'est encore chargé, et que quelqu'un d'autre exécute `import a`.
 
--`a` s'exécute jusqu'à la ligne `import b`.
--`b` s'exécute jusqu'à la ligne `import a`.
--Le module `a` existe déjà, mais ne contient pas `x` car il n'a atteint que la ligne `import b`.
--`b` stocke une référence au module `a` à moitié chargé dans une variable appelée `a`.
--`b` exécute l'instruction `def` et stocke la fonction `f()`.
--`a` continue son exécution et initialise `x`.
+- `a` s'exécute jusqu'à la ligne `import b`.
+- `b` s'exécute jusqu'à la ligne `import a`.
+- Le module `a` existe déjà, mais ne contient pas `x` car il n'a atteint que la ligne `import b`.
+- `b` stocke une référence au module `a` à moitié chargé dans une variable appelée `a`.
+- `b` exécute l'instruction `def` et stocke la fonction `f()`.
+- `a` continue son exécution et initialise `x`.
 
 Quand quelqu'un appelle `b.f()`, il affichera correctement `0` car le module `a` auquel `b` a une référence est maintenant entièrement chargé.
 
@@ -85,11 +87,15 @@ fichier `b` :
 def f():
     print(x)`
 
--`a` s'exécute jusqu'à la ligne `from b import *`.
--`b` s'exécute jusqu'à la ligne `from a import *`.
--Le module `a` existe déjà, mais n'a pas encore été entièrement exécuté.
--`b` dépaquette tout ce qui se trouve actuellement dans `a` dans sa propre portée globale. À ce stade, `a` ne contient rien car il n'a pas encore atteint la ligne `x = 0`, donc rien n'est importé.
--`b` exécute l'instruction `def` et stocke la fonction `f()`.
--`a` continue son exécution et initialise `x`.
+- `a` s'exécute jusqu'à la ligne `from b import *`.
+- `b` s'exécute jusqu'à la ligne `from a import *`.
+- Le module `a` existe déjà, mais n'a pas encore été entièrement exécuté.
+- `b` dépaquette tout ce qui se trouve actuellement dans `a` dans sa propre portée globale. À ce stade, `a` ne contient rien car il n'a pas encore atteint la ligne `x = 0`, donc rien n'est importé.
+- `b` exécute l'instruction `def` et stocke la fonction `f()`.
+- `a` continue son exécution et initialise `x`.
 
 Si quelqu'un appelle maintenant `b.f()`, il obtiendra une erreur indiquant que `x` n'existe pas dans la portée actuelle. C'est parce que cette fois `b` n'a pas de référence au `a` qui est encore en cours de chargement et ne voit pas les définitions qui ont été ajoutées après l'importation.
+
+---
+
+[Fonctions](docs/scripting/functions.md)      [Portées des noms](docs/scripting/scopes.md)

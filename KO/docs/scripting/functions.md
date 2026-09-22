@@ -1,3 +1,5 @@
+[<- 변수](docs/scripting/variables.md) <right>[가져오기 ->](docs/scripting/import.md)
+---
 # 함수
 `def` 키워드를 사용하여 새 함수를 정의하세요:
 `def f(arg1, arg2 = False):
@@ -15,19 +17,67 @@
 ## 함수 정의
 예를 들어, 드론을 여러 번 움직이는 함수를 정의할 수 있어요.
 
-`def move_n_dir(n, dir):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def move_n_dir(n, dir):
 	for i in range(n):
-		move(dir)`
+		move(dir)
+}}
 
 `def` 키워드는 이것이 함수 정의임을 나타내요.
 `move_n_dir`는 함수가 바인딩되는 이름이에요. 유효한 변수 이름이라면 무엇이든 될 수 있으며, 함수를 호출하는 데 사용돼요.
 `n`과 `dir`는 매개변수예요. 함수에 전달되는 값을 담는 변수들이죠 (이 값들을 인수라고도 해요). 함수 정의에 원하는 만큼 매개변수를 추가할 수 있어요.
 `:` 뒤에는 함수가 호출될 때 실행될 코드 블록이 와요.
 
-위의 정의를 사용하면 다음 코드는 드론을 `North`로 `10`칸, `West`로 `2`칸 움직여요.
+위의 정의를 사용하면 다음 코드는 드론을 `North`로 `2`칸, `East`로 `2`칸 움직여요.
 
-`move_n_dir(10, North)
-move_n_dir(2, West)`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def move_n_dir(n, dir):
+	for i in range(n):
+		move(dir)
+
+move_n_dir(2, North)
+move_n_dir(2, East)
+}}
 
 `def function():`을 보면, 다음과 같은 변수 할당이라고 생각해야 해요:
 `function = create_new_function_object()`
@@ -35,56 +85,175 @@ move_n_dir(2, West)`
 `def` 문은 함수 호출 전에 실행되어야 해요.
 이 코드는 오류를 발생시킬 거예요:
 
-`func()
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+func()
 def func():
-	pass`
+	pass
+}}
 
 ## 반환 값
 `return` 키워드를 사용하여 함수가 값을 반환하게 하세요.
 예를 들어, 다음 함수는 배타적 논리합 연산을 정의해요. 배타적 논리합은 한 값이 `True`이고 다른 값이 `False`일 때 `True`를 반환해요:
 
-`def xor(a, b):
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def xor(a, b):
 	return a != b
 
 if xor(True, False):
-	do_a_flip()`
+	do_a_flip()
+}}
 
 [튜플](docs/scripting/tuples.md)을 사용하면 여러 값을 반환할 수 있어요.
 
 ## 기본 인수
 인수가 전달되지 않을 때 사용될 기본값을 할당할 수도 있어요.
 
-`def f(a = False):
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def f(a = False):
 	if a:
 		do_a_flip()
 
 f()
 
-f(True)`
+f(True)
+}}
 
-기본값이 있는 인수는 기본값이 없는 인수 뒤에 올 수 없어요.
+기본값이 있는 인수 뒤에는 기본값이 없는 인수가 올 수 없어요.
 
 ## 고급 함수 사용법
 함수는 다른 값들과 마찬가지로 값이며, `def` 문은 할당문처럼 작동하여 함수를 여러분이 부여한 이름에 할당해요.
 이를 통해 다음과 같은 일을 할 수 있어요:
 
-`def f():
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def f():
 	def d():
 		do_a_flip()
 	return d
 
-f()()`
+f()()
+}}
 
 여기서 `f()`는 함수 `f`를 호출하고, `f`는 새 함수 `d`를 정의하고 반환해요. 두 번째 `()`는 반환된 함수를 실행하여 재주넘기를 해요.
 (무슨 일이 일어나는지 파악하기 어렵기 때문에 이런 종류의 일은 보통 좋은 생각이 아니에요)
 
 다른 함수를 인수로 받는 함수를 사용하면 정말 창의적으로 코드를 짤 수 있어요:
 
-`def f(g, arg):
-	for _ in range(10):
+{{codeexample 
+{
+    "camera_position": {"x": -2, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "fertilizer", "n": 4}],
+    "world_size": {"x": 5, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def f(g, arg):
+	for _ in range(4):
 		g(arg)
 
-f(move, North)
-f(use_item, Items.Fertilizer)`
+f(move, East)
+plant(Entities.Tree)
+f(use_item, Items.Fertilizer)
+}}
 
-이 코드는 드론을 `North`로 10번 움직인 다음 비료를 10번 사용해요.
+---
+
+[변수](docs/scripting/variables.md)      [이름 스코프](docs/scripting/scopes.md)      [튜플](docs/scripting/tuples.md)      [가져오기](docs/scripting/import.md)

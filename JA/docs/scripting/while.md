@@ -1,3 +1,5 @@
+[<- 最初のプログラム](docs/first_program.md) <right>[スピードアップグレード ->](docs/unlocks/speed.md)
+---
 # Whileループ
 `while` ループと `True` と `False` の値をアンロックしました。`while` ループは、条件が `True` である限りループ本体を実行し続けます。
 
@@ -9,10 +11,34 @@
 ## 初心者向け
 すでに行に複数の `harvest()` 呼び出しを並べてみたかもしれません:
 
-`harvest()
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
 harvest()
-harvest()`
-
+harvest()
+harvest()
+}}
 これにより、1回のプログラム実行で複数回収穫できます。
 しかし、3回以上収穫できるといいですし、同じコードを何度も書くのは悪い習慣です。
 解決策はループです。
@@ -29,28 +55,106 @@ whileループは次のようになります:
 	#ループ本体
 	#...`
 	
-ここで "condition" をブール値に、`#loop body` をループ内で行いたいことに置き換える必要があります。
+ここで "condition" をブール値に、`#ループ本体` をループ内で行いたいことに置き換える必要があります。
 
 利用可能な定数のブール値は2つあります。定数はプログラム中に決して変わらない値です。
 
-常に `True` である定数のブール値を作成するには、単に `True` と書きます。常に `False` である定数のブール値としては `False` と書きます。
+定数のブール値を作るには、`True` または `False` と書きます。
 したがって、次のように書くことができます
 
-
-`while False:
-	do_a_flip()`
-
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while False:
+	do_a_flip()
+}}
 または
 
-`while True:
-	do_a_flip()`
-
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+}}
 最初のものは決してフリップを行わず、2番目のものは永遠にフリップを行います（無限ループ）。
 
 通常、無限ループを作成するのはプログラムがフリーズするため悪い考えですが、このゲームではループの各反復の間に遅延があるため、実行ボタンをもう一度押して手動で停止するまでドローンはフリップを続けます。
 
 コロンの後の行がインデントされていることに注目してください。このようなインデントはコードのブロックを区切るために使用されます。
-Tabキーを押してインデントを追加し、Shift + Tab（またはBackspace）で削除します。
+Tabキーでインデントを追加し、Shift + Tabキー（またはBackspaceキー）で削除できます。複数の行を選択している場合は、そのすべてに適用されます。
 
-ループはコロンの後のすべてのインデントされたステートメントを繰り返します。
-インデントされたブロックの後のステートメントは、ループが終了した後に実行されます。
+注意：Steamでプレイしている場合、Shift + Tabキーを押すとSteamオーバーレイが開きます。ゲームの設定でインデント解除のショートカットを変更するか、Steamオーバーレイの設定でそのショートカットを変更できます。
+
+ここでは、`do_a_flip()` と `pet_the_piggy()` はインデントされた `while` ブロック内にあるため繰り返し呼ばれます。一方、`harvest()` はそのブロックの後にあるため実行されません。
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+	pet_the_piggy()
+harvest()
+}}
+
+---
+
+[forループ](docs/scripting/for.md)      [if文](docs/scripting/if.md)      [break](docs/scripting/break.md)      [continue](docs/scripting/continue.md)      [外部エディタ](docs/external_editor.md)

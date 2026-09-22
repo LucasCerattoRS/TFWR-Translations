@@ -2,7 +2,10 @@
 @warning_no_space_to_plant = Versucht, {0} zu pflanzen, aber da war schon etwas.
 @warning_cant_plant_on_ground = {0} kann nicht auf {1} gepflanzt werden.
 @warning_missing_seed = Hatte nicht die erforderlichen Items, um {0} zu pflanzen.
+@warning_not_enough_coal = Nicht genug Kohle, um nach Eisen zu suchen.
+@warning_not_enough_iron = Nicht genug Eisen, um nach Quarz zu suchen.
 @warning_no_item_to_use = Versucht, {0} zu verwenden, hatte aber nicht genug davon.
+@warning_cannot_place_ground = {0} kann nicht platziert werden, weil es ein besonderer Block ist.
 @warning_failed_swap_wrap = Versucht, über die Farmgrenzen hinweg zu tauschen. Das ist nicht erlaubt.
 @warning_failed_swap_unswappable = Versucht, {0} zu tauschen, was nicht getauscht werden kann.
 @warning_weird_substance_not_divisible = Du hast eine Anzahl von Seltsamer Substanz verwendet, die nicht genau der benötigten Menge zum Erstellen des Labyrinths entspricht. Vergiss nicht, dass die erforderliche Menge an Seltsamer Substanz mit jedem Upgrade des Labyrinths steigt.

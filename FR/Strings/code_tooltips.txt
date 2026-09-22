@@ -110,6 +110,16 @@ prend `1` tick pour s'exécuter.
 
 exemple :
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+Obtient la position z actuelle du drone.
+La position z commence à `0` et diminue lorsque tu creuses vers le bas.
+
+renvoie un nombre représentant la coordonnée z actuelle du drone.
+
+prend `1` tick pour s’exécuter.
+
+exemple :
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 Obtient la taille actuelle de la ferme.
 
@@ -140,6 +150,26 @@ prend `1` tick pour s'exécuter.
 exemple :
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+Détermine la dureté du sol sous le drone.
+
+renvoie la dureté du sol sous le drone.
+
+prend `1` tick pour s’exécuter.
+
+exemple :
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+Détermine la stabilité du sol sous le drone.
+
+renvoie la stabilité du sol sous le drone.
+
+prend `1` tick pour s’exécuter.
+
+exemple :
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 Obtient le temps de jeu actuel.
 
@@ -342,7 +372,7 @@ exemple :
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("Compagne :", plant_type, "à", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)` 
 A exactement le même effet que de cliquer sur le bouton correspondant à `unlock` dans l'arbre de recherche.
 
@@ -423,7 +453,7 @@ run_time = simulate(filename, sim_unlocks, sim_items, sim_globals, seed, speedup
 @code_tooltip_spawn_drone = `spawn_drone(function, *args)`
 Fait apparaître un nouveau drone à la même position que le drone qui a exécuté la commande `spawn_drone(function, *args)`. Le nouveau drone commence alors à exécuter la fonction spécifiée. Le reste des arguments sont copiés et passés à la fonction spécifiée. Une fois terminé, le drone disparaîtra automatiquement.
 
-renvoie le handle du nouveau drone ou `None` si tous les drones sont déjà apparus.
+renvoie la référence du nouveau drone ou `None` si tous les drones sont déjà apparus.
 
 prend `200` ticks pour s'exécuter si un drone a été généré, `1` sinon.
 
@@ -627,3 +657,59 @@ list.insert(0, 0)`
 @code_tooltip_or = Évalue le premier opérande. S'il est vrai (tout autre que `False`, `0` et les collections vides), il renvoie cette valeur immédiatement (court-circuitant l'évaluation), sinon, il évalue et renvoie le second opérande.
 @code_tooltip_return = Utilisé pour renvoyer une valeur d'une fonction.
 @code_tooltip_pass = Ne fait rien. Peut être utile car les blocs de code vides ne sont pas autorisés.
+@code_tooltip_dig = `dig()`
+Fore une case vers le bas.
+
+La vitesse de forage dépend de la dureté du bloc et de la puissance de la foreuse du drone.
+
+exemple :
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+Utilise du charbon pour rechercher du fer.
+
+renvoie la direction du minerai de fer le plus proche (`North`, `East`, `South` ou `West`) s’il y en a un à proximité. Renvoie `None` s’il n’y a pas de fer à proximité, si tu n’as pas assez de charbon ou si le drone se trouve déjà au-dessus d’un morceau de fer.
+
+coûte 1 charbon à exécuter.
+
+exemple :
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+Utilise du fer pour rechercher du quartz.
+
+renvoie la distance euclidienne (distance en 3D) entre le drone et le prochain bloc de quartz, ou `None` s’il n’y a pas de quartz à proximité.
+
+coûte 1 fer à exécuter.
+
+exemple :
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+Place des blocs.
+
+Tu peux préciser le bloc à placer. Seuls les blocs sans fonction spéciale peuvent être placés. Par exemple, tu peux utiliser `place(Grounds.Rock)`, mais pas `place(Grounds.Clay)`.
+
+exemple :
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+Pousse le bloc de champignon sous le drone.
+
+Tu ne peux pas pousser de blocs vers le haut.
+
+renvoie `True` si le bloc a été poussé, sinon `False`.
+
+exemple :
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+Vérifie si le bloc sous le drone peut être poussé.
+
+renvoie `True` si le bloc sous le drone peut être poussé, sinon `False`.
+
+exemple :
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+Saute jusqu’à une fonctionnalité souterraine associée à `unlock`.
+
+Tu ne peux exécuter `jump` qu’une seule fois par script.
+
+exemple :
+`jump(Unlocks.Iron)`

@@ -5,13 +5,19 @@
 これは便宜上のものであり、ゲーム内の言語は実際にはPythonではありませんが、PythonのIntelliSenseがまあまあ機能する程度には近いです。
 ファイルは[セーブフォルダー](persistent_data_path/Saves)にあります。
 
+永続データフォルダーの場所：
+
+- Windows: `%USERPROFILE%\AppData\LocalLow\TheFarmerWasReplaced\TheFarmerWasReplaced`
+- macOS: `~/Library/Application Support/com.TheFarmerWasReplaced.TheFarmerWasReplaced`
+- Linux (Steam/Proton): `~/.steam/steam/steamapps/compatdata/2060160/pfx/drive_c/users/steamuser/AppData/LocalLow/TheFarmerWasReplaced/TheFarmerWasReplaced`
+
 各セーブには`__builtins__.py`ファイルも含まれており、これにはIntelliSenseを有効にするためにゲーム内の組み込み関数に一致するPythonの組み込み定義が含まれています。
 VS Codeは`__builtins__.py`を自動的に検出できますが、一部のエディタは`from __builtins__ import *`を実行しないと機能しない場合があります。
 
 外部での変更をセーブをリロードせずにゲーム内で確認するには、「ファイルウォッチャー」オプションを有効にする必要があります。外部でファイルを作成または削除した場合は、それらを確認するためにセーブをリロードする必要があります。
 
 ## VS Codeの使用
-Visual Studio Codeは、The Farmer Was Replacedで使用するのにおすすめのコードエディタです。
+Visual Studio Codeは、農家は Replace() されましたで使用するのにおすすめのコードエディタです。
 
 [こちら](https://code.visualstudio.com/download)からインストールできます。
 
@@ -22,3 +28,7 @@ Visual Studio Codeは、The Farmer Was Replacedで使用するのにおすすめ
 ゲーム内では、「ファイルウォッチャー」オプションがオンになっていることを確認してください。これで、VS Codeで保存するたびに、変更が自動的にゲームに反映されます。
 
 以上です！これでプロ仕様のコードエディタでコードを書くことができます！
+
+---
+
+[最初のプログラム](docs/first_program.md)      [バックアップのロード](docs/backup.md)

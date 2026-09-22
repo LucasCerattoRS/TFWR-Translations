@@ -1,5 +1,6 @@
 @item_tooltip_template_amount = Ne hai {0}
 @item_descr_carrot = Ottenuto raccogliendo carote.
+@item_descr_rice = Ottenuto raccogliendo riso.
 @item_descr_fertilizer = Chiama `use_item(Items.Fertilizer)` per rimuovere istantaneamente 2s dal tempo di crescita rimanente delle piante.
 @item_descr_weird_substance = Chiama `use_item(Items.Weird_Substance)` su un cespuglio per far crescere un labirinto, o su altre piante per attivare/disattivare il loro stato di infezione. Ottenuto da piante infette. Fertilizzare le piante le infetta.
 @item_descr_gold = Trovato nei forzieri nei labirinti.
@@ -12,3 +13,10 @@
 @item_descr_cactus = Ottenuto raccogliendo cactus ordinati.
 @item_descr_cactus_seed = Questo oggetto è stato rimosso dal gioco.
 @item_descr_bone = Le ossa di una creatura antica.
+@item_descr_block = Un blocco, ottenuto scavando.
+@item_descr_coal = Ottenuto scavando carbone nel sottosuolo. I giacimenti di carbone si presentano in strati piatti.
+@item_descr_iron = Ottenuto scavando ferro nel sottosuolo.
+@item_descr_quartz = Ottenuto scavando vene di quarzo. Cresce in strutture simili ad aghi.
+@item_descr_dynamite = Ottenuto scavando nel terreno di dinamite.
+@item_descr_bamboo = Ottenuto raccogliendo bambù.
+@item_descr_mushroom = Ottenuto impilando blocchi di terreno con funghi.

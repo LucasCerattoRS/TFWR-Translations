@@ -8,18 +8,50 @@ Can grow on {3}.
 @object_descr_bush = A small bush that drops `Items.Wood`.
 @object_descr_tree = Trees drop more wood than bushes. They take longer to grow if other trees grow next to them.
 @object_descr_carrot = Carrots!
+@object_descr_rice = Rice can be planted on the clay sheet you find underground.
+@object_descr_bamboo = Bamboo can grow quite tall, but flowers at a certain specific height. The yield is largest if you harvest right where it flowers.
 @object_descr_pumpkin = Pumpkins grow together when they are next to other fully grown pumpkins. About 1 in 5 pumpkins dies when it grows up.
 @object_descr_dead_pumpkin = One in five pumpkins dies when it grows up, leaving behind a dead pumpkin. Dead pumpkins are useless and disappear when something new is planted.
 @object_descr_sunflower = Sunflowers collect the power from the sun. Harvesting them will give you `Items.Power`.
 If you harvest a sunflower with the maximum number of petals you get bonus power.
 @object_descr_cactus = Cacti come in 10 different sizes. When harvested adjacent cacti that are "sorted" will also be harvested.
 @object_descr_hedge = Part of the maze.
-@object_descr_treasure = A treasure that contains gold equal to the side length of the maze in which it is hidden. It can be harvested like a plant.
+@object_descr_treasure = A treasure that contains gold equal to the area of the maze in which it is hidden. It can be harvested like a plant.
 @object_descr_dinosaur = A piece of the tail of the dinosaur hat.
 @object_descr_grassland = The default ground. Grass will automatically grow on it.
 @object_descr_soil = Calling `till()` turns the ground into soil. Calling `till()` again changes it back to grassland.
+@object_descr_dirt = It's dirt.
+@object_descr_rock = It's a hard rock.
+@object_descr_clay = A clay block. Fertile ground and perfect for rice. When a rice plant matures, it turns the clay below it back to dirt.
+@object_descr_blue_block = A blue block.
+@object_descr_red_block = A red block.
+@object_descr_green_block = A green block.
+@object_descr_coal = A block rich in sedimentary coal.
+@object_descr_iron = A block containing raw magnetite.
+@object_descr_quartz = A block encasing crystalline quartz.
+@object_descr_limestone = Whitish limestone. Makes up the foundation of ancient pyramids.
+@object_descr_sand = A sand block. Part of an ancient pyramid.
+@object_descr_bedrock = Indestructible.
+@object_descr_petrified_pumpkin = A petrified pumpkin. Still good to eat.
+@object_descr_loam = Rich loam, ideal for growing certain plants. Sunflowers and carrots give double yield when planted here.
+@object_descr_perlite = Dirt with high perlite content, ideal for growing certain plants. Bushes, cacti, bamboo and trees give double yield when planted here.
 @runtime_entity_tooltip = When harvested, gives:
 {{itemblock tooltip}}
+@runtime_ground_tooltip = When mined, gives:
+{{itemblock tooltip_ground}}
+@runtime_mushroom_tooltip = When two mushroom blocks of the same type are stacked, they give:
+{{itemblock tooltip_ground}}
 @runtime_growable_tooltip = Total grow time: {0} seconds
 Grown {1}%
-@runtime_ground_tooltip = Water level: {0}
+@runtime_ground_hardness_tooltip = Hardness: {0}
+@runtime_ground_stability_tooltip = Stability: {0}
+@runtime_ground_water_tooltip = Water level: {0}
+@object_descr_dynamite = Explodes when dug into. Planting and harvesting always uses and yields 1 dynamite.
+@object_descr_dynamite_ground = Can drop some dynamite on the block below when dug. The dynamite can be harvested or dug into to explode.
+@object_descr_soot = Mysterious soot that counts the number of live dynamite on the stratum above when `measure()` is called. Immediately explodes any dynamite that falls on top it.
+@object_descr_basalt = Soft rock formed by cooling lava. Something might have been preserved below?
+@object_descr_treasure_map_ground = A treasure map! Where might it lead to?
+@object_descr_treasure_path_ground = On the path leading from the treasure map to the goal.
+@object_descr_treasure_goal_ground = The goal at the end of the treasure map trail. What might be hidden here?
+@object_descr_underground_treasure = The elusive treasure found at the end of the treasure map path.
+@object_descr_mushroom = Mushrooms growing underground. Use `measure()` to determine which type of mushroom it is.

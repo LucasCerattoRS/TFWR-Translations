@@ -10,6 +10,8 @@
 @button_tooltip_delete = このファイルを完全に削除します。
 @button_tooltip_close_docs = このウィンドウを閉じます。
 @button_tooltip_table_of_contents = 目次
+@button_tooltip_docs_home = ドキュメントのホームページに移動します。
+@button_tooltip_docs_back = 前に開いていたドキュメントのページに戻ります。
 @button_tooltip_new_game = 新しいセーブデータを作成します。
 @button_tooltip_open_folder = ファイルエクスプローラーでセーブフォルダーを開きます。
 @button_tooltip_toggle_search_docs = 検索対象にドキュメントウィンドウを含めるかどうかを切り替えます。
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = あなたのコードで警告が発生しました。アイコンをクリックして、出力ウィンドウで詳細を確認してください。
 @option_tooltip_graphics = 影、アンビエントオクルージョン、ブルームなど、様々なレンダーパイプライン設定に影響します。
 @option_tooltip_vfx_limit = 1秒あたりに再生できるビジュアルエフェクトの数を制限します。
+@option_tooltip_avalanche_particles = 落盤で発生するパーティクルを無効にします。
 @option_tooltip_volume = すべてのオーディオの音量を調整します。
 @option_tooltip_music_volume = 音楽の音量を調整します。
 @option_tooltip_drone_volume = ドローンの飛行音の音量を調整します。

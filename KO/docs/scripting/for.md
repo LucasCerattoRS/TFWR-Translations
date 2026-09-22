@@ -1,3 +1,5 @@
+[<- 확장 2](docs/unlocks/expand_2.md)
+---
 # For 루프
 `for` 루프는 Python에서처럼 작동해요. (일부 언어에서는 foreach 루프라고 불리며, 다른 것인 C 스타일 for 루프와 혼동해서는 안 돼요).
 
@@ -18,12 +20,61 @@ for 루프는 다음과 같아요:
 [범위](functions/range)      <unlock=lists>[리스트](docs/scripting/lists.md)      </unlock><unlock=functions>[튜플](docs/scripting/tuples.md)      </unlock><unlock=dicts>[딕셔너리](docs/scripting/dicts.md)      </unlock><unlock=sets>[세트](docs/scripting/sets.md)</unlock>
 
 ## 예시
-`for i in range(5):
-    harvest()`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+for i in range(5):
+    harvest()
+}}
 
 이 루프는 본문을 정해진 횟수만큼 실행해요. 이것은 본질적으로 다음과 같이 쓰는 것과 같아요.
 
-`i = 0
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+i = 0
 harvest()
 i = 1
 harvest()
@@ -32,8 +83,12 @@ harvest()
 i = 3
 harvest()
 i = 4
-harvest()`
+harvest()
+}}
 
-그래서 `harvest()`를 5번 호출해요.
 
-참고: [Break](docs/scripting/break.md) 및 [Continue](docs/scripting/continue.md)
+---
+
+[while 루프](docs/scripting/while.md)      [Break](docs/scripting/break.md)      [Continue](docs/scripting/continue.md)
+
+[range()](functions/range)

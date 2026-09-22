@@ -1,5 +1,9 @@
 # Statistiche
 
-Negli ultimi 60 secondi hai coltivato: {{itemblock stats_sum}}
+Negli ultimi 60 secondi hai raccolto: {{itemblock stats_sum}}
 
-Il tuo record personale per risorsa è: {{itemblock stats_best}}
+I tuoi record personali per risorsa sono: {{itemblock stats_best}}
+
+---
+
+[Classifiche](docs/unlocks/leaderboard.md)      [Tempi](docs/unlocks/timing.md)      [Simulazione](docs/unlocks/simulation.md)

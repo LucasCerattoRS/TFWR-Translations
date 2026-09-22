@@ -7,3 +7,7 @@
 
 세이브는 `save.json` 파일과 여러 `.py` 파일이 있는 폴더예요.
 코드 파일을 몇 개만 잃어버렸거나, 코드 파일은 그대로 있지만 `save.json` 파일이 손상된 경우, 손상된 부분만 백업의 해당 파일로 교체할 수도 있어요.
+
+---
+
+[외부 에디터](docs/external_editor.md)      [시작하기](docs/getting_started.md)

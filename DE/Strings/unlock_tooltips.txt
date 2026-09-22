@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Freischaltkosten {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Voraussetzungen zum Freischalten
+Die Freischaltung {0} muss mindestens Stufe {1} erreicht haben.
 @unlock_descr_trees = Schaltet Bäume frei.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = Reis ist wie Weizen, wenn Weizen auf Ton wachsen würde.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Verwende Listen, um viele Werte zu speichern.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -107,8 +113,41 @@ other_file.function()`
 @unlock_descr_megafarm = Mehr Drohnen!
 
 `spawn_drone(task)`
+@unlock_descr_mining = Gibt der Drohne einen Bohrer. Und einen Bergbauhelm.
+
+`dig()`
+@unlock_descr_coal = Unterirdisch entstehen Kohlevorkommen.
+@unlock_descr_iron = Unterirdisch entstehen Eisenerzadern.
+@unlock_descr_pyramid = Unterirdisch entstehen alte Sandsteinbauten.
+@unlock_descr_quartz = Unterirdisch entstehen Quarznadeln.
+@unlock_descr_ore_boost = Verdoppelt den Kohleertrag. Verdoppelt die Größe von Eisen- und Quarzadern.
+@unlock_descr_jump = Ermöglicht deiner Drohne, nach unten zu springen.
+@unlock_descr_prospecting = Verwende Kohle, um nach Eisen zu suchen!
+
+`prospect_iron()`
+@unlock_descr_drill = Verbessert die Stärke des Bohrers.
+@unlock_descr_debug_place = Platziere farbige Blöcke.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Drohnensensoren zur Interaktion mit unterirdischen Feldern
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Unterirdisch entstehen versteinerte Kürbisse.
+@unlock_descr_special_soils = Entdecke Lehm- und Perlitschichten, um den Pflanzenertrag zu steigern.
+@unlock_descr_bamboo = Pflanze Bambus und sieh ihm beim Wachsen zu.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Finde und verwende Dynamit, um Dinge zu sprengen.
+@unlock_descr_treasure_map = Suche tief unter der Erde nach verborgenen Schätzen.
+@unlock_descr_mushrooms = Finde und ernte unterirdische Pilze, indem du passende Pilztypen kombinierst.
 @multi_unlock_descr_expand = Erweitert die Farm. Dies leert auch die Farm.
 @multi_unlock_descr_carrots = Erhöht den Ertrag und die Kosten von Karotten.
+@multi_unlock_descr_rice = Erhöht Ertrag und Kosten von Reispflanzen.
 @multi_unlock_descr_trees = Erhöht den Ertrag von Büschen und Bäumen.
 @multi_unlock_descr_pumpkins = Erhöht den Ertrag und die Kosten von Kürbissen.
 @multi_unlock_descr_mazes = Erhöht das Gold in Schatztruhen und die Menge an seltsamer Substanz, die zum Erzeugen eines Labyrinths benötigt wird.
@@ -119,9 +158,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Erhalte mehr Wasser.
 @multi_unlock_descr_fertilizer = Erhalte mehr Dünger.
 @multi_unlock_descr_megafarm = Erhöht die Drohnenanzahl weiter.
+@multi_unlock_descr_drill = Erhöht die Bohrgeschwindigkeit.
+@multi_unlock_descr_coal = Unterirdisch entstehen mehr Kohleschichten.
+@multi_unlock_descr_iron = Erhöht den Ertrag von Eisenerz.
+@multi_unlock_descr_pyramid = Erhöht die Energie, die du für die Restaurierung von Pyramiden erhältst.
+@multi_unlock_descr_quartz = Erhöht den Ertrag von Quarzerz.
+@multi_unlock_descr_petrified_pumpkins = Erhöht den Ertrag versteinerter Kürbisse.
+@multi_unlock_descr_dynamite = Erhöht den Dynamitertrag und die Energie von Explosionen.
+@multi_unlock_descr_treasure_map = Erhöht die Tiefe des Schatzpfads und damit die Goldmenge, die du aus dem Schatz erhältst.
+@multi_unlock_descr_ore_boost = Erhöht den Kohleertrag weiter. Vergrößert Eisen- und Quarzadern zusätzlich.
+@multi_unlock_descr_bamboo = Erhöht Ertrag und Kosten von Bambus.
+@multi_unlock_descr_mushrooms = Erhöht den Ertrag passender Pilzblöcke.
 @auto_unlock = Automatisches Freischalten
 @cactus = Kaktus
 @carrots = Karotten
+@rice = Reis
 @costs = Kosten
 @debug = Debug
 @debug_2 = Debug_2
@@ -144,6 +195,8 @@ other_file.function()`
 @polyculture = Polykultur
 @pumpkins = Kürbisse
 @senses = Sinne
+@underground_senses = Unterirdische Sinne
+@debug_place = Farbige Blöcke
 @simulation = Simulation
 @speed = Geschwindigkeit
 @sunflowers = Sonnenblumen
@@ -154,3 +207,18 @@ other_file.function()`
 @utilities = Hilfsmittel
 @variables = Variablen
 @watering = Bewässerung
+@iron = Eisen
+@pyramid = Pyramiden
+@ore_boost = Erzbonus
+@petrified_pumpkins = Versteinerte Kürbisse
+@special_soils = Spezialböden
+@mining = Bergbau
+@coal = Kohle
+@drill = Bohrer
+@quartz = Quarz
+@prospecting = Eisensuche
+@dynamite = Dynamit
+@bamboo = Bambus
+@treasure_map = Schatzkarte
+@mushrooms = Pilze
+@jump = Sprung

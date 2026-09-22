@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Coût de déblocage {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Conditions de déblocage
+Le déblocage {0} doit être au niveau {1} ou plus.
 @unlock_descr_trees = Débloque les arbres.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = C’est comme du blé, si le blé poussait sur de l’argile.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Utilise des listes pour stocker de nombreuses valeurs.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -105,8 +111,41 @@ other_file.function()`
 @unlock_descr_megafarm = Plus de drones !
 
 `spawn_drone(task)`
+@unlock_descr_mining = Donne une foreuse au drone. Et un casque de mineur.
+
+`dig()`
+@unlock_descr_coal = Des gisements de charbon apparaissent sous terre.
+@unlock_descr_iron = Des filons de minerai de fer apparaissent sous terre.
+@unlock_descr_pyramid = D’anciennes structures en grès apparaissent sous terre.
+@unlock_descr_quartz = Des aiguilles de quartz apparaissent sous terre.
+@unlock_descr_ore_boost = Double le rendement du charbon. Double la taille des filons de fer et de quartz.
+@unlock_descr_jump = Permet à ton drone de sauter vers le bas.
+@unlock_descr_prospecting = Utilise du charbon pour rechercher du fer !
+
+`prospect_iron()`
+@unlock_descr_drill = Améliore la puissance de la foreuse.
+@unlock_descr_debug_place = Place des blocs colorés.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Des capteurs permettant au drone d’interagir avec les cases souterraines
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Des citrouilles fossilisées apparaissent sous terre.
+@unlock_descr_special_soils = Découvre des couches de terreau et de perlite pour améliorer le rendement des plantes.
+@unlock_descr_bamboo = Plante du bambou et regarde-le pousser.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Trouve de la dynamite et utilise-la pour tout faire exploser.
+@unlock_descr_treasure_map = Pars à la recherche d’un trésor caché dans les profondeurs.
+@unlock_descr_mushrooms = Trouve et récolte des champignons souterrains en associant ceux du même type.
 @multi_unlock_descr_expand = Agrandit la ferme. Cela nettoie également la ferme.
 @multi_unlock_descr_carrots = Augmente le rendement et le coût des carottes.
+@multi_unlock_descr_rice = Augmente le rendement et le coût des plants de riz.
 @multi_unlock_descr_trees = Augmente le rendement des buissons et des arbres.
 @multi_unlock_descr_pumpkins = Augmente le rendement et le coût des citrouilles.
 @multi_unlock_descr_mazes = Augmente l'or dans les coffres au trésor et la quantité de substance étrange nécessaire pour faire apparaître un labyrinthe.
@@ -117,9 +156,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Recevoir plus d'eau.
 @multi_unlock_descr_fertilizer = Recevoir plus d'engrais.
 @multi_unlock_descr_megafarm = Augmente encore le nombre de drones.
+@multi_unlock_descr_drill = Augmente la vitesse de forage.
+@multi_unlock_descr_coal = Davantage de couches de charbon apparaissent sous terre.
+@multi_unlock_descr_iron = Augmente le rendement des minerais de fer.
+@multi_unlock_descr_pyramid = Augmente la puissance obtenue en restaurant les pyramides.
+@multi_unlock_descr_quartz = Augmente le rendement des minerais de quartz.
+@multi_unlock_descr_petrified_pumpkins = Augmente le rendement des citrouilles pétrifiées.
+@multi_unlock_descr_dynamite = Augmente le rendement de la dynamite et l’énergie des explosions.
+@multi_unlock_descr_treasure_map = Augmente la profondeur du chemin au trésor et donc la quantité d’or obtenue dans le trésor.
+@multi_unlock_descr_ore_boost = Augmente encore le rendement du charbon. Augmente encore la taille des filons de fer et de quartz.
+@multi_unlock_descr_bamboo = Augmente le rendement et le coût du bambou.
+@multi_unlock_descr_mushrooms = Augmente le rendement des blocs de champignons du même type.
 @auto_unlock = Déblocage auto
 @cactus = Cactus
 @carrots = Carottes
+@rice = Riz
 @costs = Coûts
 @debug = Débogage
 @debug_2 = Débogage_2
@@ -142,6 +193,8 @@ other_file.function()`
 @polyculture = Polyculture
 @pumpkins = Citrouilles
 @senses = Sens
+@underground_senses = Sens souterrains
+@debug_place = Blocs colorés
 @simulation = Simulation
 @speed = Vitesse
 @sunflowers = Tournesols
@@ -152,3 +205,18 @@ other_file.function()`
 @utilities = Utilitaires
 @variables = Variables
 @watering = Arrosage
+@iron = Fer
+@pyramid = Pyramides
+@ore_boost = Amélioration du minerai
+@petrified_pumpkins = Citrouilles pétrifiées
+@special_soils = Sols spéciaux
+@mining = Exploitation minière
+@coal = Charbon
+@drill = Foreuse
+@quartz = Quartz
+@prospecting = Prospection du fer
+@dynamite = Dynamite
+@bamboo = Bambou
+@treasure_map = Carte au trésor
+@mushrooms = Champignon
+@jump = Saut

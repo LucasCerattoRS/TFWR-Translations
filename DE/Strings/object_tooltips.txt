@@ -8,18 +8,50 @@ Kann auf {3} wachsen.
 @object_descr_bush = Ein kleiner Busch, der `Items.Wood` fallen lässt.
 @object_descr_tree = Bäume geben mehr Holz als Büsche. Sie brauchen länger zum Wachsen, wenn andere Bäume neben ihnen wachsen.
 @object_descr_carrot = Karotten!
+@object_descr_rice = Reis kann auf der Tonschicht gepflanzt werden, die du unterirdisch findest.
+@object_descr_bamboo = Bambus kann ziemlich hoch wachsen, blüht aber in einer bestimmten Höhe. Der Ertrag ist am größten, wenn du ihn genau dort erntest, wo er blüht.
 @object_descr_pumpkin = Kürbisse wachsen zusammen, wenn sie neben anderen ausgewachsenen Kürbissen stehen. Etwa 1 von 5 Kürbissen stirbt, wenn er erwachsen wird.
 @object_descr_dead_pumpkin = Einer von fünf Kürbissen stirbt, wenn er erwachsen wird, und hinterlässt einen toten Kürbis. Tote Kürbisse sind nutzlos und verschwinden, wenn etwas Neues gepflanzt wird.
 @object_descr_sunflower = Sonnenblumen sammeln die Energie der Sonne. Wenn du sie erntest, erhältst du `Items.Power`.
 Wenn du eine Sonnenblume mit der maximalen Anzahl an Blütenblättern erntest, bekommst du Bonus-Energie.
 @object_descr_cactus = Kakteen gibt es in 10 verschiedenen Größen. Beim Ernten werden auch benachbarte Kakteen geerntet, die "sortiert" sind.
 @object_descr_hedge = Teil des Labyrinths.
-@object_descr_treasure = Ein Schatz, der Gold in Höhe der Seitenlänge des Labyrinths enthält, in dem er versteckt ist. Er kann wie eine Pflanze geerntet werden.
+@object_descr_treasure = Ein Schatz, der so viel Gold enthält, wie die Fläche des Labyrinths beträgt, in dem er versteckt ist. Er kann wie eine Pflanze geerntet werden.
 @object_descr_dinosaur = Ein Stück des Schwanzes vom Dinosaurierhut.
 @object_descr_grassland = Der Standardboden. Gras wächst automatisch darauf.
 @object_descr_soil = Der Aufruf von `till()` verwandelt den Boden in Ackerboden. Ein erneuter Aufruf von `till()` verwandelt ihn wieder in Grasland.
+@object_descr_dirt = Das ist Erde.
+@object_descr_rock = Das ist ein harter Felsblock.
+@object_descr_clay = Ein Tonblock. Fruchtbarer Boden und perfekt für Reis. Wenn eine Reispflanze reif wird, verwandelt sie den Ton darunter wieder in Erde.
+@object_descr_blue_block = Ein blauer Block.
+@object_descr_red_block = Ein roter Block.
+@object_descr_green_block = Ein grüner Block.
+@object_descr_coal = Ein Block, der reich an sedimentärer Kohle ist.
+@object_descr_iron = Ein Block, der rohen Magnetit enthält.
+@object_descr_quartz = Ein Block, der kristallinen Quarz einschließt.
+@object_descr_limestone = Weißlicher Kalkstein. Bildet das Fundament alter Pyramiden.
+@object_descr_sand = Ein Sandblock. Teil einer alten Pyramide.
+@object_descr_bedrock = Unzerstörbar.
+@object_descr_petrified_pumpkin = Ein versteinerter Kürbis. Immer noch essbar.
+@object_descr_loam = Nährstoffreicher Lehmboden, ideal für bestimmte Pflanzen. Sonnenblumen und Karotten liefern hier den doppelten Ertrag.
+@object_descr_perlite = Erde mit hohem Perlitgehalt, ideal für bestimmte Pflanzen. Büsche, Kakteen, Bambus und Bäume liefern hier den doppelten Ertrag.
 @runtime_entity_tooltip = Ergibt beim Ernten:
 {{itemblock tooltip}}
+@runtime_ground_tooltip = Beim Abbau erhältst du:
+{{itemblock tooltip_ground}}
+@runtime_mushroom_tooltip = Wenn zwei Pilzblöcke desselben Typs gestapelt werden, liefern sie:
+{{itemblock tooltip_ground}}
 @runtime_growable_tooltip = Gesamtwachstumszeit: {0} Sekunden
 Gewachsen {1}%
-@runtime_ground_tooltip = Wasserstand: {0}
+@runtime_ground_hardness_tooltip = Härte: {0}
+@runtime_ground_stability_tooltip = Stabilität: {0}
+@runtime_ground_water_tooltip = Wasserstand: {0}
+@object_descr_dynamite = Explodiert beim Graben. Pflanzen und Ernten verbrauchen beziehungsweise liefern immer 1 Dynamit.
+@object_descr_dynamite_ground = Kann beim Graben Dynamit auf den darunterliegenden Block fallen lassen. Das Dynamit kann geerntet oder durch Graben zur Explosion gebracht werden.
+@object_descr_soot = Mysteriöser Ruß, der beim Aufruf von `measure()` die Anzahl aktiver Dynamitblöcke in der darüberliegenden Schicht angibt. Dynamit, das darauf fällt, explodiert sofort.
+@object_descr_basalt = Weiches Gestein, das beim Abkühlen von Lava entstanden ist. Könnte darunter etwas erhalten geblieben sein?
+@object_descr_treasure_map_ground = Eine Schatzkarte! Wohin sie wohl führt?
+@object_descr_treasure_path_ground = Liegt auf dem Weg von der Schatzkarte zum Ziel.
+@object_descr_treasure_goal_ground = Das Ziel am Ende der Schatzkartenspur. Was hier wohl verborgen ist?
+@object_descr_underground_treasure = Der schwer zu findende Schatz am Ende des Schatzkartenpfads.
+@object_descr_mushroom = Unterirdisch wachsende Pilze. Verwende `measure()`, um ihren Typ zu bestimmen.

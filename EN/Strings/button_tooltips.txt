@@ -10,6 +10,8 @@
 @button_tooltip_delete = Permanently delete this file.
 @button_tooltip_close_docs = Close this window.
 @button_tooltip_table_of_contents = Table of Contents
+@button_tooltip_docs_home = Go to the documentation home page.
+@button_tooltip_docs_back = Go to the previously visited documentation page.
 @button_tooltip_new_game = Create a new save.
 @button_tooltip_open_folder = Open the save folder in the file explorer.
 @button_tooltip_toggle_search_docs = Toggles if the search should include docs windows.
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = Your code triggered a warning. Click the icon to view details in the Output window.
 @option_tooltip_graphics = Affects various render pipeline settings like shadows, ambient occlusion and bloom.
 @option_tooltip_vfx_limit = Limits the number of visual effects that can be played per second.
+@option_tooltip_avalanche_particles = Disable the particles created by cave-ins.
 @option_tooltip_volume = Adjust the volume of all audio.
 @option_tooltip_music_volume = Adjust the volume of the music.
 @option_tooltip_drone_volume = Adjust the volume of the drone buzzing sounds.

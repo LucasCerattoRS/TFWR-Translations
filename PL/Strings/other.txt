@@ -6,13 +6,12 @@
 @average_text2 = {0} Ukończono
 {1}
 @unlocked_in = Więcej powiązanych informacji znajdziesz w: [{0}]({1})
-@table_of_contents_section_general_info = Informacje ogólne
-@table_of_contents_section_programming = Programowanie
-@table_of_contents_section_unlocks = Odblokowania
-@table_of_contents_section_builtins = Funkcje wbudowane
-@table_of_contents_section_items = Przedmioty
-@table_of_contents_section_entities = Obiekty
-@table_of_contents_section_grounds = Podłoża
 @new_hat_unlocked = ## Odblokowano nowy kapelusz
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- prawy klik po więcej informacji --
+@missing_unlock_page = Musisz odblokować {0} w [drzewku technologii](tech_tree), zanim zobaczysz tę stronę.
+
+---
+
+{1}
+@latest_news = Najnowsze wiadomości

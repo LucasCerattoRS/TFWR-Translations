@@ -1,3 +1,5 @@
+[<- Кактус](docs/unlocks/cactus.md)
+---
 # Динозавры
 Динозавры — это древние величественные существа, которых можно разводить для получения древних костей.
 
@@ -21,6 +23,38 @@
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 Если ты снимешь эту шляпу, надев другую, то соберешь хвост.
 При этом ты получишь кости в количестве, равном квадрату длины хвоста. Так, за хвост длиной `n` ты получишь `n**2` `Items.Bone`.
 Например:
@@ -35,12 +69,39 @@
 
 Следующий цикл выводит количество тиков, занимаемых `move()` после любого количества яблок:
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("тики после ", i, " яблок: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("тики после ", i, " яблок: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 У тебя есть только одна шляпа динозавра, поэтому носить ее может только один дрон.
 
-<spoiler=показать подсказку>Если ты будешь двигаться по одному и тому же пути, который покрывает все поле, то легко сможешь каждый раз получать змейку, покрывающую все поле. Не самый эффективный способ, но помогает.
+<spoiler=показать подсказку 1>
+Если ты будешь двигаться по одному и тому же пути, который покрывает все поле, то легко сможешь каждый раз получать змейку, покрывающую все поле. Не самый эффективный способ, но помогает.
 Полный облет фермы очень большого размера может занять много времени. К тому же тебе, возможно, нужно не так много костей. Смело используй `set_world_size()`, чтобы уменьшить ферму до более удобного размера.</spoiler>
+
+---
+
+[Статистика](docs/stats.md)      [Кортежи](docs/scripting/tuples.md)      [Списки](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

@@ -1,27 +1,126 @@
+[<- Ciclo While](docs/scripting/while.md)
+---
 # Break
-`break` permette di interrompere un ciclo in anticipo. Quando viene raggiunta l'istruzione `break`, uscirà immediatamente dal ciclo più interno e inizierà a eseguire il codice dopo il ciclo.
+`break` ti permette di interrompere in anticipo un ciclo. Quando viene raggiunta un'istruzione `break`, questa esce immediatamente dal ciclo più interno e inizia a eseguire il codice successivo a quel ciclo.
 
-`for i in range(10):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(10):
 	break
-print(i)`
-Questo stampa `0` perché `i` è `0` nella prima iterazione del ciclo e poi l'istruzione break termina il ciclo.
+print(i)
+}}
+
+Questo stampa `0` perché `i` vale `0` durante la prima iterazione, dopodiché l'istruzione `break` termina il ciclo.
 
 Funziona anche con i cicli `while`.
 
-`while True:
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Tree)
+#CODE
+while True:
 	if can_harvest():
-		break`
+		break
+harvest()
+}}
 
 Questo codice esegue il ciclo `while` finché `can_harvest()` non è `True`.
-Ha lo stesso effetto di
+Ha lo stesso effetto di:
 
-`while not can_harvest():
-	pass`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Tree)
+#CODE
+while not can_harvest():
+	pass
+harvest()
+}}
 
 Nei cicli annidati, `break` esce sempre dal ciclo più interno.
 
-`for i in range(10):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(10):
 	for j in range(10):
 		break
 		print("questo non viene mai stampato")
-	print("questo viene stampato 10 volte")`
+	print("questo viene stampato 10 volte")
+}}
+
+---
+
+[Ciclo While](docs/scripting/while.md)      [Ciclo For](docs/scripting/for.md)      [Continue](docs/scripting/continue.md)

@@ -1,3 +1,5 @@
+[<- 模拟](docs/unlocks/simulation.md)
+---
 # 排行榜
 如果你走到了这一步，说明已经克服了许多挑战。但你的解决方法是否高效？
 你可以在各种排行榜上与其他玩家竞争，看看谁的耕作方法效率最高。
@@ -13,7 +15,7 @@
 为了减少方差，所有挑战都要求运行至少 2 小时（你可以加速，所以实际不会花那么长时间）。如果挑战提前完成，则会重复运行，直到总时间达到 2 小时。随后，将所有运行过程的平均值作为你的分数上传。
 
 以下是示例设置，可以让你登上干草排行榜。
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## 最快重置
 最快重置是最有声望的类别。从一块农田开始，实现游戏完全自动化，直到再次解锁排行榜。
@@ -21,6 +23,8 @@
 不必解锁全部内容，只需尽快解锁 `Unlocks.Leaderboard`。
 
 请记住，你可以使用 `num_unlocked(unlock) > 0` 来检查某项是否已解锁，也可以对解锁项使用 `get_cost()` 来查看其成本，以便自动耕种正确的物品。
+
+`unlock()` 不受科技树中的前置解锁条件限制。例如，可以先解锁 `Unlocks.Fertilizer`，再解锁 `Unlocks.Water`。
 
 函数调用：
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -127,3 +131,9 @@ simulate(filename, unlocks, items, globals, seed, speedup)`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 成功条件：`num_items(Items.Hay) >= 100000000`
+
+---
+
+[模拟](docs/unlocks/simulation.md)      [计时](docs/unlocks/timing.md)      [自动解锁](docs/unlocks/auto_unlock.md)      [成本](docs/unlocks/costs.md)      [统计](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

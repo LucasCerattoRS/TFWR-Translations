@@ -10,6 +10,8 @@
 @button_tooltip_delete = Löscht diese Datei endgültig.
 @button_tooltip_close_docs = Schließt dieses Fenster.
 @button_tooltip_table_of_contents = Inhaltsverzeichnis
+@button_tooltip_docs_home = Öffnet die Startseite der Dokumentation.
+@button_tooltip_docs_back = Öffnet die zuvor besuchte Dokumentationsseite.
 @button_tooltip_new_game = Neuen Spielstand erstellen.
 @button_tooltip_open_folder = Öffnet den Speicherordner im Datei-Explorer.
 @button_tooltip_toggle_search_docs = Schaltet um, ob die Suche auch Doku-Fenster einschließen soll.
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = Dein Code hat eine Warnung ausgelöst. Klicke auf das Symbol, um Details im Ausgabefenster anzuzeigen.
 @option_tooltip_graphics = Beeinflusst verschiedene Einstellungen der Render-Pipeline wie Schatten, Umgebungsverdeckung und Bloom.
 @option_tooltip_vfx_limit = Begrenzt die Anzahl der visuellen Effekte, die pro Sekunde abgespielt werden können.
+@option_tooltip_avalanche_particles = Deaktiviert die bei Einstürzen entstehenden Partikel.
 @option_tooltip_volume = Regelt die Lautstärke aller Töne.
 @option_tooltip_music_volume = Regelt die Lautstärke der Musik.
 @option_tooltip_drone_volume = Regelt die Lautstärke des Drohnensummens.

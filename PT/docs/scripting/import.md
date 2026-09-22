@@ -1,8 +1,13 @@
+[<- Funções](docs/scripting/functions.md)
+
+---
+
 # Import
+
 Colocar todo o seu código em um único arquivo rapidamente se torna incontrolável. 
 Instruções `import` permitem que você importe funções e variáveis globais de outro arquivo.
 Como funciona em uma captura de tela:
-![](ImportsInOnePicture400)
+![|x400](ImportsInOnePicture)
 
 Aqui, `import module2` executa o arquivo chamado `module2` e te dá acesso a todas as suas variáveis globais.
 Você pode então acessar variáveis e funções dentro do módulo importado usando o operador `.`.
@@ -14,12 +19,14 @@ Você também pode mover as variáveis globais do módulo importado para o escop
 
 `from module2 import print_x
 print_x()`
+
 Importa apenas as variáveis globais especificadas de `module2`.
 
 ou
 
 `from module2 import *
 print_x()`
+
 Importa todas as variáveis globais de `module2`.
 
 Isso também importa o arquivo `module2`, mas em vez de acessá-lo através de uma variável chamada `module2`, ele desempacota as variáveis globais de `module2` e as atribui diretamente no escopo local.
@@ -29,10 +36,12 @@ Esta forma de importação geralmente não é recomendada porque não funciona b
 # Como realmente funciona
 
 ## TLDR
+
 Importações podem ser pouco intuitivas, mas a maioria dos problemas pode ser evitada usando a sintaxe `import file` em vez de `from file import`, e envolvendo tudo que não é uma definição global em
 `if __name__ == "__main__":`
 
 ## Efeitos Colaterais da Importação
+
 A primeira vez que você importa um arquivo, ele executará o arquivo inteiro e então te dará acesso a todas as variáveis que foram definidas durante a execução.
 Se você importar o mesmo arquivo novamente, ele apenas retornará o módulo em cache da primeira vez.
 
@@ -47,50 +56,69 @@ Uma estrutura de arquivo comum em Python é colocar o código que deve ser execu
 
 def main():
     a_local_variable = "local"
-    # do things
+    # faça coisas
 
 if __name__ == "__main__":
     main()`
 
 ## Ciclos de Importação
+
 O que acontece se o arquivo `a` importa o arquivo `b` e o arquivo `b` importa o arquivo `a`?
 
-file `a`:
+arquivo `a`:
+
 `import b
 x = 0`
 
-file `b`:
+arquivo `b`:
+
 `import a
 def f():
     print(a.x)`
 
 Isso funcionará bem. Digamos que nenhum dos dois arquivos esteja carregado ainda, e alguém execute `import a`.
 
--`a` executa até a linha `import b`.
--`b` executa até a linha `import a`.
--O módulo `a` já existe, mas não contém `x` porque só chegou até a linha `import b`.
--`b` armazena uma referência ao módulo `a` parcialmente carregado em uma variável chamada `a`.
--`b` executa a instrução `def` e armazena a função `f()`.
--`a` continua a executar e inicializa `x`.
+- `a` executa até a linha `import b`.
+
+- `b` executa até a linha `import a`.
+
+- O módulo `a` já existe, mas não contém `x` porque só chegou até a linha `import b`.
+
+- `b` armazena uma referência ao módulo `a` parcialmente carregado em uma variável chamada `a`.
+
+- `b` executa a instrução `def` e armazena a função `f()`.
+
+- `a` continua a executar e inicializa `x`.
 
 Quando alguém chama `b.f()`, ele imprimirá corretamente `0` porque o módulo `a` ao qual `b` tem uma referência agora está totalmente carregado.
 
 Agora, considere o mesmo código usando a sintaxe `from`.
 
-file `a`:
+arquivo `a`:
+
 `from b import *
 x = 0`
 
-file `b`:
+arquivo `b`:
+
 `from a import *
 def f():
     print(x)`
 
--`a` executa até a linha `from b import *`.
--`b` executa até a linha `from a import *`.
--O módulo `a` já existe, mas ainda não foi totalmente executado.
--`b` desempacota tudo o que está atualmente em `a` para seu próprio escopo global. Neste ponto, `a` não contém nada porque ainda não chegou à linha `x = 0`, então nada é importado.
--`b` executa a instrução `def` e armazena a função `f()`.
--`a` continua a executar e inicializa `x`.
+- `a` executa até a linha `from b import *`.
+
+- `b` executa até a linha `from a import *`.
+
+- O módulo `a` já existe, mas ainda não foi totalmente executado.
+
+- `b` desempacota tudo o que está atualmente em `a` para seu próprio escopo global. Neste ponto, `a` não contém nada porque ainda não chegou à linha `x = 0`, então nada é importado.
+
+- `b` executa a instrução `def` e armazena a função `f()`.
+
+- `a` continua a executar e inicializa `x`.
 
 Se alguém chamar `b.f()` agora, receberá um erro de que `x` não existe no escopo atual. Isso acontece porque desta vez `b` não tem uma referência ao `a` que ainda está carregando e não vê as definições que foram adicionadas após a importação.
+
+---
+
+[Funções](docs/scripting/functions.md)      [Escopos de Nomes](docs/scripting/scopes.md)

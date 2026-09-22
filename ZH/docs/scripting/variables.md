@@ -1,3 +1,6 @@
+[<- 运算符](docs/scripting/operators.md) <right>[列表 ->](docs/scripting/lists.md)
+<right>[函数 ->](docs/scripting/functions.md)
+---
 # 变量
 变量是用于存放 1 个值的容器，并且可以自定义变量的名字
 `=` 运算符用于声明 1 个变量并为其存储 1 个值（赋值）。
@@ -18,24 +21,76 @@
 
 给变量赋值后，就可在代码中使用这个变量来代替它包含的值。
 
-`a = 5
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+a = 5
 for i in range(a):
-	do_a_flip()`
+	do_a_flip()
+}}
 
 上面的循环执行了 5 次，因为 `a` 被设置为了 `5`。
 `for` 循环中的 `i` 也是一个变量，它在循环的每次迭代中被自动赋为序列的当前值。（它不一定非要叫 `i`，你可以给它取任何有效的变量名。）
 
-变量也让你能用 `while` 循环做同样的事情：
+变量也让你能用 while 循环做同样的事情：
 
-`a = 5
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+a = 5
 i = 0
 while i < a:
 	do_a_flip()
-	i = i + 1`
+	i = i + 1
+}}
 
 这和上面的 `for` 循环做的是同样的事情。我们只需要手动递增 `i`。
-注意，要递增 i，我们把它设为它自己的值加上 `1`。根据变量的旧值来改变它的值是十分常见的操作。
+注意，要递增 `i`，我们把它设为它自己的值加上 `1`。根据变量的旧值来改变它的值是十分常见的操作。
 这些运算符可以用来简化过程：`+=, -=, *=, /=, %=`
 
 `i = i + 1` 和 `i += 1` 是一样的
 `a = a / 3` 和 `a /= 3` 是一样的
+
+---
+
+[运算符](docs/scripting/operators.md)      [While 循环](docs/scripting/while.md)      [For 循环](docs/scripting/for.md)      [函数](docs/scripting/functions.md)      [名称作用域](docs/scripting/scopes.md)

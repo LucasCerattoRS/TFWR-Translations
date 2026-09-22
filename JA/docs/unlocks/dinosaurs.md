@@ -1,3 +1,5 @@
+[<- サボテン](docs/unlocks/cactus.md)
+---
 # 恐竜
 恐竜は古代の雄大な生き物で、古代の骨のために養殖することができます。
 
@@ -21,6 +23,38 @@
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 別の帽子を装備して帽子を再び外すと、尻尾が収穫されます。
 尻尾の長さの2乗に等しい骨を受け取ります。したがって、長さ `n` の尻尾の場合、`n**2` 個の `Items.Bone` を受け取ります。
 例:
@@ -35,12 +69,39 @@
 
 次のループは、任意の数のリンゴの後の `move()` が使用するticksの数を表示します:
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("ticks after ", i, " apples: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("リンゴを ", i, " 個集めた後のティック数: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 恐竜の帽子は1つしかないので、1つのドローンしかかぶれません。
 
-<spoiler=show hint 1>フィールド全体をカバーする同じ経路に沿って移動し続けると、毎回フィールド全体をカバーするヘビを簡単に手に入れることができます。あまり効率的ではありませんが、うまくいきます。
+<spoiler=ヒント1を表示>
+フィールド全体をカバーする同じ経路に沿って移動し続けると、毎回フィールド全体をカバーするヘビを簡単に手に入れることができます。あまり効率的ではありませんが、うまくいきます。
 非常に大きな農場を完全に横断するには長い時間がかかる場合があり、実際にはそれほど多くの骨は必要ないかもしれません。`set_world_size()` を自由に使って、農場のサイズをより便利なものに変更してください。</spoiler>
+
+---
+
+[統計](docs/stats.md)      [タプル](docs/scripting/tuples.md)      [リスト](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

@@ -8,18 +8,50 @@ Może rosnąć na {3}.
 @object_descr_bush = Mały krzak, z którego wypada `Items.Wood`.
 @object_descr_tree = Z drzew wypada więcej drewna niż z krzaków. Rosną dłużej, jeśli obok nich rosną inne drzewa.
 @object_descr_carrot = Marchewki!
+@object_descr_rice = Ryż można sadzić na warstwie gliny znalezionej pod ziemią.
+@object_descr_bamboo = Bambus może urosnąć bardzo wysoko, ale zakwita na określonej wysokości. Największy plon otrzymasz, jeśli zbierzesz go dokładnie na wysokości, na której kwitnie.
 @object_descr_pumpkin = Dynie rosną razem, gdy znajdują się obok innych w pełni wyrośniętych dyń. Około 1 na 5 dyń umiera, gdy dorośnie.
 @object_descr_dead_pumpkin = Jedna na pięć dyń umiera, gdy dorośnie, pozostawiając po sobie martwą dynię. Martwe dynie są bezużyteczne i znikają, gdy posadzi się coś nowego.
 @object_descr_sunflower = Słoneczniki zbierają moc ze słońca. Zbieranie ich da ci `Items.Power`.
 Jeśli zbierzesz słonecznik z maksymalną liczbą płatków, otrzymasz dodatkową moc.
 @object_descr_cactus = Kaktusy występują w 10 różnych rozmiarach. Po zebraniu sąsiednie kaktusy, które są "posortowane", również zostaną zebrane.
 @object_descr_hedge = Część labiryntu.
-@object_descr_treasure = Skarb, który zawiera złoto równe długości boku labiryntu, w którym jest ukryty. Można go zebrać jak roślinę.
+@object_descr_treasure = Skarb zawierający ilość złota równą powierzchni labiryntu, w którym jest ukryty. Można go zebrać jak roślinę.
 @object_descr_dinosaur = Kawałek ogona kapelusza dinozaura.
 @object_descr_grassland = Domyślne podłoże. Trawa będzie na nim rosła automatycznie.
 @object_descr_soil = Wywołanie `till()` zamienia ziemię w glebę. Ponowne wywołanie `till()` zmienia ją z powrotem w teren trawiasty.
+@object_descr_dirt = To ziemia.
+@object_descr_rock = To twarda skała.
+@object_descr_clay = Blok gliny. Żyzne podłoże, idealne dla ryżu. Gdy ryż dojrzeje, zamienia glinę pod sobą z powrotem w ziemię.
+@object_descr_blue_block = Niebieski blok.
+@object_descr_red_block = Czerwony blok.
+@object_descr_green_block = Zielony blok.
+@object_descr_coal = Blok bogaty w węgiel osadowy.
+@object_descr_iron = Blok zawierający surowy magnetyt.
+@object_descr_quartz = Blok otaczający krystaliczny kwarc.
+@object_descr_limestone = Białawy wapień. Stanowi fundament starożytnych piramid.
+@object_descr_sand = Blok piasku. Część starożytnej piramidy.
+@object_descr_bedrock = Niezniszczalne.
+@object_descr_petrified_pumpkin = Skamieniała dynia. Wciąż nadaje się do jedzenia.
+@object_descr_loam = Żyzna gleba próchnicza, idealna do uprawy niektórych roślin. Posadzone tutaj słoneczniki i marchewki dają podwójny plon.
+@object_descr_perlite = Ziemia o dużej zawartości perlitu, idealna do uprawy niektórych roślin. Posadzone tutaj krzaki, kaktusy, bambus i drzewa dają podwójny plon.
 @runtime_entity_tooltip = Po zebraniu daje:
 {{itemblock tooltip}}
+@runtime_ground_tooltip = Po wydobyciu daje:
+{{itemblock tooltip_ground}}
+@runtime_mushroom_tooltip = Gdy dwa bloki grzybów tego samego rodzaju znajdą się jeden na drugim, dają:
+{{itemblock tooltip_ground}}
 @runtime_growable_tooltip = Całkowity czas wzrostu: {0} sekund
 Wzrost: {1}%
-@runtime_ground_tooltip = Poziom wody: {0}
+@runtime_ground_hardness_tooltip = Twardość: {0}
+@runtime_ground_stability_tooltip = Stabilność: {0}
+@runtime_ground_water_tooltip = Poziom wody: {0}
+@object_descr_dynamite = Eksploduje po dokopaniu się do niego. Sadzenie i zbieranie zawsze zużywają i dają 1 dynamit.
+@object_descr_dynamite_ground = Podczas kopania może upuścić dynamit na blok poniżej. Dynamit można zebrać lub dokopać się do niego, aby wywołać eksplozję.
+@object_descr_soot = Tajemnicza sadza, która po wywołaniu `measure()` zlicza aktywne dynamity w warstwie powyżej. Natychmiast detonuje każdy dynamit, który na nią spadnie.
+@object_descr_basalt = Miękka skała powstała w wyniku stygnięcia lawy. Może coś zachowało się poniżej?
+@object_descr_treasure_map_ground = Mapa skarbów! Dokąd może prowadzić?
+@object_descr_treasure_path_ground = Znajduje się na ścieżce prowadzącej od mapy skarbów do celu.
+@object_descr_treasure_goal_ground = Cel na końcu szlaku z mapy skarbów. Co może być tutaj ukryte?
+@object_descr_underground_treasure = Nieuchwytny skarb znajdujący się na końcu ścieżki z mapy skarbów.
+@object_descr_mushroom = Grzyby rosnące pod ziemią. Użyj `measure()`, aby ustalić rodzaj grzyba.

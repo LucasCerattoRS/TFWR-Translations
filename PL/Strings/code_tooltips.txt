@@ -110,6 +110,16 @@ zajmuje `1` tick.
 
 przykład:
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+Pobiera bieżącą współrzędną osi z drona.
+Współrzędna osi z zaczyna się od `0` i zmniejsza się podczas kopania w dół.
+
+zwraca liczbę reprezentującą bieżącą współrzędną osi z drona.
+
+zajmuje `1` tick.
+
+przykład:
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 Pobiera aktualny rozmiar farmy.
 
@@ -140,6 +150,26 @@ zajmuje `1` tick.
 przykład:
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+Sprawdza twardość podłoża pod dronem.
+
+zwraca twardość podłoża pod dronem.
+
+zajmuje `1` tick.
+
+przykład:
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+Sprawdza stabilność podłoża pod dronem.
+
+zwraca stabilność podłoża pod dronem.
+
+zajmuje `1` tick.
+
+przykład:
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 Pobiera aktualny czas gry.
 
@@ -342,7 +372,7 @@ przykład:
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("Towarzysz:", plant_type, "w pozycji", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)` 
 Ma dokładnie taki sam efekt jak kliknięcie przycisku odpowiadającego danemu odblokowaniu (`unlock`) w drzewku badań.
 
@@ -439,7 +469,6 @@ while True:
     if spawn_drone(harvest_column, i):
         move(East)
         i = (i + 1) % 10`
-
 @code_tooltip_wait_for = `wait_for(drone)`
 Czeka, aż dany dron (`drone`) zakończy działanie.
 
@@ -476,7 +505,7 @@ zajmuje `1` tick.
 
 przykład:
 `while num_drones() < max_drones():
-    spawn_drone("jakaś_nazwa_pliku")
+    spawn_drone(task)
     move(East)`
 @code_tooltip_num_drones = `num_drones()`
 
@@ -486,7 +515,7 @@ zajmuje `1` tick.
 
 przykład:
 `while num_drones() < max_drones():
-    spawn_drone("jakaś_nazwa_pliku")
+    spawn_drone(task)
     move(East)`
 @code_tooltip_quick_print = `quick_print(*args)`
 Wyświetla wartość tak jak `print(*args)`, ale nie zatrzymuje się, aby wypisać ją w powietrzu, więc można ją znaleźć tylko na stronie wyjściowej.
@@ -627,3 +656,59 @@ list.insert(0, 0)`
 @code_tooltip_or = Sprawdza pierwszy operand. Jeśli jest prawdziwy (wszystko inne niż `False`, `0` i puste kolekcje), natychmiast zwraca tę wartość (skracając ocenę), w przeciwnym razie sprawdza i zwraca drugi operand.
 @code_tooltip_return = Służy do zwracania wartości z funkcji.
 @code_tooltip_pass = Nic nie robi. Może być przydatne, ponieważ puste bloki kodu nie są dozwolone.
+@code_tooltip_dig = `dig()`
+Kopie pole w dół.
+
+Prędkość kopania zależy od twardości bloku i siły wiertła drona.
+
+przykład:
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+Zużywa węgiel do poszukiwania żelaza.
+
+zwraca kierunek do najbliższej rudy żelaza (`North`, `East`, `South` lub `West`), jeśli znajduje się ona w pobliżu. Zwraca `None`, jeśli w pobliżu nie ma żelaza, nie masz wystarczająco dużo węgla albo dron znajduje się już nad kawałkiem żelaza.
+
+wykonanie kosztuje 1 węgiel.
+
+przykład:
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+Zużywa żelazo do poszukiwania kwarcu.
+
+zwraca odległość euklidesową (odległość 3D) od drona do najbliższego bloku kwarcu albo `None`, jeśli w pobliżu nie ma kwarcu.
+
+wykonanie kosztuje 1 żelazo.
+
+przykład:
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+Umieszcza bloki.
+
+Możesz określić blok, który ma zostać umieszczony. Można umieszczać tylko bloki bez specjalnej funkcji. Możesz na przykład użyć `place(Grounds.Rock)`, ale nie `place(Grounds.Clay)`.
+
+przykład:
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+Popycha blok grzyba pod dronem.
+
+Nie można popychać bloków w górę.
+
+zwraca `True`, jeśli blok został popchnięty, w przeciwnym razie `False`.
+
+przykład:
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+Sprawdza, czy można popchnąć blok pod dronem.
+
+zwraca `True`, jeśli można popchnąć blok pod dronem, w przeciwnym razie `False`.
+
+przykład:
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+Przenosi drona do podziemnego obiektu związanego z `unlock`.
+
+Możesz wykonać `jump` tylko raz w skrypcie.
+
+przykład:
+`jump(Unlocks.Iron)`

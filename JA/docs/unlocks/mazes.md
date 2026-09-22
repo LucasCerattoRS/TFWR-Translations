@@ -1,17 +1,44 @@
+[<- 肥料](docs/unlocks/fertilizer.md) <right>[メガファーム ->](docs/unlocks/megafarm.md)
+---
 # 迷路
-`Items.Weird_Substance`は、[肥料](docs/unlocks/fertilizer.md)で植物を育てることで得られ、茂みに奇妙な効果をもたらします。ドローンが茂みの上にいるときに `use_item(Items.Weird_Substance, amount)` を呼び出すと、茂みは生垣の迷路に成長します。
+`Items.Weird_Substance` は茂みに奇妙な効果をもたらします。ドローンが茂みの上にいるときに `use_item(Items.Weird_Substance, amount)` を呼び出すと、茂みは生垣の迷路に成長します。
 迷路のサイズは、使用される`Items.Weird_Substance`の量（`use_item()`呼び出しの2番目の引数）によって異なります。
 迷路のアップグレードがない場合、`n`個の`Items.Weird_Substance`を使用すると、`n`x`n`の迷路ができます。各迷路アップグレードレベルは宝物を2倍にしますが、必要な`Items.Weird_Substance`の量も2倍になります。
 したがって、フィールドいっぱいの迷路を作るには:
 
-`plant(Entities.Bush)
-substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
-use_item(Items.Weird_Substance, substance)`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+}}
 
 
 どういうわけか、ドローンはそれほど高くないように見える生垣の上を飛ぶことができません。
 
-生垣のどこかに宝物が隠されています。宝物に対して `harvest()` を使用すると、迷路の面積に等しいゴールドを受け取ります。（例えば、5x5の迷路は25ゴールドをもたらします。）
+迷路のどこかに宝物が隠されています。宝物に対して `harvest()` を使用すると、迷路の面積に等しいゴールドを受け取ります。（例えば、5x5の迷路は25ゴールドをもたらします。）
 
 他の場所で `harvest()` を使用すると、迷路は単に消えてしまいます。
 
@@ -23,6 +50,44 @@ use_item(Items.Weird_Substance, substance)`
 `move()` は成功した場合は `True` を、それ以外の場合は `False` を返します。
 
 `can_move()` を使用すると、移動せずに壁があるかどうかを確認できます。
+
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+quick_print(
+    can_move(North), 
+    can_move(East), 
+    can_move(South), 
+    can_move(West)
+)
+if move(North) and get_entity_type() == Entities.Treasure:
+    harvest()
+}}
 
 宝物への行き方がわからない場合は、ヒント1を見てください。このような問題へのアプローチ方法が示されています。
 
@@ -41,7 +106,8 @@ use_item(Items.Weird_Substance, substance)`
 
 宝物は最大300回まで再配置できます。その後、宝物に奇妙な物質を使用しても、中のゴールドは増えなくなり、それ以上移動しなくなります。
 
-<spoiler=show hint 1>問題解決への一般的なアプローチは次のとおりです:
+<spoiler=ヒント1を表示>
+問題解決への一般的なアプローチは次のとおりです:
 
 迷路を作成し、自分がドローンであると想像してください。
 
@@ -51,21 +117,96 @@ use_item(Items.Weird_Substance, substance)`
 
 次に、あなたのステップをコードに翻訳してみてください。
 </spoiler>
-<spoiler=show hint 2>ループがない限り: すべての壁は実際には1つの大きなつながった壁です。壁に沿って進むと、迷路全体を通り抜けることになります。
-このアプローチは非常に少ないコードで済み、すでにどこにいたかを追跡する必要はありません。約10行のコードで十分です。</spoiler>
-<spoiler=show hint 3>ドローンを東や西のような絶対的な方向に動かす代わりに、「右に曲がる」や「左に曲がる」のような相対的な方向に動かすと非常に便利です。これを行うには、ドローンが現在どちらの方向に動いているかを追跡する必要があります。ドローンは実際には回転しませんが、コード内で「仮想的」な回転を維持することができます。
+<spoiler=ヒント2を表示>
+ループがない限り、すべての壁は1つの大きなつながった壁です。左手を壁に当ててたどれば、迷路全体を通り抜けられます。
+このアプローチは非常に少ないコードで済み、すでにどこにいたかを追跡する必要はありません。約10行のコードで十分です。
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+directions = [North, East, South, West]
+index = 0
+while get_entity_type() != Entities.Treasure:
+    index = (index - 1) % 4
+    for _ in range(4):
+        if move(directions[index]):
+            break
+        index = (index + 1) % 4
+do_a_flip()
+harvest()
+}}
+</spoiler>
+<spoiler=ヒント3を表示>
+ドローンを東や西のような絶対的な方向に動かす代わりに、「右に曲がる」や「左に曲がる」のような相対的な方向に動かすと非常に便利です。これを行うには、ドローンが現在どちらの方向に動いているかを追跡する必要があります。ドローンは実際には回転しませんが、コード内で「仮想的」な回転を維持することができます。
 次のインデックストリックが役立ちます:
 
-`directions = [North, East, South, West]
-index = 0`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+directions = [North, East, South, West]
+index = 0
+move(directions[index])
 
-`% 4` を使用して、「円の周り」を回転できるようにし、`West` の後に `North` にラップバックするようにします。
-`# 右に曲がる
-index = (index + 1) % 4`
+#右に曲がる
+index = (index + 1) % 4
+move(directions[index])
 
-`# 左に曲がる
+#左に曲がる
 index = (index - 1) % 4
+move(directions[index])
+}}
 
-move(directions[index])`</spoiler>
-<spoiler=show hint 4>もし解けない場合は、いつでも楽をして効率の悪い方法でやることができます。
+
+`% 4` を使うと方角を一周させられます。`4 % 4 == 0` かつ `-1 % 4 == 3` なので、`3 (West) + 1` は再び `0 (North)` になります。</spoiler>
+<spoiler=ヒント4を表示>
+解けない場合は、効率の低い方法を使って問題を単純にすることもできます。
 `1`x`1`の迷路を解くのは簡単です。</spoiler>
+
+---
+
+[統計](docs/stats.md)      [リスト](docs/scripting/lists.md)      [辞書](docs/scripting/dicts.md)      [タプル](docs/scripting/tuples.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [can_move()](functions/can_move)      [move()](functions/move)      [use_item()](functions/use_item)

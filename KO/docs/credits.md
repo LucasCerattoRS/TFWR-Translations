@@ -1,6 +1,6 @@
 # 크레딧
 
-## The Farmer Was Replaced
+## 농부는 대체되었다
 
 ### 프로그래밍, 게임 디자인 및 아트
 Timon Herzog
@@ -35,6 +35,7 @@ Ivan Bondar
 Jimmy Sheep
 Taigo Nakajima
 НУІ
+Lucas Ceratto (@LucasCerattoRS)
 
 ### Discord 관리자
 MrBlobfish
@@ -46,5 +47,6 @@ Jeff Siebold aka Noon Knight
 Jonas Bornhöft
 ThatMerlinGuy
 Zoroark Zwart
+arch
 Ramón Buchenberger
 Swiss Game Hub

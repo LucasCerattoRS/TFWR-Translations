@@ -1,5 +1,9 @@
 # Estadísticas
 
-En los últimos 60 segundos has conseguido: {{itemblock stats_sum}}
+Durante los últimos 60 segundos, has cosechado: {{itemblock stats_sum}}
 
-Tu mejor marca personal por recurso es: {{itemblock stats_best}}
+Tus mejores marcas personales por recurso son: {{itemblock stats_best}}
+
+---
+
+[Tablas de clasificación](docs/unlocks/leaderboard.md)      [Temporización](docs/unlocks/timing.md)      [Simulación](docs/unlocks/simulation.md)

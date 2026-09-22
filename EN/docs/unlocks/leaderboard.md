@@ -1,26 +1,30 @@
+[<- Simulation](docs/unlocks/simulation.md)
+---
 # Leaderboard
 If you have made it this far, you have overcome many challenges. But have you solved them efficiently? 
 You can compete with other players on various leaderboards for the most efficient farming methods.
 
 You can start a leaderboard run by calling `leaderboard_run(leaderboard, filename, speedup)`.
-This starts a [simulation](docs/unlocks/simulation.md) similar to `simulate()` except that the starting conditions are fixed. Each leaderboard category has different start and success conditions.
+This starts a [simulation](docs/unlocks/simulation.md) similar to `simulate()`, except that the starting conditions are fixed. Each leaderboard category has different starting and success conditions.
 
 The leaderboard run succeeds if the success condition is `True` when the simulation ends. 
 
 The simulation will NOT end automatically when the goal is reached. You must make sure that the program terminates.
 If the run is successful, your time will be added to the leaderboard.
 
-To reduce variance, all runs are required to run for at least 2 hours (You can speed it up, so it won't take that long). If a run is completed earlier, it will be repeated until a total time of 2 hours is reached. The average of all runs is then uploaded as your score.
+To reduce variance, all runs must cover at least 2 hours of simulated time. You can speed up the simulation, so it won't take that long in real time. If a run finishes earlier, it will be repeated until the total simulated time reaches 2 hours. The average time across all runs is then uploaded as your score.
 
 Here's an example setup that will get you on the hay leaderboard.
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## Fastest Reset
-The fastest reset is the most prestigious category. Completely automate the game from a single farm plot to unlocking the leaderboards again.
+The fastest reset is the most prestigious category. In this category, you completely automate the game, starting with a single farm plot and ending when you unlock the leaderboards again.
 
 You do not have to unlock everything, just try to unlock `Unlocks.Leaderboard` as fast as possible.
 
-Remember that you can use `num_unlocked(unlock) > 0` to check if something is unlocked and you can use `get_cost()` on unlocks to see what they cost so you can automatically farm the right items.
+Remember that you can use `num_unlocked(unlock) > 0` to check whether something is unlocked. You can also use `get_cost()` on unlocks to see what they cost, allowing you to farm the right items automatically.
+
+`unlock()` does not care about tech tree dependencies. For example, it is possible to unlock `Unlocks.Fertilizer` before `Unlocks.Water`.
 
 Function Call:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -98,7 +102,7 @@ Success Condition: `num_items(Items.Carrot) >= 2000000000`
 Success Condition: `num_items(Items.Hay) >= 2000000000`
 
 ## Single Drone Leaderboards
-There are also Leaderboards for farming with a single drone. You only get one drone and an 8x8 farm and have to farm a certain amount of resources as quickly as possible.
+There are also leaderboards for farming with a single drone. You get only one drone and an 8x8 farm, and you must farm a certain amount of resources as quickly as possible.
 
 ### `Leaderboards.Maze_Single`
 `leaderboard_run(Leaderboards.Maze_Single, filename, speedup)`
@@ -127,3 +131,9 @@ Success Condition: `num_items(Items.Carrot) >= 100000000`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 Success Condition: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[Simulation](docs/unlocks/simulation.md)      [Timing](docs/unlocks/timing.md)      [Auto Unlocks](docs/unlocks/auto_unlock.md)      [Costs](docs/unlocks/costs.md)      [Stats](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

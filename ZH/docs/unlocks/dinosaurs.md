@@ -1,3 +1,5 @@
+[<- 仙人掌](docs/unlocks/cactus.md)
+---
 # 恐龙
 恐龙是古老而奇伟的生物，可以养殖以获取远古骨头。
 
@@ -21,6 +23,38 @@
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 当通过装备不同的帽子再次卸下这顶帽子时，便会收获尾巴。
 你将获得等于尾巴长度平方数量的骨头。因此，若尾巴长度为 `n`，则将获得 `n**2` 根 `Items.Bone`。
 例如：
@@ -35,12 +69,38 @@
 
 以下循环打印出吃掉任意数量苹果后 `move()` 使用的 ticks 数量：
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("吃掉 ", i, " 颗苹果后的 ticks: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("吃掉 ", i, " 颗苹果后的 ticks: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 你只有一顶恐龙帽，所以只有一架无人机可以佩戴它。
 
 <spoiler=显示提示 1>如果始终沿着覆盖整个场地的同一路径移动，那么每次都能轻松地得到一条覆盖整个场地的尾巴蛇。虽然效率不高，但确实可行。
 完全遍历一个非常大的农场可能需要很长时间，而且你实际上可能并不需要那么多骨头。不妨使用 `set_world_size()` 将农场改为更方便覆盖的大小。</spoiler>
+
+---
+
+[统计](docs/stats.md)      [元组](docs/scripting/tuples.md)      [列表](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

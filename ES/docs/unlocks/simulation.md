@@ -1,3 +1,5 @@
+[<- Temporización](docs/unlocks/timing.md) <right>[Tabla de clasificación ->](docs/unlocks/leaderboard.md)
+---
 # Simulación
 
 Las simulaciones te permiten probar código rápidamente sin cambiar el estado de la granja real.
@@ -29,10 +31,10 @@ ejecutar la simulación
 La función `simulate()` devuelve el tiempo, en segundos, que tardó en simular el archivo de inicio dado.
 
 ### Nombre de Archivo
-El primer argumento de la función `simulate` es el nombre del archivo. Este es el nombre que se muestra en la parte superior de la ventana de código. La simulación ejecutará el archivo especificado como si hubieras hecho clic en el botón Ejecutar.
+El primer argumento de la función `simulate()` es el nombre del archivo. Es el nombre que aparece en la parte superior de la ventana de código. La simulación ejecutará el archivo especificado como si hubieras pulsado su botón Ejecutar.
 
 ### Desbloqueos Iniciales
-Todas las características de programación como bucles, sentencias if, listas, diccionarios,... siempre permanecerán desbloqueadas. 
+Todas las funciones de programación, como los bucles, las instrucciones `if`, las listas y los diccionarios, permanecen siempre desbloqueadas.
 
 El segundo argumento te permite especificar con qué desbloqueos/mejoras debe comenzar la simulación, además de las características de programación. Esto debe ser una secuencia de desbloqueos. La simulación comenzará con todos los desbloqueos en la secuencia mejorados a su nivel máximo.
 
@@ -55,4 +57,10 @@ La semilla aleatoria afecta a todo, desde los tiempos de crecimiento de las plan
 ### Aceleración
 El sexto argumento es la aceleración inicial de la simulación. Esto te permite probar las cosas rápidamente. Si el juego no puede mantener la velocidad establecida, se ralentizará automáticamente.
 
-La aceleración no afecta el resultado de la simulación de ninguna manera. Solo existe para reducir el tiempo de espera.
+La aceleración no afecta en modo alguno al resultado de la simulación. Solo sirve para reducir el tiempo de espera.
+
+---
+
+[Diccionarios](docs/scripting/dicts.md)      [Temporización](docs/unlocks/timing.md)      [Depuración](docs/scripting/debug.md)      [Tablas de clasificación](docs/unlocks/leaderboard.md)
+
+[simulate()](functions/simulate)

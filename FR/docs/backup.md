@@ -7,3 +7,7 @@ La manière la plus simple de charger une sauvegarde est de copier le dossier de
 
 Une sauvegarde est un dossier contenant un fichier `save.json` et un tas de fichiers `.py`.
 Si tu n'as perdu que quelques fichiers de code, ou si les fichiers de code sont toujours là mais que le fichier `save.json` est corrompu, tu peux aussi remplacer uniquement les parties corrompues par les fichiers correspondants de la sauvegarde.
+
+---
+
+[Éditeur externe](docs/external_editor.md)      [Pour commencer](docs/getting_started.md)

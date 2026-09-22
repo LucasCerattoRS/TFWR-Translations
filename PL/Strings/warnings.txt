@@ -2,7 +2,10 @@
 @warning_no_space_to_plant = Próbowano zasadzić {0}, ale coś już tam było.
 @warning_cant_plant_on_ground = Nie można sadzić {0} na {1}.
 @warning_missing_seed = Brak wymaganych przedmiotów do zasadzenia {0}.
+@warning_not_enough_coal = Za mało węgla, aby szukać żelaza.
+@warning_not_enough_iron = Za mało żelaza, aby szukać kwarcu.
 @warning_no_item_to_use = Próbowano użyć {0}, ale brakowało wystarczającej ilości.
+@warning_cannot_place_ground = Nie można umieścić {0}, ponieważ jest to specjalny blok.
 @warning_failed_swap_wrap = Próbowano dokonać zamiany poza granicami farmy. To jest niedozwolone.
 @warning_failed_swap_unswappable = Próbowano zamienić {0}, którego nie można zamienić.
 @warning_weird_substance_not_divisible = Użyto liczby Dziwnej Substancji, która nie jest dokładnie równa liczbie potrzebnej do stworzenia labiryntu. Nie zapominaj, że ilość wymaganej Dziwnej Substancji wzrasta w miarę ulepszania labiryntu.

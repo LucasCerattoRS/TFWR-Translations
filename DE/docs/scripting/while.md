@@ -1,3 +1,5 @@
+[<- Erstes Programm](docs/first_program.md) <right>[Geschwindigkeitsverbesserung ->](docs/unlocks/speed.md)
+---
 # While-Schleife
 Du hast die `while`-Schleife und die Werte `True` und `False` freigeschaltet. Die `while`-Schleife führt den Schleifenkörper so lange aus, wie die Bedingung `True` ist.
 
@@ -9,10 +11,34 @@ Mach dir keine Sorgen über Endlosschleifen. Die Verzögerungen in der Ausführu
 ## Für Anfänger
 Vielleicht hast du schon versucht, mehrere `harvest()`-Aufrufe hintereinander zu setzen:
 
-`harvest()
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
 harvest()
-harvest()`
-
+harvest()
+harvest()
+}}
 Dies ermöglicht es dir, mehrmals in einem Programmlauf zu ernten.
 Es wäre jedoch schön, mehr als dreimal zu ernten, und denselben Code mehrmals zu schreiben, ist schlechte Praxis.
 Die Lösung ist eine Schleife.
@@ -33,24 +59,102 @@ Wobei du "condition" durch einen booleschen Wert und `#loop body` durch das erse
 
 Es gibt zwei konstante boolesche Werte. Konstanten sind Werte, die sich während des Programms nie ändern.
 
-Um einen konstanten booleschen Wert zu erstellen, der immer `True` ist, kannst du einfach `True` schreiben. Schreibe `False` für einen konstanten booleschen Wert, der immer `False` sein wird.
+Um einen konstanten booleschen Wert zu erstellen, schreibst du einfach `True` oder `False`.
 Du könntest also entweder schreiben
 
-
-`while False:
-	do_a_flip()`
-
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while False:
+	do_a_flip()
+}}
 oder
 
-`while True:
-	do_a_flip()`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+}}
+Die erste Schleife führt nie einen Salto aus, während die zweite endlos Saltos ausführt (eine Endlosschleife).
 
-Die erste wird niemals einen Salto machen und die zweite wird für immer Saltos machen (eine Endlosschleife).
-
-Normalerweise ist das Erstellen einer Endlosschleife eine schlechte Idee, da sie das Programm zum Absturz bringen würde, aber in diesem Spiel gibt es Verzögerungen zwischen jeder Iteration der Schleife, sodass die Drohne so lange Saltos macht, bis du sie manuell stoppst, indem du erneut auf den Ausführen-Button drückst.
+Normalerweise ist eine Endlosschleife keine gute Idee, da sie das Programm zum Stillstand bringt. In diesem Spiel gibt es jedoch Verzögerungen zwischen den Schleifendurchläufen. Die Drohne macht daher so lange Saltos, bis du sie manuell stoppst, indem du erneut auf den Ausführen-Button drückst.
 
 Beachte, wie die Zeile nach dem Doppelpunkt eingerückt ist. Solche Einrückungen werden verwendet, um Codeblöcke zu trennen.
-Drücke einfach die Tab-Taste, um eine Einrückung hinzuzufügen, und Umschalt + Tab (oder Rücktaste), um sie zu entfernen.
+Drücke einfach die Tab-Taste, um eine Einrückung hinzuzufügen, und Umschalt + Tab (oder Rücktaste), um sie zu entfernen. Wenn mehrere Zeilen ausgewählt sind, werden Tab und Umschalt + Tab auf alle angewendet.
 
-Die Schleife wiederholt alle eingerückten Anweisungen nach dem Doppelpunkt.
-Anweisungen nach dem eingerückten Block werden ausgeführt, nachdem die Schleife beendet ist.
+Hinweis: Wenn du das Spiel über Steam spielst, öffnet Umschalt + Tab stattdessen das Steam-Overlay. Du kannst die Tastenkombination zum Entfernen der Einrückung in den Spieloptionen oder die Tastenkombination für das Steam-Overlay in dessen Optionen ändern.
+
+Hier werden `do_a_flip()` und `pet_the_piggy()` wiederholt aufgerufen, weil sie sich im eingerückten `while`-Block befinden. `harvest()` wird jedoch nie ausgeführt, da es nach diesem Block steht.
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	do_a_flip()
+	pet_the_piggy()
+harvest()
+}}
+
+---
+
+[For-Schleife](docs/scripting/for.md)      [If](docs/scripting/if.md)      [Break](docs/scripting/break.md)      [Continue](docs/scripting/continue.md)      [Externer Editor](docs/external_editor.md)

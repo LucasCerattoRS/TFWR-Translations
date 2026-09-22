@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Koszt odblokowania {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Wymagania odblokowania
+Odblokowanie {0} musi mieć poziom {1} lub wyższy.
 @unlock_descr_trees = Odblokowuje drzewa.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = To prawie jak pszenica, gdyby pszenica rosła na glinie.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Używaj list do przechowywania wielu wartości.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -107,8 +113,41 @@ other_file.function()`
 @unlock_descr_megafarm = Więcej dronów!
 
 `spawn_drone(task)`
+@unlock_descr_mining = Daje dronowi wiertło. I górniczy kapelusz.
+
+`dig()`
+@unlock_descr_coal = Pod ziemią pojawiają się złoża węgla.
+@unlock_descr_iron = Pod ziemią pojawiają się żyły rudy żelaza.
+@unlock_descr_pyramid = Pod ziemią pojawiają się starożytne budowle z piaskowca.
+@unlock_descr_quartz = Pod ziemią pojawiają się igły kwarcu.
+@unlock_descr_ore_boost = Podwaja plon węgla. Podwaja rozmiar żył żelaza i kwarcu.
+@unlock_descr_jump = Pozwala dronowi przenieść się w dół.
+@unlock_descr_prospecting = Używaj węgla do poszukiwania żelaza!
+
+`prospect_iron()`
+@unlock_descr_drill = Zwiększa siłę wiertła.
+@unlock_descr_debug_place = Umieszczaj kolorowe bloki.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Czujniki drona do interakcji z podziemnymi polami.
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Pod ziemią pojawiają się skamieniałe dynie.
+@unlock_descr_special_soils = Odkrywaj warstwy gleby próchniczej i perlitu, aby zwiększyć plon roślin.
+@unlock_descr_bamboo = Sadź bambus i patrz, jak rośnie.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Znajduj i używaj dynamitu, aby wysadzać różne rzeczy.
+@unlock_descr_treasure_map = Poluj na skarb ukryty głęboko pod ziemią.
+@unlock_descr_mushrooms = Znajduj i zbieraj podziemne grzyby, dopasowując ich rodzaj.
 @multi_unlock_descr_expand = Rozszerza farmę. To również czyści farmę.
 @multi_unlock_descr_carrots = Zwiększa plon i koszt marchewek.
+@multi_unlock_descr_rice = Zwiększa plon i koszt ryżu.
 @multi_unlock_descr_trees = Zwiększa plon krzaków i drzew.
 @multi_unlock_descr_pumpkins = Zwiększa plon i koszt dyń.
 @multi_unlock_descr_mazes = Zwiększa ilość złota w skrzyniach ze skarbami i ilość dziwnej substancji potrzebnej do stworzenia labiryntu.
@@ -119,9 +158,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Otrzymuj więcej wody.
 @multi_unlock_descr_fertilizer = Otrzymuj więcej nawozu.
 @multi_unlock_descr_megafarm = Dalsze zwiększenie liczby dronów.
+@multi_unlock_descr_drill = Zwiększa prędkość wiercenia.
+@multi_unlock_descr_coal = Pod ziemią pojawia się więcej pokładów węgla.
+@multi_unlock_descr_iron = Zwiększa plon rudy żelaza.
+@multi_unlock_descr_pyramid = Zwiększa moc uzyskiwaną z odnawiania piramid.
+@multi_unlock_descr_quartz = Zwiększa plon rudy kwarcu.
+@multi_unlock_descr_petrified_pumpkins = Zwiększa plon skamieniałych dyń.
+@multi_unlock_descr_dynamite = Zwiększa plon dynamitu i energię eksplozji.
+@multi_unlock_descr_treasure_map = Zwiększa głębokość ścieżki skarbów, a tym samym ilość złota otrzymywanego ze skarbu.
+@multi_unlock_descr_ore_boost = Dodatkowo zwiększa plon węgla. Dodatkowo zwiększa rozmiar żył żelaza i kwarcu.
+@multi_unlock_descr_bamboo = Zwiększa plon i koszt bambusa.
+@multi_unlock_descr_mushrooms = Zwiększa plon dopasowanych bloków grzybów.
 @auto_unlock = Automatyczne odblokowanie
 @cactus = Kaktus
 @carrots = Marchewki
+@rice = Ryż
 @costs = Koszty
 @debug = Debugowanie
 @debug_2 = Debugowanie 2
@@ -144,6 +195,8 @@ other_file.function()`
 @polyculture = Uprawa współrzędna
 @pumpkins = Dynie
 @senses = Zmysły
+@underground_senses = Podziemne zmysły
+@debug_place = Kolorowe bloki
 @simulation = Symulacja
 @speed = Prędkość
 @sunflowers = Słoneczniki
@@ -154,3 +207,18 @@ other_file.function()`
 @utilities = Narzędzia
 @variables = Zmienne
 @watering = Podlewanie
+@iron = Żelazo
+@pyramid = Piramidy
+@ore_boost = Wzmocnienie rud
+@petrified_pumpkins = Skamieniałe dynie
+@special_soils = Specjalne gleby
+@mining = Górnictwo
+@coal = Węgiel
+@drill = Wiertło
+@quartz = Kwarc
+@prospecting = Poszukiwanie żelaza
+@dynamite = Dynamit
+@bamboo = Bambus
+@treasure_map = Mapa skarbów
+@mushrooms = Grzyby
+@jump = Skok

@@ -5,6 +5,12 @@ Das Spiel speichert alle Codedateien als .py-Dateien, sodass du sie mit Python-E
 Beachte, dass dies nur der Bequemlichkeit dient. Die Sprache im Spiel ist nicht wirklich Python, aber sie ist nah genug dran, dass Python IntelliSense recht gut damit funktioniert.
 Du findest die Dateien im [Speicherordner](persistent_data_path/Saves).
 
+Der Ordner mit den dauerhaften Daten befindet sich hier:
+
+- Windows: `%USERPROFILE%\AppData\LocalLow\TheFarmerWasReplaced\TheFarmerWasReplaced`
+- macOS: `~/Library/Application Support/com.TheFarmerWasReplaced.TheFarmerWasReplaced`
+- Linux (Steam/Proton): `~/.steam/steam/steamapps/compatdata/2060160/pfx/drive_c/users/steamuser/AppData/LocalLow/TheFarmerWasReplaced/TheFarmerWasReplaced`
+
 Jeder Spielstand enthält auch eine `__builtins__.py`-Datei, die eingebaute Python-Definitionen enthält, die den im Spiel eingebauten Funktionen entsprechen, um IntelliSense zu ermöglichen.
 VS Code kann `__builtins__.py` automatisch erkennen, aber einige Editoren funktionieren möglicherweise nur, wenn du `from __builtins__ import *` hinzufügst.
 
@@ -21,4 +27,8 @@ Sobald du das hast, öffne den [Ordner](persistent_data_path/Saves), der deine `
 
 Stelle im Spiel sicher, dass die Option "File Watcher" aktiviert ist. Jetzt werden jedes Mal, wenn du in VS Code speicherst, die Änderungen automatisch im Spiel angezeigt.
 
-Das ist alles! Jetzt kannst du deinen Code in einem professionellen Code-Editor schreiben!
+Das war's! Jetzt kannst du deinen Code in einem professionellen Code-Editor schreiben!
+
+---
+
+[Erstes Programm](docs/first_program.md)      [Backups laden](docs/backup.md)

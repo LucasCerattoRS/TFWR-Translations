@@ -1,16 +1,94 @@
+[<- 미로](docs/unlocks/mazes.md)
+---
 # 메가 팜
 이 엄청나게 강력한 해금은 여러 드론에 접근할 수 있게 해줘요. 
+{{codeexample 
+{
+    "camera_position": {"x": -3, "y": 2.1, "z": 7},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [],
+    "world_size": {"x": 7, "y": 7},
+    "execution_speed": 21,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(North)
+move(North)
+move(North)
+move(East)
+move(East)
+move(East)
+change_hat(Hats.Wizard_Hat)
+#CODE
+def harvest_spiral(radius):
+    for i in range(1, radius, 2):
+        harvest()
+        move(West)
+        for j in range(i):
+            harvest()
+            move(South)
+        for j in range(i+1):
+            harvest()
+            move(East)
+        for j in range(i+1):
+            harvest()
+            move(North)
+        for j in range(i+1):
+            harvest()
+            move(West)
+
+while True:
+    spawn_drone(harvest_spiral, 7)
+    do_a_flip()
+}}
 
 이전처럼, 여전히 드론 하나로 시작해요. 추가 드론은 먼저 생성해야 하며 프로그램이 종료된 후 사라져요.
 각 드론은 자신만의 별도 프로그램을 실행해요. 새 드론은 `spawn_drone(function)` 함수를 사용하여 생성할 수 있어요.
 
-`def drone_function():
-    move(North)
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def drone_function():
+    move(East)
     do_a_flip()
 
-spawn_drone(drone_function)`
+spawn_drone(drone_function)
+do_a_flip()
+}}
 
-이것은 `spawn_drone(function)` 명령을 실행한 드론과 같은 위치에 새 드론을 생성해요. 새 드론은 그런 다음 지정된 함수를 실행하기 시작해요. 끝나면 자동으로 사라져요.
+이것은 `spawn_drone(function)` 명령을 실행한 드론과 같은 위치에 새 드론을 생성해요. 새 드론은 그런 다음 지정된 함수를 실행하기 시작해요. 끝나면 자동으로 사라지지만, 마지막으로 남은 드론이라면 사라지지 않아요.
 
 드론들은 서로 충돌하지 않아요. 
 
@@ -19,32 +97,106 @@ spawn_drone(drone_function)`
 
 
 ## 예시:
-`def harvest_column():
+{{codeexample 
+{
+    "camera_position": {"x": -1.5, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def harvest_column():
     for _ in range(get_world_size()):
         harvest()
         move(North)
 
 while True:
     if spawn_drone(harvest_column):
-        move(East)`
+        move(East)
+}}
 
 이것은 첫 번째 드론이 수평으로 움직이면서 더 많은 드론을 생성하게 할 거예요. 생성된 드론들은 그런 다음 수직으로 움직이며 경로상의 모든 것을 수확할 거예요.
 
 사용 가능한 모든 드론이 이미 생성되었다면, `spawn_drone()`은 아무것도 하지 않고 `None`을 반환할 거예요.
 
 각 드론에 다른 방향을 전달하는 또 다른 예시예요.
-`for dir in [North, East, South, West]:
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(North)
+move(East)
+#CODE
+for dir in [North, East, South, West]:
     def task():
         move(dir)
         do_a_flip()
-    spawn_drone(task)`
+    spawn_drone(task)
+}}
 
 ## 모든 드론은 평등해요
 특별한 "메인" 드론은 없어요. 모든 드론은 다른 드론을 생성할 수 있으며, 모두 드론 한도에 포함돼요. 모든 드론은 종료되면 사라져요. 만약 첫 번째 드론이 프로그램을 일찍 끝내면, 다른 드론이 코드 하이라이트로 실행이 시각화되는 드론이 될 거예요. 모든 드론은 중단점을 트리거할 수 있으며, 드론이 중단점을 트리거하면 코드 하이라이트가 해당 드론으로 전환돼요.
 
-<spoiler=힌트 보기> 이 매우 유용한 병렬 `for_all` 함수를 확인해보세요. 어떤 함수든 받아서 모든 농장 타일에서 실행해요. 이를 위해 사용 가능한 모든 드론을 활용하죠.
+<spoiler=힌트 보기> 
+이 매우 유용한 병렬 `for_all` 함수를 확인해보세요. 어떤 함수든 받아서 모든 농장 타일에서 실행해요. 이를 위해 사용 가능한 모든 드론을 활용하죠.
 
-`def for_all(f):
+{{codeexample 
+{
+    "camera_position": {"x": -1.5, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer", "watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def for_all(f):
 	def row():
 		for _ in range(get_world_size()-1):
 			f()
@@ -55,7 +207,8 @@ while True:
 			row()
 		move(North)
 
-for_all(harvest)`
+for_all(harvest)
+}}
 
 특히 유용한 패턴 중 하나는 드론이 사용 가능하면 생성하고 그렇지 않으면 직접 하는 것이에요.
 
@@ -67,14 +220,39 @@ for_all(harvest)`
 다른 드론이 끝날 때까지 기다리려면 `wait_for(drone)` 함수를 사용하세요. 드론을 생성할 때 `drone` 핸들을 받아요.
 `wait_for(drone)`는 다른 드론이 실행하던 함수의 반환 값을 반환해요.
 
-`def get_entity_type_in_direction(dir):
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Tree)
+move(West)
+#CODE
+def get_entity_type_in_direction(dir):
     move(dir)
     return get_entity_type()
 
-def zero_arg_wrapper():
-    return get_entity_type_in_direction(North)
-drone = spawn_drone(zero_arg_wrapper)
-print(wait_for(drone))`
+drone = spawn_drone(get_entity_type_in_direction, East)
+print(wait_for(drone))
+}}
 
 드론을 생성하는 데는 시간이 걸리므로, 사소한 일마다 새 드론을 생성하는 것은 좋은 생각이 아니에요.
 
@@ -83,48 +261,78 @@ print(wait_for(drone))`
 ## 공유 메모리 없음
 각 드론은 자신만의 메모리를 가지고 있으며 다른 드론의 전역 변수를 직접 읽거나 쓸 수 없어요.
 
-`x = 0
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": false,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def increment():
     global x
     x += 1
 
 wait_for(spawn_drone(increment))
-print(x)`
+print(x)
+}}
 
 새 드론이 자신만의 전역 `x` 사본을 증가시켰고, 이것이 첫 번째 드론의 `x`에 영향을 주지 않기 때문에 `0`을 출력할 거예요.
 
 ## 인수 전달
 
-`spawn_drone`은 호출된 함수로 전달될 추가 선택적 인수를 받아요:
-
-`def harvest_spiral(radius):
-    for i in range(0, radius, 2):
-        for j in range(i):
-            harvest()
-            move(West)
-        for j in range(i):
-            harvest()
-            move(South)
-        for j in range(i+1):
-            harvest()
-            move(East)
-        for j in range(i+1):
-            harvest()
-            move(North)
-
-wait_for(spawn_drone(harvest_spiral, 6))`
+`spawn_drone()`은 호출된 함수로 전달될 추가 선택적 인수를 받아요:
 
 공유 메모리 없음 조항이 여전히 적용된다는 점에 유의하세요. 즉, 호출된 함수는 인수의 사본에서 작동해요:
 
-`def modify(list):
-	move(North)
-	list.append('green')
-	print(list) # prints ['red', 'green']
+{{codeexample 
+{
+    "camera_position": {"x": -0.5, "y": 1.5, "z": 4},
+    "show_image": false,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def modify(list):
+	list.append('초록색')
+	print(list)
 
-l = ['red']
+l = ['빨간색']
 wait_for(spawn_drone(modify, l))
-print(l) # prints ['red']`
+print(l)
+}}
 
 ## 경쟁 상태
 여러 드론이 동시에 같은 농장 타일과 상호 작용할 수 있어요. 두 드론이 같은 tick 동안 같은 타일과 상호 작용하면, 두 상호 작용 모두 발생하지만 결과는 상호 작용 순서에 따라 달라질 수 있어요.
@@ -144,3 +352,9 @@ print(l) # prints ['red']`
 
 여러 드론이 이것을 동시에 실행하면, 모두 첫 번째 줄을 실행하여 `if` 블록으로 들어가게 돼요. 그런 다음, 모두 물을 사용하여 많이 낭비하게 될 거예요.
 드론이 두 번째 줄에 도달할 때쯤이면, 다른 드론이 그 사이에 타일에 물을 주었기 때문에 `get_water()`가 더 이상 `0.5` 미만이 아닐 수도 있어요.
+
+---
+
+[함수](docs/scripting/functions.md)      [이름 스코프](docs/scripting/scopes.md)      [시뮬레이션](docs/unlocks/simulation.md)
+
+[spawn_drone()](functions/spawn_drone)      [num_drones()](functions/num_drones)      [max_drones()](functions/max_drones)      [wait_for()](functions/wait_for)      [has_finished()](functions/has_finished)

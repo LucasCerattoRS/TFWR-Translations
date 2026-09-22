@@ -1,17 +1,44 @@
+[<- Dünger](docs/unlocks/fertilizer.md) <right>[Megafarm ->](docs/unlocks/megafarm.md)
+---
 # Labyrinthe
-`Items.Weird_Substance`, das durch das [Düngen](docs/unlocks/fertilizer.md) von Pflanzen erhalten wird, hat eine seltsame Wirkung auf Büsche. Wenn die Drohne über einem Busch ist und du `use_item(Items.Weird_Substance, amount)` aufrufst, wächst der Busch zu einem Labyrinth aus Hecken heran.
+`Items.Weird_Substance` hat eine seltsame Wirkung auf Büsche. Befindet sich die Drohne über einem Busch und rufst du `use_item(Items.Weird_Substance, amount)` auf, wächst der Busch zu einem Heckenlabyrinth heran.
 Die Größe des Labyrinths hängt von der Menge der verwendeten `Items.Weird_Substance` ab (das zweite Argument des `use_item()`-Aufrufs).
 Ohne Labyrinth-Upgrades führt die Verwendung von `n` `Items.Weird_Substance` zu einem `n`x`n`-Labyrinth. Jede Labyrinth-Upgrade-Stufe verdoppelt den Schatz, aber sie verdoppelt auch die benötigte Menge an `Items.Weird_Substance`.
 Um also ein Labyrinth in voller Feldgröße zu erstellen:
 
-`plant(Entities.Bush)
-substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
-use_item(Items.Weird_Substance, substance)`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+}}
 
 
 Aus irgendeinem Grund kann die Drohne nicht über die Hecken fliegen, obwohl sie nicht so hoch aussehen.
 
-Irgendwo in der Hecke ist ein Schatz versteckt. Verwende `harvest()` auf dem Schatz, um Gold in Höhe der Fläche des Labyrinths zu erhalten. (Zum Beispiel wird ein 5x5-Labyrinth 25 Gold einbringen.)
+Irgendwo im Labyrinth ist ein Schatz versteckt. Verwende `harvest()` beim Schatz, um eine Goldmenge zu erhalten, die der Fläche des Labyrinths entspricht. Ein 5x5 großes Labyrinth liefert beispielsweise 25 Gold.
 
 Wenn du `harvest()` irgendwo anders verwendest, verschwindet das Labyrinth einfach.
 
@@ -23,6 +50,44 @@ Du kannst prüfen, ob eine Wand da ist, indem du versuchst, dich durch sie hindu
 `move()` gibt `True` zurück, wenn es erfolgreich war, und `False` andernfalls.
 
 `can_move()` kann verwendet werden, um zu prüfen, ob eine Wand da ist, ohne sich zu bewegen.
+
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+quick_print(
+    can_move(North), 
+    can_move(East), 
+    can_move(South), 
+    can_move(West)
+)
+if move(North) and get_entity_type() == Entities.Treasure:
+    harvest()
+}}
 
 Wenn du keine Ahnung hast, wie du zum Schatz kommst, schau dir Hinweis 1 an. Er zeigt dir, wie man ein solches Problem angeht.
 
@@ -41,7 +106,8 @@ Es lohnt sich nur, wenn die zusätzlichen Informationen und die Abkürzungen dir
 
 Der Schatz kann bis zu 300 Mal verschoben werden. Danach erhöht die Verwendung von seltsamer Substanz auf dem Schatz das Gold darin nicht mehr und er wird sich nicht mehr bewegen.
 
-<spoiler=zeige Hinweis 1>Hier ist ein allgemeiner Ansatz zur Lösung des Problems:
+<spoiler=zeige Hinweis 1>
+Hier ist ein allgemeiner Ansatz zur Lösung des Problems:
 
 Erstelle ein Labyrinth und stelle dir vor, du wärst die Drohne.
 
@@ -51,21 +117,96 @@ Schreibe deine Strategie Schritt für Schritt auf, damit jemand anderes sie ohne
 
 Versuche nun, deine Schritte in Code zu übersetzen.
 </spoiler>
-<spoiler=zeige Hinweis 2>Solange es keine Schleifen gibt: Alle Wände sind eigentlich nur eine große zusammenhängende Wand. Wenn du der Wand folgst, führt sie dich durch das ganze Labyrinth.
-Dieser Ansatz erfordert sehr wenig Code und du musst nicht verfolgen, wo du schon warst. Ungefähr 10 Zeilen Code sind alles, was du brauchst.</spoiler>
-<spoiler=zeige Hinweis 3>Anstatt die Drohne in absolute Richtungen wie Ost oder West zu bewegen, kann es sehr nützlich sein, die Drohne in relative Richtungen wie "rechts abbiegen" oder "links abbiegen" zu bewegen. Dazu musst du verfolgen, in welche Richtung sich die Drohne gerade bewegt. Die Drohne dreht sich nie wirklich, aber du kannst trotzdem eine "virtuelle" Drehung im Code beibehalten.
+<spoiler=zeige Hinweis 2>
+Solange es keine Schleifen gibt: Alle Wände sind eigentlich nur eine große zusammenhängende Wand. Wenn du der Wand folgst, führt sie dich durch das ganze Labyrinth.
+Dieser Ansatz erfordert sehr wenig Code und du musst nicht nachverfolgen, wo du bereits warst. Etwa 10 Zeilen Code sind alles, was du dafür brauchst.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+directions = [North, East, South, West]
+index = 0
+while get_entity_type() != Entities.Treasure:
+    index = (index - 1) % 4
+    for _ in range(4):
+        if move(directions[index]):
+            break
+        index = (index + 1) % 4
+do_a_flip()
+harvest()
+}}
+</spoiler>
+<spoiler=zeige Hinweis 3>
+Anstatt die Drohne in absolute Richtungen wie Ost oder West zu bewegen, kann es sehr nützlich sein, die Drohne in relative Richtungen wie "rechts abbiegen" oder "links abbiegen" zu bewegen. Dazu musst du verfolgen, in welche Richtung sich die Drohne gerade bewegt. Die Drohne dreht sich nie wirklich, aber du kannst trotzdem eine "virtuelle" Drehung im Code beibehalten.
 Der folgende Index-Trick ist dafür hilfreich:
 
-`directions = [North, East, South, West]
-index = 0`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+directions = [North, East, South, West]
+index = 0
+move(directions[index])
 
-Verwende `% 4`, damit sie sich "im Kreis" drehen kann, so dass sie nach `West` wieder zu `North` zurückkehrt.
-`# rechts abbiegen
-index = (index + 1) % 4`
+#nach rechts drehen
+index = (index + 1) % 4
+move(directions[index])
 
-`# links abbiegen
+#nach links drehen
 index = (index - 1) % 4
+move(directions[index])
+}}
 
-move(directions[index])`</spoiler>
-<spoiler=zeige Hinweis 4>Wenn du es nicht lösen kannst, kannst du es dir immer einfach machen und es weniger effizient tun.
-Ein `1`x`1`-Labyrinth zu lösen ist trivial.</spoiler>
+
+Mit `% 4` kann sich die Richtung „im Kreis drehen“, sodass `3 (West) + 1` wieder `0 (North)` ergibt, weil `4 % 4 == 0` und `-1 % 4 == 3` gilt.</spoiler>
+<spoiler=zeige Hinweis 4>
+Wenn du es nicht lösen kannst, kannst du es dir immer einfach machen und es weniger effizient tun.
+Ein `1`x`1`-Labyrinth zu lösen ist ganz einfach.</spoiler>
+
+---
+
+[Statistiken](docs/stats.md)      [Listen](docs/scripting/lists.md)      [Dictionaries](docs/scripting/dicts.md)      [Tupel](docs/scripting/tuples.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [can_move()](functions/can_move)      [move()](functions/move)      [use_item()](functions/use_item)

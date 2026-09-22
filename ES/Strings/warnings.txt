@@ -2,7 +2,10 @@
 @warning_no_space_to_plant = Se intentó plantar {0} pero ya había algo allí.
 @warning_cant_plant_on_ground = No se puede plantar {0} en {1}.
 @warning_missing_seed = No se tenían los ítems necesarios para plantar {0}.
+@warning_not_enough_coal = No había suficiente carbón para buscar hierro.
+@warning_not_enough_iron = No había suficiente hierro para buscar cuarzo.
 @warning_no_item_to_use = Se intentó usar {0} pero no había suficiente.
+@warning_cannot_place_ground = No se puede colocar {0} porque es un bloque especial.
 @warning_failed_swap_wrap = Se intentó hacer un intercambio fuera de los límites de la granja. Eso no está permitido.
 @warning_failed_swap_unswappable = Se intentó intercambiar {0}, que no puede ser intercambiado.
 @warning_weird_substance_not_divisible = Usaste una cantidad de Sustancia Extraña que no es exactamente la necesaria para crear el laberinto. No olvides que la cantidad de Sustancia Extraña requerida aumenta a medida que mejoras el laberinto.

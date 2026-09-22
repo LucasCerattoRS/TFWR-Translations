@@ -1,17 +1,44 @@
+[<- 비료](docs/unlocks/fertilizer.md) <right>[메가 팜 ->](docs/unlocks/megafarm.md)
+---
 # 미로
-식물에 [비료를 주어](docs/unlocks/fertilizer.md) 얻는 `Items.Weird_Substance`는 덤불에 이상한 효과를 줘요. 드론이 덤불 위에 있을 때 `use_item(Items.Weird_Substance, amount)`를 호출하면 덤불이 울타리 미로로 자라나요.
+`Items.Weird_Substance`는 덤불에 이상한 효과를 줘요. 드론이 덤불 위에 있을 때 `use_item(Items.Weird_Substance, amount)`를 호출하면 덤불이 울타리 미로로 자라나요.
 미로의 크기는 사용된 `Items.Weird_Substance`의 양(`use_item()` 호출의 두 번째 인수)에 따라 달라져요.
-미로 업그레이드가 없으면 `n`개의 `Items.Weird_Substance`를 사용하면 `n`x`n` 미로가 생겨요. 각 미로 업그레이드 레벨은 보물을 두 배로 만들지만, 필요한 `Items.Weird_Substance`의 양도 두 배로 늘려요. 
+미로 업그레이드가 없으면 `n`개의 `Items.Weird_Substance`를 사용하면 `n`x`n` 미로가 생겨요. 각 미로 업그레이드 레벨은 보물을 두 배로 만들지만, 필요한 `Items.Weird_Substance`의 양도 두 배로 늘려요.
 그래서 밭 전체 크기의 미로를 만들려면:
 
-`plant(Entities.Bush)
-substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
-use_item(Items.Weird_Substance, substance)`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+}}
 
 
 어떤 이유에서인지 드론은 울타리 위로 날아갈 수 없어요, 그렇게 높아 보이지 않는데도 말이죠.
 
-울타리 어딘가에 보물이 숨겨져 있어요. 보물에 `harvest()`를 사용하면 미로 면적과 같은 양의 금을 받아요. (예를 들어, 5x5 미로는 25 금을 줘요.)
+미로 어딘가에 보물이 숨겨져 있어요. 보물에 `harvest()`를 사용하면 미로 면적과 같은 양의 금을 받아요. (예를 들어, 5x5 미로는 25 금을 줘요.)
 
 다른 곳에서 `harvest()`를 사용하면 미로는 그냥 사라져요.
 
@@ -19,17 +46,55 @@ use_item(Items.Weird_Substance, substance)`
 
 미로를 재사용하지 않는 한 미로에는 루프가 없어요 (미로 재사용 방법은 아래 참조). 그래서 되돌아가지 않고는 드론이 같은 위치에 다시 도달할 방법이 없어요.
 
-벽을 통과하려고 시도하여 벽이 있는지 확인할 수 있어요. 
+벽을 통과하려고 시도하여 벽이 있는지 확인할 수 있어요.
 `move()`는 성공하면 `True`를, 그렇지 않으면 `False`를 반환해요.
 
 `can_move()`는 움직이지 않고 벽이 있는지 확인하는 데 사용할 수 있어요.
+
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+quick_print(
+    can_move(North), 
+    can_move(East), 
+    can_move(South), 
+    can_move(West)
+)
+if move(North) and get_entity_type() == Entities.Treasure:
+    harvest()
+}}
 
 보물에 어떻게 도달해야 할지 모르겠다면, 힌트 1을 보세요. 이런 문제에 접근하는 방법을 보여줘요.
 
 미로 어디에서든 `measure()`를 사용하면 보물의 위치를 반환해요.
 `x, y = measure()`
 
-추가 도전 과제로, 보물에 다시 같은 양의 `Items.Weird_Substance`를 사용하여 미로를 재사용할 수도 있어요. 
+추가 도전 과제로, 보물에 다시 같은 양의 `Items.Weird_Substance`를 사용하여 미로를 재사용할 수도 있어요.
 이렇게 하면 보물을 수집하고, 미로 안의 무작위 위치에 새로운 보물이 생성돼요.
 
 보물이 이동할 때마다, 미로의 벽 일부가 무작위로 제거될 수 있어요. 그래서 재사용된 미로에는 루프가 포함될 수 있어요.
@@ -41,7 +106,8 @@ use_item(Items.Weird_Substance, substance)`
 
 보물은 최대 300번까지 재배치될 수 있어요. 그 후에는 보물에 기묘한 물질을 사용해도 금이 더 이상 늘어나지 않고 더 이상 움직이지 않을 거예요.
 
-<spoiler=힌트 1 보기>문제 해결에 대한 일반적인 접근 방식은 다음과 같아요:
+<spoiler=힌트 1 보기>
+문제 해결에 대한 일반적인 접근 방식은 다음과 같아요:
 
 미로를 만들고 자신이 드론이라고 상상해보세요.
 
@@ -51,21 +117,96 @@ use_item(Items.Weird_Substance, substance)`
 
 이제 자신의 단계를 코드로 번역해보세요.
 </spoiler>
-<spoiler=힌트 2 보기>루프가 없는 한: 모든 벽은 사실 하나의 큰 연결된 벽이에요. 벽을 따라가면 미로 전체를 통과하게 될 거예요.
-이 접근 방식은 코드가 거의 필요 없으며, 이미 가본 곳을 추적할 필요도 없어요. 약 10줄의 코드면 충분해요.</spoiler>
-<spoiler=힌트 3 보기>드론을 동쪽이나 서쪽 같은 절대 방향으로 움직이는 대신 "오른쪽으로 돌기"나 "왼쪽으로 돌기" 같은 상대 방향으로 움직이는 것이 매우 유용할 수 있어요. 이렇게 하려면 드론이 현재 어느 방향으로 움직이고 있는지 추적해야 해요. 드론은 실제로 회전하지 않지만, 코드에서 "가상" 회전을 유지할 수 있어요.
+<spoiler=힌트 2 보기>
+루프가 없는 한 모든 벽은 사실 하나의 큰 연결된 벽이에요. 왼손을 벽에 대고 따라가면 미로 전체를 통과하게 될 거예요.
+이 접근 방식은 코드가 거의 필요 없으며, 이미 가본 곳을 추적할 필요도 없어요. 약 10줄의 코드면 충분해요.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+directions = [North, East, South, West]
+index = 0
+while get_entity_type() != Entities.Treasure:
+    index = (index - 1) % 4
+    for _ in range(4):
+        if move(directions[index]):
+            break
+        index = (index + 1) % 4
+do_a_flip()
+harvest()
+}}
+</spoiler>
+<spoiler=힌트 3 보기>
+드론을 동쪽이나 서쪽 같은 절대 방향으로 움직이는 대신 "오른쪽으로 돌기"나 "왼쪽으로 돌기" 같은 상대 방향으로 움직이는 것이 매우 유용할 수 있어요. 이렇게 하려면 드론이 현재 어느 방향으로 움직이고 있는지 추적해야 해요. 드론은 실제로 회전하지 않지만, 코드에서 "가상" 회전을 유지할 수 있어요.
 다음 인덱스 트릭이 이에 도움이 돼요:
 
-`directions = [North, East, South, West]
-index = 0`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+directions = [North, East, South, West]
+index = 0
+move(directions[index])
 
-`% 4`를 사용하여 "원을 따라" 회전할 수 있게 하면 `West` 다음에 다시 `North`로 돌아와요.
-`# 오른쪽으로 돌기
-index = (index + 1) % 4`
+# 오른쪽으로 돌기
+index = (index + 1) % 4
+move(directions[index])
 
-`# 왼쪽으로 돌기
+# 왼쪽으로 돌기
 index = (index - 1) % 4
+move(directions[index])
+}}
 
-move(directions[index])`</spoiler>
-<spoiler=힌트 4 보기>해결할 수 없다면, 언제나 쉽게 덜 효율적으로 할 수 있어요. 
+
+`% 4`는 "원을 따라" 회전할 수 있게 해줘요. `4 % 4 == 0`이고 `-1 % 4 == 3`이므로 `3 (West) + 1`은 다시 `0 (North)`가 돼요.</spoiler>
+<spoiler=힌트 4 보기>
+해결할 수 없다면, 언제나 쉽게 덜 효율적으로 할 수 있어요.
 `1`x`1` 미로를 푸는 것은 아주 쉬워요.</spoiler>
+
+---
+
+[통계](docs/stats.md)      [리스트](docs/scripting/lists.md)      [딕셔너리](docs/scripting/dicts.md)      [튜플](docs/scripting/tuples.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [can_move()](functions/can_move)      [move()](functions/move)      [use_item()](functions/use_item)

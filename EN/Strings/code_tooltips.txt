@@ -110,6 +110,16 @@ takes `1` tick to execute.
 
 example:
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+Gets the current z position of the drone.
+The z position starts at `0` and decreases when you dig down.
+
+returns a number representing the current z coordinate of the drone.
+
+takes `1` tick to execute.
+
+example:
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 Get the current size of the farm.
 
@@ -140,6 +150,26 @@ takes `1` tick to execute.
 example:
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+Find out how hard the ground is under the drone.
+
+returns the hardness of the ground under the drone.
+
+takes `1` tick to execute.
+
+example:
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+Find out how stable the ground is under the drone.
+
+returns the stability of the ground under the drone.
+
+takes `1` tick to execute.
+
+example:
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 Get the current game time.
 
@@ -632,3 +662,59 @@ list.insert(0, 0)`
 @code_tooltip_or = Evaluates the first operand. If it's truthy (anything other than `False`, `0` and empty collections), it returns that value immediately (short-circuiting the evaluation), otherwise, it evaluates and returns the second operand.
 @code_tooltip_return = Used to return a value from a function.
 @code_tooltip_pass = Does nothing. Can be useful because empty code blocks aren't allowed.
+@code_tooltip_dig = `dig()`
+Dig a tile downward.
+
+Digging speed depends on the block's hardness and on the drone's drill strength.
+
+example:
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+Uses coal to look for iron.
+
+returns the direction to the nearest iron ore (`North`, `East`, `South`, or `West`) if one is nearby. Returns `None` if no iron is nearby, or if you don't have enough coal, or if the drone is already above a piece of iron.
+
+costs 1 coal to execute.
+
+example:
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+Use iron to look for quartz.
+
+returns the euclidean distance (3D distance) from the drone to the next quartz block, or `None` if no quartz is nearby.
+
+costs 1 iron to execute.
+
+example:
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+Place blocks.
+
+You can specify the block to be placed. Only blocks without special function can be placed. For example, you can `place(Grounds.Rock)` but not `place(Grounds.Clay)`.
+
+example:
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+Push the mushroom block under the drone.
+
+You cannot push bocks upwards.
+
+returns `True` if the block was pushed, `False` otherwise.
+
+example:
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+Checks whether the block under the drone can be pushed.
+
+returns `True` if the block under the drone can be pushed, `False` otherwise.
+
+example:
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+Jumps to an underground feature associated with `unlock`.
+
+You can only execute `jump` once per script.
+
+example:
+`jump(Unlocks.Iron)`

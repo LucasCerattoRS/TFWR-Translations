@@ -7,3 +7,6 @@ Najłatwiejszym sposobem wczytania kopii zapasowej jest skopiowanie folderu konk
 
 Zapis to folder z plikiem `save.json` i kilkoma plikami `.py`.
 Jeśli straciłeś tylko kilka plików z kodem lub pliki z kodem wciąż tam są, ale plik `save.json` jest uszkodzony, możesz również zastąpić tylko uszkodzone części odpowiadającymi im plikami z kopii zapasowej.
+---
+
+[Zewnętrzny edytor](docs/external_editor.md)      [Pierwsze kroki](docs/getting_started.md)

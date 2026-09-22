@@ -12,6 +12,7 @@
 @low = Низкое
 @sfx limit = Лимит звуковых эффектов
 @vfx limit = Лимит визуальных эффектов
+@avalanche particles = Частицы обвалов
 @volume damping = Приглушение звука
 @volume = Громкость
 @music volume = Громкость музыки

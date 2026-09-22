@@ -1,29 +1,109 @@
+[<- Повышение скорости](docs/unlocks/speed.md)
+---
 # If
-Ты можешь использовать if, elif и else, чтобы задать условия выполнения кода.
+Для условного выполнения кода можно использовать `if`, `elif` и `else`.
 
-`if condition1:
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+condition1 = False
+condition2 = False
+condition3 = True
+
+if condition1:
 	do_a_flip()
 elif condition2:
 	harvest()
 else:
 	do_a_flip()
-	harvest()`
+	harvest()
+}}
 
 ## Синтаксис
-`if` позволяет выполнять код, только если какое-то условие равно `True`. Похоже на цикл `while`, только не повторяется.
-`if` принимает условие так же, как и цикл `while`, и выполняет блок кода `if`, если условие равно `True`:
+Инструкция `if` позволяет выполнять код, только если условие равно `True`. Она похожа на цикл `while`, который не повторяется.
+Инструкция `if`, как и цикл `while`, принимает условие и выполняет свой блок кода, если условие равно `True`:
 
-`#сделать сальто, если условие True
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+condition = True
+
 if condition:
-	do_a_flip()`
+	do_a_flip()
+}}
 
-Ты можешь добавить `else` после if. Эта инструкция определяет код, выполняющийся при условии, равном `False`.
+После блока `if` также можно добавить блок `else`. Блок `else` выполняется, если условие равно `False`.
 
-Сделать сальто, если `condition` равно `True`, иначе — собрать урожай.
-`if condition:
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+condition = False
+
+if condition:
 	do_a_flip()
 else:
-	harvest()`
+	harvest()
+}}
 
 `elif` — это сокращение от else if.
 
@@ -43,3 +123,7 @@ elif condition2:
 	#b
 else:
 	#c`
+
+---
+
+[Цикл while](docs/scripting/while.md)      [Операторы](docs/scripting/operators.md)      [Датчики](docs/unlocks/senses.md)

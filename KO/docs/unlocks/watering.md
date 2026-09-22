@@ -1,3 +1,6 @@
+[<- 당근](docs/unlocks/carrots.md) <right>[비료 ->](docs/unlocks/fertilizer.md)
+<right>[해바라기 ->](docs/unlocks/sunflowers.md)
+---
 # 물주기
 식물은 물을 주면 더 빨리 자라요. 땅은 `0`에서 `1` 범위의 물 수위를 가져요.
 `get_water()` 함수는 드론이 위치한 땅의 물 수위를 반환해요.
@@ -12,3 +15,43 @@
 한 탱크에는 `0.25`의 물이 들어있어요.
 
 아무 땅 위에서나 `use_item(Items.Water)`를 호출하여 땅에 물을 주세요.
+{{codeexample 
+{
+    "camera_position": {"x": -4, "y": 1, "z": 6},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "water", "n": 10}],
+    "world_size": {"x": 9, "y": 1},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+for _ in range(9):
+    till()
+    move(East)
+#CODE
+for i in range(5):
+    if i > 0:
+        use_item(Items.Water, i)
+    plant(Entities.Tree)
+    print(get_water())
+	move(East)
+	move(East)
+}}
+
+---
+
+[비료](docs/unlocks/fertilizer.md)
+
+[use_item()](functions/use_item)      [get_water()](functions/get_water)

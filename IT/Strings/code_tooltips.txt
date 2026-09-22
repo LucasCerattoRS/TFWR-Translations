@@ -110,6 +110,16 @@ richiede `1` tick per essere eseguita.
 
 esempio:
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+Ottiene la posizione z attuale del drone.
+La posizione z parte da `0` e diminuisce quando scavi verso il basso.
+
+restituisce un numero che rappresenta la coordinata z attuale del drone.
+
+richiede `1` tick per essere eseguita.
+
+esempio:
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 Ottiene la dimensione attuale della fattoria.
 
@@ -140,6 +150,26 @@ richiede `1` tick per essere eseguita.
 esempio:
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+Scopri quanto è duro il terreno sotto il drone.
+
+restituisce la durezza del terreno sotto il drone.
+
+richiede `1` tick per essere eseguita.
+
+esempio:
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+Scopri quanto è stabile il terreno sotto il drone.
+
+restituisce la stabilità del terreno sotto il drone.
+
+richiede `1` tick per essere eseguita.
+
+esempio:
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 Ottiene il tempo di gioco attuale.
 
@@ -212,7 +242,7 @@ restituisce `None`
 richiede 1s per essere eseguita.
 
 esempio:
-`print("ground:", get_ground_type())`
+`print("terreno:", get_ground_type())`
 @code_tooltip_len = `len(collection)` 
 Ottiene il numero di elementi in una lista, set, dict o tupla.
 
@@ -321,7 +351,7 @@ esempio:
 `cost = get_cost(Unlocks.Carrots)
 for item in cost:
     if num_items(item) < cost[item]:
-        print("not enough items to unlock carrots")`
+        print("oggetti insufficienti per sbloccare le carote")`
 @code_tooltip_clear = `clear()` 
 Rimuove tutto dalla fattoria, sposta il drone alla posizione `(0,0)` e cambia il cappello con quello di paglia.
 
@@ -342,7 +372,7 @@ esempio:
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("Compagna:", plant_type, "a", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)` 
 Ha esattamente lo stesso effetto di cliccare il pulsante corrispondente a `unlock` nell'albero delle ricerche.
 
@@ -500,7 +530,7 @@ restituisce `None`
 richiede `0` tick per essere eseguita.
 
 esempio:
-`quick_print("hi mom")`
+`quick_print("ciao mamma")`
 @code_tooltip_change_hat = `change_hat(hat)`
 Cambia il cappello del drone in `hat`.
 
@@ -632,3 +662,59 @@ list.insert(0, 0)`
 @code_tooltip_or = Valuta il primo operando. Se è 'truthy' (qualsiasi cosa diversa da `False`, `0` e collezioni vuote), restituisce immediatamente quel valore (cortocircuitando la valutazione), altrimenti, valuta e restituisce il secondo operando.
 @code_tooltip_return = Usato per restituire un valore da una funzione.
 @code_tooltip_pass = Non fa nulla. Può essere utile perché i blocchi di codice vuoti non sono ammessi.
+@code_tooltip_dig = `dig()`
+Scava una casella verso il basso.
+
+La velocità di scavo dipende dalla durezza del blocco e dalla potenza della trivella del drone.
+
+esempio:
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+Usa il carbone per cercare il ferro.
+
+restituisce la direzione del minerale di ferro più vicino (`North`, `East`, `South` o `West`) se ce n'è uno nelle vicinanze. Restituisce `None` se non c'è ferro nelle vicinanze, se non hai abbastanza carbone o se il drone si trova già sopra un blocco di ferro.
+
+costa 1 carbone per essere eseguita.
+
+esempio:
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+Usa il ferro per cercare il quarzo.
+
+restituisce la distanza euclidea (distanza 3D) dal drone al blocco di quarzo più vicino, oppure `None` se non c'è quarzo nelle vicinanze.
+
+costa 1 ferro per essere eseguita.
+
+esempio:
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+Posiziona blocchi.
+
+Puoi specificare il blocco da posizionare. Puoi posizionare solo i blocchi senza una funzione speciale. Per esempio, puoi usare `place(Grounds.Rock)`, ma non `place(Grounds.Clay)`.
+
+esempio:
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+Spinge il blocco di funghi sotto il drone.
+
+Non puoi spingere i blocchi verso l'alto.
+
+restituisce `True` se il blocco è stato spinto, `False` altrimenti.
+
+esempio:
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+Controlla se il blocco sotto il drone può essere spinto.
+
+restituisce `True` se il blocco sotto il drone può essere spinto, `False` altrimenti.
+
+esempio:
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+Salta a una funzionalità sotterranea associata a `unlock`.
+
+Puoi eseguire `jump` una sola volta per script.
+
+esempio:
+`jump(Unlocks.Iron)`

@@ -1,33 +1,143 @@
+[<- Funções](docs/scripting/functions.md)
+
+---
+
 # Tuplas
+
 Tuplas são uma ótima maneira de combinar múltiplos valores em um único valor.
 Para criar uma tupla, basta separar os valores com vírgulas:
 
-`tuple = 1, 2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+tuple = 1, 2
+print(tuple)
+}}
 
-Você também pode desempacotá-las em várias variáveis novamente. No código abaixo, a tupla `(1,2)` é desempacotada em duas variáveis `a` e `b`.
+Você também pode desempacotá-las em várias variáveis. No código abaixo, a tupla `(1, 2)` é desempacotada em duas variáveis, `a` e `b`.
 
-`a, b = 1, 2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+a, b = 1, 2
+print(a)
+a, b = b, a
+print(a)
+}}
 
 Tuplas podem ser indexadas como listas, mas são imutáveis e não podem ser alteradas após a criação.
 
-`tuple = 1, 2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+tuple = 1, 2
+print(tuple[1])
 
-`print(tuple[1])`
-imprime `2`
+tuple[0] = 3
+}}
 
-`tuple[0] = 3`
-lança um erro
 <unlock=dicts>
-Diferente das listas, tuplas podem ser usadas como chaves em dicionários.
+Ao contrário das listas, as tuplas podem ser usadas como chaves em dicionários.
 
-`d = {(1,2):(4,5)}
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+d = {(1,2):(4,5)}
 
-print(d[(1,2)])`
-imprime `(4,5)`</unlock>
+print(d[(1,2)])
+}}</unlock>
 
 Elas também podem ser úteis para retornar múltiplos valores em uma função.
 
-`def f():
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+def f():
     return 1, 2
 
-a, b = f()`
+a, b = f()
+}}
+
+---
+
+[Listas](docs/scripting/lists.md)      [Dicionários](docs/scripting/dicts.md)      [Funções](docs/scripting/functions.md)

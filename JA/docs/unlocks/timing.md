@@ -1,3 +1,6 @@
+
+[<- デバッグ](docs/scripting/debug.md) <right>[シミュレーション ->](docs/unlocks/simulation.md)
+---
 # タイミング
 もしメソッドを本気で最適化したいなら、このゲームで時間がどのように計測されるかを理解する必要があります。このアンロックは、まさにそのためのものです。
 
@@ -9,6 +12,31 @@
 `get_tick_count()` は実行開始から実行されたtickの数を返します。
 
 これら2つの関数と `quick_print()` は、完全にコストがかかりません。呼び出し操作でさえも無料です。
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
 
 ## ランタイムの詳細
 
@@ -32,3 +60,9 @@
 データ構造へのインデックス参照は、インデックス演算子に1 tickかかり、辞書やセットの場合は、キーのサイズに応じて追加のtickがかかります。
 
 組み込み関数が実行にかかるtick数は、各関数のドキュメントに個別に記載されています。
+
+---
+
+[デバッグ](docs/scripting/debug.md)      [シミュレーション](docs/unlocks/simulation.md)      [ランキング](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

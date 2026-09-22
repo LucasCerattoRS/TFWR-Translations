@@ -6,4 +6,8 @@ Diese Backups findest du im [Backup-Verzeichnis](persistent_data_path/Backup). E
 Der einfachste Weg, ein Backup zu laden, ist, den Ordner des spezifischen Backups, das du laden möchtest, in das Speicherverzeichnis zu kopieren.
 
 Ein Spielstand ist ein Ordner mit einer `save.json`-Datei und einer Reihe von `.py`-Dateien.
-Wenn du nur wenige Codedateien verloren hast oder die Codedateien noch vorhanden sind, aber die `save.json`-Datei beschädigt ist, kannst du auch nur die beschädigten Teile durch die entsprechenden Dateien aus dem Backup ersetzen.
+Wenn du nur einige Codedateien verloren hast oder die Codedateien noch vorhanden sind, aber die Datei `save.json` beschädigt ist, kannst du auch nur die beschädigten Teile durch die entsprechenden Dateien aus dem Backup ersetzen.
+
+---
+
+[Externer Editor](docs/external_editor.md)      [Erste Schritte](docs/getting_started.md)

@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Coste de Desbloqueo {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Requisitos de desbloqueo
+El desbloqueo {0} debe estar en el nivel {1} o superior.
 @unlock_descr_trees = Desbloquea los árboles.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = Es como el trigo, si el trigo creciera sobre arcilla.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Usa listas para almacenar muchos valores.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -105,8 +111,41 @@ other_file.function()`
 @unlock_descr_megafarm = ¡Más drones y una granja más grande!
 
 `spawn_drone(task)`
+@unlock_descr_mining = Le da un taladro al dron. Y un casco de minero.
+
+`dig()`
+@unlock_descr_coal = Los depósitos de carbón aparecen bajo tierra.
+@unlock_descr_iron = Las vetas de mineral de hierro aparecen bajo tierra.
+@unlock_descr_pyramid = Antiguas estructuras de arenisca aparecen bajo tierra.
+@unlock_descr_quartz = Agujas de cuarzo aparecen bajo tierra.
+@unlock_descr_ore_boost = Duplica el rendimiento del carbón. Duplica el tamaño de las vetas de hierro y cuarzo.
+@unlock_descr_jump = Permite que tu dron salte hacia abajo.
+@unlock_descr_prospecting = ¡Usa carbón para buscar hierro!
+
+`prospect_iron()`
+@unlock_descr_drill = Mejora la potencia del taladro.
+@unlock_descr_debug_place = Coloca bloques de colores.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Sensores para que el dron interactúe con casillas subterráneas.
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Las calabazas petrificadas aparecen bajo tierra.
+@unlock_descr_special_soils = Descubre capas de suelo franco y perlita para aumentar el rendimiento de las plantas.
+@unlock_descr_bamboo = Planta bambú y observa cómo crece.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Encuentra y usa dinamita para hacer volar cosas por los aires.
+@unlock_descr_treasure_map = Busca tesoros ocultos en las profundidades.
+@unlock_descr_mushrooms = Encuentra y cosecha hongos subterráneos emparejando los del mismo tipo.
 @multi_unlock_descr_expand = Expande la granja. Esto también limpia la granja.
 @multi_unlock_descr_carrots = Aumenta el rendimiento y el coste de las zanahorias.
+@multi_unlock_descr_rice = Aumenta el rendimiento y el coste de las plantas de arroz.
 @multi_unlock_descr_trees = Aumenta el rendimiento de arbustos y árboles.
 @multi_unlock_descr_pumpkins = Aumenta el rendimiento y el coste de las calabazas.
 @multi_unlock_descr_mazes = Aumenta el oro en los cofres del tesoro y la cantidad de sustancia extraña necesaria para generar un laberinto.
@@ -117,9 +156,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Recibe más agua.
 @multi_unlock_descr_fertilizer = Recibe más fertilizante.
 @multi_unlock_descr_megafarm = Aumenta aún más el número de drones y expande la granja.
+@multi_unlock_descr_drill = Aumenta la velocidad del taladro.
+@multi_unlock_descr_coal = Hace que aparezcan más capas de carbón bajo tierra.
+@multi_unlock_descr_iron = Aumenta el rendimiento del mineral de hierro.
+@multi_unlock_descr_pyramid = Aumenta la energía obtenida al restaurar pirámides.
+@multi_unlock_descr_quartz = Aumenta el rendimiento del mineral de cuarzo.
+@multi_unlock_descr_petrified_pumpkins = Aumenta el rendimiento de las calabazas petrificadas.
+@multi_unlock_descr_dynamite = Aumenta el rendimiento de la dinamita y la energía de las explosiones.
+@multi_unlock_descr_treasure_map = Aumenta la profundidad del camino del tesoro y, por tanto, la cantidad de oro que obtienes del tesoro.
+@multi_unlock_descr_ore_boost = Aumenta aún más el rendimiento del carbón. Aumenta aún más el tamaño de las vetas de hierro y cuarzo.
+@multi_unlock_descr_bamboo = Aumenta el rendimiento y el coste del bambú.
+@multi_unlock_descr_mushrooms = Aumenta el rendimiento de los bloques de hongo coincidentes.
 @auto_unlock = Autodesbloqueo
 @cactus = Cactus
 @carrots = Zanahorias
+@rice = Arroz
 @costs = Costes
 @debug = Depuración
 @debug_2 = Depuración_2
@@ -142,6 +193,8 @@ other_file.function()`
 @polyculture = Policultivo
 @pumpkins = Calabazas
 @senses = Sentidos
+@underground_senses = Sentidos subterráneos
+@debug_place = Bloques de colores
 @simulation = Simulación
 @speed = Velocidad
 @sunflowers = Girasoles
@@ -152,3 +205,18 @@ other_file.function()`
 @utilities = Utilidades
 @variables = Variables
 @watering = Riego
+@iron = Hierro
+@pyramid = Pirámides
+@ore_boost = Mejora de minerales
+@petrified_pumpkins = Calabazas petrificadas
+@special_soils = Suelos especiales
+@mining = Minería
+@coal = Carbón
+@drill = Taladro
+@quartz = Cuarzo
+@prospecting = Prospección de hierro
+@dynamite = Dinamita
+@bamboo = Bambú
+@treasure_map = Mapa del tesoro
+@mushrooms = Hongo
+@jump = Salto

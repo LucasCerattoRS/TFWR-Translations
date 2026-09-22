@@ -1,19 +1,20 @@
+[<- Simulation](docs/unlocks/simulation.md)
+---
 # Bestenliste
 Wenn du es bis hierher geschafft hast, hast du viele Herausforderungen gemeistert. Aber hast du sie auch effizient gelöst? 
 Du kannst mit anderen Spielern auf verschiedenen Bestenlisten um die effizientesten Farmmethoden wetteifern.
 
 Du kannst einen Bestenlisten-Lauf starten, indem du `leaderboard_run(leaderboard, filename, speedup)` aufrufst.
 Dies startet eine [Simulation](docs/unlocks/simulation.md), ähnlich wie `simulate()`, außer dass die Startbedingungen festgelegt sind. Jede Bestenlisten-Kategorie hat unterschiedliche Start- und Erfolgsbedingungen.
-
 Der Bestenlisten-Lauf ist erfolgreich, wenn die Erfolgsbedingung am Ende der Simulation `True` ist. 
 
 Die Simulation wird NICHT automatisch enden, wenn das Ziel erreicht ist. Du musst sicherstellen, dass das Programm terminiert.
 Wenn der Lauf erfolgreich ist, wird deine Zeit zur Bestenliste hinzugefügt.
 
-Um die Varianz zu reduzieren, müssen alle Läufe mindestens 2 Stunden dauern (Du kannst es beschleunigen, also wird es nicht so lange dauern). Wenn ein Lauf früher abgeschlossen wird, wird er wiederholt, bis eine Gesamtzeit von 2 Stunden erreicht ist. Der Durchschnitt aller Läufe wird dann als dein Ergebnis hochgeladen.
+Um Schwankungen zu verringern, müssen alle Durchläufe mindestens 2 Stunden simulierter Zeit umfassen. Du kannst die Simulation beschleunigen, sodass dies in Echtzeit nicht so lange dauert. Endet ein Durchlauf früher, wird er wiederholt, bis insgesamt 2 Stunden simulierte Zeit erreicht sind. Anschließend wird die durchschnittliche Zeit aller Durchläufe als dein Ergebnis hochgeladen.
 
 Hier ist ein Beispiel-Setup, das dich auf die Heu-Bestenliste bringt.
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## Schnellster Reset
 Der schnellste Reset ist die prestigeträchtigste Kategorie. Automatisiere das Spiel vollständig von einem einzelnen Farmfeld bis zum erneuten Freischalten der Bestenlisten.
@@ -21,6 +22,8 @@ Der schnellste Reset ist die prestigeträchtigste Kategorie. Automatisiere das S
 Du musst nicht alles freischalten, versuche einfach, `Unlocks.Leaderboard` so schnell wie möglich freizuschalten.
 
 Denke daran, dass du `num_unlocked(unlock) > 0` verwenden kannst, um zu prüfen, ob etwas freigeschaltet ist, und `get_cost()` auf Freischaltungen anwenden kannst, um zu sehen, was sie kosten, damit du automatisch die richtigen Gegenstände farmen kannst.
+
+`unlock()` berücksichtigt Abhängigkeiten im Forschungsbaum nicht. Du kannst beispielsweise `Unlocks.Fertilizer` vor `Unlocks.Water` freischalten.
 
 Funktionsaufruf:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -99,7 +102,6 @@ Erfolgsbedingung: `num_items(Items.Hay) >= 2000000000`
 
 ## Einzel-Drohnen-Bestenlisten
 Es gibt auch Bestenlisten für das Farmen mit einer einzelnen Drohne. Du bekommst nur eine Drohne und eine 8x8-Farm und musst eine bestimmte Menge an Ressourcen so schnell wie möglich farmen.
-
 ### `Leaderboards.Maze_Single`
 `leaderboard_run(Leaderboards.Maze_Single, filename, speedup)`
 Erfolgsbedingung: `num_items(Items.Gold) >= 616448`
@@ -127,3 +129,9 @@ Erfolgsbedingung: `num_items(Items.Carrot) >= 100000000`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 Erfolgsbedingung: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[Simulation](docs/unlocks/simulation.md)      [Zeitmessung](docs/unlocks/timing.md)      [Automatische Freischaltungen](docs/unlocks/auto_unlock.md)      [Kosten](docs/unlocks/costs.md)      [Statistiken](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

@@ -1,7 +1,13 @@
+[<- Depuração](docs/scripting/debug.md) <right>[Simulação ->](docs/unlocks/simulation.md)
+
+---
+
 # Medição de Tempo
+
 Se você realmente quer otimizar seus métodos, precisa entender como o tempo é medido neste jogo. Este desbloqueio é todo sobre isso.
 
 ## Novas Funções
+
 Existem duas funções úteis para medir quanto tempo as coisas levam:
 
 `get_time()` retorna o tempo em segundos desde o início do jogo.
@@ -10,9 +16,35 @@ Existem duas funções úteis para medir quanto tempo as coisas levam:
 
 Essas duas funções, assim como `quick_print()`, são completamente gratuitas. Até a operação de chamada é gratuita para elas.
 
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
+
 ## Detalhes de Execução
 
 ### Fique Ligado
+
 Não é assim que o desempenho funciona no mundo real. Estas são apenas regras criadas para este jogo ter um modelo de tempo consistente e compreensível.
 Você provavelmente só se importará com isso se quiser hiper-otimizar seu código.
 
@@ -31,3 +63,9 @@ Os loops `for` e `while` levam um tick para iniciar, mas as iterações são gra
 Indexar uma estrutura de dados leva um tick para o operador de índice e, no caso de um dicionário ou conjunto, ticks adicionais dependendo do tamanho da chave.
 
 O número de ticks que as funções nativas levam para serem executadas está documentado na documentação de cada função individualmente.
+
+---
+
+[Depuração](docs/scripting/debug.md)      [Simulação](docs/unlocks/simulation.md)      [Placares de Líderes](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

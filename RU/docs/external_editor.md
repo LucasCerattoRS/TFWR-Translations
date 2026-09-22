@@ -5,6 +5,12 @@
 Обрати внимание, что этот вариант добавлен только для удобства. На самом деле в игре используется не Python, но язык достаточно близок к нему, чтобы на нем　выполнялся Python IntelliSense.
 Ты можешь найти файлы в [папке сохранений](persistent_data_path/Saves).
 
+Папка постоянных данных находится здесь:
+
+- Windows: `%USERPROFILE%\AppData\LocalLow\TheFarmerWasReplaced\TheFarmerWasReplaced`
+- macOS: `~/Library/Application Support/com.TheFarmerWasReplaced.TheFarmerWasReplaced`
+- Linux (Steam/Proton): `~/.steam/steam/steamapps/compatdata/2060160/pfx/drive_c/users/steamuser/AppData/LocalLow/TheFarmerWasReplaced/TheFarmerWasReplaced`
+
 Для работы IntelliSense каждое сохранение также содержит файл `__builtins__.py` со встроенными определениями Python, соответствующими встроенным функциям игры.
 VS Code автоматически обнаруживает `__builtins__.py`, но в некоторых редакторах для работы необходимо добавить `from __builtins__ import *`.
 
@@ -22,3 +28,7 @@ Visual Studio Code — рекомендуемый редактор кода д�
 В игре необходимо включить настройку «Отслеживание файлов». Теперь каждый раз, когда ты сохраняешь код в VS Code, изменения будут автоматически отображаться в игре.
 
 Вот и все! Теперь ты можешь писать код в профессиональном редакторе.
+
+---
+
+[Первая программа](docs/first_program.md)      [Загрузка резервных копий](docs/backup.md)

@@ -1,3 +1,5 @@
+[<- 시뮬레이션](docs/unlocks/simulation.md)
+---
 # 리더보드
 여기까지 오셨다면, 많은 도전을 극복하셨을 거예요. 하지만 효율적으로 해결하셨나요? 
 다양한 리더보드에서 다른 플레이어들과 가장 효율적인 농사 방법으로 경쟁할 수 있어요.
@@ -10,10 +12,10 @@
 목표에 도달해도 시뮬레이션은 자동으로 끝나지 않아요. 프로그램이 종료되도록 해야 해요.
 런이 성공하면, 여러분의 시간이 리더보드에 추가될 거예요.
 
-편차를 줄이기 위해, 모든 런은 최소 2시간 동안 실행되어야 해요 (속도를 높일 수 있으니 그렇게 오래 걸리지는 않을 거예요). 런이 더 일찍 완료되면, 총 2시간이 될 때까지 반복될 거예요. 그런 다음 모든 런의 평균이 여러분의 점수로 업로드돼요.
+편차를 줄이기 위해 모든 런은 최소 2시간의 시뮬레이션 시간을 포함해야 해요. 시뮬레이션 속도를 높일 수 있으므로 실제로 그렇게 오래 걸리지는 않아요. 런이 더 일찍 끝나면 총 시뮬레이션 시간이 2시간에 도달할 때까지 반복돼요. 그런 다음 모든 런의 평균 시간이 점수로 업로드돼요.
 
 건초 리더보드에 오를 수 있는 예시 설정이에요.
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## 가장 빠른 리셋
 가장 빠른 리셋은 가장 권위 있는 카테고리예요. 단 하나의 농지에서 시작하여 리더보드를 다시 해금할 때까지 게임을 완전히 자동화하세요.
@@ -22,6 +24,8 @@
 
 `num_unlocked(unlock) > 0`을 사용하여 무언가가 해금되었는지 확인할 수 있고, 해금에 `get_cost()`를 사용하여 비용을 확인하여 올바른 아이템을 자동으로 수확할 수 있다는 것을 기억하세요.
 
+`unlock()`은 기술 트리의 의존 관계를 따지지 않아요. 예를 들어 `Unlocks.Water`보다 `Unlocks.Fertilizer`를 먼저 해금할 수도 있어요.
+
 함수 호출:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
 
@@ -29,7 +33,7 @@
 `unlocks = {}
 items = {}
 globals = {}
-#음수 시드 값은 무작위 시드를 의미해요
+# 음수 시드 값은 무작위 시드를 의미해요
 seed = -1
 simulate(filename, unlocks, items, globals, seed, speedup)`
 
@@ -127,3 +131,9 @@ simulate(filename, unlocks, items, globals, seed, speedup)`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 성공 조건: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[시뮬레이션](docs/unlocks/simulation.md)      [타이밍](docs/unlocks/timing.md)      [자동 해금](docs/unlocks/auto_unlock.md)      [비용](docs/unlocks/costs.md)      [통계](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

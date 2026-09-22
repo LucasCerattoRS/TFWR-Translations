@@ -1,13 +1,52 @@
+[<- Kürbisse](docs/unlocks/pumpkins.md)
+---
 # Polykultur
 Du hast vielleicht schon bemerkt, dass Pflanzen manchmal mehr Ertrag bringen, wenn sie zusammen gepflanzt werden.
-Gras, Büsche, Bäume und Karotten bringen mehr Ertrag, wenn sie den richtigen Pflanzenbegleiter haben. Die Begleiter-Präferenz ist für jede einzelne Pflanze unterschiedlich und kann nicht vorhergesagt werden. Glücklicherweise kann die Begleiter-Präferenz der Pflanze unter der Drohne mit `get_companion()` gemessen werden. Es gibt ein Tupel zurück, bei dem das erste Element die Art der Pflanze ist, die sie als Begleiter haben möchte, und das zweite Element die Position, an der sie ihren Begleiter haben möchte.
+Gras, Büsche, Bäume und Karotten liefern einen höheren Ertrag, wenn sie den richtigen Pflanzenbegleiter haben. Jede einzelne Pflanze hat eine andere, nicht vorhersagbare Begleitervorliebe. Zum Glück kannst du die Vorliebe der Pflanze unter der Drohne mit `get_companion()` messen. Die Funktion gibt ein Tupel zurück, dessen erstes Element die gewünschte Pflanzenart und dessen zweites Element die gewünschte Position des Begleiters angibt. Der Begleiter muss für den Ertragsbonus nicht vollständig ausgewachsen sein.
 
-`plant_type, (x, y) = get_companion()`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 20,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+plant_type, (x, y) = get_companion()
+print(plant_type, (x, y))
+move(East)
+move(South)
+plant(plant_type)
+move(West)
+move(North)
+do_a_flip()
+harvest()
+}}
 
-Wenn du zum Beispiel einen Busch pflanzt und dann `get_companion()` aufrufst, wird es etwas wie `(Entities.Carrot, (3, 5))` zurückgeben. Das bedeutet, dass dieser Busch gerne Karotten an der Position `(3,5)` hätte. Wenn du also Karotten bei `(3,5)` pflanzt und dann den Busch erntest, wird er mehr Holz einbringen. Das Wachstumsstadium der Karotte spielt keine Rolle.
+Eine Pflanze kann `Entities.Grass`, `Entities.Bush`, `Entities.Tree` oder `Entities.Carrot` als Begleiter bevorzugen. Jede Pflanze wählt zufällig, entscheidet sich aber immer für eine andere Pflanzenart als ihre eigene. Die Position kann mit Ausnahme der Position der Pflanze selbst überall innerhalb von 3 Schritten liegen.
 
-Die Begleiter-Präferenz einer Pflanze kann entweder `Entities.Grass`, `Entities.Bush`, `Entities.Tree` oder `Entities.Carrot` sein. Jede Pflanze wählt dies zufällig, aber sie wird immer eine andere Pflanze als sich selbst wählen. Die Position kann auch jede Position innerhalb von 3 Zügen von der Pflanze entfernt sein, außer der Position der Pflanze selbst.
+Wenn sich unter der Drohne keine Pflanze mit einer Begleitervorliebe befindet, gibt `get_companion()` `None` zurück.
 
-Wenn sich keine Pflanze unter der Drohne befindet, die eine Begleiter-Präferenz hat, gibt `get_companion()` `None` zurück.
+Beim ersten Freischalten der Polykultur beträgt der Ertragsmultiplikator `5`. Mit jeder Verbesserung verdoppelt er sich.
 
-Bevor die Polykultur freigeschaltet ist, beträgt der Ertragsmultiplikator `5`. Er verdoppelt sich bei jedem Upgrade.
+---
+
+[Statistiken](docs/stats.md)      [Tupel](docs/scripting/tuples.md)      [Dictionaries](docs/scripting/dicts.md)      [Sinne](docs/unlocks/senses.md)      [Pflanzen](docs/unlocks/plant.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

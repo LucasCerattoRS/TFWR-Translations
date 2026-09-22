@@ -1,3 +1,5 @@
+[<- Depuración](docs/scripting/debug.md) <right>[Simulación ->](docs/unlocks/simulation.md)
+---
 # Medición de Tiempo
 Si de verdad quieres optimizar tus métodos, necesitas entender cómo se mide el tiempo en este juego. Este desbloqueo trata sobre eso.
 
@@ -8,7 +10,32 @@ Hay dos funciones útiles para medir cuánto tardan las cosas:
 
 `get_tick_count()` devuelve el número de ticks realizados desde el inicio de la ejecución.
 
-Estas dos funciones, así como `quick_print()`, son completamente gratuitas. Incluso la operación de llamada es gratuita para ellas.
+Estas dos funciones, al igual que `quick_print()`, son completamente gratuitas. Incluso su operación de llamada es gratuita.
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
 
 ## Detalles de Ejecución
 
@@ -17,7 +44,7 @@ Así no es como funciona el rendimiento en el mundo real. Estas son solo reglas 
 Probablemente solo te importe esto si quieres hiperoptimizar tu código.
 
 
-La unidad básica de tiempo para la ejecución de código se llama "tick". Sin mejoras de velocidad y energía, la ejecución procede a una velocidad de `400` ticks por segundo.
+La unidad básica de tiempo para la ejecución de código se llama «tick». Sin mejoras de velocidad ni energía, la ejecución avanza a `400` ticks por segundo.
 
 En general, las operaciones que combinan dos valores como `+, -, *, /, //, %, and, or, ...` tardan un tick en ejecutarse.
 Los operadores unarios `-` y `not` son gratuitos.
@@ -28,7 +55,13 @@ Acceder a un módulo importado con el operador `.` es gratuito.
 Si una función o módulo se ha pasado a través de argumentos o asignaciones de variables, usarlo costará 1 tick en lugar de 0.
 Los bucles `for` y `while` tardan un tick en empezar, pero las iteraciones son gratuitas (sin contar el tiempo para evaluar las expresiones de condición/secuencia).
 `return`, `break` y `continue` son todos gratuitos.
-`pass` tarda un tick, por lo que se puede usar para crear retrasos precisos.
-Indexar en una estructura de datos tarda un tick para el operador de índice y, en el caso de un diccionario o conjunto, ticks adicionales dependiendo del tamaño de la clave.
+`pass` tarda un tick, así que se puede usar para crear retrasos precisos.
+Indexar una estructura de datos tarda un tick por el operador de índice y, en el caso de un diccionario o conjunto, ticks adicionales según el tamaño de la clave.
 
-El número de ticks que tardan en ejecutarse las funciones integradas está documentado en la documentación de cada función de forma individual.
+El número de ticks que tardan en ejecutarse las funciones integradas está documentado en la página de cada función.
+
+---
+
+[Depuración](docs/scripting/debug.md)      [Simulación](docs/unlocks/simulation.md)      [Tablas de clasificación](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

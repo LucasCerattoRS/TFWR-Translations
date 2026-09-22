@@ -1,11 +1,13 @@
+[<- Funkcje](docs/scripting/functions.md)
+---
 # Import
 Umieszczanie całego kodu w jednym pliku szybko staje się nie do opanowania. 
-Instrukcje `import` pozwalają na importowanie funkcji i zmiennych globalnych z innego pliku.
-Jak to działa w jednym zrzucie ekranu:
-![](ImportsInOnePicture400)
+Instrukcje `import` pozwalają importować funkcje i zmienne globalne z innego pliku.
+Jak to działa na jednym zrzucie ekranu:
+![|x400](ImportsInOnePicture)
 
 Tutaj `import module2` uruchamia plik o nazwie `module2` i daje ci dostęp do wszystkich jego zmiennych globalnych.
-Następnie możesz uzyskać dostęp do zmiennych i funkcji w zaimportowanym module za pomocą operatora `. `.
+Następnie możesz uzyskać dostęp do zmiennych i funkcji w zaimportowanym module za pomocą operatora `.`.
 Więc w tym przykładzie `module2.print_x()` wywołuje `print_x()` z `module2`.
 
 ### Nie musisz czytać dalej
@@ -28,26 +30,26 @@ Ta forma importu zazwyczaj nie jest zalecana, ponieważ nie działa dobrze, gdy 
 
 # Jak to naprawdę działa
 
-## TLDR
+## TL;DR
 Importy mogą być dość nieintuicyjne, ale większości problemów można uniknąć, trzymając się składni `import file` zamiast `from file import` i opakowując wszystko, co nie jest definicją globalną, w
 `if __name__ == "__main__":`
 
 ## Efekty uboczne importu
-Gdy importujesz plik po raz pierwszy, cały plik zostanie wykonany, a następnie uzyskasz dostęp do wszystkich zmiennych, które zostały zdefiniowane podczas jego wykonania.
-Jeśli zaimportujesz ten sam plik ponownie, zwróci on po prostu moduł z pamięci podręcznej z pierwszego importu.
+Gdy importujesz plik po raz pierwszy, gra wykonuje cały plik, a następnie daje ci dostęp do wszystkich zmiennych zdefiniowanych podczas tego wykonania.
+Jeśli zaimportujesz ten sam plik ponownie, zwróci moduł zapisany w pamięci podręcznej podczas pierwszego importu.
 
 Oznacza to, że instrukcje importu mogą mieć efekty uboczne. Jeśli zaimportujesz plik, który wywołuje `harvest()`, faktycznie zbierze on plony podczas importu. Ale gdy zaimportujesz go ponownie, nie zbierze plonów, ponieważ plik jest uruchamiany tylko raz.
 
-Jest sposób na uniknięcie takich efektów ubocznych za pomocą zmiennej `__name__`. Jest to zmienna, która jest automatycznie ustawiana na `"__main__"`, gdy plik jest uruchamiany bezpośrednio, i na nazwę pliku, gdy plik jest uruchamiany przez `import`.
-Uznaje się za dobrą praktykę umieszczanie każdego kodu, który nie powinien być uruchamiany podczas importowania pliku, wewnątrz bloku `if __name__ == "__main__":`.
+Efektów ubocznych można uniknąć za pomocą zmiennej `__name__`. Jest ona automatycznie ustawiana na `"__main__"`, gdy plik jest uruchamiany bezpośrednio, oraz na nazwę pliku, gdy jest uruchamiany przez `import`.
+Dobrą praktyką jest umieszczanie kodu, który nie powinien być uruchamiany podczas importowania pliku, wewnątrz bloku `if __name__ == "__main__":`.
 
 Powszechną strukturą plików w Pythonie jest umieszczanie kodu, który ma być wykonany po uruchomieniu pliku, w funkcji `main()`. W ten sposób masz wyraźne rozróżnienie między zmiennymi lokalnymi (zdefiniowanymi wewnątrz `main()`) a zmiennymi globalnymi, które można importować (zdefiniowanymi poza `main()`).
 
-`a_global_variable = "global"
+`a_global_variable = "globalna"
 
 def main():
-    a_local_variable = "local"
-    # do things
+    a_local_variable = "lokalna"
+    # wykonaj operacje
 
 if __name__ == "__main__":
     main()`
@@ -66,12 +68,12 @@ def f():
 
 To zadziała bez problemu. Załóżmy, że żaden z dwóch plików nie jest jeszcze załadowany, a ktoś inny wykonuje `import a`.
 
--`a` wykonuje się do linii `import b`.
--`b` wykonuje się do linii `import a`.
--Moduł `a` już istnieje, ale nie zawiera `x`, ponieważ doszedł tylko do linii `import b`.
--`b` przechowuje odniesienie do w połowie załadowanego modułu `a` w zmiennej o nazwie `a`.
--`b` wykonuje instrukcję `def` i przechowuje funkcję `f()`.
--`a` kontynuuje działanie i inicjalizuje `x`.
+- `a` wykonuje się do wiersza `import b`.
+- `b` wykonuje się do wiersza `import a`.
+- Moduł `a` już istnieje, ale nie zawiera `x`, ponieważ doszedł tylko do wiersza `import b`.
+- `b` zapisuje odwołanie do częściowo załadowanego modułu `a` w zmiennej o nazwie `a`.
+- `b` wykonuje instrukcję `def` i zapisuje funkcję `f()`.
+- `a` kontynuuje działanie i inicjalizuje `x`.
 
 Gdy ktoś wywoła `b.f()`, poprawnie wyświetli się `0`, ponieważ moduł `a`, do którego `b` ma odniesienie, jest już w pełni załadowany.
 
@@ -86,11 +88,14 @@ plik `b`:
 def f():
     print(x)`
 
--`a` wykonuje się do linii `from b import *`.
--`b` wykonuje się do linii `from a import *`.
--Moduł `a` już istnieje, ale nie został jeszcze w pełni wykonany.
--`b` rozpakowuje wszystko, co aktualnie znajduje się w `a`, do swojego własnego zasięgu globalnego. W tym momencie `a` nie zawiera nic, ponieważ nie doszło jeszcze do linii `x = 0`, więc nic nie jest importowane.
--`b` wykonuje instrukcję `def` i przechowuje funkcję `f()`.
--`a` kontynuuje działanie i inicjalizuje `x`.
+- `a` wykonuje się do wiersza `from b import *`.
+- `b` wykonuje się do wiersza `from a import *`.
+- Moduł `a` już istnieje, ale nie został jeszcze w pełni wykonany.
+- `b` rozpakowuje całą bieżącą zawartość `a` do własnego zasięgu globalnego. W tym momencie `a` jest puste, ponieważ nie doszło jeszcze do wiersza `x = 0`, więc nic nie zostaje zaimportowane.
+- `b` wykonuje instrukcję `def` i zapisuje funkcję `f()`.
+- `a` kontynuuje działanie i inicjalizuje `x`.
 
 Jeśli ktoś teraz wywoła `b.f()`, otrzyma błąd, że `x` nie istnieje w bieżącym zasięgu. Dzieje się tak, ponieważ tym razem `b` nie ma odniesienia do wciąż ładującego się `a` i nie widzi definicji, które zostały dodane po imporcie.
+---
+
+[Funkcje](docs/scripting/functions.md)      [Zasięgi nazw](docs/scripting/scopes.md)

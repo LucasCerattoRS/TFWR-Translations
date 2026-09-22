@@ -6,13 +6,12 @@
 @average_text2 = 已完成 {0} 次
 {1}
 @unlocked_in = 更多相关信息请见：[{0}]({1})
-@table_of_contents_section_general_info = 通用信息
-@table_of_contents_section_programming = 编程
-@table_of_contents_section_unlocks = 解锁
-@table_of_contents_section_builtins = 内置函数
-@table_of_contents_section_items = 物品
-@table_of_contents_section_entities = 实体
-@table_of_contents_section_grounds = 地块
 @new_hat_unlocked = ## 已解锁新帽子
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- 右键点击获取更多信息 --
+@missing_unlock_page = 你需要先在[科技树](tech_tree)中解锁 {0}，才能查看此页面。
+
+---
+
+{1}
+@latest_news = 最新消息

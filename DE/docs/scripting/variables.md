@@ -1,3 +1,6 @@
+[<- Operatoren](docs/scripting/operators.md) <right>[Listen ->](docs/scripting/lists.md)
+<right>[Funktionen ->](docs/scripting/functions.md)
+---
 # Variablen
 Variablen kann man sich als benannte Behälter vorstellen, die einen Wert enthalten können.
 Der `=` Operator wird verwendet, um eine Variable zu deklarieren und einen Wert darin zu speichern.
@@ -18,24 +21,76 @@ Der `=` Operator weist den Wert auf der rechten Seite dem Namen auf der linken S
 
 Nachdem einer Variable ein Wert zugewiesen wurde, kannst du sie im Code verwenden, um den darin enthaltenen Wert abzurufen
 
-`a = 5
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+a = 5
 for i in range(a):
-	do_a_flip()`
+	do_a_flip()
+}}
 
 Die obige Schleife wird 5 Mal ausgeführt, weil `a` auf `5` gesetzt ist.
 Das `i` in der `for`-Schleife ist ebenfalls eine Variable, der bei jeder Iteration der Schleife automatisch der aktuelle Wert der Sequenz zugewiesen wird. (Sie muss nicht `i` heißen, du kannst ihr jeden gültigen Variablennamen geben.)
 
 Variablen ermöglichen es dir auch, dasselbe mit einer while-Schleife zu tun:
 
-`a = 5
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+a = 5
 i = 0
 while i < a:
 	do_a_flip()
-	i = i + 1`
+	i = i + 1
+}}
 
-Dies tut dasselbe wie die for-Schleife oben. Wir müssen i nur manuell erhöhen.
-Beachte, dass wir, um i zu erhöhen, es auf seinen eigenen Wert plus `1` setzen. Den Wert einer Variable basierend auf ihrem vorherigen Wert zu ändern, ist sehr üblich.
+Dies tut dasselbe wie die `for`-Schleife oben. Wir müssen `i` nur manuell erhöhen.
+Beachte, dass wir, um `i` zu erhöhen, es auf seinen eigenen Wert plus `1` setzen. Den Wert einer Variable basierend auf ihrem vorherigen Wert zu ändern, ist sehr üblich.
 Es kann mit diesen Operatoren abgekürzt werden: `+=, -=, *=, /=, %=`
 
 `i = i + 1` ist dasselbe wie `i += 1`
 `a = a / 3` ist dasselbe wie `a /= 3`
+
+---
+
+[Operatoren](docs/scripting/operators.md)      [While-Schleife](docs/scripting/while.md)      [For-Schleife](docs/scripting/for.md)      [Funktionen](docs/scripting/functions.md)      [Geltungsbereiche](docs/scripting/scopes.md)

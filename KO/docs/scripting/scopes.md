@@ -1,3 +1,5 @@
+[<- 함수](docs/scripting/functions.md)
+---
 # 이름 스코프
 스코프는 어떤 변수를 어디에서 접근할 수 있는지를 결정해요. 스코프는 기본적으로 이름과 값의 매핑이에요.
 기본적으로 Python에서와 동일하게 작동해요.
@@ -11,10 +13,10 @@
 
 이 `def` 문은 전역 스코프에서 `f`라는 이름에 함수를 할당해요.
 `def f():
-    ``f`의 지역 스코프에서 `y`라는 이름에 `1` 값을 할당해요.``
+    `함수 `f`의 지역 스코프에서 `y`라는 이름에 `1` 값을 할당해요.`
     y = 1
 
-    ``f`의 지역 스코프에서 `g`라는 이름에 함수를 할당해요.``
+    `함수 `f`의 지역 스코프에서 `g`라는 이름에 함수를 할당해요.`
     def g():
         pass`
 
@@ -22,30 +24,70 @@
 전역 스코프에서 `f`에 저장된 함수를 가져와 호출해요.
 
 `print(y)`
-전역 스코프에 있는 이 print 문은 `y`가 전역 스코프에 선언된 적이 없어서 여기서 읽을 수 없으므로 오류를 발생시켜요.
-`y`는 `f`의 지역 스코프에만 존재했어요.
+전역 스코프에 있는 이 `print` 문은 `y`가 전역 스코프에 선언된 적이 없어서 여기서 읽을 수 없으므로 오류를 발생시켜요.
+이 변수는 `f`의 지역 스코프에만 존재했어요.
 
 ## global 키워드
 기본적으로 함수 내의 모든 변수는 전역 스코프에 같은 이름의 변수가 존재하더라도 지역 스코프에 바인딩돼요.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 이 코드는 `0`을 출력해요. `f` 안의 지역 변수 `x`는 전역 변수 `x`와 다른 변수이므로 전역 `x`는 변경되지 않아요. 이것은 중요해요. 그렇지 않으면 함수 호출이 우연히 그 함수의 지역 변수와 이름이 같은 전역 변수를 덮어쓸 수 있기 때문이에요.
 
 전역 변수에 쓰려면 `global` 키워드를 사용하여 명시적으로 해야 해요.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 이 예시에서 `global x`는 `x`를 그 위에 정의된 전역 변수 `x`에 바인딩해요. 이제 이것은 `1`을 출력할 거예요.
 전역 변수를 변경하는 것은 보통 스파게티 코드로 가는 첫걸음이며, 프로그램의 모든 부분이 다른 모든 부분에 영향을 미치게 되므로 남용하지 마세요.
@@ -53,8 +95,32 @@ print(x)`
 ## 루프와 분기문
 루프와 분기문은 자신만의 스코프를 만들지 않으므로, 그 안에서 선언된 것은 밖에서도 사용할 수 있어요.
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
 이것은 `2`를 출력할 거예요. `for` 루프의 마지막 반복에서 `i`에 `2`를 할당했기 때문이에요.
+
+---
+
+[변수](docs/scripting/variables.md)      [함수](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [메가팜](docs/unlocks/megafarm.md)

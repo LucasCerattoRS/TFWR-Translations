@@ -1,17 +1,44 @@
+[<- Удобрение](docs/unlocks/fertilizer.md) <right>[Мегаферма ->](docs/unlocks/megafarm.md)
+---
 # Лабиринты
-Странное вещество `Items.Weird_Substance`, получаемое при [удобрении](docs/unlocks/fertilizer.md) растений, оказывает необычное воздействие на кусты. Если дрон находится над кустом и ты вызываешь `use_item(Items.Weird_Substance, amount)`, куст превращается в зеленый лабиринт.
-Размер лабиринта зависит от количества использованного `Items.Weird_Substance` (второй аргумент вызова `use_item()`).
-До улучшения лабиринта использование `n` `Items.Weird_Substance` приводит к созданию лабиринта `n`x`n`. Каждый уровень улучшения удваивает клад, а также необходимое количество `Items.Weird_Substance`.
-Итак, вот код для создания лабиринта, охватывающего все поле:
+`Items.Weird_Substance` странно действует на кусты. Если дрон находится над кустом и вызвать `use_item(Items.Weird_Substance, amount)`, куст превратится в лабиринт из живой изгороди.
+Размер лабиринта зависит от количества использованного `Items.Weird_Substance` (второго аргумента вызова `use_item()`).
+Без улучшений лабиринта использование `n` единиц `Items.Weird_Substance` создаст лабиринт размером `n`x`n`. Каждый уровень улучшения удваивает сокровище, но также удваивает необходимое количество `Items.Weird_Substance`.
+Чтобы создать лабиринт размером со все поле:
 
-`plant(Entities.Bush)
-substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
-use_item(Items.Weird_Substance, substance)`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+}}
 
 
 По какой-то причине дрон не может летать над изгородями, хотя они кажутся не такими уж высокими.
 
-Где-то в изгороди спрятан клад. Примени `harvest()` к кладу, чтобы получить золото в количестве, равном площади лабиринта. (Например, лабиринт 5х5 принесет 25 золота.)
+Где-то в лабиринте спрятан клад. Примени `harvest()` к кладу, чтобы получить золото в количестве, равном площади лабиринта. Например, лабиринт 5х5 принесет 25 золота.
 
 Если ты используешь `harvest()` в любом другом месте, лабиринт пропадет.
 
@@ -23,6 +50,44 @@ use_item(Items.Weird_Substance, substance)`
 `move()` возвращает `True`, если попытка удачная, в противном случае — `False`.
 
 `can_move()` можно использовать для проверки наличия стены, не совершая движения.
+
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+quick_print(
+    can_move(North), 
+    can_move(East), 
+    can_move(South), 
+    can_move(West)
+)
+if move(North) and get_entity_type() == Entities.Treasure:
+    harvest()
+}}
 
 Если ты не понимаешь, как добраться до клада, посмотри подсказку 1. Она объясняет, как подходить к решению такой задачи.
 
@@ -41,7 +106,8 @@ use_item(Items.Weird_Substance, substance)`
 
 Клад можно перемещать до 300 раз. После этого применение странного вещества к кладу больше не будет увеличивать золото в нем, и он больше не будет перемещаться.
 
-<spoiler=показать подсказку 1>Ниже показан общий подход к решению задачи.
+<spoiler=показать подсказку 1>
+Вот общий подход к решению задачи:
 
 Создай лабиринт и представь, что ты дрон.
 
@@ -49,23 +115,98 @@ use_item(Items.Weird_Substance, substance)`
 
 Опиши стратегию шаг за шагом, чтобы кто-то другой мог воспроизвести ее без раздумий.
 
-Теперь попробуй преобразовать шаги в код.
+Теперь попробуй перевести свои шаги в код.
 </spoiler>
-<spoiler=показать подсказку 2>Пока нет циклов: все стены на самом деле являются единой большой стеной. Если перемещаться вдоль стены, она проведет тебя через весь лабиринт.
-Этот подход не требует длинного кода, и тебе не нужно отслеживать пройденные участки. Около 10 строк кода — вот и все, что тебе понадобится.</spoiler>
-<spoiler=показать подсказку 3>Вместо того, чтобы перемещать дрон в абсолютных направлениях, таких как восток или запад, имеет смысл использовать относительные направления, такие как «повернуть направо» или «повернуть налево». Для этого нужно отслеживать, в каком направлении перемещается дрон в текущий момент. Дрон никогда не поворачивает, но ты все равно можешь задать его «виртуальный» поворот в коде.
-Тут пригодится следующий трюк с индексами:
+<spoiler=показать подсказку 2>
+Пока в лабиринте нет циклов, все стены образуют одну большую связную стену. Если держаться левой рукой за стену и следовать вдоль нее, она проведет через весь лабиринт.
+Для этого подхода нужно совсем немного кода и не требуется запоминать посещенные места. Достаточно примерно 10 строк.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+directions = [North, East, South, West]
+index = 0
+while get_entity_type() != Entities.Treasure:
+    index = (index - 1) % 4
+    for _ in range(4):
+        if move(directions[index]):
+            break
+        index = (index + 1) % 4
+do_a_flip()
+harvest()
+}}
+</spoiler>
+<spoiler=показать подсказку 3>
+Вместо движения в абсолютных направлениях вроде востока и запада бывает удобно использовать относительные направления вроде «повернуть направо» и «повернуть налево». Для этого нужно отслеживать текущее направление движения дрона. Сам дрон не поворачивается, но в коде можно поддерживать «виртуальный» поворот.
+Здесь пригодится следующий прием с индексами:
 
-`directions = [North, East, South, West]
-index = 0`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+directions = [North, East, South, West]
+index = 0
+move(directions[index])
 
-Используй `% 4`: это позволит дрону вращаться «по кругу», так что после `West` он вернется к `North`.
-`# повернуть направо
-index = (index + 1) % 4`
+#повернуть направо
+index = (index + 1) % 4
+move(directions[index])
 
-`# повернуть налево
+#повернуть налево
 index = (index - 1) % 4
+move(directions[index])
+}}
 
-move(directions[index])`</spoiler>
-<spoiler=показать подсказку 4>Если не получается найти решение, всегда можно использовать менее эффективный способ и не ломать голову.
-Решить лабиринт `1`х`1` — задача, не требующая особых усилий.</spoiler>
+
+`% 4` позволяет вращаться «по кругу»: `3 (West) + 1` снова дает `0 (North)`, потому что `4 % 4 == 0`, а `-1 % 4 == 3`.</spoiler>
+<spoiler=показать подсказку 4>
+Если решить задачу не получается, можно упростить ее, выбрав менее эффективный подход.
+Лабиринт размером `1`x`1` решается элементарно.</spoiler>
+
+---
+
+[Статистика](docs/stats.md)      [Списки](docs/scripting/lists.md)      [Словари](docs/scripting/dicts.md)      [Кортежи](docs/scripting/tuples.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [can_move()](functions/can_move)      [move()](functions/move)      [use_item()](functions/use_item)

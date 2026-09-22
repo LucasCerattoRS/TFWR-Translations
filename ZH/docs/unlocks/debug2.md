@@ -1,3 +1,5 @@
+[<- 调试](docs/scripting/debug.md)
+---
 # 调试 2
 当无人机速度太快，或者网格太大时，可能很难判断具体情况。
 
@@ -5,3 +7,9 @@
 它们可用来减慢执行速度和缩小农场。
 
 农场大小和执行速度将在执行结束时重置为默认值。
+
+---
+
+[调试](docs/scripting/debug.md)      [输出](docs/output.md)      [放置地块辅助调试](docs/unlocks/debug_place.md)      [计时](docs/unlocks/timing.md)      [模拟](docs/unlocks/simulation.md)
+
+[set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

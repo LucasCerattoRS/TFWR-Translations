@@ -1,26 +1,30 @@
+[<- Simulazione](docs/unlocks/simulation.md)
+---
 # Classifica
 Se sei arrivato fin qui, hai superato molte sfide. Ma le hai risolte in modo efficiente? 
 Puoi competere con altri giocatori in varie classifiche per i metodi di coltivazione più efficienti.
 
 Puoi avviare una partita per la classifica chiamando `leaderboard_run(leaderboard, filename, speedup)`.
-Questo avvia una [simulazione](docs/unlocks/simulation.md) simile a `simulate()` tranne che le condizioni di partenza sono fisse. Ogni categoria di classifica ha condizioni di partenza e di successo diverse.
+Questo avvia una [simulazione](docs/unlocks/simulation.md) simile a `simulate()`, ma con condizioni iniziali fisse. Ogni categoria della classifica ha condizioni iniziali e di successo diverse.
 
 La partita per la classifica ha successo se la condizione di successo è `True` quando la simulazione termina. 
 
 La simulazione NON terminerà automaticamente quando l'obiettivo viene raggiunto. Devi assicurarti che il programma termini.
 Se la partita ha successo, il tuo tempo verrà aggiunto alla classifica.
 
-Per ridurre la varianza, tutte le partite devono durare almeno 2 ore (puoi accelerarle, quindi non ci vorrà così tanto). Se una partita viene completata prima, verrà ripetuta fino al raggiungimento di un tempo totale di 2 ore. La media di tutte le partite viene quindi caricata come tuo punteggio.
+Per ridurre la variabilità, tutte le run devono coprire almeno 2 ore di tempo simulato. Puoi accelerare la simulazione, quindi non servirà altrettanto tempo reale. Se una run termina prima, verrà ripetuta finché il tempo simulato totale non raggiunge 2 ore. La media dei tempi di tutte le run viene quindi caricata come punteggio.
 
 Ecco un esempio di configurazione che ti porterà nella classifica del fieno.
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## Reset più Veloce
-Il reset più veloce è la categoria più prestigiosa. Automatizza completamente il gioco da un singolo appezzamento di terreno fino a sbloccare di nuovo le classifiche.
+Il reset più veloce è la categoria più prestigiosa. Devi automatizzare completamente il gioco, partendo da un'unica casella di fattoria e terminando quando sblocchi di nuovo le classifiche.
 
 Non devi sbloccare tutto, cerca solo di sbloccare `Unlocks.Leaderboard` il più velocemente possibile.
 
-Ricorda che puoi usare `num_unlocked(unlock) > 0` per controllare se qualcosa è sbloccato e puoi usare `get_cost()` sugli sblocchi per vedere quanto costano, in modo da poter coltivare automaticamente gli oggetti giusti.
+Ricorda che puoi usare `num_unlocked(unlock) > 0` per controllare se qualcosa è sbloccato. Puoi anche usare `get_cost()` sugli sblocchi per conoscerne il costo e raccogliere automaticamente gli oggetti giusti.
+
+`unlock()` ignora le dipendenze dell'albero tecnologico. Per esempio, puoi sbloccare `Unlocks.Fertilizer` prima di `Unlocks.Water`.
 
 Chiamata di Funzione:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -98,7 +102,7 @@ Condizione di Successo: `num_items(Items.Carrot) >= 2000000000`
 Condizione di Successo: `num_items(Items.Hay) >= 2000000000`
 
 ## Classifiche a Drone Singolo
-Ci sono anche Classifiche per coltivare con un singolo drone. Ottieni un solo drone e una fattoria 8x8 e devi coltivare una certa quantità di risorse il più velocemente possibile.
+Esistono anche classifiche per la coltivazione con un solo drone. Hai a disposizione un solo drone e una fattoria 8x8 e devi raccogliere una certa quantità di risorse il più rapidamente possibile.
 
 ### `Leaderboards.Maze_Single`
 `leaderboard_run(Leaderboards.Maze_Single, filename, speedup)`
@@ -127,3 +131,9 @@ Condizione di Successo: `num_items(Items.Carrot) >= 100000000`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 Condizione di Successo: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[Simulazione](docs/unlocks/simulation.md)      [Tempi](docs/unlocks/timing.md)      [Sblocchi Automatici](docs/unlocks/auto_unlock.md)      [Costi](docs/unlocks/costs.md)      [Statistiche](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

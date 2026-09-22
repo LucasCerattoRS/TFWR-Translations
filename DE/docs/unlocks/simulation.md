@@ -1,3 +1,5 @@
+[<- Zeitmessung](docs/unlocks/timing.md) <right>[Bestenlisten ->](docs/unlocks/leaderboard.md)
+---
 # Simulation
 
 Simulationen ermöglichen es dir, Code schnell zu testen, ohne den Zustand der echten Farm zu verändern.
@@ -29,10 +31,10 @@ Führe die Simulation aus
 Die `simulate()`-Funktion gibt die Zeit in Sekunden zurück, die benötigt wurde, um die angegebene Startdatei zu simulieren.
 
 ### Dateiname
-Das erste Argument der `simulate`-Funktion ist der Dateiname. Dies ist der Name, der oben im Codefenster angezeigt wird. Die Simulation führt die angegebene Datei so aus, als ob du den Ausführen-Button darauf geklickt hättest.
+Das erste Argument der `simulate()`-Funktion ist der Dateiname. Dies ist der Name, der oben im Codefenster angezeigt wird. Die Simulation führt die angegebene Datei so aus, als ob du den Ausführen-Button darauf geklickt hättest.
 
 ### Start-Freischaltungen
-Alle Programmier-Features wie Schleifen, if-Anweisungen, Listen, Dicts,... bleiben immer freigeschaltet. 
+Alle Programmier-Features wie Schleifen, `if`-Anweisungen, Listen, Dicts,... bleiben immer freigeschaltet. 
 
 Das zweite Argument ermöglicht es dir, anzugeben, mit welchen Freischaltungen/Upgrades die Simulation zusätzlich zu den Programmier-Features starten soll. Dies sollte eine Sequenz von Freischaltungen sein. Die Simulation startet mit allen Freischaltungen in der Sequenz, die auf ihre maximale Stufe aufgerüstet sind.
 
@@ -55,4 +57,10 @@ Der Zufalls-Seed beeinflusst alles, von den Wachstumszeiten der Pflanzen über L
 ### Speedup
 Das sechste Argument ist der anfängliche Speedup der Simulation. Dies ermöglicht es dir, Dinge schnell zu testen. Wenn das Spiel mit der eingestellten Geschwindigkeit nicht mithalten kann, wird es automatisch langsamer.
 
-Der Speedup beeinflusst das Ergebnis der Simulation in keiner Weise. Er dient nur dazu, die Wartezeit zu verkürzen.
+Die Beschleunigung beeinflusst das Ergebnis der Simulation in keiner Weise. Sie dient nur dazu, die Wartezeit zu verkürzen.
+
+---
+
+[Dictionaries](docs/scripting/dicts.md)      [Zeitmessung](docs/unlocks/timing.md)      [Debuggen](docs/scripting/debug.md)      [Bestenlisten](docs/unlocks/leaderboard.md)
+
+[simulate()](functions/simulate)

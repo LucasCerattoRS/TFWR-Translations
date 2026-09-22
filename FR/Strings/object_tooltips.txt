@@ -8,18 +8,50 @@ Peut pousser sur {3}.
 @object_descr_bush = Un petit buisson qui donne `Items.Wood`.
 @object_descr_tree = Les arbres donnent plus de bois que les buissons. Ils mettent plus de temps à pousser si d'autres arbres poussent à côté d'eux.
 @object_descr_carrot = Des carottes !
+@object_descr_rice = Le riz peut être planté sur la couche d’argile que tu trouves sous terre.
+@object_descr_bamboo = Le bambou peut pousser très haut, mais il fleurit à une hauteur bien précise. Le rendement est maximal si tu le récoltes exactement à la hauteur où il fleurit.
 @object_descr_pumpkin = Les citrouilles poussent ensemble lorsqu'elles sont à côté d'autres citrouilles complètement développées. Environ 1 citrouille sur 5 meurt en grandissant.
 @object_descr_dead_pumpkin = Une citrouille sur cinq meurt en grandissant, laissant derrière elle une citrouille morte. Les citrouilles mortes sont inutiles et disparaissent lorsque quelque chose de nouveau est planté.
 @object_descr_sunflower = Les tournesols collectent la puissance du soleil. Les récolter te donnera `Items.Power`.
 Si tu récoltes un tournesol avec le nombre maximum de pétales, tu obtiens un bonus de puissance.
 @object_descr_cactus = Les cactus existent en 10 tailles différentes. Lors de la récolte, les cactus adjacents qui sont "triés" seront également récoltés.
 @object_descr_hedge = Partie du labyrinthe.
-@object_descr_treasure = Un trésor qui contient de l'or égal à la longueur du côté du labyrinthe dans lequel il est caché. Il peut être récolté comme une plante.
+@object_descr_treasure = Un trésor qui contient une quantité d’or égale à l’aire du labyrinthe dans lequel il est caché. Il peut être récolté comme une plante.
 @object_descr_dinosaur = Un morceau de la queue du chapeau de dinosaure.
 @object_descr_grassland = Le sol par défaut. L'herbe y poussera automatiquement.
 @object_descr_soil = Appeler `till()` transforme le sol en terre labourée. L'appeler à nouveau le retransforme en prairie.
+@object_descr_dirt = C’est de la terre.
+@object_descr_rock = C’est une roche dure.
+@object_descr_clay = Un bloc d’argile. Un sol fertile, idéal pour le riz. Lorsqu’un plant de riz arrive à maturité, il retransforme l’argile située dessous en terre.
+@object_descr_blue_block = Un bloc bleu.
+@object_descr_red_block = Un bloc rouge.
+@object_descr_green_block = Un bloc vert.
+@object_descr_coal = Un bloc riche en charbon sédimentaire.
+@object_descr_iron = Un bloc contenant de la magnétite brute.
+@object_descr_quartz = Un bloc renfermant du quartz cristallin.
+@object_descr_limestone = Du calcaire blanchâtre. Il constitue les fondations des anciennes pyramides.
+@object_descr_sand = Un bloc de sable. Il fait partie d’une ancienne pyramide.
+@object_descr_bedrock = Indestructible.
+@object_descr_petrified_pumpkin = Une citrouille pétrifiée. Toujours bonne à manger.
+@object_descr_loam = Un terreau riche, idéal pour certaines plantes. Les tournesols et les carottes donnent un rendement double lorsqu’ils y sont plantés.
+@object_descr_perlite = Une terre riche en perlite, idéale pour certaines plantes. Les buissons, cactus, bambous et arbres donnent un rendement double lorsqu’ils y sont plantés.
 @runtime_entity_tooltip = Une fois récolté, donne :
 {{itemblock tooltip}}
+@runtime_ground_tooltip = Une fois extrait, donne :
+{{itemblock tooltip_ground}}
+@runtime_mushroom_tooltip = Lorsque deux blocs de champignons du même type sont empilés, ils donnent :
+{{itemblock tooltip_ground}}
 @runtime_growable_tooltip = Temps de croissance total : {0} secondes
 Croissance : {1}%
-@runtime_ground_tooltip = Niveau d'eau : {0}
+@runtime_ground_hardness_tooltip = Dureté : {0}
+@runtime_ground_stability_tooltip = Stabilité : {0}
+@runtime_ground_water_tooltip = Niveau d’eau : {0}
+@object_descr_dynamite = Explose lorsqu’on la fore. La planter coûte toujours 1 dynamite et la récolter en rapporte 1.
+@object_descr_dynamite_ground = Peut laisser tomber de la dynamite sur le bloc inférieur lorsqu’on le fore. La dynamite peut être récoltée ou forée pour la faire exploser.
+@object_descr_soot = Une suie mystérieuse qui, lorsque `measure()` est appelée, indique le nombre de dynamites actives dans la strate supérieure. Elle fait immédiatement exploser toute dynamite qui tombe dessus.
+@object_descr_basalt = Une roche tendre formée par le refroidissement de la lave. Quelque chose aurait-il été préservé dessous ?
+@object_descr_treasure_map_ground = Une carte au trésor ! Où peut-elle bien mener ?
+@object_descr_treasure_path_ground = Sur le chemin qui mène de la carte au trésor jusqu’au but.
+@object_descr_treasure_goal_ground = Le but au bout de la piste de la carte au trésor. Que peut-il bien y avoir de caché ici ?
+@object_descr_underground_treasure = L’insaisissable trésor découvert au bout du chemin indiqué par la carte.
+@object_descr_mushroom = Des champignons qui poussent sous terre. Utilise `measure()` pour déterminer leur type.

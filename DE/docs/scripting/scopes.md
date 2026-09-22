@@ -1,3 +1,5 @@
+[<- Funktionen](docs/scripting/functions.md)
+---
 # Namensbereiche (Scopes)
 Scopes (Geltungsbereiche) bestimmen, welche Variablen von wo aus zugegriffen werden können. Ein Scope ist im Grunde eine Zuordnung von Namen zu Werten.
 Sie funktionieren im Grunde genauso wie in Python.
@@ -22,30 +24,70 @@ Diese `def`-Anweisung weist dem Namen `f` im globalen Geltungsbereich eine Funkt
 Ruft die in `f` gespeicherte Funktion aus dem globalen Geltungsbereich ab und führt sie aus.
 
 `print(y)`
-Diese print-Anweisung im globalen Geltungsbereich löst einen Fehler aus, da `y` nie im globalen Geltungsbereich deklariert wurde und wir es hier nicht lesen können.
+Diese `print`-Anweisung im globalen Geltungsbereich löst einen Fehler aus, da `y` nie im globalen Geltungsbereich deklariert wurde und wir es hier nicht lesen können.
 Es existierte nur im lokalen Geltungsbereich von `f`.
 
 ## Das global-Schlüsselwort
 Standardmäßig binden alle Variablen in Funktionen an den lokalen Geltungsbereich, auch wenn eine Variable mit demselben Namen im globalen Geltungsbereich existiert.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 Dieser Code gibt `0` aus, weil das lokale `x` innerhalb von `f` nicht dieselbe Variable ist wie das globale `x`, sodass das globale `x` unverändert bleibt. Das ist wichtig, weil sonst ein Funktionsaufruf versehentlich eine globale Variable überschreiben könnte, die zufällig denselben Namen hat wie eine lokale Variable dieser Funktion.
 
 Wenn du auf eine globale Variable schreiben möchtest, musst du dies explizit mit dem `global`-Schlüsselwort tun.
 
-`x = 0
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+x = 0
 
 def f():
     global x
     x = 1
 f()
-print(x)`
+print(x)
+}}
 
 In diesem Beispiel bindet `global x` die Variable `x` an die globale Variable `x`, die darüber definiert ist. Dies wird nun `1` ausgeben.
 Beachte, dass das Ändern globaler Variablen normalerweise der erste Schritt in Richtung Spaghetticode ist, bei dem jeder Teil des Programms jeden anderen Teil des Programms beeinflusst, also verwende es nicht übermäßig.
@@ -53,8 +95,32 @@ Beachte, dass das Ändern globaler Variablen normalerweise der erste Schritt in 
 ## Schleifen und Verzweigungen
 Schleifen und Verzweigungen erstellen keine eigenen Geltungsbereiche, daher kann alles, was in ihnen deklariert wird, auch außerhalb verwendet werden.
 
-`for i in range(3):
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+for i in range(3):
     pass
-print(i)`
+print(i)
+}}
 
-Dies gibt `2` aus, weil die letzte Iteration der `for`-Schleife `i` den Wert `2` zugewiesen hat.
+Dies gibt `2` aus, weil `i` im letzten Durchlauf der `for`-Schleife der Wert `2` zugewiesen wurde.
+
+---
+
+[Variablen](docs/scripting/variables.md)      [Funktionen](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [Megafarm](docs/unlocks/megafarm.md)

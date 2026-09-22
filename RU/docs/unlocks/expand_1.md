@@ -1,12 +1,42 @@
+[<- Повышение скорости](docs/unlocks/speed.md) <right>[Расширение 2 ->](docs/unlocks/expand_2.md)
+<right>[Горное дело ->](docs/unlocks/mining.md)
+---
 # Расширение 1
-<unlock=for>Также см. [Расширение_2](docs/unlocks/expand_2.md)
-
-</unlock>Твоя ферма выросла! Однако от нового пространства будет мало пользы, если дрон не сможет двигаться, так что тебе доступна новая функция `move()`, перемещающая дрон. Для использования `move()` нужно указать направление, в котором должен переместиться дрон. Для этого есть четыре новые константы: `North, East, South, West`.
+Твоя ферма выросла! От нового пространства мало пользы, если дрон не может перемещаться, поэтому появилась функция `move()`. Функция `move()` перемещает дрон в указанном направлении. Доступны четыре новые константы: `North, East, South, West`
 
 Например, `move(North)` переместит дрона на одну клетку на север.
 
-Если дрон выйдет за край фермы, то просто переместится на противоположную сторону.
-В следующем примере дрон будет перемещаться на север и возвращаться к началу после достижения края фермы:
+Если выйти за край фермы, дрон появится с противоположной стороны.
 
-`while True:
-	move(North)`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 3},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	move(North)
+}}
+
+---
+
+[Цикл while](docs/scripting/while.md)      [Операторы](docs/scripting/operators.md)      [Расширение 2](docs/unlocks/expand_2.md)
+
+[move()](functions/move)

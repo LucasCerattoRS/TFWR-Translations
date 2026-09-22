@@ -12,6 +12,7 @@
 @low = 낮음
 @sfx limit = SFX 제한
 @vfx limit = VFX 제한
+@avalanche particles = 붕괴 파티클
 @volume damping = 볼륨 감쇠
 @volume = 볼륨
 @music volume = 음악 볼륨

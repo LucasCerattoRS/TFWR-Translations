@@ -2,7 +2,10 @@
 @warning_no_space_to_plant = Tentato di piantare {0} ma c'era già qualcosa lì.
 @warning_cant_plant_on_ground = Non posso piantare {0} su {1}.
 @warning_missing_seed = Non avevi gli oggetti richiesti per piantare {0}.
+@warning_not_enough_coal = Carbone insufficiente per cercare il ferro.
+@warning_not_enough_iron = Ferro insufficiente per cercare il quarzo.
 @warning_no_item_to_use = Tentato di usare {0} ma non ce n'era abbastanza.
+@warning_cannot_place_ground = Impossibile posizionare {0}, perché è un blocco speciale.
 @warning_failed_swap_wrap = Hai provato a fare uno swap oltre i confini della farm. Questo non è permesso.
 @warning_failed_swap_unswappable = Provato a scambiare {0}, che non può essere scambiato.
 @warning_weird_substance_not_divisible = Hai usato una quantità di Sostanza Strana che non è esattamente quella necessaria per creare il labirinto. Non dimenticare che la quantità di Sostanza Strana richiesta aumenta man mano che potenzi il labirinto.

@@ -1,6 +1,6 @@
 # 制作人员
 
-## The Farmer Was Replaced
+## 编程农场
 
 ### 编程、游戏设计和美术
 Timon Herzog
@@ -35,6 +35,7 @@ Ivan Bondar
 Jimmy Sheep
 Taigo Nakajima
 НУІ
+Lucas Ceratto (@LucasCerattoRS)
 
 ### Discord 管理员
 MrBlobfish
@@ -46,5 +47,6 @@ Jeff Siebold aka Noon Knight
 Jonas Bornhöft
 ThatMerlinGuy
 Zoroark Zwart
+arch
 Ramón Buchenberger
 Swiss Game Hub

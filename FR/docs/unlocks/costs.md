@@ -1,19 +1,86 @@
+[<- Dictionnaires](docs/scripting/dicts.md) <right>[Déblocages automatiques ->](docs/unlocks/auto_unlock.md)
+---
 # Coûts
 Tout coût peut être représenté par un dictionnaire qui mappe des objets à des nombres.
 
 La fonction `get_cost()` renvoie un tel dictionnaire. Elle renvoie le coût d'une plante ou d'un déblocage.
 
-`get_cost(Entities.Pumpkin)`
-renvoie `{Items.Carrot:1}`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+print(get_cost(Entities.Pumpkin))
+}}
 
 Pour les déblocages, un deuxième argument optionnel peut être passé pour le niveau de déblocage dont tu veux obtenir le coût. Par défaut, c'est le niveau de déblocage actuel.
 
-`get_cost(Unlocks.Loops, 0)`
-renvoie `{Items.Hay:5}`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+print(get_cost(Unlocks.Loops, 0))
+print(get_cost(Unlocks.Loops, 1))
+}}
 
-Pour les déblocages qui sont déjà au niveau maximum, `get_cost()` renverra `None`.
+Pour les déblocages déjà au niveau maximal, `get_cost()` renvoie un dictionnaire vide.
 
-Il peut être utilisé comme ceci :
-`cost = get_cost(quelque_chose)
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+cost = get_cost(Entities.Carrot)
 for item in cost:
-	quantite_de_cet_objet_necessaire = cost[item]`
+	if num_items(item) < cost[item]:
+		print("il manque", cost[item] - num_items(item), item)
+}}
+
+---
+
+[Dictionnaires](docs/scripting/dicts.md)      [Déblocages automatiques](docs/unlocks/auto_unlock.md)      [Classements](docs/unlocks/leaderboard.md)
+
+[get_cost()](functions/get_cost)

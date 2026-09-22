@@ -1,3 +1,5 @@
+[<- Czas](docs/unlocks/timing.md) <right>[Tabela wyników ->](docs/unlocks/leaderboard.md)
+---
 # Symulacja
 
 Symulacje pozwalają na szybkie testowanie kodu bez zmiany stanu prawdziwej farmy.
@@ -29,10 +31,10 @@ uruchom symulację
 Funkcja `simulate()` zwraca czas w sekundach, jaki zajęła symulacja danego pliku startowego.
 
 ### Nazwa pliku
-Pierwszym argumentem funkcji symulacji jest nazwa pliku. Jest to nazwa wyświetlana na górze okna kodu. Symulacja uruchomi określony plik tak, jakbyś kliknął na nim przycisk Uruchom.
+Pierwszym argumentem funkcji `simulate()` jest nazwa pliku wyświetlana na górze okna kodu. Symulacja uruchomi wskazany plik tak, jakby naciśnięto w jego oknie przycisk Wykonaj.
 
 ### Początkowe odblokowania
-Wszystkie funkcje programistyczne, takie jak pętle, instrukcje if, listy, słowniki,... zawsze pozostaną odblokowane. 
+Wszystkie funkcje programistyczne, takie jak pętle, instrukcje `if`, listy i słowniki, zawsze pozostają odblokowane.
 
 Drugi argument pozwala określić, z jakimi odblokowaniami/ulepszeniami symulacja ma się rozpocząć, oprócz funkcji programistycznych. Powinna to być sekwencja odblokowań. Symulacja rozpocznie się z wszystkimi odblokowaniami w sekwencji ulepszonymi do maksymalnego poziomu.
 
@@ -47,12 +49,17 @@ Jednak możliwe jest przekazanie wartości do symulacji za pomocą czwartego arg
 
 Zauważ, że kopiuje to wszystkie wartości, więc ich zmiana wewnątrz symulacji nie wpłynie na oryginalne wartości poza symulacją. Nie jest możliwe zwracanie wartości z symulacji innych niż czas jej trwania.
 
-### Ziarno losowości (Random Seed)
+### Ziarno losowości
 Piąty argument pozwala określić ziarno losowości używane w symulacji. Musi to być dodatnia liczba całkowita. Wartości ujemne spowodują użycie losowego ziarna.
 
 Ziarno losowości wpływa na wszystko, od czasów wzrostu roślin, przez układy labiryntów, po czasy ubywania wody. Jeśli uruchomisz tę samą symulację wielokrotnie z tym samym ziarnem losowości i tymi samymi warunkami początkowymi, wynik powinien być zawsze taki sam.
 
-### Przyspieszenie (Speedup)
-Szósty argument to początkowe przyspieszenie symulacji. Pozwala to na szybkie testowanie. Jeśli gra nie jest w stanie nadążyć z ustawioną prędkością, automatycznie zwolni.
+### Przyspieszenie
+Szósty argument to początkowe przyspieszenie symulacji. Pozwala ono szybko testować różne rzeczy. Jeśli gra nie nadąża za ustawioną prędkością, automatycznie zwolni.
 
 Przyspieszenie nie wpływa w żaden sposób na wynik symulacji. Służy jedynie do skrócenia czasu oczekiwania.
+---
+
+[Słowniki](docs/scripting/dicts.md)      [Czas](docs/unlocks/timing.md)      [Debugowanie](docs/scripting/debug.md)      [Tabele wyników](docs/unlocks/leaderboard.md)
+
+[simulate()](functions/simulate)

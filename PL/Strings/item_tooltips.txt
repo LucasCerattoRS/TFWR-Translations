@@ -1,5 +1,6 @@
 @item_tooltip_template_amount = Masz {0}
 @item_descr_carrot = Zdobywane przez zbieranie marchewek.
+@item_descr_rice = Zdobywany przez zbieranie ryżu.
 @item_descr_fertilizer = Wywołaj `use_item(Items.Fertilizer)`, aby natychmiast skrócić pozostały czas wzrostu roślin o 2s.
 @item_descr_weird_substance = Wywołaj `use_item(Items.Weird_Substance)` na krzaku, aby wyhodować labirynt, lub na innych roślinach, aby przełączyć ich status infekcji. Zdobywane z zainfekowanych roślin. Nawożenie roślin je infekuje.
 @item_descr_gold = Znalezione w skrzyniach ze skarbami w labiryntach.
@@ -12,3 +13,10 @@
 @item_descr_cactus = Zdobywane przez zbieranie posortowanych kaktusów.
 @item_descr_cactus_seed = Ten przedmiot został usunięty z gry.
 @item_descr_bone = Kości starożytnego stworzenia.
+@item_descr_block = Blok zdobywany przez kopanie.
+@item_descr_coal = Zdobywany przez wykopywanie węgla pod ziemią. Złoża węgla występują w płaskich pokładach.
+@item_descr_iron = Zdobywane przez wykopywanie żelaza pod ziemią.
+@item_descr_quartz = Zdobywany przez wykopywanie żył kwarcu. Tworzy struktury przypominające igły.
+@item_descr_dynamite = Zdobywany przez dokopywanie się do podłoża z dynamitem.
+@item_descr_bamboo = Zdobywany przez zbieranie bambusa.
+@item_descr_mushroom = Zdobywany przez układanie na sobie bloków podłoża z grzybami.

@@ -5,6 +5,12 @@ Il gioco salva tutti i file di codice come file .py, quindi puoi modificarli con
 Nota che questo è solo per comodità. Il linguaggio del gioco non è in realtà Python, ma è abbastanza simile da far funzionare decentemente Python IntelliSense.
 Puoi trovare i file nella [cartella di salvataggio](persistent_data_path/Saves).
 
+La cartella dei dati persistenti si trova qui:
+
+- Windows: `%USERPROFILE%\AppData\LocalLow\TheFarmerWasReplaced\TheFarmerWasReplaced`
+- macOS: `~/Library/Application Support/com.TheFarmerWasReplaced.TheFarmerWasReplaced`
+- Linux (Steam/Proton): `~/.steam/steam/steamapps/compatdata/2060160/pfx/drive_c/users/steamuser/AppData/LocalLow/TheFarmerWasReplaced/TheFarmerWasReplaced`
+
 Ogni salvataggio contiene anche un file `__builtins__.py`, che contiene definizioni integrate di Python che corrispondono alle funzioni integrate del gioco per abilitare IntelliSense.
 VS Code è in grado di rilevare `__builtins__.py` automaticamente, ma alcuni editor potrebbero funzionare solo se fai `from __builtins__ import *`.
 
@@ -22,3 +28,7 @@ Una volta fatto ciò, apri la [cartella](persistent_data_path/Saves) che contien
 Nel gioco, assicurati di aver attivato l'opzione "File Watcher". Ora, ogni volta che salvi in VS Code, le modifiche appariranno automaticamente nel gioco.
 
 Ecco fatto! Ora puoi scrivere il tuo codice in un editor professionale!
+
+---
+
+[Primo Programma](docs/first_program.md)      [Caricamento dei Backup](docs/backup.md)

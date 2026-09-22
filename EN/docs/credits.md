@@ -35,6 +35,7 @@ Ivan Bondar
 Jimmy Sheep
 Taigo Nakajima
 НУІ
+Lucas Ceratto (@LucasCerattoRS)
 
 ### Discord Moderators
 MrBlobfish
@@ -46,5 +47,6 @@ Jeff Siebold aka Noon Knight
 Jonas Bornhöft
 ThatMerlinGuy
 Zoroark Zwart
+arch
 Ramón Buchenberger
 Swiss Game Hub

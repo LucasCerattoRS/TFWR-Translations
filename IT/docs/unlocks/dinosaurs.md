@@ -1,29 +1,63 @@
+[<- Cactus](docs/unlocks/cactus.md)
+---
 # Dinosauri
 I dinosauri sono creature antiche e maestose che possono essere allevate per ottenere ossa antiche.
 
-Sfortunatamente i dinosauri si sono estinti molto tempo fa, quindi il meglio che possiamo fare ora è travestirci da uno di loro.
-A questo scopo hai ricevuto il nuovo cappello da dinosauro.
+Purtroppo i dinosauri si sono estinti molto tempo fa, quindi il massimo che possiamo fare è travestirci da uno di loro.
+Per questo hai ricevuto il nuovo cappello da dinosauro.
 
 Il cappello può essere equipaggiato con
 `change_hat(Hats.Dinosaur_Hat)`
 
-Sfortunatamente non ha l'aspetto che aveva nella pubblicità...
+Purtroppo non ha proprio l'aspetto che aveva nella pubblicità...
 
 Se equipaggi il cappello da dinosauro e hai abbastanza cactus, una [mela](objects/apple) verrà automaticamente acquistata e posizionata sotto il drone.
 Quando il drone si trova su una mela e si muove di nuovo, mangerà la mela e la sua coda si allungherà di uno. Se te lo puoi permettere, una nuova mela verrà acquistata e posizionata in un luogo casuale.
 La mela non può comparire se c'è qualcos'altro piantato dove vorrebbe essere.
 
-La coda del dinosauro verrà trascinata dietro il drone, riempiendo le caselle precedenti su cui si è mosso. Se un drone cerca di muoversi sopra la coda, `move()` fallirà e restituirà `False`. 
-L'ultimo segmento della coda si sposterà durante il movimento, quindi puoi muovertici sopra. Tuttavia, se il serpente riempie tutta la fattoria, non sarai più in grado di muoverti. Quindi puoi controllare se il serpente è completamente cresciuto verificando se non puoi più muoverti.
+La coda del dinosauro viene trascinata dietro il drone e riempie le caselle su cui è passato. Se il drone prova a muoversi sulla propria coda, `move()` fallisce e restituisce `False`.
+L'ultimo segmento della coda si sposta durante il movimento, quindi puoi muoverti sopra di esso. Se però il serpente riempie l'intera fattoria, non potrai più muoverti. Puoi quindi verificare se il serpente ha raggiunto la lunghezza massima controllando se riesci ancora a muoverti.
 Mentre indossi il cappello da dinosauro, il drone non può superare il bordo della fattoria per passare dall'altro lato.
 
 Usando `measure()` su una mela si ottiene la posizione della mela successiva come una tupla.
 
 `next_x, next_y = measure()`
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "cactus", "n": 10000}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 5,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+change_hat(Hats.Dinosaur_Hat)
+while True:
+    next_x, next_y = measure()
+    while get_pos_x() != next_x:
+        move(East)
+    while get_pos_y() != next_y:
+        move(North)
+}}
+
 Quando il cappello viene rimosso equipaggiandone un altro, la coda verrà raccolta.
-Riceverai un numero di ossa pari alla lunghezza della coda al quadrato. Quindi per una coda di lunghezza `n` riceverai `n**2` `Items.Bone`. 
-Per Esempio:
+Riceverai una quantità di ossa pari al quadrato della lunghezza della coda. Per una coda lunga `n`, riceverai `n**2` `Items.Bone`.
+Per esempio:
 lunghezza 1 => 1 osso
 lunghezza 2 => 4 ossa
 lunghezza 3 => 9 ossa
@@ -35,12 +69,39 @@ Il Cappello da Dinosauro è molto pesante, quindi se lo equipaggi, `move()` impi
 
 Il seguente ciclo stampa il numero di tick usati da `move()` dopo un qualsiasi numero di mele:
 
-`ticks = 400
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+ticks = 400
 for i in range(100):
-    print("tick dopo ", i, " mele: ", ticks)
-    ticks -= ticks * 0.03 // 1`
+    quick_print("tick dopo ", i, " mele: ", ticks)
+    ticks -= ticks * 0.03 // 1
+}}
 
 Hai solo un cappello da dinosauro, quindi solo un drone può indossarlo.
 
-<spoiler=mostra suggerimento 1>Se continui a muoverti lungo lo stesso percorso che copre l'intero campo, puoi facilmente ottenere un serpente che copre l'intero campo ogni volta. Non è molto efficiente, ma funziona.
-Attraversare completamente una fattoria molto grande può richiedere molto tempo e potresti non aver bisogno di così tante ossa. Sentiti libero di usare `set_world_size()` per cambiare la dimensione della fattoria in qualcosa di più conveniente.</spoiler>
+<spoiler=mostra suggerimento 1>
+Se continui a seguire lo stesso percorso che copre tutto il campo, puoi ottenere facilmente ogni volta un serpente che occupa l'intero campo. Non è molto efficiente, ma funziona.
+Attraversare interamente una fattoria molto grande può richiedere molto tempo e forse non ti servono davvero così tante ossa. Puoi usare `set_world_size()` per impostare una dimensione più comoda.</spoiler>
+
+---
+
+[Statistiche](docs/stats.md)      [Tuple](docs/scripting/tuples.md)      [Liste](docs/scripting/lists.md)
+
+[change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

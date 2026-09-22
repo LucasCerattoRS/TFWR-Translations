@@ -1,35 +1,100 @@
+[<- Fertilizante](docs/unlocks/fertilizer.md) <right>[Megagranja ->](docs/unlocks/megafarm.md)
+---
 # Laberintos
-`Items.Weird_Substance`, que se obtiene [fertilizando](docs/unlocks/fertilizer.md) plantas, tiene un efecto extraño en los arbustos. Si el dron está sobre un arbusto y llamas a `use_item(Items.Weird_Substance, amount)`, el arbusto se convertirá en un laberinto de setos.
+`Items.Weird_Substance` produce un extraño efecto en los arbustos. Si el dron está sobre un arbusto y llamas a `use_item(Items.Weird_Substance, amount)`, el arbusto se convertirá en un laberinto de setos.
 El tamaño del laberinto depende de la cantidad de `Items.Weird_Substance` utilizada (el segundo argumento de la llamada a `use_item()`).
-Sin mejoras de laberinto, usar `n` `Items.Weird_Substance` resultará en un laberinto de `n`x`n`. Cada nivel de mejora del laberinto duplica el tesoro, pero también duplica la cantidad de `Items.Weird_Substance` necesaria. 
+Sin mejoras de laberinto, usar `n` `Items.Weird_Substance` creará un laberinto de `n`x`n`. Cada nivel de mejora duplica el tesoro, pero también duplica la cantidad de `Items.Weird_Substance` necesaria.
 Así que para hacer un laberinto de campo completo:
 
-`plant(Entities.Bush)
-substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
-use_item(Items.Weird_Substance, substance)`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+}}
 
 
 Por alguna razón, el dron no puede volar sobre los setos, aunque no parezcan tan altos.
 
-Hay un tesoro escondido en algún lugar del seto. Usa `harvest()` en el tesoro para recibir oro igual al área del laberinto. (Por ejemplo, un laberinto de 5x5 producirá 25 de oro).
+Hay un tesoro oculto en algún lugar del laberinto. Usa `harvest()` sobre el tesoro para recibir una cantidad de oro igual al área del laberinto. Por ejemplo, un laberinto de 5x5 producirá 25 de oro.
 
 Si usas `harvest()` en cualquier otro lugar, el laberinto simplemente desaparecerá.
 
 `get_entity_type()` es igual a `Entities.Treasure` si el dron está sobre el tesoro y `Entities.Hedge` en cualquier otro lugar del laberinto.
 
-Los laberintos no contienen bucles a menos que reutilices el laberinto (ver más abajo cómo reutilizar un laberinto). Así que no hay forma de que el dron termine en la misma posición de nuevo sin retroceder.
+Los laberintos no contienen bucles a menos que los reutilices (consulta más abajo). Por tanto, el dron no puede volver a la misma posición sin desandar el camino.
 
 Puedes comprobar si hay una pared intentando moverte a través de ella. 
 `move()` devuelve `True` si tuvo éxito y `False` en caso contrario.
 
 `can_move()` se puede usar para comprobar si hay una pared sin moverse.
 
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+quick_print(
+    can_move(North), 
+    can_move(East), 
+    can_move(South), 
+    can_move(West)
+)
+if move(North) and get_entity_type() == Entities.Treasure:
+    harvest()
+}}
+
 Si no tienes idea de cómo llegar al tesoro, echa un vistazo a la Pista 1. Te muestra cómo abordar un problema como este.
 
 Usar `measure()` en cualquier lugar del laberinto devuelve la posición del tesoro.
 `x, y = measure()`
 
-Para un desafío extra, también puedes reutilizar el laberinto usando la misma cantidad de `Items.Weird_Substance` en el tesoro de nuevo. 
+Si quieres un reto adicional, puedes reutilizar el laberinto volviendo a usar sobre el tesoro la misma cantidad de `Items.Weird_Substance`.
 Esto recogerá el tesoro y generará un nuevo tesoro en una posición aleatoria del laberinto.
 
 Cada vez que se mueve el tesoro, se pueden eliminar algunas de las paredes del laberinto de forma aleatoria. Así que los laberintos reutilizados pueden contener bucles.
@@ -39,9 +104,10 @@ Reutilizar un laberinto no te da más oro que simplemente cosechar y generar un 
 Este es un desafío 100% extra que puedes omitir.
 Solo vale la pena si la información extra y los atajos te ayudan a resolver el laberinto más rápido.
 
-El tesoro se puede reubicar hasta 300 veces. Después de eso, usar sustancia rara en el tesoro ya no aumentará el oro en él y ya no se moverá más.
+El tesoro se puede reubicar hasta 300 veces. Después, usar Sustancia Extraña sobre él ya no aumentará el oro que contiene ni lo moverá.
 
-<spoiler=show hint 1>Aquí tienes un enfoque general para resolver el problema:
+<spoiler=mostrar pista 1>
+Este es un enfoque general para resolver el problema:
 
 Crea un laberinto e imagina que eres el dron.
 
@@ -51,21 +117,96 @@ Escribe tu estrategia paso a paso para que otra persona pueda seguirla sin pensa
 
 Ahora intenta traducir tus pasos a código.
 </spoiler>
-<spoiler=show hint 2>Mientras no haya bucles: todas las paredes son en realidad una gran pared conectada. Si sigues la pared, te llevará por todo el laberinto.
-Este enfoque requiere muy poco código y no necesitas llevar un registro de dónde has estado. Unas 10 líneas de código es todo lo que necesitas.</spoiler>
-<spoiler=show hint 3>En lugar de mover el dron en direcciones absolutas como este u oeste, puede ser muy útil moverlo en direcciones relativas como "girar a la derecha" o "girar a la izquierda". Para hacer esto, necesitas llevar un registro de la dirección en la que se está moviendo el dron. El dron nunca rota realmente, pero aún puedes mantener una rotación "virtual" en el código.
+<spoiler=mostrar pista 2>
+Mientras no haya bucles, todas las paredes forman una gran pared conectada. Si apoyas la mano izquierda en la pared y la sigues, te llevará por todo el laberinto.
+Este método requiere muy poco código y no necesitas recordar por dónde has pasado. Bastan unas 10 líneas de código.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 2.4, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": false,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": false,
+    "autoplay": true,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 4, "y": 4},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": -1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+plant(Entities.Bush)
+size = get_world_size()
+substance = size * 2**(num_unlocked(Unlocks.Mazes) - 1)
+use_item(Items.Weird_Substance, substance)
+#CODE
+directions = [North, East, South, West]
+index = 0
+while get_entity_type() != Entities.Treasure:
+    index = (index - 1) % 4
+    for _ in range(4):
+        if move(directions[index]):
+            break
+        index = (index + 1) % 4
+do_a_flip()
+harvest()
+}}
+</spoiler>
+<spoiler=mostrar pista 3>
+En vez de mover el dron en direcciones absolutas como este u oeste, puede ser útil moverlo en direcciones relativas como «girar a la derecha» o «girar a la izquierda». Para ello, debes llevar la cuenta de la dirección en la que se está moviendo. El dron nunca gira realmente, pero puedes mantener una rotación «virtual» en el código.
 El siguiente truco de índice es útil para esto:
 
-`directions = [North, East, South, West]
-index = 0`
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [{"item": "weird_substance", "n": 10}],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+directions = [North, East, South, West]
+index = 0
+move(directions[index])
 
-Usa `% 4` para permitirle rotar "alrededor del círculo", de modo que después de `West` vuelva a `North`.
-`# girar a la derecha
-index = (index + 1) % 4`
+# girar a la derecha
+index = (index + 1) % 4
+move(directions[index])
 
-`# girar a la izquierda
+# girar a la izquierda
 index = (index - 1) % 4
+move(directions[index])
+}}
 
-move(directions[index])`</spoiler>
-<spoiler=show hint 4>Si no puedes resolverlo, siempre puedes facilitarte la vida y hacerlo de manera menos eficiente. 
+
+`% 4` se usa para permitir que la rotación «dé la vuelta al círculo», de modo que `3 (West) + 1` vuelva a ser `0 (North)`, porque `4 % 4 == 0` y `-1 % 4 == 3`.</spoiler>
+<spoiler=mostrar pista 4>
+Si no logras resolverlo, siempre puedes simplificar el problema usando un enfoque menos eficiente.
 Resolver un laberinto de `1`x`1` es trivial.</spoiler>
+
+---
+
+[Estadísticas](docs/stats.md)      [Listas](docs/scripting/lists.md)      [Diccionarios](docs/scripting/dicts.md)      [Tuplas](docs/scripting/tuples.md)
+
+[harvest()](functions/harvest)      [plant()](functions/plant)      [can_move()](functions/can_move)      [move()](functions/move)      [use_item()](functions/use_item)

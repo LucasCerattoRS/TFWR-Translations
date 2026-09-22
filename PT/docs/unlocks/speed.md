@@ -1,24 +1,67 @@
+[<- Loop While](docs/scripting/while.md) <right>[Expandir 1 ->](docs/unlocks/expand_1.md)
+
+<right>[Plantio ->](docs/unlocks/plant.md)
+
+---
+
 # Melhoria de Velocidade
-A velocidade de execução foi dobrada. O problema é que o drone agora colhe mais rápido do que a grama pode crescer, resultando em nenhuma colheita. Para lidar com isso, o [if](docs/scripting/if.md) e a função [can_harvest](functions/can_harvest) agora estão desbloqueados.
+
+A velocidade de execução dobrou. O problema é que agora o drone colhe mais rápido do que a grama consegue crescer, o que não gera rendimento algum. Para lidar com isso, agora estão desbloqueados os desvios [if](docs/scripting/if.md) e a função [can_harvest()](functions/can_harvest).
 
 ## Verificando Antes de Colher
-Até agora, só tínhamos `True` e `False` como condições, o que, claro, não é muito útil com `if`. 
 
-A nova função `can_harvest()` fornece uma condição melhor. `can_harvest()` retorna `True` se a planta sob o drone puder ser colhida e `False` caso contrário.
+Uma instrução `if` executa seu bloco de código uma vez se a condição fornecida for `True`.
 
-`if can_harvest():
-	#faça algo`
+A nova função `can_harvest()` fornece uma condição útil. `can_harvest()` retorna `True` se a planta sob o drone puder ser colhida e `False` caso contrário.
 
-A razão pela qual você pode usar esta função como uma condição assim é porque ela retorna um valor booleano.
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+if can_harvest():
+	do_a_flip()
+}}
 
-Um valor de retorno essencialmente significa que, após a funcionalidade ser executada, a expressão de chamada da função é avaliada para o valor retornado.
+Você pode entender um valor de retorno como se a expressão de chamada da função `can_harvest()` fosse substituída pelo valor retornado `True` durante a avaliação do `if`.
 
 O que acontece quando o código acima é executado:
-	-o if é executado
-	-`can_harvest()` é chamada
-	-`can_harvest()` faz o que tem que fazer
-	-`can_harvest()` retorna `True` ou `False`
-	-a instrução agora é `if True:` ou `if False:`
-	-o bloco de código só é executado se for possível colher
+
+- A instrução `if` é executada.
+
+- `can_harvest()` é chamada.
+
+- `can_harvest()` retorna `True` porque a grama está totalmente crescida.
+
+- Agora a instrução é `if True:`.
+
+- O desvio é executado porque o valor é `True`.
+
+Se a grama não estivesse totalmente crescida, o drone não daria uma cambalhota.
 
 Agora podemos usar `if` para impedir que o drone colha cedo demais.
+
+---
+
+[If](docs/scripting/if.md)      [Loop While](docs/scripting/while.md)
+
+[harvest()](functions/harvest)      [can_harvest()](functions/can_harvest)

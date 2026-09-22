@@ -1,24 +1,57 @@
+[<- While 循环](docs/scripting/while.md) <right>[扩张 1 ->](docs/unlocks/expand_1.md)
+<right>[种植 ->](docs/unlocks/plant.md)
+---
 # 速度升级
-现在，无人机的执行速度翻倍了！但是无人机收获的速度比草生长的速度还快，这会导致根本没有收成。为了解决这个问题，现在解锁了 [if](docs/scripting/if.md) 分支和 [can_harvest](functions/can_harvest) 函数。
+现在，无人机的执行速度翻倍了！但是无人机收获的速度比草生长的速度还快，这会导致根本没有收成。为了解决这个问题，现在解锁了 [if](docs/scripting/if.md) 分支和 [can_harvest()](functions/can_harvest) 函数。
 
 ## 在收获前检查
-到目前为止，我们只用 `True` 和 `False` 作为条件，这对于 `if` 来说用处不大。
+当给定条件为 `True` 时，`if` 语句会执行一次其代码块。
 
-调用新的 `can_harvest()` 函数会返回当前无人机下方的植物是否可以被收获，如果植物成熟，则可以被收获返回 `True`，否则返回 `False`。
+新的 `can_harvest()` 函数提供了一个实用的条件：如果无人机下方的植物可以收获，它会返回 `True`，否则返回 `False`。
 
-`if can_harvest():
-	#做点什么`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+if can_harvest():
+	do_a_flip()
+}}
 
-它的返回结果可以被作为一个条件进行判断操作，是因为它会返回一个布尔值。
+你可以这样理解返回值：在判断 `if` 条件时，函数调用表达式 `can_harvest()` 就像被返回的 `True` 替换了一样。
 
-调用某个函数，得到的结果被称为返回值。
+上面的代码运行时会发生以下过程：
+- 执行 `if` 语句。
+- 调用 `can_harvest()`。
+- 草已经完全成熟，因此 `can_harvest()` 返回 `True`。
+- 语句现在变成 `if True:`。
+- 值为 `True`，所以执行分支。
 
-当上面的代码运行时会发生什么：
-	-运行 if 语句
-	-调用 `can_harvest()`
-	-`can_harvest()` 执行其功能
-	-`can_harvest()` 返回 `True` 或 `False`
-	-语句现在变成了 `if True:` 或 `if False:`
-	-只有在可以收获时，才会执行代码块
+如果草尚未完全成熟，无人机就不会翻转。
 
-现在我们可以使用 `if` 语句来防止无人机在下方植物未成熟时提前收获的情况。
+现在我们可以结合 `if` 语句和 `can_harvest()`，防止无人机在下方植物未成熟时提前收获。
+
+---
+
+[If 语句](docs/scripting/if.md)      [While 循环](docs/scripting/while.md)
+
+[harvest()](functions/harvest)      [can_harvest()](functions/can_harvest)

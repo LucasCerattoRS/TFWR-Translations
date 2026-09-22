@@ -1,3 +1,5 @@
+[<- 시작하기](docs/getting_started.md) <right>[while 루프 ->](docs/scripting/while.md)
+---
 # 첫 번째 프로그램
 ## 텍스트 에디터
 모든 프로그래밍은 코드 창에서 이루어져요. 각 코드 창은 코드가 포함된 텍스트 파일에 해당해요. 
@@ -5,17 +7,17 @@
 
 코드가 실행 중이 아닐 때는 일반 텍스트 에디터처럼 편집할 수 있어요.
 코드 창의 녹색 재생 버튼을 눌러 프로그램을 직접 실행할 수 있어요.
-![](PlayButton50)
+![|x50](PlayButton)
 
 화면 오른쪽 상단의 "+" 버튼을 사용하여 더 많은 코드 파일을 만들 수 있어요.
 창을 다른 창 위로 드래그하여 고정할 수 있어요.
 
 입력을 시작하면 간단한 코드 자동 완성 창이 나타나는 것을 볼 수 있을 거예요.
-Tab 키를 눌러 자동 완성을 삽입하세요.
+Tab 키를 눌러 선택한 자동 완성을 삽입하세요.
 화살표 키를 사용하여 자동 완성 옵션을 탐색하세요.
 
 이번이 처음 프로그래밍하는 것이라도 걱정하지 마세요. 언어는 단계별로 해금되므로, 할 수 있는 모든 것에 압도당하지 않을 거예요. 
-문법 또한 세계에서 가장 널리 사용되는 프로그래밍 언어 중 하나인 Python과 유사하므로, 배우는 것이 완전히 낭비는 아니에요.
+문법 또한 세계에서 가장 널리 사용되는 프로그래밍 언어 중 하나인 Python과 유사하므로, 여기서 배운 내용은 다른 곳에서도 유용할 거예요.
 
 이미 Python을 알고 있다면 그것도 문제없어요. 초기 게임을 빠르게 건너뛰고 더 흥미로운 내용으로 넘어갈 수 있을 거예요.
 
@@ -31,11 +33,42 @@ Tab 키를 눌러 자동 완성을 삽입하세요.
 
 코드 창에 이 문장들을 입력하고 실행 버튼을 눌러보세요.
 
-코드를 문장의 순서라고 생각할 수 있어요. 다음과 같이 여러 문장을 연달아 실행할 수 있어요:
+코드를 명령문의 연속이라고 생각할 수 있어요. 여러 줄에 명령문을 놓으면 여러 명령문을 연달아 실행할 수 있어요.
+아래의 임베디드 코드 창에서 재생 버튼을 눌러 코드가 실행되는 모습을 확인해 보세요.
 
-`harvest()
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
 do_a_flip()
-harvest()`
+harvest()
+harvest()
+}}
 
 ## 해금
-풀을 모으면 건초를 얻을 수 있어요. 건초는 해금 메뉴에서 루프를 해금하는 데 사용할 수 있어요. 오른쪽 상단의 버튼으로 해금 메뉴를 여세요.
+풀을 모으면 건초를 얻을 수 있어요. 건초는 기술 트리에서 루프를 해금하는 데 사용할 수 있어요. 화면 오른쪽 상단의 버튼으로 기술 트리를 여세요.
+
+---
+
+[외부 에디터](docs/external_editor.md)      [주석](docs/scripting/comments.md)      [while 루프](docs/scripting/while.md)
+
+[harvest()](functions/harvest)      [do_a_flip()](functions/do_a_flip)

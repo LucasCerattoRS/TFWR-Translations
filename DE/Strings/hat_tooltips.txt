@@ -18,3 +18,8 @@
 @hat_descr_gold_trophy_hat = Nur für den besten Farmer.
 @hat_descr_silver_trophy_hat = Für den zweitbesten Farmer.
 @hat_descr_wood_trophy_hat = Für den drittbesten Farmer.
+@hat_descr_dynamite_hat = Hut für den Sprengmeister. Bei jedem Graben kommt es zu einer Explosion, die ein Dynamit kostet. Es kann nur eine Sprengmeister-Drohne geben.
+@hat_descr_golden_cactus_hat = Eine goldene Version des Kaktushuts.
+@hat_descr_golden_pumpkin_hat = Eine goldene Version des Kürbishuts.
+@hat_descr_golden_sunflower_hat = Eine goldene Version des Sonnenblumenhuts.
+@hat_descr_the_farmers_remains = Was ist passiert?

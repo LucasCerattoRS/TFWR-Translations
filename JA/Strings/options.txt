@@ -12,6 +12,7 @@
 @low = 低
 @sfx limit = SFX 上限
 @vfx limit = VFX 上限
+@avalanche particles = 落盤のパーティクル
 @volume damping = 音量減衰
 @volume = 音量
 @music volume = BGM音量

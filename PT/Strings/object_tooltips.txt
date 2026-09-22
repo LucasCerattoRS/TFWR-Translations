@@ -8,18 +8,50 @@ Pode crescer em {3}.
 @object_descr_bush = Um pequeno arbusto que solta `Items.Wood`.
 @object_descr_tree = Árvores soltam mais madeira que arbustos. Elas demoram mais para crescer se outras árvores crescerem ao lado delas.
 @object_descr_carrot = Cenouras!
+@object_descr_rice = O arroz pode ser plantado na camada de argila encontrada no subsolo.
+@object_descr_bamboo = O bambu pode crescer bastante, mas floresce em uma altura específica. A produção é maior se você o colher exatamente na altura em que floresce.
 @object_descr_pumpkin = Abóboras crescem juntas quando estão ao lado de outras abóboras totalmente crescidas. Cerca de 1 em 5 abóboras morre quando cresce.
 @object_descr_dead_pumpkin = Uma em cada cinco abóboras morre ao crescer, deixando para trás uma abóbora morta. Abóboras mortas são inúteis e desaparecem quando algo novo é plantado.
 @object_descr_sunflower = Girassóis coletam a energia do sol. Colhê-los lhe dará `Items.Power`.
 Se você colher um girassol com o número máximo de pétalas, você ganha energia bônus.
 @object_descr_cactus = Cactos vêm em 10 tamanhos diferentes. Quando colhidos, cactos adjacentes que estão "ordenados" também serão colhidos.
 @object_descr_hedge = Parte do labirinto.
-@object_descr_treasure = Um tesouro que contém ouro igual ao comprimento do lado do labirinto em que está escondido. Pode ser colhido como uma planta.
+@object_descr_treasure = Um tesouro que contém uma quantidade de ouro igual à área do labirinto em que está escondido. Pode ser colhido como uma planta.
 @object_descr_dinosaur = Um pedaço da cauda do chapéu de dinossauro.
 @object_descr_grassland = O solo padrão. Grama crescerá automaticamente nele.
 @object_descr_soil = Chamar `till()` transforma o solo em terra arada. Chamar `till()` novamente o transforma de volta em grama.
+@object_descr_dirt = É terra.
+@object_descr_rock = É uma rocha dura.
+@object_descr_clay = Um bloco de argila. Solo fértil e perfeito para arroz. Quando uma planta de arroz amadurece, ela transforma a argila abaixo dela novamente em terra.
+@object_descr_blue_block = Um bloco azul.
+@object_descr_red_block = Um bloco vermelho.
+@object_descr_green_block = Um bloco verde.
+@object_descr_coal = Um bloco rico em carvão sedimentar.
+@object_descr_iron = Um bloco contendo magnetita bruta.
+@object_descr_quartz = Um bloco que contém quartzo cristalino.
+@object_descr_limestone = Calcário esbranquiçado. Forma a fundação de pirâmides antigas.
+@object_descr_sand = Um bloco de areia. Parte de uma pirâmide antiga.
+@object_descr_bedrock = Indestrutível.
+@object_descr_petrified_pumpkin = Uma abóbora petrificada. Ainda dá para comer.
+@object_descr_loam = Solo franco rico, ideal para cultivar certas plantas. Girassóis e cenouras dão o dobro da produção quando plantados aqui.
+@object_descr_perlite = Terra com alto teor de perlita, ideal para cultivar certas plantas. Arbustos, cactos, bambus e árvores dão o dobro da produção quando plantados aqui.
 @runtime_entity_tooltip = Quando colhido, dá:
 {{itemblock tooltip}}
+@runtime_ground_tooltip = Quando escavado, dá:
+{{itemblock tooltip_ground}}
+@runtime_mushroom_tooltip = Quando dois blocos de cogumelo do mesmo tipo são empilhados, eles dão:
+{{itemblock tooltip_ground}}
 @runtime_growable_tooltip = Tempo total de crescimento: {0} segundos
 Crescimento: {1}%
-@runtime_ground_tooltip = Nível de água: {0}
+@runtime_ground_hardness_tooltip = Dureza: {0}
+@runtime_ground_stability_tooltip = Estabilidade: {0}
+@runtime_ground_water_tooltip = Nível de água: {0}
+@object_descr_dynamite = Explode ao ser escavada. Plantar sempre consome 1 dinamite, e colher sempre rende 1 dinamite.
+@object_descr_dynamite_ground = Pode soltar dinamite no bloco abaixo ao ser escavado. A dinamite pode ser colhida ou escavada para explodir.
+@object_descr_soot = Fuligem misteriosa que conta o número de dinamites ativas no estrato acima quando `measure()` é chamado. Explode imediatamente qualquer dinamite que caia sobre ela.
+@object_descr_basalt = Rocha macia formada pelo resfriamento da lava. Será que algo foi preservado embaixo?
+@object_descr_treasure_map_ground = Um mapa do tesouro! Aonde será que ele leva?
+@object_descr_treasure_path_ground = No caminho que leva do mapa do tesouro até o objetivo.
+@object_descr_treasure_goal_ground = O objetivo no fim da trilha do mapa do tesouro. O que será que está escondido aqui?
+@object_descr_underground_treasure = O tesouro esquivo encontrado no fim do caminho do mapa do tesouro.
+@object_descr_mushroom = Cogumelos que crescem no subsolo. Use `measure()` para determinar o tipo de cogumelo.

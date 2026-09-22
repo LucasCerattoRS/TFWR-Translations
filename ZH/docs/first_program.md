@@ -1,3 +1,5 @@
+[<- 入门指南](docs/getting_started.md) <right>[While 循环 ->](docs/scripting/while.md)
+---
 # 第一个程序
 ## 文本编辑器
 
@@ -6,15 +8,14 @@
 
 程序停止运行时，就可以在窗口中编写代码，像使用其他的文本编辑器一样。
 单击窗口中的绿色运行按钮可以直接执行程序。
-![](PlayButton50)
+![|x50](PlayButton)
 
 单击屏幕右上角的“+”按钮可以创建新的代码文件。
 将一个窗口拖到另一个窗口上，两个窗口可以有序地堆放在一起。
 
 在窗口中编写代码时，会弹出一个简单的代码补全窗口。
-按 Tab 键可以补全代码。
-使用方向键可以在代码补全窗口快速选择你想要输入的关键字、内置函数以及自定义函数等内容。
-将鼠标移动到代码补全窗口的列表上时，可以快速展示对应的用法，这可以帮你快速理解关键字、内置函数以及自定义函数等内容的作用。
+按 Tab 键可以插入选中的补全内容。
+使用方向键可以在补全选项之间切换。
 
 如果你是第一次编程，新手也可以快速上手。这些功能是逐步解锁的，相关知识不会一股脑地砸下来，让你手忙脚乱。
 这款游戏中编程的语法也与 Python 相似，而 Python 是世界上使用最广泛的编程语言之一，所以学习它并不是在浪费时间。
@@ -33,18 +34,42 @@
 
 在窗口中输入这 2 个语句，然后单击运行按钮，就可以让无人机动起来，你自己试试看吧！
 
-你可以把你编写的代码理解成是由单个语句组成的古诗，就像这样：
+你可以把代码看成一系列语句。把多个语句写在不同行上，就能依次运行。
+试着点击下方嵌入式代码窗口中的运行按钮，看看代码如何执行：
 
-`床前明月光，
-疑是地上霜。
-举头望明月，
-低头思故乡。`
-
-这些语句就像古诗一样，从上到下依次执行，每一步都是你想让无人机做的事情：
-
-`harvest()
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
 do_a_flip()
-harvest()`
+harvest()
+harvest()
+}}
 
 ## 科技树
 收集草可获得干草。干草可以用来在科技树中解锁循环功能。点击右上角的按钮可打开科技树。
+
+---
+
+[外部编辑器](docs/external_editor.md)      [注释](docs/scripting/comments.md)      [While 循环](docs/scripting/while.md)
+
+[harvest()](functions/harvest)      [do_a_flip()](functions/do_a_flip)

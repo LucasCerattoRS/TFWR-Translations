@@ -12,6 +12,7 @@
 @low = 低
 @sfx limit = 音效限制
 @vfx limit = 视效限制
+@avalanche particles = 塌方粒子效果
 @volume damping = 音量抑制
 @volume = 音量
 @music volume = 音乐音量

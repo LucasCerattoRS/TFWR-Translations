@@ -1,5 +1,7 @@
+[<- Debug](docs/scripting/debug.md) <right>[Simulation ->](docs/unlocks/simulation.md)
+---
 # Timing
-If you really want to optimize your methods you need to understand how time is measured in this game. This unlock is all about that.
+If you really want to optimize your methods, you need to understand how time is measured in this game. This unlock is all about that.
 
 ## New Functions
 There are two useful functions to measure how long things take:
@@ -8,7 +10,32 @@ There are two useful functions to measure how long things take:
 
 `get_tick_count()` returns the number of ticks performed since the start of execution.
 
-These two functions as well as `quick_print()`, are completely free. Even the call operation is free for them.
+These two functions, as well as `quick_print()`, are completely free. Even the call operation is free for them.
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
 
 ## Runtime Details
 
@@ -17,10 +44,10 @@ This is not how performance works in the real world. These are just rules made u
 You will probably only care about this if you want to hyper-optimize your code.
 
 
-The basic unit of time for code execution is called a "tick". Without speed upgrades and power, the execution proceeds at a rate of `400` ticks per second.
+The basic unit of time for code execution is called a "tick." Without speed upgrades and power, execution proceeds at a rate of `400` ticks per second.
 
 In general, operations that combine two values such as `+, -, *, /, //, %, and, or, ...` take one tick to run.
-Single value `-` and `not` are free.
+Unary `-` and `not` are free.
 An `if` branch also takes one tick to run (in addition to the time it takes to evaluate the condition expression).
 Function calls and variable reads and writes are free but function definitions take 1 tick.
 `import` statements are free.
@@ -28,7 +55,13 @@ Accessing an imported module with the `.` operator is free.
 If a function or module has been passed via arguments or variable assignments, using it will cost 1 tick instead of 0.
 `for` and `while` loops take one tick to start, but the iterations are free (not counting the time to evaluate the condition/sequence expressions).
 `return`, `break` and `continue` are all free.
-`pass` takes one tick so it can be used to create precise delays.
-Indexing into a datastructure takes one tick for the index operator and, in the case of a dictionary or set, additional ticks depending on the size of the key.
+`pass` takes one tick, so it can be used to create precise delays.
+Indexing into a data structure takes one tick for the index operator and, in the case of a dictionary or set, additional ticks depending on the size of the key.
 
-The number of ticks that builtin functions take to execute is documented in the documentation of each function on an individual basis.
+The number of ticks that built-in functions take to execute is documented on each function's page.
+
+---
+
+[Debug](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Leaderboards](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

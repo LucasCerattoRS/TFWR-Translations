@@ -1,3 +1,5 @@
+[<- Agrandir 1](docs/unlocks/expand_1.md)
+---
 # Expansion 2
 Ta ferme s'est encore agrandie ! Maintenant, les cases ne sont plus en une belle rangée, tu dois donc trouver un moyen de parcourir une grille carrée.
 
@@ -6,36 +8,113 @@ Il est temps d'introduire la boucle `for`.
 
 Tu peux tout lire sur la boucle `for` sur la page [Boucle For](docs/scripting/for.md), mais pour l'instant tu n'en auras besoin que pour répéter du code un nombre fixe de fois.
 
-`#faire n loopings
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 1},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
 for i in range(5):
-	do_a_flip()`
+	do_a_flip()
+}}
 
-`range(n)` crée une plage de nombres de `0` à `n-1`, qui contient `n` éléments. La boucle `for` exécute son corps de boucle une fois pour chaque élément de la séquence. Dans cet exemple, `do_a_flip()` sera appelé `5` fois.
+`range(n)` crée une séquence de `n` nombres allant de `0` à `n - 1`. La boucle `for` exécute son corps une fois pour chaque élément de la séquence. Dans cet exemple, `do_a_flip()` est appelée `5` fois.
 
 La fonction `get_world_size()` est également disponible maintenant. Elle renvoie la longueur d'un côté de ta ferme. De cette façon, tu peux écrire du code qui ne se cassera pas avec la prochaine amélioration d'expansion.
 
-`for i in range(get_world_size()):
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+for i in range(get_world_size()):
 	harvest()
-	move(North)`
+	move(North)
+}}
 
 Cet exemple récolte une colonne de la ferme pour n'importe quelle taille de ferme.
 
-Si tu es bloqué en essayant de comprendre comment déplacer le drone autour de la ferme, regarde l'indice ci-dessous.
-<spoiler=montrer l'indice>Il y a, bien sûr, plusieurs façons de se déplacer dans la ferme.
-Ce que nous cherchons, c'est un moyen de la parcourir de manière systématique qui ne se cassera pas lorsque la ferme s'agrandira à nouveau.
-Un moyen systématique d'atteindre chaque endroit de la ferme serait de répéter les 2 étapes suivantes à l'infini :
+Si tu ne sais pas comment déplacer le drone dans toute la ferme, consulte l’indice ci-dessous.
+<spoiler=afficher l’indice>Il existe bien sûr plusieurs façons de parcourir la ferme.
+Nous cherchons une méthode systématique qui continuera de fonctionner lorsque la ferme s’agrandira de nouveau.
+Pour atteindre systématiquement chaque case de la ferme, tu pourrais répéter indéfiniment les deux étapes suivantes :
 
-1. Se déplacer vers le `North` jusqu'à revenir au point de départ.
-2. Se déplacer vers l'`East`
+1. Aller vers `North` jusqu’à ce que le drone réapparaisse de l’autre côté.
+2. Aller vers `East`.
 
-`for i in range(get_world_size()):` peut être utile pour transformer cette idée en code.
+`for i in range(get_world_size()):` peut t’aider à traduire cette idée en code.
 </spoiler>
-<spoiler=voir une solution possible> Le parcours de base pourrait ressembler à ceci :
-
-`for i in range(get_world_size()):
+<spoiler=afficher une solution possible>
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 3, "y": 3},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+do_a_flip()
+#CODE
+for i in range(get_world_size()):
 	for j in range(get_world_size()):
-		#faire un looping sur chaque case
+		#parcourir chaque case
 		do_a_flip()
 		move(North)
-	move(East)`
+	move(East)
+}}
 </spoiler>
+---
+
+[Boucle for](docs/scripting/for.md)      [Boucle while](docs/scripting/while.md)      [Variables](docs/scripting/variables.md)
+
+[move()](functions/move)      [get_world_size()](functions/get_world_size)

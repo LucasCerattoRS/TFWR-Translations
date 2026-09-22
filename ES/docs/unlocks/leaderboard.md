@@ -1,26 +1,30 @@
+[<- Simulación](docs/unlocks/simulation.md)
+---
 # Tabla de clasificación
 Si has llegado hasta aquí, has superado muchos desafíos. Pero, ¿los has resuelto de manera eficiente? 
 Puedes competir con otros jugadores en varias tablas de clasificación por los métodos de cultivo más eficientes.
 
 Puedes iniciar una carrera en la tabla de clasificación llamando a `leaderboard_run(leaderboard, filename, speedup)`.
-Esto inicia una [simulación](docs/unlocks/simulation.md) similar a `simulate()`, excepto que las condiciones iniciales son fijas. Cada categoría de la tabla de clasificación tiene diferentes condiciones de inicio y éxito.
+Esto inicia una [simulación](docs/unlocks/simulation.md) parecida a `simulate()`, salvo que las condiciones iniciales son fijas. Cada categoría de la tabla de clasificación tiene condiciones iniciales y de éxito distintas.
 
 La carrera de la tabla de clasificación tiene éxito si la condición de éxito es `True` cuando la simulación termina. 
 
 La simulación NO terminará automáticamente cuando se alcance el objetivo. Debes asegurarte de que el programa termine.
 Si la carrera es exitosa, tu tiempo se añadirá a la tabla de clasificación.
 
-Para reducir la varianza, todas las carreras deben durar al menos 2 horas (puedes acelerarlo, para que no tarde tanto). Si una carrera se completa antes, se repetirá hasta alcanzar un tiempo total de 2 horas. El promedio de todas las carreras se sube como tu puntuación.
+Para reducir la variación, todas las carreras deben abarcar al menos 2 horas de tiempo simulado. Puedes acelerar la simulación, así que no tardará tanto tiempo real. Si una carrera termina antes, se repetirá hasta que el tiempo simulado total alcance las 2 horas. Después se subirá como puntuación el tiempo medio de todas las carreras.
 
 Aquí hay un ejemplo de configuración que te pondrá en la tabla de clasificación del heno.
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## Reinicio más rápido
-El reinicio más rápido es la categoría más prestigiosa. Automatiza completamente el juego desde una sola parcela de granja hasta desbloquear de nuevo las tablas de clasificación.
+El reinicio más rápido es la categoría más prestigiosa. En ella automatizas el juego por completo: empiezas con una sola parcela y terminas cuando vuelves a desbloquear las tablas de clasificación.
 
 No tienes que desbloquear todo, solo intenta desbloquear `Unlocks.Leaderboard` lo más rápido posible.
 
-Recuerda que puedes usar `num_unlocked(unlock) > 0` para comprobar si algo está desbloqueado y puedes usar `get_cost()` en los desbloqueos para ver cuánto cuestan y así poder cultivar automáticamente los ítems correctos.
+Recuerda que puedes usar `num_unlocked(unlock) > 0` para comprobar si algo está desbloqueado. También puedes usar `get_cost()` con los desbloqueos para ver cuánto cuestan y conseguir automáticamente los ítems adecuados.
+
+`unlock()` no tiene en cuenta las dependencias del árbol tecnológico. Por ejemplo, es posible desbloquear `Unlocks.Fertilizer` antes que `Unlocks.Water`.
 
 Llamada de función:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -98,7 +102,7 @@ Condición de éxito: `num_items(Items.Carrot) >= 2000000000`
 Condición de éxito: `num_items(Items.Hay) >= 2000000000`
 
 ## Tablas de clasificación de un solo dron
-También hay tablas de clasificación para cultivar con un solo dron. Solo tienes un dron y una granja de 8x8 y tienes que conseguir una cierta cantidad de recursos lo más rápido posible.
+También hay tablas de clasificación para cultivar con un solo dron. Solo dispones de un dron y una granja de 8x8, y debes obtener una cantidad determinada de recursos lo más rápido posible.
 
 ### `Leaderboards.Maze_Single`
 `leaderboard_run(Leaderboards.Maze_Single, filename, speedup)`
@@ -127,3 +131,9 @@ Condición de éxito: `num_items(Items.Carrot) >= 100000000`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 Condición de éxito: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[Simulación](docs/unlocks/simulation.md)      [Temporización](docs/unlocks/timing.md)      [Autodesbloqueos](docs/unlocks/auto_unlock.md)      [Costes](docs/unlocks/costs.md)      [Estadísticas](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

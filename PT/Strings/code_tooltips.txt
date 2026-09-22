@@ -110,6 +110,16 @@ leva `1` tick para executar.
 
 exemplo:
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+Obtém a posição z atual do drone.
+A posição z começa em `0` e diminui quando você escava para baixo.
+
+retorna um número que representa a coordenada z atual do drone.
+
+leva `1` tick para executar.
+
+exemplo:
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 Obtém o tamanho atual da fazenda.
 
@@ -140,6 +150,26 @@ leva `1` tick para executar.
 exemplo:
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+Descobre a dureza do solo sob o drone.
+
+retorna a dureza do solo sob o drone.
+
+leva `1` tick para executar.
+
+exemplo:
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+Descobre a estabilidade do solo sob o drone.
+
+retorna a estabilidade do solo sob o drone.
+
+leva `1` tick para executar.
+
+exemplo:
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 Obtém o tempo de jogo atual.
 
@@ -342,7 +372,7 @@ exemplo:
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("Companheira:", plant_type, "em", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)` 
 Tem exatamente o mesmo efeito que clicar no botão correspondente a `unlock` na árvore de pesquisa.
 
@@ -628,3 +658,59 @@ list.insert(0, 0)`
 @code_tooltip_or = Avalia o primeiro operando. Se for verdadeiro (qualquer coisa diferente de `False`, `0` e coleções vazias), retorna esse valor imediatamente (curto-circuito na avaliação), caso contrário, avalia e retorna o segundo operando.
 @code_tooltip_return = Usado para retornar um valor de uma função.
 @code_tooltip_pass = Não faz nada. Pode ser útil porque blocos de código vazios não são permitidos.
+@code_tooltip_dig = `dig()`
+Escava um bloco para baixo.
+
+A velocidade de escavação depende da dureza do bloco e da força da broca do drone.
+
+exemplo:
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+Usa carvão para procurar ferro.
+
+retorna a direção até o minério de ferro mais próximo (`North`, `East`, `South` ou `West`) se houver um por perto. Retorna `None` se não houver ferro próximo, se você não tiver carvão suficiente ou se o drone já estiver sobre um pedaço de ferro.
+
+custa 1 carvão para executar.
+
+exemplo:
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+Usa ferro para procurar quartzo.
+
+retorna a distância euclidiana (distância 3D) do drone até o próximo bloco de quartzo, ou `None` se não houver quartzo por perto.
+
+custa 1 ferro para executar.
+
+exemplo:
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+Coloca blocos.
+
+Você pode especificar o bloco a ser colocado. Só é possível colocar blocos sem função especial. Por exemplo, você pode usar `place(Grounds.Rock)`, mas não `place(Grounds.Clay)`.
+
+exemplo:
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+Empurra o bloco de cogumelo sob o drone.
+
+Não é possível empurrar blocos para cima.
+
+retorna `True` se o bloco foi empurrado, caso contrário, `False`.
+
+exemplo:
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+Verifica se o bloco sob o drone pode ser empurrado.
+
+retorna `True` se o bloco sob o drone puder ser empurrado, caso contrário, `False`.
+
+exemplo:
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+Salta para um recurso subterrâneo associado a `unlock`.
+
+Você só pode executar `jump` uma vez por script.
+
+exemplo:
+`jump(Unlocks.Iron)`

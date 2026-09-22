@@ -1,3 +1,5 @@
+[<- Tempi](docs/unlocks/timing.md) <right>[Classifiche ->](docs/unlocks/leaderboard.md)
+---
 # Simulazione
 
 Le simulazioni ti permettono di testare rapidamente il codice senza modificare lo stato della fattoria reale.
@@ -5,7 +7,7 @@ Lo stato iniziale della simulazione può essere scelto liberamente e, al termine
 
 La funzione `simulate()` viene utilizzata per avviare una simulazione.
 
-il file da cui deve iniziare l'esecuzione
+il file in cui deve iniziare l'esecuzione
 `filename = "f1"`
 
 inizia con tutto sbloccato e completamente potenziato
@@ -29,10 +31,10 @@ esegui la simulazione
 La funzione `simulate()` restituisce il tempo, in secondi, impiegato per simulare il file di partenza dato.
 
 ### Nome del File
-Il primo argomento della funzione di simulazione è il nome del file. Questo è il nome visualizzato nella parte superiore della finestra del codice. La simulazione eseguirà il file specificato come se avessi cliccato il pulsante Esegui su di esso.
+Il primo argomento della funzione `simulate()` è il nome del file, visualizzato in cima alla finestra del codice. La simulazione eseguirà il file specificato come se avessi premuto il suo pulsante Esegui.
 
 ### Sblocchi Iniziali
-Tutte le funzionalità di programmazione come cicli, istruzioni if, liste, dizionari,... rimarranno sempre sbloccate. 
+Tutte le funzionalità di programmazione, come cicli, istruzioni `if`, liste e dizionari, rimangono sempre sbloccate.
 
 Il secondo argomento ti permette di specificare con quali sblocchi/potenziamenti la simulazione dovrebbe iniziare, oltre alle funzionalità di programmazione. Questa dovrebbe essere una sequenza di sblocchi. La simulazione inizierà con tutti gli sblocchi nella sequenza potenziati al loro livello massimo.
 
@@ -53,6 +55,12 @@ Il quinto argomento ti permette di specificare il seed casuale utilizzato nella 
 Il seed casuale influisce su tutto, dai tempi di crescita delle piante alla disposizione dei labirinti, ai tempi di decadimento dell'acqua. Se avvii la stessa simulazione più volte con lo stesso seed casuale e le stesse condizioni iniziali, il risultato dovrebbe essere sempre lo stesso.
 
 ### Accelerazione
-Il sesto argomento è l'accelerazione iniziale della simulazione. Questo ti permette di testare le cose rapidamente. Se il gioco non riesce a tenere il passo con la velocità impostata, rallenterà automaticamente.
+Il sesto argomento è l'accelerazione iniziale della simulazione. Ti permette di eseguire rapidamente i test. Se il gioco non riesce a mantenere la velocità impostata, rallenta automaticamente.
 
-L'accelerazione non influisce in alcun modo sul risultato della simulazione. Esiste solo per ridurre il tempo di attesa.
+L'accelerazione non influisce in alcun modo sul risultato della simulazione. Serve solo a ridurre il tempo di attesa.
+
+---
+
+[Dizionari](docs/scripting/dicts.md)      [Tempi](docs/unlocks/timing.md)      [Debug](docs/scripting/debug.md)      [Classifiche](docs/unlocks/leaderboard.md)
+
+[simulate()](functions/simulate)

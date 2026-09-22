@@ -1,12 +1,15 @@
+[<- Sadzenie](docs/unlocks/plant.md) <right>[Zmysły ->](docs/unlocks/senses.md)
+<right>[Zmienne ->](docs/scripting/variables.md)
+---
 # Operatory
-operatory arytmetyczne: `+, -, *, /, //, %, **`
-operatory porównania: `==, !=, <=, >=, <, >`
-operatory logiczne: `not, and, or`
+Operatory arytmetyczne: `+, -, *, /, //, %, **`
+Operatory porównania: `==, !=, <=, >=, <, >`
+Operatory logiczne: `not, and, or`
 
-Uwaga: Wszystkie liczby w grze są liczbami zmiennoprzecinkowymi. Dlatego wszystkie operatory arytmetyczne są operatorami zmiennoprzecinkowymi.
-`//` jest zdefiniowane tak, że po prostu zaokrągla liczbę w dół po dzieleniu.
+Uwaga: Wszystkie liczby w grze są liczbami zmiennoprzecinkowymi, dlatego wszystkie operatory arytmetyczne są operatorami zmiennoprzecinkowymi.
+`//` zaokrągla w dół wynik dzielenia.
 
-Do używania operatorów przypisania musisz odblokować odblokowanie „Zmienne”.
+Aby używać operatorów przypisania, musisz odblokować „Zmienne”.
 
 ## Wprowadzenie
 Operatory pozwalają na porównywanie, modyfikowanie i łączenie wartości. 
@@ -17,59 +20,671 @@ Operatory logiczne (zwane również operatorami boolowskimi) `not, and, or` słu
 ## Operatory arytmetyczne
 `+` i `-` służą do dodawania i odejmowania.
 
-`2 + 3` daje w wyniku `5`
-`3 - 2` daje w wyniku `1`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+2 + 3
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+3 - 2
+}}
 
 `*`, `/` i `//` służą do mnożenia i dzielenia.
 
-`2 * 3` daje w wyniku `6`
-`5 / 2` daje w wyniku `2.5`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+2 * 3
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+5 / 2
+}}
 
 `//` robi to samo co `/`, ale wynik jest zaokrąglany w dół (do najbliższej liczby całkowitej).
 
-`5 // 2` daje w wyniku `2`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+5 // 2
+}}
 
-`%` to operator modulo, znany również jako operator reszty z dzielenia. Zasadniczo dzieli dwie liczby, a następnie zwraca resztę. Można o nim myśleć jako o wielokrotnym odejmowaniu prawej liczby od lewej, aż reszta będzie mniejsza od prawej liczby.
+`%` to operator modulo, znany również jako operator reszty z dzielenia. Dzieli dwie liczby i zwraca resztę. Można też myśleć o nim jak o wielokrotnym odejmowaniu liczby po prawej od liczby po lewej, aż reszta będzie mniejsza od liczby po prawej.
 
-`4 % 2` daje w wyniku `0`
-`5 % 2` daje w wyniku `1`
-`6 % 2` daje w wyniku `0`
-`2 % 6` daje w wyniku `2`
-`1.5 % 1` daje w wyniku `0.5`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+4 % 2
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+5 % 2
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+6 % 2
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+2 % 6
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+1.5 % 1
+}}
 
 `**` to operator potęgowania.
 
-`2**2` daje w wyniku `4`
-`(-5)**3` daje w wyniku `-125`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+2**2
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+(-5)**3
+}}
 
 ## Operatory porównania
-`==` i `!=` służą do sprawdzania, czy dwie wartości są „równe” (`==`) lub „nierówne” (`!=`). Mogą być używane na wszystkich typach wartości.
+`==` i `!=` sprawdzają, czy dwie wartości są równe (`==`) lub nierówne (`!=`). Można ich używać ze wszystkimi typami wartości.
 
-`2 == 2` daje w wyniku `True`
-`Entities.Bush != Entities.Bush` daje w wyniku `False`
-`3 != 3 + 1` daje w wyniku `True`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+2 == 2
+}}
 
-`<=, >=, <, >` mogą być używane tylko na liczbach. Sprawdzają, czy lewa liczba jest „mniejsza lub równa” (`<=`), „większa lub równa” (`>=`), „mniejsza” (`<`) lub „większa” (`>`) od prawej liczby.
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+Entities.Bush != Entities.Bush
+}}
 
-`1 <= 1` daje w wyniku `True`
-`2 >= 3` daje w wyniku `False`
-`-2 < -1` daje w wyniku `True`
-`6 > 6` daje w wyniku `False`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+3 != 3 + 1
+}}
+
+Operatorów `<=`, `>=`, `<` i `>` można używać tylko z liczbami. Sprawdzają, czy lewa liczba jest mniejsza lub równa (`<=`), większa lub równa (`>=`), mniejsza (`<`) albo większa (`>`) od prawej.
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+1 <= 1
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+2 >= 3
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+-2 < -1
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+6 > 6
+}}
 
 ## Operatory logiczne
 `not` po prostu odwraca wartość:
 
-`not False` daje w wyniku `True`
-`not True` daje w wyniku `False`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+not False
+}}
 
-`and` daje w wyniku `True` tylko wtedy, gdy obie wartości są `True`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+not True
+}}
 
-`True and True` daje w wyniku `True`
-`True and False` daje w wyniku `False`
-`False and False` daje w wyniku `False`
+`and` daje w wyniku `True` tylko wtedy, gdy obie wartości są `True`.
 
-`or` daje w wyniku `True`, jeśli co najmniej jedna z wartości jest `True`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+True and True
+}}
 
-`True or True` daje w wyniku `True`
-`True or False` daje w wyniku `True`
-`False or False` daje w wyniku `False`
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+True and False
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+False and False
+}}
+
+`or` daje w wyniku `True`, jeśli co najmniej jedna z wartości jest `True`.
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+True or True
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+True or False
+}}
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+False or False
+}}
+
+Operatory można łączyć w większe wyrażenia, ale trzeba uważać na kolejność wykonywania działań. Używaj nawiasów, aby jednoznacznie określić zamierzoną kolejność.
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "print_last_result": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 200,
+    "seed": 0,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+(4 % 2 == 1 or 4 % 2 == 0) and 2 + 3 > 4
+}}
+
+---
+
+[Zmienne](docs/scripting/variables.md)      [If](docs/scripting/if.md)      [Pętla While](docs/scripting/while.md)      [Zmysły](docs/unlocks/senses.md)

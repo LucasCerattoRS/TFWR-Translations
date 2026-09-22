@@ -1,5 +1,6 @@
 @item_tooltip_template_amount = Tu as {0}
 @item_descr_carrot = Obtenu en récoltant des carottes.
+@item_descr_rice = Obtenu en récoltant du riz.
 @item_descr_fertilizer = Appelle `use_item(Items.Fertilizer)` pour retirer instantanément 2s au temps de croissance restant des plantes.
 @item_descr_weird_substance = Appelle `use_item(Items.Weird_Substance)` sur un buisson pour faire pousser un labyrinthe, ou sur d'autres plantes pour basculer leur statut d'infection. Obtenu à partir de plantes infectées. Fertiliser les plantes les infecte.
 @item_descr_gold = Trouvé dans les coffres au trésor des labyrinthes.
@@ -12,3 +13,10 @@
 @item_descr_cactus = Obtenu en récoltant des cactus triés.
 @item_descr_cactus_seed = Cet objet a été retiré du jeu.
 @item_descr_bone = Les os d'une créature ancienne.
+@item_descr_block = Un bloc obtenu en forant.
+@item_descr_coal = Obtenu en extrayant du charbon sous terre. Les gisements de charbon forment des couches planes.
+@item_descr_iron = Obtenu en extrayant du fer sous terre.
+@item_descr_quartz = Obtenu en extrayant des filons de quartz. Il pousse sous forme d’aiguilles.
+@item_descr_dynamite = Obtenue en forant un bloc de dynamite.
+@item_descr_bamboo = Obtenu en récoltant du bambou.
+@item_descr_mushroom = Obtenu en empilant des blocs de champignons.

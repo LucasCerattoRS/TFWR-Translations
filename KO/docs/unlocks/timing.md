@@ -1,3 +1,5 @@
+[<- 디버그](docs/scripting/debug.md) <right>[시뮬레이션 ->](docs/unlocks/simulation.md)
+---
 # 타이밍
 자신의 방법을 정말로 최적화하고 싶다면 이 게임에서 시간이 어떻게 측정되는지 이해해야 해요. 이 해금은 바로 그것에 관한 것이에요.
 
@@ -9,6 +11,31 @@
 `get_tick_count()`는 실행 시작 후 수행된 틱 수를 반환해요.
 
 이 두 함수와 `quick_print()`는 완전히 무료예요. 심지어 호출 연산도 무료예요.
+
+{{codeexample 
+{
+    "show_image": false,
+    "show_code": true,
+    "show_inventory": false,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+start_time, start_ticks = get_time(), get_tick_count()
+harvest()
+time, ticks = get_time(), get_tick_count()
+quick_print(time - start_time, ticks - start_ticks)
+}}
 
 ## 런타임 상세 정보
 
@@ -32,3 +59,9 @@
 자료 구조에 인덱싱하는 것은 인덱스 연산자에 1 tick이 걸리고, 딕셔너리나 세트의 경우 키의 크기에 따라 추가적인 틱이 걸려요.
 
 내장 함수가 실행되는 데 걸리는 틱 수는 각 함수의 문서에 개별적으로 기록되어 있어요.
+
+---
+
+[디버그](docs/scripting/debug.md)      [시뮬레이션](docs/unlocks/simulation.md)      [리더보드](docs/unlocks/leaderboard.md)
+
+[get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

@@ -1,12 +1,42 @@
+[<- Geschwindigkeitsverbesserung](docs/unlocks/speed.md) <right>[Erweitern 2 ->](docs/unlocks/expand_2.md)
+<right>[Bergbau ->](docs/unlocks/mining.md)
+---
 # Erweitern 1
-<unlock=for>Siehe auch [Erweitern_2](docs/unlocks/expand_2.md)
-
-</unlock>Deine Farm ist gewachsen! Dieser Platz nützt nicht viel, wenn du die Drohne nicht bewegen kannst, also gibt es eine neue Funktion `move()`, die die Drohne bewegt. `move()` erfordert, dass du die Richtung angibst, in die du die Drohne bewegen möchtest. Dafür gibt es vier neue Konstanten: `North, East, South, West`
+Deine Farm ist gewachsen! Der zusätzliche Platz nützt wenig, wenn du die Drohne nicht bewegen kannst. Deshalb gibt es die neue Funktion `move()`, welche die Drohne bewegt. Bei `move()` musst du die gewünschte Bewegungsrichtung angeben. Dafür gibt es vier neue Konstanten: `North, East, South, West`
 
 Zum Beispiel wird `move(North)` die Drohne ein Feld nach Norden bewegen.
 
-Wenn du dich über den Rand der Farm bewegst, wird die Drohne auf die andere Seite der Farm versetzt.
-Der folgende Beispielcode bewegt die Drohne weiter nach Norden und springt zurück zum Anfang, wenn sie den Rand der Farm erreicht:
+Wenn du dich über den Rand der Farm hinausbewegst, erscheint die Drohne auf der gegenüberliegenden Seite.
 
-`while True:
-	move(North)`
+{{codeexample 
+{
+    "camera_position": {"x": 0, "y": 1.8, "z": 5},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": false,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 1, "y": 3},
+    "execution_speed": 2,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 1,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+#CODE
+while True:
+	move(North)
+}}
+
+---
+
+[While-Schleife](docs/scripting/while.md)      [Operatoren](docs/scripting/operators.md)      [Erweitern 2](docs/unlocks/expand_2.md)
+
+[move()](functions/move)

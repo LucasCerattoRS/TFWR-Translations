@@ -10,6 +10,8 @@
 @button_tooltip_delete = 永久删除此文件。
 @button_tooltip_close_docs = 关闭此窗口。
 @button_tooltip_table_of_contents = 目录
+@button_tooltip_docs_home = 返回文档首页。
+@button_tooltip_docs_back = 返回上次访问的文档页面。
 @button_tooltip_new_game = 创建新存档。
 @button_tooltip_open_folder = 在文件资源管理器中打开存档文件夹。
 @button_tooltip_toggle_search_docs = 切换是否在搜索中包含文档窗口。
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = 你的代码触发了警告。点击图标在输出窗口中查看详情。
 @option_tooltip_graphics = 影响各种渲染管线设置，如阴影、环境光遮蔽和泛光。
 @option_tooltip_vfx_limit = 限制每秒可播放的视觉效果数量。
+@option_tooltip_avalanche_particles = 关闭塌方产生的粒子效果。
 @option_tooltip_volume = 调整所有音频的音量。
 @option_tooltip_music_volume = 调整音乐的音量。
 @option_tooltip_drone_volume = 调整无人机嗡嗡声的音量。

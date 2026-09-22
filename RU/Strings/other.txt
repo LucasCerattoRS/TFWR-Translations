@@ -6,13 +6,12 @@
 @average_text2 = Завершено: {0}
 {1}
 @unlocked_in = Больше информации см. здесь: [{0}]({1})
-@table_of_contents_section_general_info = Общая информация
-@table_of_contents_section_programming = Программирование
-@table_of_contents_section_unlocks = Технологии
-@table_of_contents_section_builtins = Встроенные функции
-@table_of_contents_section_items = Предметы
-@table_of_contents_section_entities = Сущности
-@table_of_contents_section_grounds = Типы земли
 @new_hat_unlocked = ## Разблокирована новая шляпа
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- щелкни ПКМ, чтобы узнать больше --
+@missing_unlock_page = Чтобы увидеть эту страницу, сначала разблокируй {0} в [дереве технологий](tech_tree).
+
+---
+
+{1}
+@latest_news = Последние новости

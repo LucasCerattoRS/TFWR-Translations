@@ -8,18 +8,50 @@ Puede crecer en {3}.
 @object_descr_bush = Un pequeño arbusto que suelta `Items.Wood`.
 @object_descr_tree = Los árboles sueltan más madera que los arbustos. Tardan más en crecer si otros árboles crecen a su lado.
 @object_descr_carrot = ¡Zanahorias!
+@object_descr_rice = El arroz se puede plantar en la capa de arcilla que encontrarás bajo tierra.
+@object_descr_bamboo = El bambú puede crecer bastante alto, pero florece a una altura concreta. Obtendrás el mayor rendimiento si lo cosechas justo donde florece.
 @object_descr_pumpkin = Las calabazas crecen juntas cuando están al lado de otras calabazas completamente crecidas. Aproximadamente 1 de cada 5 calabazas muere cuando crece.
 @object_descr_dead_pumpkin = Una de cada cinco calabazas muere cuando crece, dejando atrás una calabaza muerta. Las calabazas muertas son inútiles y desaparecen cuando se planta algo nuevo.
 @object_descr_sunflower = Los girasoles recogen la energía del sol. Cosecharlos te dará `Items.Power`.
 Si cosechas un girasol con el número máximo de pétalos, obtienes energía extra.
 @object_descr_cactus = Los cactus vienen en 10 tamaños diferentes. Al cosechar, los cactus adyacentes que estén "ordenados" también serán cosechados.
 @object_descr_hedge = Parte del laberinto.
-@object_descr_treasure = Un tesoro que contiene oro igual a la longitud del lado del laberinto en el que está escondido. Se puede cosechar como una planta.
+@object_descr_treasure = Un tesoro que contiene una cantidad de oro igual al área del laberinto en el que está escondido. Se puede cosechar como una planta.
 @object_descr_dinosaur = Un trozo de la cola del sombrero de dinosaurio.
 @object_descr_grassland = El terreno por defecto. La hierba crecerá automáticamente sobre él.
 @object_descr_soil = Llamar a `till()` convierte el terreno en tierra de cultivo. Volver a llamar a `till()` lo convierte de nuevo en pradera.
+@object_descr_dirt = Es tierra.
+@object_descr_rock = Es una roca dura.
+@object_descr_clay = Un bloque de arcilla. Es un terreno fértil y perfecto para el arroz. Cuando una planta de arroz madura, vuelve a convertir la arcilla que tiene debajo en tierra.
+@object_descr_blue_block = Un bloque azul.
+@object_descr_red_block = Un bloque rojo.
+@object_descr_green_block = Un bloque verde.
+@object_descr_coal = Un bloque rico en carbón sedimentario.
+@object_descr_iron = Un bloque que contiene magnetita en bruto.
+@object_descr_quartz = Un bloque que encierra cuarzo cristalino.
+@object_descr_limestone = Piedra caliza blanquecina. Forma los cimientos de antiguas pirámides.
+@object_descr_sand = Un bloque de arena. Parte de una antigua pirámide.
+@object_descr_bedrock = Indestructible.
+@object_descr_petrified_pumpkin = Una calabaza petrificada. Aún se puede comer.
+@object_descr_loam = Suelo franco rico, ideal para cultivar ciertas plantas. Los girasoles y las zanahorias dan el doble de rendimiento cuando se plantan aquí.
+@object_descr_perlite = Tierra con un alto contenido de perlita, ideal para cultivar ciertas plantas. Los arbustos, cactus, bambús y árboles dan el doble de rendimiento cuando se plantan aquí.
 @runtime_entity_tooltip = Al cosechar, da:
 {{itemblock tooltip}}
+@runtime_ground_tooltip = Al extraerlo, da:
+{{itemblock tooltip_ground}}
+@runtime_mushroom_tooltip = Cuando se apilan dos bloques de hongo del mismo tipo, dan:
+{{itemblock tooltip_ground}}
 @runtime_growable_tooltip = Tiempo total de crecimiento: {0} segundos
 Crecido {1}%
-@runtime_ground_tooltip = Nivel de agua: {0}
+@runtime_ground_hardness_tooltip = Dureza: {0}
+@runtime_ground_stability_tooltip = Estabilidad: {0}
+@runtime_ground_water_tooltip = Nivel de agua: {0}
+@object_descr_dynamite = Explota al excavar en ella. Plantarla y cosecharla siempre consume y produce 1 dinamita.
+@object_descr_dynamite_ground = Al excavar, puede dejar caer dinamita sobre el bloque inferior. La dinamita se puede cosechar o excavar para hacerla explotar.
+@object_descr_soot = Hollín misterioso que, al llamar a `measure()`, cuenta la dinamita activa en el estrato superior. Hace explotar inmediatamente cualquier dinamita que caiga encima.
+@object_descr_basalt = Roca blanda formada al enfriarse la lava. ¿Puede que se haya conservado algo debajo?
+@object_descr_treasure_map_ground = ¡Un mapa del tesoro! ¿Adónde conducirá?
+@object_descr_treasure_path_ground = Está en el camino que lleva desde el mapa del tesoro hasta la meta.
+@object_descr_treasure_goal_ground = La meta al final de la ruta del mapa del tesoro. ¿Qué habrá escondido aquí?
+@object_descr_underground_treasure = El escurridizo tesoro hallado al final del camino del mapa del tesoro.
+@object_descr_mushroom = Hongos que crecen bajo tierra. Usa `measure()` para determinar de qué tipo son.

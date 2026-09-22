@@ -1,4 +1,6 @@
 @unlock_tooltip_template_cost = ### Custo do Desbloqueio {{{{itemblock cost unlock {0}}}}}
+@unlock_tooltip_template_additional_requirement = ### Requisitos de desbloqueio
+O desbloqueio {0} precisa estar no nível {1} ou superior.
 @unlock_descr_trees = Desbloqueia árvores.
 
 `plant(Entities.Trees)`
@@ -45,6 +47,10 @@ do_two_flips()`
 
 `till()
 plant(Entities.Carrot)`
+@unlock_descr_rice = É como o trigo, se o trigo crescesse na argila.
+
+`if get_ground_type() == Grounds.Clay:
+    plant(Entities.Rice)`
 @unlock_descr_lists = Use listas para armazenar muitos valores.
 
 `plants = [Entities.Grass, Entities.Bush, Entities.Tree]
@@ -107,8 +113,41 @@ other_file.function()`
 @unlock_descr_megafarm = Mais drones!
 
 `spawn_drone(task)`
+@unlock_descr_mining = Dá ao drone uma broca. E um capacete de mineração.
+
+`dig()`
+@unlock_descr_coal = Depósitos de carvão surgem no subsolo.
+@unlock_descr_iron = Veios de minério de ferro surgem no subsolo.
+@unlock_descr_pyramid = Estruturas antigas de arenito surgem no subsolo.
+@unlock_descr_quartz = Agulhas de quartzo surgem no subsolo.
+@unlock_descr_ore_boost = Dobra a produção de carvão. Dobra o tamanho dos veios de ferro e quartzo.
+@unlock_descr_jump = Permite que seu drone salte para baixo.
+@unlock_descr_prospecting = Use carvão para procurar ferro!
+
+`prospect_iron()`
+@unlock_descr_drill = Melhora a força da broca.
+@unlock_descr_debug_place = Coloque blocos coloridos.
+
+`place(Grounds.Red_Block)`
+@unlock_descr_underground_senses = Sensores do drone para interagir com blocos subterrâneos
+
+`while get_pos_z() < 100:
+    while get_hardness() > 5:
+        while get_hardness(North):
+            dig(North)
+        move(North)
+    dig()`
+@unlock_descr_petrified_pumpkins = Abóboras fossilizadas surgem no subsolo.
+@unlock_descr_special_soils = Descubra camadas de solo franco e perlita para aumentar a produção das plantas.
+@unlock_descr_bamboo = Plante bambu e observe-o crescer.
+
+`plant(Entities.Bamboo)`
+@unlock_descr_dynamite = Encontre e use dinamite para explodir coisas.
+@unlock_descr_treasure_map = Procure um tesouro escondido nas profundezas.
+@unlock_descr_mushrooms = Encontre e colha cogumelos subterrâneos combinando o tipo de cogumelo.
 @multi_unlock_descr_expand = Expande a fazenda. Isso também limpa a fazenda.
 @multi_unlock_descr_carrots = Aumenta a produção e o custo das cenouras.
+@multi_unlock_descr_rice = Aumenta a produção e o custo das plantas de arroz.
 @multi_unlock_descr_trees = Aumenta a produção de arbustos e árvores.
 @multi_unlock_descr_pumpkins = Aumenta a produção e o custo das abóboras.
 @multi_unlock_descr_mazes = Aumenta o ouro nos baús de tesouro e a quantidade de substância estranha necessária para gerar um labirinto.
@@ -119,9 +158,21 @@ other_file.function()`
 @multi_unlock_descr_watering = Receba mais água.
 @multi_unlock_descr_fertilizer = Receba mais fertilizante.
 @multi_unlock_descr_megafarm = Aumenta ainda mais o número de drones.
+@multi_unlock_descr_drill = Aumenta a velocidade da broca.
+@multi_unlock_descr_coal = Mais camadas de carvão surgem no subsolo.
+@multi_unlock_descr_iron = Aumenta a produção dos minérios de ferro.
+@multi_unlock_descr_pyramid = Aumenta a energia obtida ao restaurar pirâmides.
+@multi_unlock_descr_quartz = Aumenta a produção dos minérios de quartzo.
+@multi_unlock_descr_petrified_pumpkins = Aumenta a produção de abóboras petrificadas.
+@multi_unlock_descr_dynamite = Aumenta a produção de dinamite e a energia das explosões.
+@multi_unlock_descr_treasure_map = Aumenta a profundidade do caminho do tesouro e, portanto, a quantidade de ouro obtida do tesouro.
+@multi_unlock_descr_ore_boost = Aumenta ainda mais a produção de carvão. Aumenta ainda mais o tamanho dos veios de ferro e quartzo.
+@multi_unlock_descr_bamboo = Aumenta a produção e o custo do bambu.
+@multi_unlock_descr_mushrooms = Aumenta a produção dos blocos de cogumelo correspondentes.
 @auto_unlock = Desbloqueio Automático
 @cactus = Cacto
 @carrots = Cenouras
+@rice = Arroz
 @costs = Custos
 @debug = Depuração
 @debug_2 = Depuração_2
@@ -144,6 +195,8 @@ other_file.function()`
 @polyculture = Policultura
 @pumpkins = Abóboras
 @senses = Sentidos
+@underground_senses = Sentidos Subterrâneos
+@debug_place = Blocos Coloridos
 @simulation = Simulação
 @speed = Velocidade
 @sunflowers = Girassóis
@@ -154,3 +207,18 @@ other_file.function()`
 @utilities = Utilitários
 @variables = Variáveis
 @watering = Rega
+@iron = Ferro
+@pyramid = Pirâmides
+@ore_boost = Melhoria de Minério
+@petrified_pumpkins = Abóboras Petrificadas
+@special_soils = Solos Especiais
+@mining = Mineração
+@coal = Carvão
+@drill = Broca
+@quartz = Quartzo
+@prospecting = Prospecção de Ferro
+@dynamite = Dinamite
+@bamboo = Bambu
+@treasure_map = Mapa do Tesouro
+@mushrooms = Cogumelo
+@jump = Salto

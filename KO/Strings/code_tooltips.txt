@@ -110,6 +110,16 @@ y 위치는 남쪽에서 `0`으로 시작해서 북쪽 방향으로 증가합니
 
 예시:
 `x, y = get_pos_x(), get_pos_y()`
+@code_tooltip_get_pos_z = `get_pos_z()` 
+드론의 현재 z 위치를 가져옵니다.
+z 위치는 `0`에서 시작하며 아래로 파내려갈수록 감소합니다.
+
+드론의 현재 z 좌표를 나타내는 숫자를 반환합니다.
+
+실행하는 데 `1` tick이 필요합니다.
+
+예시:
+`x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
 @code_tooltip_get_world_size = `get_world_size()` 
 농장의 현재 크기를 가져옵니다.
 
@@ -140,6 +150,26 @@ y 위치는 남쪽에서 `0`으로 시작해서 북쪽 방향으로 증가합니
 예시:
 `if get_ground_type() != Grounds.Soil:
     till()`
+@code_tooltip_get_hardness = `get_hardness()` 
+드론 아래의 땅이 얼마나 단단한지 확인합니다.
+
+드론 아래 땅의 경도를 반환합니다.
+
+실행하는 데 `1` tick이 필요합니다.
+
+예시:
+`if get_hardness() < 5:
+    dig()`
+@code_tooltip_get_stability = `get_stability()` 
+드론 아래의 땅이 얼마나 안정적인지 확인합니다.
+
+드론 아래 땅의 안정성을 반환합니다.
+
+실행하는 데 `1` tick이 필요합니다.
+
+예시:
+`if get_stability() > 3:
+    dig()`
 @code_tooltip_get_time = `get_time()` 
 현재 게임 시간을 가져옵니다.
 
@@ -212,7 +242,7 @@ print(get_tick_count())`
 실행하는 데 1초 걸립니다.
 
 예시:
-`print("ground:", get_ground_type())`
+`print("땅:", get_ground_type())`
 @code_tooltip_len = `len(collection)` 
 리스트, 세트, 딕셔너리 또는 튜플의 요소 수를 가져옵니다.
 
@@ -342,7 +372,7 @@ for item in cost:
 `companion = get_companion()
 if companion != None:
     plant_type, (x, y) = companion
-    print("Companion:", plant_type, "at", x, ",", y)`
+    print("동반 식물:", plant_type, "위치", x, ",", y)`
 @code_tooltip_unlock = `unlock(unlock)` 
 연구 트리에서 `unlock`에 해당하는 버튼을 클릭하는 것과 완전히 똑같은 효과를 가집니다.
 
@@ -500,7 +530,7 @@ result = wait_for(drone)`
 실행하는 데 `0`틱이 필요합니다.
 
 예시:
-`quick_print("hi mom")`
+`quick_print("엄마 안녕")`
 @code_tooltip_change_hat = `change_hat(hat)`
 드론의 모자를 `hat`으로 바꿉니다.
 
@@ -632,3 +662,59 @@ list.insert(0, 0)`
 @code_tooltip_or = 첫 번째 피연산자를 평가합니다. true에 해당(`False`, `0`, 빈 컬렉션이 아닌 모든 값)하는 값이면 즉시 그 값을 반환합니다(단락 평가). 그렇지 않으면 두 번째 피연산자를 평가하고 반환합니다.
 @code_tooltip_return = 함수에서 값을 반환할 때 사용합니다.
 @code_tooltip_pass = 아무것도 하지 않습니다. 빈 코드 블록은 허용되지 않으므로 유용할 수 있습니다.
+@code_tooltip_dig = `dig()`
+한 타일을 아래쪽으로 파냅니다.
+
+파는 속도는 블록의 경도와 드론의 드릴 강도에 따라 달라집니다.
+
+예시:
+`dig()`
+@code_tooltip_prospect_iron = `prospect_iron()`
+석탄을 사용해 철을 탐사합니다.
+
+근처에 철광석이 있으면 가장 가까운 철광석의 방향(`North`, `East`, `South`, `West` 중 하나)을 반환합니다. 근처에 철이 없거나, 석탄이 부족하거나, 드론이 이미 철 조각 위에 있으면 `None`을 반환합니다.
+
+실행하는 데 석탄 1개가 필요합니다.
+
+예시:
+`while prospect_iron() != None:
+    move(prospect_iron())`
+@code_tooltip_prospect_quartz = `prospect_quartz()`
+철을 사용해 수정을 탐사합니다.
+
+드론에서 다음 수정 블록까지의 유클리드 거리(3차원 거리)를 반환하며, 근처에 수정이 없으면 `None`을 반환합니다.
+
+실행하는 데 철 1개가 필요합니다.
+
+예시:
+`print(prospect_quartz())`
+@code_tooltip_place = `place(ground)`
+블록을 배치합니다.
+
+배치할 블록을 지정할 수 있습니다. 특수 기능이 없는 블록만 배치할 수 있습니다. 예를 들어 `place(Grounds.Rock)`은 가능하지만 `place(Grounds.Clay)`는 불가능합니다.
+
+예시:
+`place(Grounds.Rock)`
+@code_tooltip_push = `push(direction)`
+드론 아래의 버섯 블록을 밀어냅니다.
+
+블록을 위로 밀 수는 없습니다.
+
+블록을 밀었으면 `True`를, 그렇지 않으면 `False`를 반환합니다.
+
+예시:
+`push(North)`
+@code_tooltip_can_push = `can_push(direction)`
+드론 아래의 블록을 밀 수 있는지 확인합니다.
+
+드론 아래의 블록을 밀 수 있으면 `True`를, 그렇지 않으면 `False`를 반환합니다.
+
+예시:
+`can_push(North)`
+@code_tooltip_jump = `jump(unlock)` 
+`unlock`과 연관된 지하 기능으로 점프합니다.
+
+스크립트당 `jump`는 한 번만 실행할 수 있습니다.
+
+예시:
+`jump(Unlocks.Iron)`

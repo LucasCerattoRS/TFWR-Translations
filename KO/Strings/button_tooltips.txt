@@ -10,6 +10,8 @@
 @button_tooltip_delete = 이 파일을 영구적으로 삭제합니다.
 @button_tooltip_close_docs = 이 창을 닫습니다.
 @button_tooltip_table_of_contents = 목차
+@button_tooltip_docs_home = 문서 홈으로 이동합니다.
+@button_tooltip_docs_back = 이전에 방문한 문서 페이지로 이동합니다.
 @button_tooltip_new_game = 새로운 저장 항목을 만듭니다.
 @button_tooltip_open_folder = 파일 탐색기에서 저장 폴더를 엽니다.
 @button_tooltip_toggle_search_docs = 검색에 문서 창을 포함할지를 토글합니다.
@@ -21,6 +23,7 @@
 @warning_icon_tooltip = 코드가 경고를 발동했습니다. 아이콘을 클릭해서 출력 창에서 자세한 내용을 확인하세요.
 @option_tooltip_graphics = 그림자, 앰비언트 오클루전, 블룸 같은 다양한 렌더 파이프라인 설정에 영향을 줍니다.
 @option_tooltip_vfx_limit = 초당 재생할 수 있는 시각 효과의 수를 제한합니다.
+@option_tooltip_avalanche_particles = 땅이 붕괴할 때 생성되는 파티클을 비활성화합니다.
 @option_tooltip_volume = 모든 오디오의 볼륨을 조절합니다.
 @option_tooltip_music_volume = 음악 볼륨을 조절합니다.
 @option_tooltip_drone_volume = 드론 소리 볼륨을 조절합니다.

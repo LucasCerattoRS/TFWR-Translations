@@ -1,3 +1,6 @@
+
+[<- シミュレーション](docs/unlocks/simulation.md)
+---
 # リーダーボード
 ここまでたどり着いたなら、多くの課題を乗り越えてきたことでしょう。しかし、それらを効率的に解決しましたか？
 さまざまなリーダーボードで他のプレイヤーと最も効率的な農業方法を競うことができます。
@@ -10,10 +13,10 @@
 目標に到達してもシミュレーションは自動的に終了しません。プログラムが終了するようにする必要があります。
 ランが成功した場合、あなたのタイムがリーダーボードに追加されます。
 
-ばらつきを減らすため、すべてのランは少なくとも2時間実行する必要があります（スピードアップできるので、それほど長くはかかりません）。ランが早く完了した場合、合計時間が2時間に達するまで繰り返されます。すべてのランの平均がスコアとしてアップロードされます。
+ばらつきを減らすため、すべてのランはシミュレーション内で合計2時間以上実行する必要があります。シミュレーションは加速できるので、現実の時間で2時間はかかりません。早く終了したランは、シミュレーション時間が合計2時間に達するまで繰り返されます。全ランの平均時間がスコアとしてアップロードされます。
 
 これは、干し草のリーダーボードに載るためのセットアップ例です。
-![](LeaderboardSetup400)
+![|x400](LeaderboardSetup)
 
 ## 最速リセット
 最速リセットは最も名誉あるカテゴリです。単一の農地からリーダーボードを再びアンロックするまで、ゲームを完全に自動化します。
@@ -21,6 +24,8 @@
 すべてをアンロックする必要はなく、できるだけ早く `Unlocks.Leaderboard` をアンロックするようにしてください。
 
 `num_unlocked(unlock) > 0` を使って何かがアンロックされているかを確認でき、`get_cost()` をアンロックに使用してコストを確認できるので、適切なアイテムを自動的に栽培できます。
+
+`unlock()` はアンロックツリーの依存関係を考慮しません。たとえば、`Unlocks.Water` より先に `Unlocks.Fertilizer` をアンロックできます。
 
 関数呼び出し:
 `leaderboard_run(Leaderboards.Fastest_Reset, filename, speedup)`
@@ -127,3 +132,9 @@ simulate(filename, unlocks, items, globals, seed, speedup)`
 ### `Leaderboards.Hay_Single`
 `leaderboard_run(Leaderboards.Hay_Single, filename, speedup)`
 成功条件: `num_items(Items.Hay) >= 100000000`
+
+---
+
+[シミュレーション](docs/unlocks/simulation.md)      [タイミング](docs/unlocks/timing.md)      [自動アンロック](docs/unlocks/auto_unlock.md)      [コスト](docs/unlocks/costs.md)      [統計](docs/stats.md)
+
+[get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

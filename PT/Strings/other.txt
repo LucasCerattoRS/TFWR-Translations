@@ -6,13 +6,12 @@
 @average_text2 = {0} Corridas Concluídas
 {1}
 @unlocked_in = Para mais informações relacionadas, veja: [{0}]({1})
-@table_of_contents_section_general_info = Informações Gerais
-@table_of_contents_section_programming = Programação
-@table_of_contents_section_unlocks = Desbloqueios
-@table_of_contents_section_builtins = Funções Nativas
-@table_of_contents_section_items = Itens
-@table_of_contents_section_entities = Entidades
-@table_of_contents_section_grounds = Solos
 @new_hat_unlocked = ## Novo Chapéu Desbloqueado
 `change_hat(`{0}`)`
 @right_click_for_more_info = -- clique com o botão direito para mais informações --
+@missing_unlock_page = Você precisa desbloquear {0} na [árvore de tecnologias](tech_tree) antes de poder ver esta página.
+
+---
+
+{1}
+@latest_news = Últimas Notícias

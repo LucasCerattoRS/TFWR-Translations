@@ -7,3 +7,7 @@ La forma más fácil de cargar una copia de seguridad es copiar la carpeta de la
 
 Un guardado es una carpeta con un archivo `save.json` y un montón de archivos `.py`.
 Si solo perdiste algunos archivos de código, o los archivos de código todavía están allí pero el archivo `save.json` está dañado, también puedes reemplazar solo las partes dañadas con los archivos correspondientes de la copia de seguridad.
+
+---
+
+[Editor externo](docs/external_editor.md)      [Para empezar](docs/getting_started.md)
