@@ -216,7 +216,7 @@ Un modèle particulièrement utile est de créer un drone si un est disponible e
 </spoiler>
 
 ## Attendre un autre drone
-Utilise la fonction `wait_for(drone)` pour attendre qu'un autre drone ait fini. Tu reçois la référence du drone lorsque tu le crées.
+Utilise la fonction `wait_for(drone)` pour attendre qu'un autre drone ait fini. Tu reçois la référence `drone` lorsque tu le crées.
 `wait_for(drone)` renvoie la valeur de retour de la fonction que l'autre drone exécutait.
 
 {{codeexample 
