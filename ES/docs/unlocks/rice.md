@@ -8,7 +8,7 @@ Debajo de la superficie has observado una fina capa de arcilla. Resulta que este
 
 El arroz secará la arcilla en la que lo plantes. Solo puedes usar cada bloque de arcilla una vez. Por suerte, la capa tiene varios bloques de grosor. Y, por supuesto, siempre puedes usar `clear()` para restaurar la capa de arcilla del mundo.
 
-El siguiente código puede resultarte útil como punto de partida.
+El siguiente código puede resultarte útil para excavar hacia abajo hasta encontrar arcilla.
 
 {{codeexample 
 {

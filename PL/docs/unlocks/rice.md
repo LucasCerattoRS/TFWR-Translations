@@ -8,7 +8,7 @@ Pod powierzchnią zauważasz cienką warstwę gliny. Okazuje się, że to żyzne
 
 Ryż wysusza glinę, na której został posadzony. Każdego bloku gliny możesz użyć tylko raz. Na szczęście warstwa ma grubość kilku bloków. Oczywiście zawsze możesz użyć `clear()`, aby odtworzyć warstwę gliny.
 
-Poniższy kod może być przydatnym punktem wyjścia.
+Poniższy kod może pomóc ci kopać w dół, aż znajdziesz glinę.
 
 {{codeexample 
 {

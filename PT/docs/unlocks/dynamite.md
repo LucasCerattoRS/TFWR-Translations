@@ -42,6 +42,22 @@ Chamar `measure()` em um bloco de fuligem retorna o número de minas nos oito bl
 
 A primeira escavação no estrato de dinamite é sempre inerte. Cada bloco minerado rende um pouco de dinamite. Quando o estrato é destruído, seja removendo todos os blocos inertes ou atingindo dinamite ativa, você também recebe uma quantidade de dinamite igual ao quadrado do número de blocos ativos totalmente expostos.
 
+Se você escavar dinamite ativa, os dois estratos explodem. É possível verificar isso usando `get_ground_type()` depois de escavar `Grounds.Dynamite`. Se o solo não for `Grounds.Soot`, você não resolveu o quebra-cabeça. Por outro lado, se o último bloco de dinamite inerte for escavado, todos os blocos de dinamite desaparecem e você recebe o rendimento máximo do quebra-cabeça. O estrato de fuligem permanece, mas `measure()` retorna `None`, indicando que o quebra-cabeça foi resolvido com sucesso.
+
+`# Escave um bloco de dinamite e verifique o estado do quebra-cabeça
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # Dinamite ativa escavada, quebra-cabeça fracassou
+        return False
+    elif measure() == None:
+        # Último bloco inerte escavado, quebra-cabeça resolvido
+        return True
+    else:
+        # A medição retornou um número, quebra-cabeça ainda em andamento
+        return None
+`
+
 O número de minas ativas e a dificuldade de encontrá-las aumentam com a profundidade.
 
 A dinamite coletada pode ser usada com `use_item(Items.Dynamite)` e explode imediatamente abaixo do drone.
@@ -53,4 +69,3 @@ Melhore a dinamite para aumentar a produção ao escavar blocos de dinamite e ex
 [Estatísticas](docs/stats.md)      [Sentidos Subterrâneos](docs/unlocks/underground_senses.md)      [Dicionários](docs/scripting/dicts.md)      [Conjuntos](docs/scripting/sets.md)
 
 [move()](functions/move)      [dig()](functions/dig)      [measure()](functions/measure)      [use_item()](functions/use_item)
-

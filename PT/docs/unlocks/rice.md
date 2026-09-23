@@ -8,7 +8,7 @@ Sob a superfície, você percebeu uma fina camada de argila. Acontece que esse s
 
 O arroz seca a argila em que foi plantado. Cada bloco de argila só pode ser usado uma vez. Felizmente, a camada tem alguns blocos de espessura. E, é claro, você sempre pode usar `clear()` para restaurar a camada de argila.
 
-O código a seguir pode ser um ponto de partida útil.
+O código a seguir pode ajudar você a escavar para baixo até encontrar argila.
 
 {{codeexample 
 {
@@ -44,4 +44,3 @@ do_a_flip()
 [Estatísticas](docs/stats.md)      [Mineração](docs/unlocks/mining.md)      [Sentidos Subterrâneos](docs/unlocks/underground_senses.md)      [If](docs/scripting/if.md)      [Loop For](docs/scripting/for.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)
-

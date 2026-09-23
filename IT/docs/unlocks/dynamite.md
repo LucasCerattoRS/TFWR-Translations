@@ -42,6 +42,22 @@ Chiamare `measure()` su un blocco di fuliggine restituisce il numero di mine nel
 
 Il primo blocco scavato nello strato di dinamite è sempre inerte. Ogni blocco di dinamite scavato produce un po' di dinamite. Quando lo strato viene distrutto, dopo aver scavato tutti i blocchi inerti oppure colpendo per errore della dinamite attiva, ricevi anche una quantità di dinamite pari al quadrato del numero di blocchi attivi completamente scoperti.
 
+Se scavi nella dinamite attiva, entrambi gli strati esplodono. Puoi verificarlo usando `get_ground_type()` dopo aver scavato in `Grounds.Dynamite`. Se il terreno non è `Grounds.Soot`, non hai risolto l'enigma. Se invece viene scavato l'ultimo blocco di dinamite inerte, tutti i blocchi di dinamite scompaiono e ottieni la resa massima dell'enigma. Lo strato di fuliggine rimane, ma `measure()` restituisce `None`, indicando che l'enigma è stato risolto correttamente.
+
+`# Scava un blocco di dinamite e controlla lo stato dell'enigma
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # Scavata dinamite attiva, enigma fallito
+        return False
+    elif measure() == None:
+        # Scavato l'ultimo blocco inerte, enigma risolto
+        return True
+    else:
+        # Ottenuto un numero dalla misurazione, enigma ancora in corso
+        return None
+`
+
 Il numero di mine attive nello strato di dinamite, e quindi la difficoltà nel trovarle, aumenta con la profondità.
 
 La dinamite raccolta può essere usata con `use_item(Items.Dynamite)` ed esplode immediatamente sotto il drone.

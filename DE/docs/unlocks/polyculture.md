@@ -43,7 +43,7 @@ Eine Pflanze kann `Entities.Grass`, `Entities.Bush`, `Entities.Tree` oder `Entit
 
 Wenn sich unter der Drohne keine Pflanze mit einer Begleitervorliebe befindet, gibt `get_companion()` `None` zurück.
 
-Beim ersten Freischalten der Polykultur beträgt der Ertragsmultiplikator `5`. Mit jeder Verbesserung verdoppelt er sich.
+Bevor die Polykultur zum ersten Mal freigeschaltet wird, beträgt der Ertragsmultiplikator `5`. Mit jeder Verbesserung verdoppelt er sich.
 
 ---
 

@@ -8,7 +8,7 @@ Unter der Oberfläche hast du eine dünne Tonschicht entdeckt. Wie sich herausst
 
 Reis trocknet den Ton aus, auf dem er gepflanzt wurde. Du kannst jeden Tonblock nur einmal verwenden. Zum Glück ist die Schicht mehrere Blöcke dick. Und natürlich kannst du jederzeit mit `clear()` die Welt zurücksetzen, um die Tonschicht wiederherzustellen.
 
-Der folgende Code könnte dir als Ausgangspunkt dienen.
+Der folgende Code könnte dir helfen, nach unten zu graben, bis du Ton findest.
 
 {{codeexample 
 {

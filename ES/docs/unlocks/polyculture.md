@@ -43,7 +43,7 @@ La preferencia de una planta puede ser `Entities.Grass`, `Entities.Bush`, `Entit
 
 Si debajo del dron no hay ninguna planta con una preferencia de compañera, `get_companion()` devuelve `None`.
 
-Cuando desbloqueas el policultivo por primera vez, el multiplicador de rendimiento es `5`. Se duplica con cada mejora.
+Antes de desbloquear el policultivo por primera vez, el multiplicador de rendimiento es `5`. Se duplica con cada mejora.
 
 ---
 

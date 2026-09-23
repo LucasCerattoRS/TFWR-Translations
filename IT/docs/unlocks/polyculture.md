@@ -43,7 +43,7 @@ La compagna preferita può essere `Entities.Grass`, `Entities.Bush`, `Entities.T
 
 Se sotto il drone non c'è una pianta con una preferenza, `get_companion()` restituisce `None`.
 
-Quando sblocchi la policoltura, il moltiplicatore della resa è `5`. Raddoppia a ogni potenziamento.
+Prima di sbloccare la policoltura per la prima volta, il moltiplicatore della resa è `5`. Raddoppia a ogni potenziamento.
 
 ---
 

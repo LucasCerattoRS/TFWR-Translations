@@ -43,7 +43,7 @@ Preferowanym towarzyszem rośliny może być `Entities.Grass`, `Entities.Bush`, 
 
 Jeśli pod dronem nie ma rośliny z preferencją towarzysza, `get_companion()` zwraca `None`.
 
-Po pierwszym odblokowaniu uprawy współrzędnej mnożnik plonu wynosi `5`. Podwaja się przy każdym ulepszeniu.
+Przed pierwszym odblokowaniem uprawy współrzędnej mnożnik plonu wynosi `5`. Podwaja się przy każdym ulepszeniu.
 
 ---
 

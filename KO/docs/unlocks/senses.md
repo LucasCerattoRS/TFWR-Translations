@@ -4,6 +4,34 @@
 이제 드론이 볼 수 있어요!
 
 `get_pos_x()`와 `get_pos_y()` 함수는 드론의 현재 x, y 좌표를 반환해요. 시작 위치에서는 둘 다 `0`이에요. x 좌표는 `East` 방향으로 타일마다 `1`씩 증가하고, y 좌표는 `North` 방향으로 타일마다 `1`씩 증가해요.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 2},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+#CODE
+print("x =", get_pos_x(), "y =", get_pos_y())
+if get_pos_x() == 1 and get_pos_y() == 0:
+    do_a_flip()
+}}
 
 `num_items(item)`은 해당 아이템을 몇 개 가지고 있는지 반환해요.
 {{codeexample 
@@ -21,7 +49,7 @@
     "execution_speed": 1,
     "digging_speed": 1,
     "action_ticks": 200,
-    "operation_ticks": 1,
+    "operation_ticks": 100,
     "seed": 1,
     "exclude_unlocks": ["watering", "fertilizer"],
     "starting_chunk": 0,
@@ -35,7 +63,7 @@ print(num_items(Items.Hay))
 `get_entity_type()`와 `get_ground_type()`은 드론 아래에 있는 개체나 땅의 종류를 반환해요.
 {{codeexample 
 {
-    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "camera_position": {"x": 0, "y": 1.5, "z": 6},
     "show_image": true,
     "image_size": {"x": 800, "y": 300},
     "show_code": true,
@@ -48,7 +76,7 @@ print(num_items(Items.Hay))
     "execution_speed": 1,
     "digging_speed": 1,
     "action_ticks": 200,
-    "operation_ticks": 1,
+    "operation_ticks": 100,
     "seed": 1,
     "exclude_unlocks": ["watering", "fertilizer"],
     "starting_chunk": 0,
@@ -62,7 +90,7 @@ if get_entity_type() == Entities.Bush:
 	do_a_flip()
 
 print(get_ground_type())
-if get_entity_type() != Grounds.Soil:
+if get_ground_type() != Grounds.Soil:
 	do_a_flip()
 }}
 

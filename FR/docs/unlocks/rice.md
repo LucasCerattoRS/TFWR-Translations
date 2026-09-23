@@ -8,7 +8,7 @@ Sous la surface, tu as remarqué une fine couche d’argile. Il s’avère que c
 
 Le riz assèche l’argile sur laquelle il est planté. Chaque bloc d’argile ne peut être utilisé qu’une seule fois. Heureusement, la couche fait plusieurs blocs d’épaisseur. Et bien sûr, tu peux toujours utiliser `clear()` pour recréer la couche d’argile.
 
-Le code suivant peut constituer un bon point de départ.
+Le code suivant peut t’aider à creuser jusqu’à trouver de l’argile.
 
 {{codeexample 
 {

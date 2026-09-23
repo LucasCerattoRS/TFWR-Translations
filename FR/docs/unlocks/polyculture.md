@@ -43,7 +43,7 @@ La préférence de compagnon d'une plante peut être soit `Entities.Grass`, `Ent
 
 S'il n'y a pas de plante sous le drone qui a une préférence de compagnon, `get_companion()` renverra `None`.
 
-Lorsque la polyculture est débloquée pour la première fois, le multiplicateur de rendement vaut `5`. Il double à chaque amélioration.
+Avant que la polyculture soit débloquée pour la première fois, le multiplicateur de rendement vaut `5`. Il double à chaque amélioration.
 
 ---
 

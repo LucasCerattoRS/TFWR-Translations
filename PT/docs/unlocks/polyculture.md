@@ -46,7 +46,7 @@ A preferência de companhia de uma planta pode ser `Entities.Grass`, `Entities.B
 
 Se não houver uma planta com preferência de companhia sob o drone, `get_companion()` retornará `None`.
 
-Quando a policultura é desbloqueada pela primeira vez, o multiplicador de rendimento é `5`. Ele dobra a cada melhoria.
+Antes de a policultura ser desbloqueada pela primeira vez, o multiplicador de rendimento é `5`. Ele dobra a cada melhoria.
 
 ---
 

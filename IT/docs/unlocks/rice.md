@@ -8,7 +8,7 @@ Sotto la superficie hai notato un sottile strato di argilla. A quanto pare, ques
 
 Il riso prosciuga l'argilla su cui è piantato. Puoi usare ogni blocco d'argilla una sola volta. Per fortuna, lo strato è spesso alcuni blocchi. E naturalmente puoi sempre usare `clear()` per ripristinare lo strato d'argilla.
 
-Il codice seguente potrebbe esserti utile come punto di partenza.
+Il codice seguente potrebbe esserti utile per scavare verso il basso finché non trovi l'argilla.
 
 {{codeexample 
 {

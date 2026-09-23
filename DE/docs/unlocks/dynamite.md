@@ -42,6 +42,22 @@ Wenn du `measure()` auf einem Rußblock aufrufst, erhältst du die Anzahl der Mi
 
 Der erste aufgebrochene Block der Dynamitschicht ist immer ein Blindgänger. Jeder abgebaute Dynamitblock liefert etwas Dynamit. Wird die Dynamitschicht zerstört – entweder weil du erfolgreich alle Blindgänger ausgegraben oder versehentlich aktives Dynamit getroffen hast –, erhältst du außerdem Dynamit in Höhe des Quadrats der vollständig freigelegten aktiven Blöcke.
 
+Wenn du in aktives Dynamit gräbst, explodieren beide Schichten. Du kannst dies überprüfen, indem du nach dem Graben in `Grounds.Dynamite` `get_ground_type()` verwendest. Wenn der Boden nicht `Grounds.Soot` ist, hast du das Rätsel nicht gelöst. Wird hingegen der letzte nicht aktive Dynamitblock ausgegraben, verschwinden alle Dynamitblöcke und du erhältst den maximalen Ertrag für das Rätsel. Die Rußschicht bleibt bestehen, aber `measure()` gibt `None` zurück, was anzeigt, dass das Rätsel erfolgreich gelöst wurde.
+
+`# In einen Dynamitblock graben und den Zustand des Rätsels überprüfen
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # In aktives Dynamit gegraben, Rätsel fehlgeschlagen
+        return False
+    elif measure() == None:
+        # Letzten Blindgänger ausgegraben, Rätsel gelöst
+        return True
+    else:
+        # Messung ergab eine Anzahl, Rätsel läuft noch
+        return None
+`
+
 Die Anzahl der aktiven Minen in der Dynamitschicht und damit die Schwierigkeit, sie zu finden, nimmt mit der Tiefe zu.
 
 Gesammeltes Dynamit kann mit `use_item(Items.Dynamite)` verwendet werden und explodiert direkt unter der Drohne.

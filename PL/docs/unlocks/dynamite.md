@@ -42,6 +42,22 @@ Wywołanie `measure()` na bloku sadzy zwraca liczbę min na ośmiu sąsiednich p
 
 Pierwszy wykopany blok w warstwie dynamitu jest zawsze niewypałem. Każdy wydobyty blok daje trochę dynamitu. Gdy warstwa zostanie zniszczona — przez wykopanie wszystkich niewypałów lub przypadkowe dokopanie się do aktywnego dynamitu — otrzymasz także ilość dynamitu równą kwadratowi liczby całkowicie odsłoniętych aktywnych bloków.
 
+Jeśli dokopiesz się do aktywnego dynamitu, oba pokłady eksplodują. Możesz to sprawdzić za pomocą `get_ground_type()` po dokopaniu się do `Grounds.Dynamite`. Jeśli podłoże nie jest typu `Grounds.Soot`, zagadka zakończyła się niepowodzeniem. Jeśli natomiast wykopiesz ostatni nieaktywny blok dynamitu, wszystkie bloki dynamitu znikną, a ty otrzymasz maksymalny plon za tę zagadkę. Warstwa sadzy pozostanie, ale `measure()` zwróci `None`, co oznacza, że zagadka została pomyślnie rozwiązana.
+
+`# Dokop się do bloku dynamitu i sprawdź stan zagadki
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # Dokopano się do aktywnego dynamitu, zagadka nieudana
+        return False
+    elif measure() == None:
+        # Wykopano ostatni niewypał, zagadka rozwiązana
+        return True
+    else:
+        # Pomiar zwrócił liczbę, zagadka nadal trwa
+        return None
+`
+
 Liczba aktywnych min w warstwie dynamitu, a tym samym trudność ich odnalezienia, rośnie wraz z głębokością.
 
 Zebranego dynamitu można użyć za pomocą `use_item(Items.Dynamite)`; eksploduje bezpośrednio pod dronem.

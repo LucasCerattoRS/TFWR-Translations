@@ -42,6 +42,22 @@ Llamar a `measure()` sobre un bloque de hollín devuelve el número de minas que
 
 La primera excavación en el estrato de dinamita siempre da con un bloque inerte. Cada bloque de dinamita extraído produce un poco de dinamita. Cuando se destruye el estrato, ya sea por haber excavado correctamente todos los bloques inertes o por excavar sin querer dinamita activa, también obtienes una cantidad de dinamita igual al cuadrado del número de bloques activos descubiertos por completo.
 
+Si excavas dinamita activa, los dos estratos explotan. Puedes comprobarlo usando `get_ground_type()` después de excavar `Grounds.Dynamite`. Si el terreno no es `Grounds.Soot`, no has resuelto el puzle. En cambio, si excavas el último bloque de dinamita inerte, todos los bloques de dinamita desaparecen y obtienes el rendimiento máximo del puzle. El estrato de hollín permanece, pero `measure()` devuelve `None`, lo que indica que el puzle se ha resuelto correctamente.
+
+`# Excava un bloque de dinamita y comprueba el estado del puzle
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # Se excavó dinamita activa; el puzle ha fallado
+        return False
+    elif measure() == None:
+        # Se excavó el último bloque inerte; puzle resuelto
+        return True
+    else:
+        # La medición dio un número; el puzle sigue en curso
+        return None
+`
+
 El número de minas activas en el estrato de dinamita y, por tanto, la dificultad para encontrarlas aumentan con la profundidad.
 
 La dinamita recogida se puede usar con `use_item(Items.Dynamite)` y explota inmediatamente debajo del dron.

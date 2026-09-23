@@ -42,6 +42,22 @@ Appeler `measure()` sur un bloc de suie renvoie le nombre de mines présentes da
 
 Le premier bloc foré dans la strate de dynamite est toujours inerte. Chaque bloc de dynamite extrait rapporte un peu de dynamite. Lorsque la strate est détruite, soit après avoir extrait tous les blocs inertes, soit après avoir foré par mégarde de la dynamite active, tu reçois aussi une quantité de dynamite égale au carré du nombre de blocs actifs entièrement dégagés.
 
+Si tu fores de la dynamite active, les deux strates explosent. Tu peux le vérifier avec `get_ground_type()` après avoir foré dans `Grounds.Dynamite`. Si le sol n’est pas `Grounds.Soot`, tu n’as pas résolu l’énigme. En revanche, si le dernier bloc de dynamite inerte est extrait, tous les blocs de dynamite disparaissent et tu obtiens le rendement maximal de l’énigme. La strate de suie reste en place, mais `measure()` renvoie `None`, ce qui indique que l’énigme a été résolue.
+
+`# Forer un bloc de dynamite et vérifier l’état de l’énigme
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # Dynamite active forée, énigme échouée
+        return False
+    elif measure() == None:
+        # Dernier bloc inerte extrait, énigme résolue
+        return True
+    else:
+        # Un nombre a été mesuré, énigme toujours en cours
+        return None
+`
+
 Le nombre de mines actives dans la strate de dynamite, et donc la difficulté pour les trouver, augmente avec la profondeur.
 
 La dynamite récupérée peut être utilisée avec `use_item(Items.Dynamite)` et explose immédiatement sous le drone.
