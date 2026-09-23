@@ -1,4 +1,4 @@
-[<- 木](docs/unlocks/trees.md) <right>[混植 ->](docs/unlocks/polyculture.md)
+[<- 木](docs/unlocks/trees.md) <right>[混作 ->](docs/unlocks/polyculture.md)
 <right>[サボテン ->](docs/unlocks/cactus.md)
 ---
 # カボチャ

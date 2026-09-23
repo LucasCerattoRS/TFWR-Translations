@@ -1,4 +1,4 @@
-[<- 植え付け](docs/unlocks/plant.md) <right>[感覚 ->](docs/unlocks/senses.md)
+[<- 植える](docs/unlocks/plant.md) <right>[感覚 ->](docs/unlocks/senses.md)
 <right>[変数 ->](docs/scripting/variables.md)
 ---
 # 演算子

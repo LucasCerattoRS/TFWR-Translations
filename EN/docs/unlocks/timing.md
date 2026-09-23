@@ -62,6 +62,6 @@ The number of ticks that built-in functions take to execute is documented on eac
 
 ---
 
-[Debug](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Leaderboards](docs/unlocks/leaderboard.md)
+[Debug](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Leaderboard](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

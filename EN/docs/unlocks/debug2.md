@@ -10,6 +10,6 @@ The farm size and the execution speed will be reset to the default values at the
 
 ---
 
-[Debug](docs/scripting/debug.md)      [Output](docs/output.md)      [Placing Blocks to Debug](docs/unlocks/debug_place.md)      [Timing](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
+[Debug](docs/scripting/debug.md)      [Output](docs/output.md)      [Colorful Blocks](docs/unlocks/debug_place.md)      [Timing](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

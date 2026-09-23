@@ -1,6 +1,6 @@
 [<- Exploitation minière](docs/unlocks/mining.md) <right>[Bambou ->](docs/unlocks/bamboo.md)
 <right>[Citrouilles pétrifiées ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Sols spéciaux ->](docs/unlocks/special_soils.md)
+<right>[Perlite et terreau ->](docs/unlocks/special_soils.md)
 ---
 # Riz
 

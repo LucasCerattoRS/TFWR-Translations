@@ -1,4 +1,4 @@
-[<- Agrandir 2](docs/unlocks/expand_2.md)
+[<- Expansion 2](docs/unlocks/expand_2.md)
 ---
 # Boucle For
 La boucle `for` fonctionne comme en Python. (Appelée boucle foreach dans certains langages, à ne pas confondre avec la boucle for de style C, qui est une chose différente).

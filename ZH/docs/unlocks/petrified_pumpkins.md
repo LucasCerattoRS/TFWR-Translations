@@ -45,6 +45,6 @@ for i in range(get_world_size()):
 
 ---
 
-[统计](docs/stats.md)      [采矿](docs/unlocks/mining.md)      [地下感官](docs/unlocks/underground_senses.md)
+[统计数据](docs/stats.md)      [采矿](docs/unlocks/mining.md)      [地下感官](docs/unlocks/underground_senses.md)
 
 [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)

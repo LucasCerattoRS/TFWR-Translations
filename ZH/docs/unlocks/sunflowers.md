@@ -71,6 +71,6 @@ for _ in range(5):
 
 ---
 
-[统计](docs/stats.md)      [列表](docs/scripting/lists.md)      [字典](docs/scripting/dicts.md)      [变量](docs/scripting/variables.md)      [For 循环](docs/scripting/for.md)      [If 语句](docs/scripting/if.md)      [运算符](docs/scripting/operators.md)
+[统计数据](docs/stats.md)      [列表](docs/scripting/lists.md)      [字典](docs/scripting/dicts.md)      [变量](docs/scripting/variables.md)      [For 循环](docs/scripting/for.md)      [If 语句](docs/scripting/if.md)      [运算符](docs/scripting/operators.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [measure()](functions/measure)

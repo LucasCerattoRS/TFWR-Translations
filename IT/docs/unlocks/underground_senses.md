@@ -69,6 +69,6 @@ if get_ground_type() == Grounds.Dirt:
 Nota che i quattro blocchi direttamente adiacenti al drone vengono rimossi a prescindere dalla loro stabilità mentre il drone scava verso il basso, a meno che il blocco non abbia una funzione speciale. Argilla, ferro e quarzo, per esempio, non vengono rimossi da questa regola. Possono comunque crollare per mancanza di stabilità.
 ---
 
-[Estrazione](docs/unlocks/mining.md)      [Sensi](docs/unlocks/senses.md)
+[Estrazione](docs/unlocks/mining.md)      [Sensori](docs/unlocks/senses.md)
 
 [get_pos_z()](functions/get_pos_z)      [get_ground_type()](functions/get_ground_type)      [get_hardness()](functions/get_hardness)      [get_stability()](functions/get_stability)

@@ -1,4 +1,4 @@
-[<- Espandi 1](docs/unlocks/expand_1.md)
+[<- Espansione 1](docs/unlocks/expand_1.md)
 ---
 # Espansione 2
 La tua fattoria si è espansa di nuovo! Ora le caselle non sono più in una bella fila, quindi devi trovare un modo per attraversare una griglia quadrata.

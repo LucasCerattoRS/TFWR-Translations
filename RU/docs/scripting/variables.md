@@ -93,4 +93,4 @@ while i < a:
 
 ---
 
-[Операторы](docs/scripting/operators.md)      [Цикл while](docs/scripting/while.md)      [Цикл for](docs/scripting/for.md)      [Функции](docs/scripting/functions.md)      [Области видимости](docs/scripting/scopes.md)
+[Операторы](docs/scripting/operators.md)      [Цикл while](docs/scripting/while.md)      [Цикл for](docs/scripting/for.md)      [Функции](docs/scripting/functions.md)      [Области видимости имен](docs/scripting/scopes.md)

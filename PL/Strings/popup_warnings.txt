@@ -4,7 +4,6 @@
 @cancel = Anuluj
 @popup_warning_exit_game = Czy chcesz zapisać przed wyjściem?
 @popup_warning_load_game = Czy chcesz zapisać przed wczytaniem?
-@save = Zapisz
 @don't save = Nie zapisuj
 @popup_warning_corrupted_save = Wygląda na to, że wystąpił problem z wczytaniem {0}. Sprawdź sekcję dotyczącą kopii zapasowych, aby uzyskać więcej informacji.
 @popup_warning_failed_read_save = Nie udało się odczytać plików zapisu {0}. Upewnij się, że zamknąłeś wszystkie inne programy korzystające z tych plików i spróbuj ponownie.

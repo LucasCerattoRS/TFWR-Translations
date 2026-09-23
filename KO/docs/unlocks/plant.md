@@ -40,6 +40,6 @@ plant(Entities.Bush)
 
 ---
 
-[통계](docs/stats.md)      [If](docs/scripting/if.md)      [감각](docs/unlocks/senses.md)      [혼합 재배](docs/unlocks/polyculture.md)
+[통계](docs/stats.md)      [If문](docs/scripting/if.md)      [감각](docs/unlocks/senses.md)      [혼합 재배](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)

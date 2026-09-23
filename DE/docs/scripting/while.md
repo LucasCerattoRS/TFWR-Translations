@@ -1,4 +1,4 @@
-[<- Erstes Programm](docs/first_program.md) <right>[Geschwindigkeitsverbesserung ->](docs/unlocks/speed.md)
+[<- Erstes Programm](docs/first_program.md) <right>[Geschwindigkeits-Upgrade ->](docs/unlocks/speed.md)
 ---
 # While-Schleife
 Du hast die `while`-Schleife und die Werte `True` und `False` freigeschaltet. Die `while`-Schleife führt den Schleifenkörper so lange aus, wie die Bedingung `True` ist.

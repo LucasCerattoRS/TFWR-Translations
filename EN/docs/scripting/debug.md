@@ -94,6 +94,6 @@ When execution stops, the output is also written to the [output.txt](persistent_
 
 ---
 
-[Output](docs/output.md)      [Comments](docs/scripting/comments.md)      [Debug 2](docs/unlocks/debug2.md)      [Placing Blocks to Debug](docs/unlocks/debug_place.md)      [Simulation](docs/unlocks/simulation.md)
+[Output](docs/output.md)      [Comments](docs/scripting/comments.md)      [Debug 2](docs/unlocks/debug2.md)      [Colorful Blocks](docs/unlocks/debug_place.md)      [Simulation](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

@@ -6,4 +6,4 @@ Tus mejores marcas personales por recurso son: {{itemblock stats_best}}
 
 ---
 
-[Tablas de clasificación](docs/unlocks/leaderboard.md)      [Temporización](docs/unlocks/timing.md)      [Simulación](docs/unlocks/simulation.md)
+[Tabla de clasificación](docs/unlocks/leaderboard.md)      [Medición de Tiempo](docs/unlocks/timing.md)      [Simulación](docs/unlocks/simulation.md)

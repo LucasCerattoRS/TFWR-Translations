@@ -81,6 +81,6 @@ for item in cost:
 
 ---
 
-[Dictionaries](docs/scripting/dicts.md)      [Automatische Freischaltungen](docs/unlocks/auto_unlock.md)      [Bestenlisten](docs/unlocks/leaderboard.md)
+[Dictionaries](docs/scripting/dicts.md)      [Automatische Freischaltungen](docs/unlocks/auto_unlock.md)      [Bestenliste](docs/unlocks/leaderboard.md)
 
 [get_cost()](functions/get_cost)

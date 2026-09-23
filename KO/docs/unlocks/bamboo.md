@@ -1,4 +1,4 @@
-[<- 벼](docs/unlocks/rice.md) <right>[디버그용 블록 배치 ->](docs/unlocks/debug_place.md)
+[<- 벼](docs/unlocks/rice.md) <right>[알록달록한 블록 ->](docs/unlocks/debug_place.md)
 <right>[피라미드 ->](docs/unlocks/pyramid.md)
 ---
 # 대나무
@@ -81,6 +81,6 @@ harvest()
 
 ---
 
-[통계](docs/stats.md)      [for 루프](docs/scripting/for.md)      [변수](docs/scripting/variables.md)      [If](docs/scripting/if.md)      [함수](docs/scripting/functions.md)      [벼](docs/unlocks/rice.md)
+[통계](docs/stats.md)      [for 루프](docs/scripting/for.md)      [변수](docs/scripting/variables.md)      [If문](docs/scripting/if.md)      [함수](docs/scripting/functions.md)      [벼](docs/unlocks/rice.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [place()](functions/place)      [measure()](functions/measure)

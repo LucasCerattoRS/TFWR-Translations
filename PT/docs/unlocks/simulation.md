@@ -1,4 +1,4 @@
-[<- Cronometragem](docs/unlocks/timing.md) <right>[Placar de Líderes ->](docs/unlocks/leaderboard.md)
+[<- Medição de Tempo](docs/unlocks/timing.md) <right>[Placar de Líderes ->](docs/unlocks/leaderboard.md)
 
 ---
 
@@ -69,6 +69,6 @@ A aceleração não afeta o resultado da simulação de forma alguma. Ela existe
 
 ---
 
-[Dicionários](docs/scripting/dicts.md)      [Cronometragem](docs/unlocks/timing.md)      [Depuração](docs/scripting/debug.md)      [Placares de Líderes](docs/unlocks/leaderboard.md)
+[Dicionários](docs/scripting/dicts.md)      [Medição de Tempo](docs/unlocks/timing.md)      [Depuração](docs/scripting/debug.md)      [Placar de Líderes](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

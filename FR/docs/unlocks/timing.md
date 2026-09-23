@@ -62,6 +62,6 @@ Le nombre de ticks que les fonctions intégrées prennent pour s'exécuter est d
 
 ---
 
-[Débogage](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Classements](docs/unlocks/leaderboard.md)
+[Débogage](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Classement](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

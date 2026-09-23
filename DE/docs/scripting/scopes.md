@@ -123,4 +123,4 @@ Dies gibt `2` aus, weil `i` im letzten Durchlauf der `for`-Schleife der Wert `2`
 
 ---
 
-[Variablen](docs/scripting/variables.md)      [Funktionen](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [Megafarm](docs/unlocks/megafarm.md)
+[Variablen](docs/scripting/variables.md)      [Funktionen](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [Mega-Farm](docs/unlocks/megafarm.md)

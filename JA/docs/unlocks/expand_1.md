@@ -1,4 +1,4 @@
-[<- スピードアップグレード](docs/unlocks/speed.md) <right>[拡大 2 ->](docs/unlocks/expand_2.md)
+[<- スピードアップグレード](docs/unlocks/speed.md) <right>[拡張 2 ->](docs/unlocks/expand_2.md)
 <right>[採掘 ->](docs/unlocks/mining.md)
 ---
 # 拡張 1
@@ -37,6 +37,6 @@ while True:
 
 ---
 
-[whileループ](docs/scripting/while.md)      [演算子](docs/scripting/operators.md)      [拡大 2](docs/unlocks/expand_2.md)
+[whileループ](docs/scripting/while.md)      [演算子](docs/scripting/operators.md)      [拡張 2](docs/unlocks/expand_2.md)
 
 [move()](functions/move)

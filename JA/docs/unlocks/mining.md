@@ -1,4 +1,4 @@
-[<- 拡大](docs/unlocks/expand_1.md) <right>[地下の感覚 ->](docs/unlocks/underground_senses.md)
+[<- 拡張 1](docs/unlocks/expand_1.md) <right>[地下の感覚 ->](docs/unlocks/underground_senses.md)
 <right>[稲 ->](docs/unlocks/rice.md)
 <right>[石炭 ->](docs/unlocks/coal.md)
 ---

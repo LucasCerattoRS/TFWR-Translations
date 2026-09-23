@@ -33,4 +33,4 @@ Ein Kommentar in der Zeile vor einer Funktionsdefinition wird Teil der Informati
 
 ---
 
-[Erstes Programm](docs/first_program.md)      [Debuggen](docs/scripting/debug.md)      [Funktionen](docs/scripting/functions.md)
+[Erstes Programm](docs/first_program.md)      [Debug](docs/scripting/debug.md)      [Funktionen](docs/scripting/functions.md)

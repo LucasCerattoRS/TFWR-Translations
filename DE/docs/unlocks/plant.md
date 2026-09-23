@@ -1,5 +1,5 @@
-[<- Geschwindigkeitsverbesserung](docs/unlocks/speed.md) <right>[Karotten ->](docs/unlocks/carrots.md)
-<right>[Debuggen ->](docs/scripting/debug.md)
+[<- Geschwindigkeits-Upgrade](docs/unlocks/speed.md) <right>[Karotten ->](docs/unlocks/carrots.md)
+<right>[Debug ->](docs/scripting/debug.md)
 <right>[Operatoren ->](docs/scripting/operators.md)
 ---
 # Pflanzen

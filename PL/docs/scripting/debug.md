@@ -94,6 +94,6 @@ Gdy wykonanie się zatrzyma, dane wyjściowe są również zapisywane w pliku [o
 
 ---
 
-[Dane wyjściowe](docs/output.md)      [Komentarze](docs/scripting/comments.md)      [Debugowanie 2](docs/unlocks/debug2.md)      [Umieszczanie bloków do debugowania](docs/unlocks/debug_place.md)      [Symulacja](docs/unlocks/simulation.md)
+[Dane wyjściowe](docs/output.md)      [Komentarze](docs/scripting/comments.md)      [Debugowanie 2](docs/unlocks/debug2.md)      [Kolorowe bloki](docs/unlocks/debug_place.md)      [Symulacja](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

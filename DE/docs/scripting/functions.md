@@ -256,4 +256,4 @@ f(use_item, Items.Fertilizer)
 
 ---
 
-[Variablen](docs/scripting/variables.md)      [Geltungsbereiche](docs/scripting/scopes.md)      [Tupel](docs/scripting/tuples.md)      [Import](docs/scripting/import.md)
+[Variablen](docs/scripting/variables.md)      [Namensbereiche (Scopes)](docs/scripting/scopes.md)      [Tupel](docs/scripting/tuples.md)      [Import](docs/scripting/import.md)

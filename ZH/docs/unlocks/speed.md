@@ -2,7 +2,7 @@
 <right>[种植 ->](docs/unlocks/plant.md)
 ---
 # 速度升级
-现在，无人机的执行速度翻倍了！但是无人机收获的速度比草生长的速度还快，这会导致根本没有收成。为了解决这个问题，现在解锁了 [if](docs/scripting/if.md) 分支和 [can_harvest()](functions/can_harvest) 函数。
+现在，无人机的执行速度翻倍了！但是无人机收获的速度比草生长的速度还快，这会导致根本没有收成。为了解决这个问题，现在解锁了 [If 语句](docs/scripting/if.md) 分支和 [can_harvest()](functions/can_harvest) 函数。
 
 ## 在收获前检查
 当给定条件为 `True` 时，`if` 语句会执行一次其代码块。

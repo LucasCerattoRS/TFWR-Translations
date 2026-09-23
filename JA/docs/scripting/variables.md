@@ -93,4 +93,4 @@ while i < a:
 
 ---
 
-[演算子](docs/scripting/operators.md)      [whileループ](docs/scripting/while.md)      [forループ](docs/scripting/for.md)      [関数](docs/scripting/functions.md)      [スコープ](docs/scripting/scopes.md)
+[演算子](docs/scripting/operators.md)      [whileループ](docs/scripting/while.md)      [forループ](docs/scripting/for.md)      [関数](docs/scripting/functions.md)      [名前スコープ](docs/scripting/scopes.md)

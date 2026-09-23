@@ -6,4 +6,4 @@ Deine persönlichen Bestleistungen nach Ressource: {{itemblock stats_best}}
 
 ---
 
-[Bestenlisten](docs/unlocks/leaderboard.md)      [Zeitmessung](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
+[Bestenliste](docs/unlocks/leaderboard.md)      [Zeitmessung](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)

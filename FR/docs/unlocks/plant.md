@@ -1,4 +1,4 @@
-[<- Amélioration de la vitesse](docs/unlocks/speed.md) <right>[Carottes ->](docs/unlocks/carrots.md)
+[<- Amélioration de Vitesse](docs/unlocks/speed.md) <right>[Carottes ->](docs/unlocks/carrots.md)
 <right>[Débogage ->](docs/scripting/debug.md)
 <right>[Opérateurs ->](docs/scripting/operators.md)
 ---

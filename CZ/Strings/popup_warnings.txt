@@ -4,7 +4,6 @@
 @cancel = Zrušit
 @popup_warning_exit_game = Chceš hru před ukončením uložit?
 @popup_warning_load_game = Chceš hru uložit před načtením?
-@save = Uložit
 @don't save = Neukládat
 @popup_warning_corrupted_save = Při načítání {0} došlo k problému. Více informací najdeš v části o zálohách.
 @popup_warning_failed_read_save = Nepodařilo se načíst soubory savů {0}. Ujisti se, že jsi zavřel všechny programy, které mají tyto soubory otevřené, a zkus to znovu.

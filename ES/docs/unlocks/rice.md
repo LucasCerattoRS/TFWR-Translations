@@ -1,6 +1,6 @@
 [<- Minería](docs/unlocks/mining.md) <right>[Bambú ->](docs/unlocks/bamboo.md)
 <right>[Calabazas petrificadas ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Suelos especiales ->](docs/unlocks/special_soils.md)
+<right>[Perlita y suelo franco ->](docs/unlocks/special_soils.md)
 ---
 # Arroz
 

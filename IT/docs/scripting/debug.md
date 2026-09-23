@@ -1,4 +1,4 @@
-[<- Piantare](docs/unlocks/plant.md) <right>[Debug 2 ->](docs/unlocks/debug2.md)
+[<- Pianta](docs/unlocks/plant.md) <right>[Debug 2 ->](docs/unlocks/debug2.md)
 <right>[Tempi ->](docs/unlocks/timing.md)
 ---
 # Debug
@@ -94,6 +94,6 @@ Quando l'esecuzione si ferma, l'output viene scritto anche nel file [output.txt]
 
 ---
 
-[Output](docs/output.md)      [Commenti](docs/scripting/comments.md)      [Debug 2](docs/unlocks/debug2.md)      [Posizionare Blocchi per il Debug](docs/unlocks/debug_place.md)      [Simulazione](docs/unlocks/simulation.md)
+[Output](docs/output.md)      [Commenti](docs/scripting/comments.md)      [Debug 2](docs/unlocks/debug2.md)      [Blocchi Colorati](docs/unlocks/debug_place.md)      [Simulazione](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

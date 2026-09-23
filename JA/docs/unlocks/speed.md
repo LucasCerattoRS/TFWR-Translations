@@ -1,8 +1,8 @@
-[<- whileループ](docs/scripting/while.md) <right>[拡大 ->](docs/unlocks/expand_1.md)
-<right>[植え付け ->](docs/unlocks/plant.md)
+[<- whileループ](docs/scripting/while.md) <right>[拡張 1 ->](docs/unlocks/expand_1.md)
+<right>[植える ->](docs/unlocks/plant.md)
 ---
 # スピードアップグレード
-実行速度が2倍になりました。問題は、ドローンが草の成長よりも速く収穫するようになり、全く収穫できなくなってしまうことです。これに対処するために、[if](docs/scripting/if.md)分岐と[can_harvest()](functions/can_harvest)関数がアンロックされました。
+実行速度が2倍になりました。問題は、ドローンが草の成長よりも速く収穫するようになり、全く収穫できなくなってしまうことです。これに対処するために、[If文](docs/scripting/if.md)分岐と[can_harvest()](functions/can_harvest)関数がアンロックされました。
 
 ## 収穫する前にチェックする
 `if` ステートメントは、指定した条件が `True` の場合にコードブロックを1回実行します。

@@ -1,4 +1,4 @@
-[<- Primeiros Passos](docs/getting_started.md) <right>[Loop While ->](docs/scripting/while.md)
+[<- Começando](docs/getting_started.md) <right>[Loop While ->](docs/scripting/while.md)
 
 ---
 

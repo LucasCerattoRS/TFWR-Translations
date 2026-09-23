@@ -50,6 +50,6 @@ Antes de a policultura ser desbloqueada pela primeira vez, o multiplicador de re
 
 ---
 
-[Estatísticas](docs/stats.md)      [Tuplas](docs/scripting/tuples.md)      [Dicionários](docs/scripting/dicts.md)      [Sentidos](docs/unlocks/senses.md)      [Plantio](docs/unlocks/plant.md)
+[Estatísticas](docs/stats.md)      [Tuplas](docs/scripting/tuples.md)      [Dicionários](docs/scripting/dicts.md)      [Sentidos](docs/unlocks/senses.md)      [Plantar](docs/unlocks/plant.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

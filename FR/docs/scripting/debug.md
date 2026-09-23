@@ -1,5 +1,5 @@
 [<- Planter](docs/unlocks/plant.md) <right>[Débogage 2 ->](docs/unlocks/debug2.md)
-<right>[Chronométrage ->](docs/unlocks/timing.md)
+<right>[Mesure du Temps ->](docs/unlocks/timing.md)
 ---
 # Débogage
 Parfois, ton code ne fonctionne tout simplement pas et tu dois trouver pourquoi. Il existe quelques outils pour t'aider à le faire.
@@ -94,6 +94,6 @@ Lorsque l'exécution s'arrête, la sortie est également écrite dans le fichier
 
 ---
 
-[Sortie](docs/output.md)      [Commentaires](docs/scripting/comments.md)      [Débogage 2](docs/unlocks/debug2.md)      [Placer des blocs pour déboguer](docs/unlocks/debug_place.md)      [Simulation](docs/unlocks/simulation.md)
+[Sortie](docs/output.md)      [Commentaires](docs/scripting/comments.md)      [Débogage 2](docs/unlocks/debug2.md)      [Blocs colorés](docs/unlocks/debug_place.md)      [Simulation](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

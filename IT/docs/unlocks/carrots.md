@@ -1,4 +1,4 @@
-[<- Piantare](docs/unlocks/plant.md) <right>[Annaffiatura ->](docs/unlocks/watering.md)
+[<- Pianta](docs/unlocks/plant.md) <right>[Annaffiare ->](docs/unlocks/watering.md)
 <right>[Alberi ->](docs/unlocks/trees.md)
 ---
 # Carote
@@ -40,6 +40,6 @@ Puoi vedere il costo di ogni pianta nella sua [pagina dedicata](objects/carrot).
 
 ---
 
-[Statistiche](docs/stats.md)      [Piantare](docs/unlocks/plant.md)      [Annaffiatura](docs/unlocks/watering.md)      [If](docs/scripting/if.md)      [Sensi](docs/unlocks/senses.md)      [Policoltura](docs/unlocks/polyculture.md)
+[Statistiche](docs/stats.md)      [Pianta](docs/unlocks/plant.md)      [Annaffiare](docs/unlocks/watering.md)      [If](docs/scripting/if.md)      [Sensori](docs/unlocks/senses.md)      [Policoltura](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)

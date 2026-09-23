@@ -1,4 +1,4 @@
-[<- Zeitmessung](docs/unlocks/timing.md) <right>[Bestenlisten ->](docs/unlocks/leaderboard.md)
+[<- Zeitmessung](docs/unlocks/timing.md) <right>[Bestenliste ->](docs/unlocks/leaderboard.md)
 ---
 # Simulation
 
@@ -61,6 +61,6 @@ Die Beschleunigung beeinflusst das Ergebnis der Simulation in keiner Weise. Sie 
 
 ---
 
-[Dictionaries](docs/scripting/dicts.md)      [Zeitmessung](docs/unlocks/timing.md)      [Debuggen](docs/scripting/debug.md)      [Bestenlisten](docs/unlocks/leaderboard.md)
+[Dictionaries](docs/scripting/dicts.md)      [Zeitmessung](docs/unlocks/timing.md)      [Debug](docs/scripting/debug.md)      [Bestenliste](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

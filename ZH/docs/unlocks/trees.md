@@ -75,6 +75,6 @@ print("is_even(x): ", is_even(get_pos_x()))
 
 ---
 
-[统计](docs/stats.md)      [运算符](docs/scripting/operators.md)      [If 语句](docs/scripting/if.md)      [For 循环](docs/scripting/for.md)      [混合种植](docs/unlocks/polyculture.md)
+[统计数据](docs/stats.md)      [运算符](docs/scripting/operators.md)      [If 语句](docs/scripting/if.md)      [For 循环](docs/scripting/for.md)      [混合种植](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)

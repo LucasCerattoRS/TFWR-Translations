@@ -1,6 +1,6 @@
 [<- Węgiel](docs/unlocks/coal.md) <right>[Kwarc ->](docs/unlocks/quartz.md)
 <right>[Poszukiwanie żelaza ->](docs/unlocks/prospecting.md)
-<right>[Mapa skarbów ->](docs/unlocks/treasure_map.md)
+<right>[Mapa skarbu ->](docs/unlocks/treasure_map.md)
 ---
 # Żelazo
 

@@ -1,4 +1,4 @@
-[<- Rega](docs/unlocks/watering.md) <right>[Labirintos ->](docs/unlocks/mazes.md)
+[<- Irrigação](docs/unlocks/watering.md) <right>[Labirintos ->](docs/unlocks/mazes.md)
 
 ---
 
@@ -90,6 +90,6 @@ for _ in range(6):
 
 ---
 
-[Estatísticas](docs/stats.md)      [Rega](docs/unlocks/watering.md)      [Labirintos](docs/unlocks/mazes.md)
+[Estatísticas](docs/stats.md)      [Irrigação](docs/unlocks/watering.md)      [Labirintos](docs/unlocks/mazes.md)
 
 [use_item()](functions/use_item)

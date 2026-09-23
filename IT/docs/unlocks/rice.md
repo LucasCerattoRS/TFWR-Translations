@@ -1,6 +1,6 @@
 [<- Estrazione](docs/unlocks/mining.md) <right>[Bambù ->](docs/unlocks/bamboo.md)
 <right>[Zucche Pietrificate ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Terreni Speciali ->](docs/unlocks/special_soils.md)
+<right>[Perlite e Terriccio ->](docs/unlocks/special_soils.md)
 ---
 # Riso
 

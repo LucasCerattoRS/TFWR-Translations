@@ -1,4 +1,4 @@
-[<- 변수](docs/scripting/variables.md) <right>[가져오기 ->](docs/scripting/import.md)
+[<- 변수](docs/scripting/variables.md) <right>[Import ->](docs/scripting/import.md)
 ---
 # 함수
 `def` 키워드를 사용하여 새 함수를 정의하세요:
@@ -256,4 +256,4 @@ f(use_item, Items.Fertilizer)
 
 ---
 
-[변수](docs/scripting/variables.md)      [이름 스코프](docs/scripting/scopes.md)      [튜플](docs/scripting/tuples.md)      [가져오기](docs/scripting/import.md)
+[변수](docs/scripting/variables.md)      [이름 스코프](docs/scripting/scopes.md)      [튜플](docs/scripting/tuples.md)      [Import](docs/scripting/import.md)

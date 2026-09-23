@@ -256,4 +256,4 @@ f(use_item, Items.Fertilizer)
 
 ---
 
-[変数](docs/scripting/variables.md)      [スコープ](docs/scripting/scopes.md)      [タプル](docs/scripting/tuples.md)      [インポート](docs/scripting/import.md)
+[変数](docs/scripting/variables.md)      [名前スコープ](docs/scripting/scopes.md)      [タプル](docs/scripting/tuples.md)      [インポート](docs/scripting/import.md)

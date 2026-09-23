@@ -31,4 +31,4 @@ En el juego, asegúrate de tener activada la opción "File Watcher". Ahora, cada
 
 ---
 
-[Primer programa](docs/first_program.md)      [Cargar copias de seguridad](docs/backup.md)
+[Primer programa](docs/first_program.md)      [Cargando Copias de Seguridad](docs/backup.md)

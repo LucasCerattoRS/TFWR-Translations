@@ -250,7 +250,6 @@
 <dlc>**Mineração**
 <columns>
 <unlock=basalt>[Basalt](grounds/basalt)
-</unlock><unlock=bedrock>[Bedrock](grounds/bedrock)
 </unlock><unlock=clay>[Clay](grounds/clay)
 </unlock><unlock=coal>[Coal](grounds/coal)
 </unlock><unlock=dirt>[Dirt](grounds/dirt)

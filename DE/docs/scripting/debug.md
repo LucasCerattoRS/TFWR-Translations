@@ -1,4 +1,4 @@
-[<- Pflanzen](docs/unlocks/plant.md) <right>[Debuggen 2 ->](docs/unlocks/debug2.md)
+[<- Pflanzen](docs/unlocks/plant.md) <right>[Debug 2 ->](docs/unlocks/debug2.md)
 <right>[Zeitmessung ->](docs/unlocks/timing.md)
 ---
 # Debug
@@ -94,6 +94,6 @@ Wenn die Ausführung endet, wird die Ausgabe außerdem in die Datei [output.txt]
 
 ---
 
-[Ausgabe](docs/output.md)      [Kommentare](docs/scripting/comments.md)      [Debuggen 2](docs/unlocks/debug2.md)      [Blöcke zum Debuggen platzieren](docs/unlocks/debug_place.md)      [Simulation](docs/unlocks/simulation.md)
+[Ausgabe](docs/output.md)      [Kommentare](docs/scripting/comments.md)      [Debug 2](docs/unlocks/debug2.md)      [Farbige Blöcke](docs/unlocks/debug_place.md)      [Simulation](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

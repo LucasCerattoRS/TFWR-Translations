@@ -1,4 +1,4 @@
-[<- Expandir 1](docs/unlocks/expand_1.md)
+[<- Expansión 1](docs/unlocks/expand_1.md)
 ---
 # Expansión 2
 ¡Tu granja se ha expandido de nuevo! Ahora las casillas ya no están en una bonita fila, así que necesitas encontrar una manera de recorrer una cuadrícula cuadrada.

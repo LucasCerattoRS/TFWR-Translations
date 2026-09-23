@@ -1,5 +1,5 @@
-[<- Ciclo While](docs/scripting/while.md) <right>[Espandi 1 ->](docs/unlocks/expand_1.md)
-<right>[Piantare ->](docs/unlocks/plant.md)
+[<- Ciclo While](docs/scripting/while.md) <right>[Espansione 1 ->](docs/unlocks/expand_1.md)
+<right>[Pianta ->](docs/unlocks/plant.md)
 ---
 # Potenziamento Velocità
 La velocità di esecuzione è raddoppiata. Il problema è che ora il drone raccoglie più velocemente di quanto cresca l'erba, senza ottenere alcuna resa. Per risolvere il problema sono ora sbloccati i rami [if](docs/scripting/if.md) e la funzione [can_harvest()](functions/can_harvest).

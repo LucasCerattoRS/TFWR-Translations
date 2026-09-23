@@ -1,6 +1,6 @@
 [<- Górnictwo](docs/unlocks/mining.md) <right>[Bambus ->](docs/unlocks/bamboo.md)
 <right>[Skamieniałe dynie ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Specjalne gleby ->](docs/unlocks/special_soils.md)
+<right>[Perlit i gleba próchnicza ->](docs/unlocks/special_soils.md)
 ---
 # Ryż
 
@@ -41,6 +41,6 @@ do_a_flip()
 
 ---
 
-[Statystyki](docs/stats.md)      [Górnictwo](docs/unlocks/mining.md)      [Podziemne zmysły](docs/unlocks/underground_senses.md)      [Instrukcja if](docs/scripting/if.md)      [Pętla for](docs/scripting/for.md)
+[Statystyki](docs/stats.md)      [Górnictwo](docs/unlocks/mining.md)      [Podziemne zmysły](docs/unlocks/underground_senses.md)      [If](docs/scripting/if.md)      [Pętla for](docs/scripting/for.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)

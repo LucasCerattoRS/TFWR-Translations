@@ -1,6 +1,6 @@
 [<- Mining](docs/unlocks/mining.md) <right>[Bamboo ->](docs/unlocks/bamboo.md)
 <right>[Petrified Pumpkins ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Special Soils ->](docs/unlocks/special_soils.md)
+<right>[Perlite and Loam ->](docs/unlocks/special_soils.md)
 ---
 # Rice
 

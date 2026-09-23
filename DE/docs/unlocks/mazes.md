@@ -1,4 +1,4 @@
-[<- Dünger](docs/unlocks/fertilizer.md) <right>[Megafarm ->](docs/unlocks/megafarm.md)
+[<- Dünger](docs/unlocks/fertilizer.md) <right>[Mega-Farm ->](docs/unlocks/megafarm.md)
 ---
 # Labyrinthe
 `Items.Weird_Substance` hat eine seltsame Wirkung auf Büsche. Befindet sich die Drohne über einem Busch und rufst du `use_item(Items.Weird_Substance, amount)` auf, wächst der Busch zu einem Heckenlabyrinth heran.

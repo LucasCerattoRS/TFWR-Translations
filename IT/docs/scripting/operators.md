@@ -1,4 +1,4 @@
-[<- Piantare](docs/unlocks/plant.md) <right>[Sensi ->](docs/unlocks/senses.md)
+[<- Pianta](docs/unlocks/plant.md) <right>[Sensori ->](docs/unlocks/senses.md)
 <right>[Variabili ->](docs/scripting/variables.md)
 ---
 # Operatori
@@ -687,4 +687,4 @@ Gli operatori possono essere combinati in espressioni più grandi, ma fai attenz
 
 ---
 
-[Variabili](docs/scripting/variables.md)      [If](docs/scripting/if.md)      [Ciclo While](docs/scripting/while.md)      [Sensi](docs/unlocks/senses.md)
+[Variabili](docs/scripting/variables.md)      [If](docs/scripting/if.md)      [Ciclo While](docs/scripting/while.md)      [Sensori](docs/unlocks/senses.md)

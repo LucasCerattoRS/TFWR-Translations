@@ -1,4 +1,4 @@
-[<- Ryż](docs/unlocks/rice.md) <right>[Umieszczanie bloków do debugowania ->](docs/unlocks/debug_place.md)
+[<- Ryż](docs/unlocks/rice.md) <right>[Kolorowe bloki ->](docs/unlocks/debug_place.md)
 <right>[Piramidy ->](docs/unlocks/pyramid.md)
 ---
 # Bambus

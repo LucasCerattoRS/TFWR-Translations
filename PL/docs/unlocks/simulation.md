@@ -60,6 +60,6 @@ Szósty argument to początkowe przyspieszenie symulacji. Pozwala ono szybko tes
 Przyspieszenie nie wpływa w żaden sposób na wynik symulacji. Służy jedynie do skrócenia czasu oczekiwania.
 ---
 
-[Słowniki](docs/scripting/dicts.md)      [Czas](docs/unlocks/timing.md)      [Debugowanie](docs/scripting/debug.md)      [Tabele wyników](docs/unlocks/leaderboard.md)
+[Słowniki](docs/scripting/dicts.md)      [Czas](docs/unlocks/timing.md)      [Debugowanie](docs/scripting/debug.md)      [Tabela wyników](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

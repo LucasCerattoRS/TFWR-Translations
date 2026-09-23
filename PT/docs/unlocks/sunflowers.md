@@ -1,4 +1,4 @@
-[<- Rega](docs/unlocks/watering.md)
+[<- Irrigação](docs/unlocks/watering.md)
 
 ---
 

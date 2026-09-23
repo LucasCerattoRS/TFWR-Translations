@@ -100,4 +100,4 @@ def f():
 
 ---
 
-[関数](docs/scripting/functions.md)      [スコープ](docs/scripting/scopes.md)
+[関数](docs/scripting/functions.md)      [名前スコープ](docs/scripting/scopes.md)

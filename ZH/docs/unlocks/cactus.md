@@ -145,6 +145,6 @@ harvest()
 
 ---
 
-[统计](docs/stats.md)
+[统计数据](docs/stats.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [swap()](functions/swap)      [measure()](functions/measure)

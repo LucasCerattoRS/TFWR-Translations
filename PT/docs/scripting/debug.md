@@ -1,6 +1,6 @@
-[<- Plantio](docs/unlocks/plant.md) <right>[Depuração 2 ->](docs/unlocks/debug2.md)
+[<- Plantar](docs/unlocks/plant.md) <right>[Depuração 2 ->](docs/unlocks/debug2.md)
 
-<right>[Cronometragem ->](docs/unlocks/timing.md)
+<right>[Medição de Tempo ->](docs/unlocks/timing.md)
 
 ---
 
@@ -98,6 +98,6 @@ Quando a execução para, a saída também é gravada no arquivo [output.txt](pe
 
 ---
 
-[Saída](docs/output.md)      [Comentários](docs/scripting/comments.md)      [Depuração 2](docs/unlocks/debug2.md)      [Colocando Blocos para Depurar](docs/unlocks/debug_place.md)      [Simulação](docs/unlocks/simulation.md)
+[Saída](docs/output.md)      [Comentários](docs/scripting/comments.md)      [Depuração 2](docs/unlocks/debug2.md)      [Blocos Coloridos](docs/unlocks/debug_place.md)      [Simulação](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

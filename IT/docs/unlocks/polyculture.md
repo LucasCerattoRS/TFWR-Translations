@@ -47,6 +47,6 @@ Prima di sbloccare la policoltura per la prima volta, il moltiplicatore della re
 
 ---
 
-[Statistiche](docs/stats.md)      [Tuple](docs/scripting/tuples.md)      [Dizionari](docs/scripting/dicts.md)      [Sensi](docs/unlocks/senses.md)      [Piantare](docs/unlocks/plant.md)
+[Statistiche](docs/stats.md)      [Tuple](docs/scripting/tuples.md)      [Dizionari](docs/scripting/dicts.md)      [Sensori](docs/unlocks/senses.md)      [Pianta](docs/unlocks/plant.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

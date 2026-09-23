@@ -57,6 +57,6 @@ print(get_cost(Unlocks.Loops))
 
 ---
 
-[Costs](docs/unlocks/costs.md)      [Dictionaries](docs/scripting/dicts.md)      [If](docs/scripting/if.md)      [Leaderboards](docs/unlocks/leaderboard.md)
+[Costs](docs/unlocks/costs.md)      [Dictionaries](docs/scripting/dicts.md)      [If](docs/scripting/if.md)      [Leaderboard](docs/unlocks/leaderboard.md)
 
 [get_cost()](functions/get_cost)      [unlock()](functions/unlock)

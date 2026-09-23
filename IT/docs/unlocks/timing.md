@@ -62,6 +62,6 @@ Il numero di tick necessari per eseguire le funzioni predefinite è indicato nel
 
 ---
 
-[Debug](docs/scripting/debug.md)      [Simulazione](docs/unlocks/simulation.md)      [Classifiche](docs/unlocks/leaderboard.md)
+[Debug](docs/scripting/debug.md)      [Simulazione](docs/unlocks/simulation.md)      [Classifica](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

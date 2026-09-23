@@ -1,4 +1,4 @@
-[<- Rice](docs/unlocks/rice.md) <right>[Placing Blocks to Debug ->](docs/unlocks/debug_place.md)
+[<- Rice](docs/unlocks/rice.md) <right>[Colorful Blocks ->](docs/unlocks/debug_place.md)
 <right>[Pyramids ->](docs/unlocks/pyramid.md)
 ---
 # Bamboo

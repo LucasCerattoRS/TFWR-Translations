@@ -81,6 +81,6 @@ for item in cost:
 
 ---
 
-[Diccionarios](docs/scripting/dicts.md)      [Autodesbloqueos](docs/unlocks/auto_unlock.md)      [Tablas de clasificación](docs/unlocks/leaderboard.md)
+[Diccionarios](docs/scripting/dicts.md)      [Autodesbloqueos](docs/unlocks/auto_unlock.md)      [Tabla de clasificación](docs/unlocks/leaderboard.md)
 
 [get_cost()](functions/get_cost)

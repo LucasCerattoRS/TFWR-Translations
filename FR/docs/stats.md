@@ -6,4 +6,4 @@ Ton record personnel par ressource est : {{itemblock stats_best}}
 
 ---
 
-[Classements](docs/unlocks/leaderboard.md)      [Chronométrage](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
+[Classement](docs/unlocks/leaderboard.md)      [Mesure du Temps](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)

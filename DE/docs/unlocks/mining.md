@@ -1,4 +1,4 @@
-[<- Erweiterung 1](docs/unlocks/expand_1.md) <right>[Unterirdische Sinne ->](docs/unlocks/underground_senses.md)
+[<- Erweitern 1](docs/unlocks/expand_1.md) <right>[Unterirdische Sinne ->](docs/unlocks/underground_senses.md)
 <right>[Reis ->](docs/unlocks/rice.md)
 <right>[Kohle ->](docs/unlocks/coal.md)
 ---

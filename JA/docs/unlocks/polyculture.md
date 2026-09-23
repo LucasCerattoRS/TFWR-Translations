@@ -47,6 +47,6 @@ harvest()
 
 ---
 
-[統計](docs/stats.md)      [タプル](docs/scripting/tuples.md)      [辞書](docs/scripting/dicts.md)      [感覚](docs/unlocks/senses.md)      [植え付け](docs/unlocks/plant.md)
+[統計](docs/stats.md)      [タプル](docs/scripting/tuples.md)      [辞書](docs/scripting/dicts.md)      [感覚](docs/unlocks/senses.md)      [植える](docs/unlocks/plant.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

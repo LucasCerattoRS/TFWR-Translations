@@ -1,6 +1,6 @@
 [<- 採掘](docs/unlocks/mining.md) <right>[竹 ->](docs/unlocks/bamboo.md)
 <right>[石化したカボチャ ->](docs/unlocks/petrified_pumpkins.md)
-<right>[特殊な土壌 ->](docs/unlocks/special_soils.md)
+<right>[パーライトと壌土 ->](docs/unlocks/special_soils.md)
 ---
 # 稲
 
@@ -41,6 +41,6 @@ do_a_flip()
 
 ---
 
-[統計](docs/stats.md)      [採掘](docs/unlocks/mining.md)      [地下の感覚](docs/unlocks/underground_senses.md)      [if](docs/scripting/if.md)      [forループ](docs/scripting/for.md)
+[統計](docs/stats.md)      [採掘](docs/unlocks/mining.md)      [地下の感覚](docs/unlocks/underground_senses.md)      [If文](docs/scripting/if.md)      [forループ](docs/scripting/for.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)

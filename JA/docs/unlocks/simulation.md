@@ -1,4 +1,4 @@
-[<- タイミング](docs/unlocks/timing.md) <right>[ランキング ->](docs/unlocks/leaderboard.md)
+[<- タイミング](docs/unlocks/timing.md) <right>[リーダーボード ->](docs/unlocks/leaderboard.md)
 ---
 # シミュレーション
 
@@ -61,6 +61,6 @@
 
 ---
 
-[辞書](docs/scripting/dicts.md)      [タイミング](docs/unlocks/timing.md)      [デバッグ](docs/scripting/debug.md)      [ランキング](docs/unlocks/leaderboard.md)
+[辞書](docs/scripting/dicts.md)      [タイミング](docs/unlocks/timing.md)      [デバッグ](docs/scripting/debug.md)      [リーダーボード](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

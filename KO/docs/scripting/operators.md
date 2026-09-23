@@ -687,4 +687,4 @@ False or False
 
 ---
 
-[변수](docs/scripting/variables.md)      [If](docs/scripting/if.md)      [While 루프](docs/scripting/while.md)      [감각](docs/unlocks/senses.md)
+[변수](docs/scripting/variables.md)      [If문](docs/scripting/if.md)      [While 루프](docs/scripting/while.md)      [감각](docs/unlocks/senses.md)

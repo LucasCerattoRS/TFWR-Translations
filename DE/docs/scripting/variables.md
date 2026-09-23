@@ -93,4 +93,4 @@ Es kann mit diesen Operatoren abgekürzt werden: `+=, -=, *=, /=, %=`
 
 ---
 
-[Operatoren](docs/scripting/operators.md)      [While-Schleife](docs/scripting/while.md)      [For-Schleife](docs/scripting/for.md)      [Funktionen](docs/scripting/functions.md)      [Geltungsbereiche](docs/scripting/scopes.md)
+[Operatoren](docs/scripting/operators.md)      [While-Schleife](docs/scripting/while.md)      [For-Schleife](docs/scripting/for.md)      [Funktionen](docs/scripting/functions.md)      [Namensbereiche (Scopes)](docs/scripting/scopes.md)

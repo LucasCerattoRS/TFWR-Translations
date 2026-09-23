@@ -1,4 +1,4 @@
-[<- Annaffiatura](docs/unlocks/watering.md)
+[<- Annaffiare](docs/unlocks/watering.md)
 ---
 # Girasoli
 I [girasoli](objects/sunflower) raccolgono l'energia del sole. Puoi raccogliere quell'energia. 

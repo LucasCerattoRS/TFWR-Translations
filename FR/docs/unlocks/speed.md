@@ -1,4 +1,4 @@
-[<- Boucle while](docs/scripting/while.md) <right>[Agrandir 1 ->](docs/unlocks/expand_1.md)
+[<- Boucle while](docs/scripting/while.md) <right>[Expansion 1 ->](docs/unlocks/expand_1.md)
 <right>[Planter ->](docs/unlocks/plant.md)
 ---
 # Amélioration de Vitesse

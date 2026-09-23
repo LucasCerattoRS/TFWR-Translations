@@ -123,4 +123,4 @@ Esto imprimirá `2` porque la última iteración del bucle `for` asignó `2` a `
 
 ---
 
-[Variables](docs/scripting/variables.md)      [Funciones](docs/scripting/functions.md)      [Importar](docs/scripting/import.md)      [Megagranja](docs/unlocks/megafarm.md)
+[Variables](docs/scripting/variables.md)      [Funciones](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [Megagranja](docs/unlocks/megafarm.md)

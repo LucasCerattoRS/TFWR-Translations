@@ -160,4 +160,4 @@ harvest()
 
 ---
 
-[for 루프](docs/scripting/for.md)      [If](docs/scripting/if.md)      [Break](docs/scripting/break.md)      [Continue](docs/scripting/continue.md)      [외부 에디터](docs/external_editor.md)
+[for 루프](docs/scripting/for.md)      [If문](docs/scripting/if.md)      [Break](docs/scripting/break.md)      [Continue](docs/scripting/continue.md)      [외부 에디터](docs/external_editor.md)

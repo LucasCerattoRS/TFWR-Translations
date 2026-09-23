@@ -1,4 +1,4 @@
-[<- Espandi 1](docs/unlocks/expand_1.md) <right>[Sensi Sotterranei ->](docs/unlocks/underground_senses.md)
+[<- Espansione 1](docs/unlocks/expand_1.md) <right>[Sensi Sotterranei ->](docs/unlocks/underground_senses.md)
 <right>[Riso ->](docs/unlocks/rice.md)
 <right>[Carbone ->](docs/unlocks/coal.md)
 ---

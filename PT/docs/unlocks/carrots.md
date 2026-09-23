@@ -1,4 +1,4 @@
-[<- Plantio](docs/unlocks/plant.md) <right>[Rega ->](docs/unlocks/watering.md)
+[<- Plantar](docs/unlocks/plant.md) <right>[Irrigação ->](docs/unlocks/watering.md)
 
 <right>[Árvores ->](docs/unlocks/trees.md)
 
@@ -45,6 +45,6 @@ Você pode ver o custo de qualquer planta em sua [própria página](objects/carr
 
 ---
 
-[Estatísticas](docs/stats.md)      [Plantio](docs/unlocks/plant.md)      [Rega](docs/unlocks/watering.md)      [If](docs/scripting/if.md)      [Sentidos](docs/unlocks/senses.md)      [Policultura](docs/unlocks/polyculture.md)
+[Estatísticas](docs/stats.md)      [Plantar](docs/unlocks/plant.md)      [Irrigação](docs/unlocks/watering.md)      [If](docs/scripting/if.md)      [Sentidos](docs/unlocks/senses.md)      [Policultura](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)

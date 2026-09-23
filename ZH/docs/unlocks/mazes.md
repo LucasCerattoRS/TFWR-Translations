@@ -202,6 +202,6 @@ move(directions[index])
 
 ---
 
-[统计](docs/stats.md)      [列表](docs/scripting/lists.md)      [字典](docs/scripting/dicts.md)      [元组](docs/scripting/tuples.md)
+[统计数据](docs/stats.md)      [列表](docs/scripting/lists.md)      [字典](docs/scripting/dicts.md)      [元组](docs/scripting/tuples.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [can_move()](functions/can_move)      [move()](functions/move)      [use_item()](functions/use_item)

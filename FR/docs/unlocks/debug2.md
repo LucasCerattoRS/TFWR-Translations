@@ -9,6 +9,6 @@ Elles te permettent de réduire la vitesse d'exécution et la taille de la ferme
 La taille de la ferme et la vitesse d'exécution seront réinitialisées à leurs valeurs par défaut à la fin de l'exécution.
 ---
 
-[Débogage](docs/scripting/debug.md)      [Sortie](docs/output.md)      [Placer des blocs pour déboguer](docs/unlocks/debug_place.md)      [Chronométrage](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
+[Débogage](docs/scripting/debug.md)      [Sortie](docs/output.md)      [Blocs colorés](docs/unlocks/debug_place.md)      [Mesure du Temps](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

@@ -1,4 +1,4 @@
-[<- Mejora de velocidad](docs/unlocks/speed.md) <right>[Expandir 2 ->](docs/unlocks/expand_2.md)
+[<- Mejora de velocidad](docs/unlocks/speed.md) <right>[Expansión 2 ->](docs/unlocks/expand_2.md)
 <right>[Minería ->](docs/unlocks/mining.md)
 ---
 # Expansión 1
@@ -37,6 +37,6 @@ while True:
 
 ---
 
-[Bucle while](docs/scripting/while.md)      [Operadores](docs/scripting/operators.md)      [Expandir 2](docs/unlocks/expand_2.md)
+[Bucle while](docs/scripting/while.md)      [Operadores](docs/scripting/operators.md)      [Expansión 2](docs/unlocks/expand_2.md)
 
 [move()](functions/move)

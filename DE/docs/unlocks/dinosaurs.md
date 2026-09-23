@@ -1,4 +1,4 @@
-[<- Kakteen](docs/unlocks/cactus.md)
+[<- Kaktus](docs/unlocks/cactus.md)
 ---
 # Dinosaurier
 Dinosaurier sind uralte, majestätische Kreaturen, die für uralte Knochen gefarmt werden können.

@@ -275,6 +275,6 @@ print(b)
 
 ---
 
-[Variablen](docs/scripting/variables.md)      [For-Schleife](docs/scripting/for.md)      [Tupel](docs/scripting/tuples.md)      [Dictionaries](docs/scripting/dicts.md)      [Mengen](docs/scripting/sets.md)
+[Variablen](docs/scripting/variables.md)      [For-Schleife](docs/scripting/for.md)      [Tupel](docs/scripting/tuples.md)      [Dictionaries](docs/scripting/dicts.md)      [Sets](docs/scripting/sets.md)
 
 [len()](functions/len)

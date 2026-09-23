@@ -1,4 +1,4 @@
-[<- Potenziamento Velocità](docs/unlocks/speed.md) <right>[Espandi 2 ->](docs/unlocks/expand_2.md)
+[<- Potenziamento Velocità](docs/unlocks/speed.md) <right>[Espansione 2 ->](docs/unlocks/expand_2.md)
 <right>[Estrazione ->](docs/unlocks/mining.md)
 ---
 # Espansione 1
@@ -37,6 +37,6 @@ while True:
 
 ---
 
-[Ciclo While](docs/scripting/while.md)      [Operatori](docs/scripting/operators.md)      [Espandi 2](docs/unlocks/expand_2.md)
+[Ciclo While](docs/scripting/while.md)      [Operatori](docs/scripting/operators.md)      [Espansione 2](docs/unlocks/expand_2.md)
 
 [move()](functions/move)

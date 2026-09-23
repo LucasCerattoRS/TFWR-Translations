@@ -1,5 +1,5 @@
 [<- Bäume](docs/unlocks/trees.md) <right>[Polykultur ->](docs/unlocks/polyculture.md)
-<right>[Kakteen ->](docs/unlocks/cactus.md)
+<right>[Kaktus ->](docs/unlocks/cactus.md)
 ---
 # Kürbisse
 [Kürbisse](objects/pumpkin) wachsen wie Karotten auf gepflügtem Boden. Das Pflanzen kostet Karotten.

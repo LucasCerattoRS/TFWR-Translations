@@ -1,4 +1,4 @@
-[<- Annaffiatura](docs/unlocks/watering.md) <right>[Labirinti ->](docs/unlocks/mazes.md)
+[<- Annaffiare](docs/unlocks/watering.md) <right>[Labirinti ->](docs/unlocks/mazes.md)
 ---
 # Fertilizzante
 A un certo punto, aspettare che le piante crescano non è più abbastanza efficiente.
@@ -87,6 +87,6 @@ for _ in range(6):
 
 ---
 
-[Statistiche](docs/stats.md)      [Annaffiatura](docs/unlocks/watering.md)      [Labirinti](docs/unlocks/mazes.md)
+[Statistiche](docs/stats.md)      [Annaffiare](docs/unlocks/watering.md)      [Labirinti](docs/unlocks/mazes.md)
 
 [use_item()](functions/use_item)

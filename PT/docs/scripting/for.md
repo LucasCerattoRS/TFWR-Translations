@@ -1,4 +1,4 @@
-[<- Expandir 2](docs/unlocks/expand_2.md)
+[<- Expansão 2](docs/unlocks/expand_2.md)
 
 ---
 

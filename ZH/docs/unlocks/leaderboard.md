@@ -134,6 +134,6 @@ simulate(filename, unlocks, items, globals, seed, speedup)`
 
 ---
 
-[模拟](docs/unlocks/simulation.md)      [计时](docs/unlocks/timing.md)      [自动解锁](docs/unlocks/auto_unlock.md)      [成本](docs/unlocks/costs.md)      [统计](docs/stats.md)
+[模拟](docs/unlocks/simulation.md)      [计时](docs/unlocks/timing.md)      [自动解锁](docs/unlocks/auto_unlock.md)      [成本](docs/unlocks/costs.md)      [统计数据](docs/stats.md)
 
 [get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

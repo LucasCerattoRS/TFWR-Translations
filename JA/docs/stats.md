@@ -6,4 +6,4 @@
 
 ---
 
-[ランキング](docs/unlocks/leaderboard.md)      [タイミング](docs/unlocks/timing.md)      [シミュレーション](docs/unlocks/simulation.md)
+[リーダーボード](docs/unlocks/leaderboard.md)      [タイミング](docs/unlocks/timing.md)      [シミュレーション](docs/unlocks/simulation.md)

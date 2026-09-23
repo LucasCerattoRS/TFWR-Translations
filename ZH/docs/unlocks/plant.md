@@ -40,6 +40,6 @@ plant(Entities.Bush)
 
 ---
 
-[统计](docs/stats.md)      [If 语句](docs/scripting/if.md)      [感官](docs/unlocks/senses.md)      [混合种植](docs/unlocks/polyculture.md)
+[统计数据](docs/stats.md)      [If 语句](docs/scripting/if.md)      [感官](docs/unlocks/senses.md)      [混合种植](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)

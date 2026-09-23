@@ -123,4 +123,4 @@ print(i)
 
 ---
 
-[변수](docs/scripting/variables.md)      [함수](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [메가팜](docs/unlocks/megafarm.md)
+[변수](docs/scripting/variables.md)      [함수](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [메가 팜](docs/unlocks/megafarm.md)

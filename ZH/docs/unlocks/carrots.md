@@ -1,5 +1,5 @@
 [<- 种植](docs/unlocks/plant.md) <right>[浇水 ->](docs/unlocks/watering.md)
-<right>[树木 ->](docs/unlocks/trees.md)
+<right>[树 ->](docs/unlocks/trees.md)
 ---
 # 胡萝卜
 调用 `plant(Entities.Carrot)` 函数可以种植胡萝卜。在种植胡萝卜之前你必须先耕地，只需调用 `till()` 函数即可耕地，将地块变为 `Grounds.Soil` 。再次调用 `till()` 则会将地块变回 `Grounds.Grassland`。
@@ -42,6 +42,6 @@ till()
 
 ---
 
-[统计](docs/stats.md)      [种植](docs/unlocks/plant.md)      [浇水](docs/unlocks/watering.md)      [If 语句](docs/scripting/if.md)      [感官](docs/unlocks/senses.md)      [混合种植](docs/unlocks/polyculture.md)
+[统计数据](docs/stats.md)      [种植](docs/unlocks/plant.md)      [浇水](docs/unlocks/watering.md)      [If 语句](docs/scripting/if.md)      [感官](docs/unlocks/senses.md)      [混合种植](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)

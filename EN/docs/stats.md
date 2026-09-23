@@ -6,4 +6,4 @@ Your personal bests by resource are: {{itemblock stats_best}}
 
 ---
 
-[Leaderboards](docs/unlocks/leaderboard.md)      [Timing](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
+[Leaderboard](docs/unlocks/leaderboard.md)      [Timing](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)

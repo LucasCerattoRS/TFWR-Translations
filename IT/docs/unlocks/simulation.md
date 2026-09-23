@@ -1,4 +1,4 @@
-[<- Tempi](docs/unlocks/timing.md) <right>[Classifiche ->](docs/unlocks/leaderboard.md)
+[<- Tempi](docs/unlocks/timing.md) <right>[Classifica ->](docs/unlocks/leaderboard.md)
 ---
 # Simulazione
 
@@ -61,6 +61,6 @@ L'accelerazione non influisce in alcun modo sul risultato della simulazione. Ser
 
 ---
 
-[Dizionari](docs/scripting/dicts.md)      [Tempi](docs/unlocks/timing.md)      [Debug](docs/scripting/debug.md)      [Classifiche](docs/unlocks/leaderboard.md)
+[Dizionari](docs/scripting/dicts.md)      [Tempi](docs/unlocks/timing.md)      [Debug](docs/scripting/debug.md)      [Classifica](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

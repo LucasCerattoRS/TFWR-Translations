@@ -66,6 +66,6 @@ O número de ticks que as funções nativas levam para serem executadas está do
 
 ---
 
-[Depuração](docs/scripting/debug.md)      [Simulação](docs/unlocks/simulation.md)      [Placares de Líderes](docs/unlocks/leaderboard.md)
+[Depuração](docs/scripting/debug.md)      [Simulação](docs/unlocks/simulation.md)      [Placar de Líderes](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

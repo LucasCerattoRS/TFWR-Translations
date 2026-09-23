@@ -355,6 +355,6 @@ print(l)
 
 ---
 
-[Функции](docs/scripting/functions.md)      [Области видимости](docs/scripting/scopes.md)      [Симуляция](docs/unlocks/simulation.md)
+[Функции](docs/scripting/functions.md)      [Области видимости имен](docs/scripting/scopes.md)      [Симуляция](docs/unlocks/simulation.md)
 
 [spawn_drone()](functions/spawn_drone)      [num_drones()](functions/num_drones)      [max_drones()](functions/max_drones)      [wait_for()](functions/wait_for)      [has_finished()](functions/has_finished)

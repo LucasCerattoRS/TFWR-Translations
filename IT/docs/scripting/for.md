@@ -1,4 +1,4 @@
-[<- Espandi 2](docs/unlocks/expand_2.md)
+[<- Espansione 2](docs/unlocks/expand_2.md)
 ---
 # Ciclo For
 Il ciclo `for` funziona come in Python. In alcuni linguaggi è chiamato ciclo foreach e non va confuso con il ciclo for in stile C, che funziona in modo diverso.

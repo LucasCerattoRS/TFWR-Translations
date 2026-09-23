@@ -1,4 +1,4 @@
-[<- Temporización](docs/unlocks/timing.md) <right>[Tabla de clasificación ->](docs/unlocks/leaderboard.md)
+[<- Medición de Tiempo](docs/unlocks/timing.md) <right>[Tabla de clasificación ->](docs/unlocks/leaderboard.md)
 ---
 # Simulación
 
@@ -61,6 +61,6 @@ La aceleración no afecta en modo alguno al resultado de la simulación. Solo si
 
 ---
 
-[Diccionarios](docs/scripting/dicts.md)      [Temporización](docs/unlocks/timing.md)      [Depuración](docs/scripting/debug.md)      [Tablas de clasificación](docs/unlocks/leaderboard.md)
+[Diccionarios](docs/scripting/dicts.md)      [Medición de Tiempo](docs/unlocks/timing.md)      [Depuración](docs/scripting/debug.md)      [Tabla de clasificación](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

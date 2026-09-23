@@ -66,6 +66,6 @@ Ciò significa che anche se pianti una zucca su ogni casella di un quadrato, una
 
 ---
 
-[Statistiche](docs/stats.md)      [Operatori](docs/scripting/operators.md)      [Variabili](docs/scripting/variables.md)      [Sensi](docs/unlocks/senses.md)
+[Statistiche](docs/stats.md)      [Operatori](docs/scripting/operators.md)      [Variabili](docs/scripting/variables.md)      [Sensori](docs/unlocks/senses.md)
 
 [harvest()](functions/harvest)      [can_harvest()](functions/can_harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)

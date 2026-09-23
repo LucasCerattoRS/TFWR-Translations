@@ -1,5 +1,5 @@
 [<- Plantar](docs/unlocks/plant.md) <right>[Depuración 2 ->](docs/unlocks/debug2.md)
-<right>[Temporización ->](docs/unlocks/timing.md)
+<right>[Medición de Tiempo ->](docs/unlocks/timing.md)
 ---
 # Depuración
 A veces tu código simplemente no funciona y necesitas averiguar por qué. Hay un par de herramientas para ayudarte a hacerlo.
@@ -94,6 +94,6 @@ Cuando la ejecución se detiene, la salida también se escribe en el archivo [ou
 
 ---
 
-[Salida](docs/output.md)      [Comentarios](docs/scripting/comments.md)      [Depuración 2](docs/unlocks/debug2.md)      [Colocar bloques para depurar](docs/unlocks/debug_place.md)      [Simulación](docs/unlocks/simulation.md)
+[Salida](docs/output.md)      [Comentarios](docs/scripting/comments.md)      [Depuración 2](docs/unlocks/debug2.md)      [Bloques de colores](docs/unlocks/debug_place.md)      [Simulación](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

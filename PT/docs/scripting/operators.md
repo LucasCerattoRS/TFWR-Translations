@@ -1,4 +1,4 @@
-[<- Plantio](docs/unlocks/plant.md) <right>[Sentidos ->](docs/unlocks/senses.md)
+[<- Plantar](docs/unlocks/plant.md) <right>[Sentidos ->](docs/unlocks/senses.md)
 
 <right>[Variáveis ->](docs/scripting/variables.md)
 

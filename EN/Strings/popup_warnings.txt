@@ -4,7 +4,6 @@
 @cancel = Cancel
 @popup_warning_exit_game = Do you wish to save before quitting?
 @popup_warning_load_game = Do you wish to save before loading?
-@save = Save
 @don't save = Don't Save
 @popup_warning_corrupted_save = There seems to have been a problem loading {0}. Check out the section on backups for more information.
 @popup_warning_failed_read_save = Failed to read the save files of {0}. Make sure you close all other programs accessing the files and try again.

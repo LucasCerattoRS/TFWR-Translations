@@ -63,6 +63,6 @@ quick_print(time - start_time, ticks - start_ticks)
 
 ---
 
-[デバッグ](docs/scripting/debug.md)      [シミュレーション](docs/unlocks/simulation.md)      [ランキング](docs/unlocks/leaderboard.md)
+[デバッグ](docs/scripting/debug.md)      [シミュレーション](docs/unlocks/simulation.md)      [リーダーボード](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

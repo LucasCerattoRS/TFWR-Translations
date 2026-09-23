@@ -71,6 +71,6 @@ for _ in range(5):
 
 ---
 
-[통계](docs/stats.md)      [리스트](docs/scripting/lists.md)      [딕셔너리](docs/scripting/dicts.md)      [변수](docs/scripting/variables.md)      [for 루프](docs/scripting/for.md)      [If](docs/scripting/if.md)      [연산자](docs/scripting/operators.md)
+[통계](docs/stats.md)      [리스트](docs/scripting/lists.md)      [딕셔너리](docs/scripting/dicts.md)      [변수](docs/scripting/variables.md)      [for 루프](docs/scripting/for.md)      [If문](docs/scripting/if.md)      [연산자](docs/scripting/operators.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [measure()](functions/measure)

@@ -62,6 +62,6 @@ El número de ticks que tardan en ejecutarse las funciones integradas está docu
 
 ---
 
-[Depuración](docs/scripting/debug.md)      [Simulación](docs/unlocks/simulation.md)      [Tablas de clasificación](docs/unlocks/leaderboard.md)
+[Depuración](docs/scripting/debug.md)      [Simulación](docs/unlocks/simulation.md)      [Tabla de clasificación](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

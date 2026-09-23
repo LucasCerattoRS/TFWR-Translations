@@ -47,6 +47,6 @@ harvest()
 
 ---
 
-[统计](docs/stats.md)      [元组](docs/scripting/tuples.md)      [字典](docs/scripting/dicts.md)      [感官](docs/unlocks/senses.md)      [种植](docs/unlocks/plant.md)
+[统计数据](docs/stats.md)      [元组](docs/scripting/tuples.md)      [字典](docs/scripting/dicts.md)      [感官](docs/unlocks/senses.md)      [种植](docs/unlocks/plant.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [get_companion()](functions/get_companion)

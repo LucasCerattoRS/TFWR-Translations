@@ -1,4 +1,4 @@
-[<- Riso](docs/unlocks/rice.md) <right>[Posizionare Blocchi per il Debug ->](docs/unlocks/debug_place.md)
+[<- Riso](docs/unlocks/rice.md) <right>[Blocchi Colorati ->](docs/unlocks/debug_place.md)
 <right>[Piramidi ->](docs/unlocks/pyramid.md)
 ---
 # Bambù

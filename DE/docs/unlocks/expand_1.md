@@ -1,4 +1,4 @@
-[<- Geschwindigkeitsverbesserung](docs/unlocks/speed.md) <right>[Erweitern 2 ->](docs/unlocks/expand_2.md)
+[<- Geschwindigkeits-Upgrade](docs/unlocks/speed.md) <right>[Erweitern 2 ->](docs/unlocks/expand_2.md)
 <right>[Bergbau ->](docs/unlocks/mining.md)
 ---
 # Erweitern 1

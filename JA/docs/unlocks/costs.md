@@ -81,6 +81,6 @@ for item in cost:
 
 ---
 
-[辞書](docs/scripting/dicts.md)      [自動アンロック](docs/unlocks/auto_unlock.md)      [ランキング](docs/unlocks/leaderboard.md)
+[辞書](docs/scripting/dicts.md)      [自動アンロック](docs/unlocks/auto_unlock.md)      [リーダーボード](docs/unlocks/leaderboard.md)
 
 [get_cost()](functions/get_cost)

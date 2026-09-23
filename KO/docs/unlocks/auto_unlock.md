@@ -57,6 +57,6 @@ print(get_cost(Unlocks.Loops))
 
 ---
 
-[비용](docs/unlocks/costs.md)      [딕셔너리](docs/scripting/dicts.md)      [If](docs/scripting/if.md)      [리더보드](docs/unlocks/leaderboard.md)
+[비용](docs/unlocks/costs.md)      [딕셔너리](docs/scripting/dicts.md)      [If문](docs/scripting/if.md)      [리더보드](docs/unlocks/leaderboard.md)
 
 [get_cost()](functions/get_cost)      [unlock()](functions/unlock)

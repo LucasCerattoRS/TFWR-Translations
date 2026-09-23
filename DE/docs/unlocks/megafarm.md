@@ -355,6 +355,6 @@ Bis eine Drohne die zweite Zeile erreicht, könnte `get_water()` bereits nicht m
 
 ---
 
-[Funktionen](docs/scripting/functions.md)      [Geltungsbereiche](docs/scripting/scopes.md)      [Simulation](docs/unlocks/simulation.md)
+[Funktionen](docs/scripting/functions.md)      [Namensbereiche (Scopes)](docs/scripting/scopes.md)      [Simulation](docs/unlocks/simulation.md)
 
 [spawn_drone()](functions/spawn_drone)      [num_drones()](functions/num_drones)      [max_drones()](functions/max_drones)      [wait_for()](functions/wait_for)      [has_finished()](functions/has_finished)

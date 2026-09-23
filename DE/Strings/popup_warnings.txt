@@ -4,7 +4,6 @@
 @cancel = Abbrechen
 @popup_warning_exit_game = Möchtest du vor dem Beenden speichern?
 @popup_warning_load_game = Möchtest du vor dem Laden speichern?
-@save = Speichern
 @don't save = Nicht speichern
 @popup_warning_corrupted_save = Es scheint ein Problem beim Laden von {0} gegeben zu haben. Weitere Informationen findest du im Abschnitt über Backups.
 @popup_warning_failed_read_save = Fehler beim Lesen der Speicherdateien von {0}. Stelle sicher, dass du alle anderen Programme schließt, die auf die Dateien zugreifen, und versuche es erneut.

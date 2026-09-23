@@ -28,6 +28,6 @@ Die Goldmenge ist proportional zur Länge des Schatzpfades. Wenn du die Schatzka
 
 ---
 
-[Statistiken](docs/stats.md)      [For-Schleifen](docs/scripting/for.md)      [Tupel](docs/scripting/tuples.md)      [Unterirdische Sinne](docs/unlocks/underground_senses.md)
+[Statistiken](docs/stats.md)      [For-Schleife](docs/scripting/for.md)      [Tupel](docs/scripting/tuples.md)      [Unterirdische Sinne](docs/unlocks/underground_senses.md)
 
 [harvest()](functions/harvest)      [move()](functions/move)      [dig()](functions/dig)      [measure()](functions/measure)

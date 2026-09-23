@@ -1,4 +1,4 @@
-[<- Amélioration de la vitesse](docs/unlocks/speed.md)
+[<- Amélioration de Vitesse](docs/unlocks/speed.md)
 ---
 # If
 Tu peux utiliser `if`, `elif` et `else` pour exécuter du code de manière conditionnelle.

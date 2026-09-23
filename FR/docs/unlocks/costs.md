@@ -1,4 +1,4 @@
-[<- Dictionnaires](docs/scripting/dicts.md) <right>[Déblocages automatiques ->](docs/unlocks/auto_unlock.md)
+[<- Dictionnaires](docs/scripting/dicts.md) <right>[Déblocages Auto ->](docs/unlocks/auto_unlock.md)
 ---
 # Coûts
 Tout coût peut être représenté par un dictionnaire qui mappe des objets à des nombres.
@@ -81,6 +81,6 @@ for item in cost:
 
 ---
 
-[Dictionnaires](docs/scripting/dicts.md)      [Déblocages automatiques](docs/unlocks/auto_unlock.md)      [Classements](docs/unlocks/leaderboard.md)
+[Dictionnaires](docs/scripting/dicts.md)      [Déblocages Auto](docs/unlocks/auto_unlock.md)      [Classement](docs/unlocks/leaderboard.md)
 
 [get_cost()](functions/get_cost)

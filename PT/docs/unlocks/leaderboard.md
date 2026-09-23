@@ -158,6 +158,6 @@ Condição de Sucesso: `num_items(Items.Hay) >= 100000000`
 
 ---
 
-[Simulação](docs/unlocks/simulation.md)      [Cronometragem](docs/unlocks/timing.md)      [Desbloqueios Automáticos](docs/unlocks/auto_unlock.md)      [Custos](docs/unlocks/costs.md)      [Estatísticas](docs/stats.md)
+[Simulação](docs/unlocks/simulation.md)      [Medição de Tempo](docs/unlocks/timing.md)      [Desbloqueios Automáticos](docs/unlocks/auto_unlock.md)      [Custos](docs/unlocks/costs.md)      [Estatísticas](docs/stats.md)
 
 [get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

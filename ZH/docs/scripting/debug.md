@@ -94,6 +94,6 @@ print(get_pos_x(), get_pos_y())
 
 ---
 
-[输出](docs/output.md)      [注释](docs/scripting/comments.md)      [调试 2](docs/unlocks/debug2.md)      [放置地块辅助调试](docs/unlocks/debug_place.md)      [模拟](docs/unlocks/simulation.md)
+[输出](docs/output.md)      [注释](docs/scripting/comments.md)      [调试 2](docs/unlocks/debug2.md)      [彩色地块](docs/unlocks/debug_place.md)      [模拟](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

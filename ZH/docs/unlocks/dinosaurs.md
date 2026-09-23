@@ -101,6 +101,6 @@ for i in range(100):
 
 ---
 
-[统计](docs/stats.md)      [元组](docs/scripting/tuples.md)      [列表](docs/scripting/lists.md)
+[统计数据](docs/stats.md)      [元组](docs/scripting/tuples.md)      [列表](docs/scripting/lists.md)
 
 [change_hat()](functions/change_hat)      [move()](functions/move)      [measure()](functions/measure)

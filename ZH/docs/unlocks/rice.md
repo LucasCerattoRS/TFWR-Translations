@@ -1,6 +1,6 @@
 [<- 采矿](docs/unlocks/mining.md) <right>[竹子 ->](docs/unlocks/bamboo.md)
 <right>[石化南瓜 ->](docs/unlocks/petrified_pumpkins.md)
-<right>[特殊土壤 ->](docs/unlocks/special_soils.md)
+<right>[珍珠岩与壤土 ->](docs/unlocks/special_soils.md)
 ---
 # 水稻
 
@@ -41,6 +41,6 @@ do_a_flip()
 
 ---
 
-[统计](docs/stats.md)      [采矿](docs/unlocks/mining.md)      [地下感官](docs/unlocks/underground_senses.md)      [If 语句](docs/scripting/if.md)      [For 循环](docs/scripting/for.md)
+[统计数据](docs/stats.md)      [采矿](docs/unlocks/mining.md)      [地下感官](docs/unlocks/underground_senses.md)      [If 语句](docs/scripting/if.md)      [For 循环](docs/scripting/for.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)

@@ -1,4 +1,4 @@
-[<- Variáveis](docs/scripting/variables.md) <right>[Importação ->](docs/scripting/import.md)
+[<- Variáveis](docs/scripting/variables.md) <right>[Import ->](docs/scripting/import.md)
 
 ---
 
@@ -265,4 +265,4 @@ f(use_item, Items.Fertilizer)
 
 ---
 
-[Variáveis](docs/scripting/variables.md)      [Escopos de Nomes](docs/scripting/scopes.md)      [Tuplas](docs/scripting/tuples.md)      [Importação](docs/scripting/import.md)
+[Variáveis](docs/scripting/variables.md)      [Escopos de Nomes](docs/scripting/scopes.md)      [Tuplas](docs/scripting/tuples.md)      [Import](docs/scripting/import.md)

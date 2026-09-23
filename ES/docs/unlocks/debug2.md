@@ -10,6 +10,6 @@ El tamaño de la granja y la velocidad de ejecución volverán a sus valores pre
 
 ---
 
-[Depuración](docs/scripting/debug.md)      [Salida](docs/output.md)      [Colocar bloques para depurar](docs/unlocks/debug_place.md)      [Temporización](docs/unlocks/timing.md)      [Simulación](docs/unlocks/simulation.md)
+[Depuración](docs/scripting/debug.md)      [Salida](docs/output.md)      [Bloques de colores](docs/unlocks/debug_place.md)      [Medición de Tiempo](docs/unlocks/timing.md)      [Simulación](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

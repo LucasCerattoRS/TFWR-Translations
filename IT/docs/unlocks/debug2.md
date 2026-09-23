@@ -10,6 +10,6 @@ Le dimensioni della fattoria e la velocità di esecuzione torneranno ai valori p
 
 ---
 
-[Debug](docs/scripting/debug.md)      [Output](docs/output.md)      [Posizionare Blocchi per il Debug](docs/unlocks/debug_place.md)      [Tempi](docs/unlocks/timing.md)      [Simulazione](docs/unlocks/simulation.md)
+[Debug](docs/scripting/debug.md)      [Output](docs/output.md)      [Blocchi Colorati](docs/unlocks/debug_place.md)      [Tempi](docs/unlocks/timing.md)      [Simulazione](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

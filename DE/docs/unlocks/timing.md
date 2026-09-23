@@ -1,4 +1,4 @@
-[<- Debuggen](docs/scripting/debug.md) <right>[Simulation ->](docs/unlocks/simulation.md)
+[<- Debug](docs/scripting/debug.md) <right>[Simulation ->](docs/unlocks/simulation.md)
 ---
 # Zeitmessung
 Wenn du deine Methoden wirklich optimieren willst, musst du verstehen, wie die Zeit in diesem Spiel gemessen wird. Darum geht es bei dieser Freischaltung.
@@ -60,6 +60,6 @@ Die Anzahl der Ticks, welche die Ausführung eingebauter Funktionen benötigt, i
 
 ---
 
-[Debuggen](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Bestenlisten](docs/unlocks/leaderboard.md)
+[Debug](docs/scripting/debug.md)      [Simulation](docs/unlocks/simulation.md)      [Bestenliste](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

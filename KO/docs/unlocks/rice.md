@@ -1,6 +1,6 @@
 [<- 채광](docs/unlocks/mining.md) <right>[대나무 ->](docs/unlocks/bamboo.md)
 <right>[화석화된 호박 ->](docs/unlocks/petrified_pumpkins.md)
-<right>[특수 토양 ->](docs/unlocks/special_soils.md)
+<right>[진주암과 양토 ->](docs/unlocks/special_soils.md)
 ---
 # 벼
 
@@ -41,6 +41,6 @@ do_a_flip()
 
 ---
 
-[통계](docs/stats.md)      [채광](docs/unlocks/mining.md)      [지하 감각](docs/unlocks/underground_senses.md)      [If](docs/scripting/if.md)      [for 루프](docs/scripting/for.md)
+[통계](docs/stats.md)      [채광](docs/unlocks/mining.md)      [지하 감각](docs/unlocks/underground_senses.md)      [If문](docs/scripting/if.md)      [for 루프](docs/scripting/for.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)

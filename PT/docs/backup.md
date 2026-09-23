@@ -11,4 +11,4 @@ Se você perdeu apenas alguns arquivos de código, ou os arquivos de código ain
 
 ---
 
-[Editor Externo](docs/external_editor.md)      [Primeiros Passos](docs/getting_started.md)
+[Editor Externo](docs/external_editor.md)      [Começando](docs/getting_started.md)

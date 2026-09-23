@@ -1,4 +1,4 @@
-[<- 水稻](docs/unlocks/rice.md) <right>[放置地块辅助调试 ->](docs/unlocks/debug_place.md)
+[<- 水稻](docs/unlocks/rice.md) <right>[彩色地块 ->](docs/unlocks/debug_place.md)
 <right>[金字塔 ->](docs/unlocks/pyramid.md)
 ---
 # 竹子
@@ -81,6 +81,6 @@ harvest()
 
 ---
 
-[统计](docs/stats.md)      [For 循环](docs/scripting/for.md)      [变量](docs/scripting/variables.md)      [If 语句](docs/scripting/if.md)      [函数](docs/scripting/functions.md)      [水稻](docs/unlocks/rice.md)
+[统计数据](docs/stats.md)      [For 循环](docs/scripting/for.md)      [变量](docs/scripting/variables.md)      [If 语句](docs/scripting/if.md)      [函数](docs/scripting/functions.md)      [水稻](docs/unlocks/rice.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [place()](functions/place)      [measure()](functions/measure)

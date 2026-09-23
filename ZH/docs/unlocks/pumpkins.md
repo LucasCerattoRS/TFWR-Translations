@@ -1,4 +1,4 @@
-[<- 树木](docs/unlocks/trees.md) <right>[混合种植 ->](docs/unlocks/polyculture.md)
+[<- 树](docs/unlocks/trees.md) <right>[混合种植 ->](docs/unlocks/polyculture.md)
 <right>[仙人掌 ->](docs/unlocks/cactus.md)
 ---
 # 南瓜
@@ -66,6 +66,6 @@ harvest()
 
 ---
 
-[统计](docs/stats.md)      [运算符](docs/scripting/operators.md)      [变量](docs/scripting/variables.md)      [感官](docs/unlocks/senses.md)
+[统计数据](docs/stats.md)      [运算符](docs/scripting/operators.md)      [变量](docs/scripting/variables.md)      [感官](docs/unlocks/senses.md)
 
 [harvest()](functions/harvest)      [can_harvest()](functions/can_harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)

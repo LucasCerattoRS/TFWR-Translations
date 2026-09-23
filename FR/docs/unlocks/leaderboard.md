@@ -133,6 +133,6 @@ Condition de succès : `num_items(Items.Carrot) >= 100000000`
 Condition de succès : `num_items(Items.Hay) >= 100000000`
 ---
 
-[Simulation](docs/unlocks/simulation.md)      [Chronométrage](docs/unlocks/timing.md)      [Déblocages automatiques](docs/unlocks/auto_unlock.md)      [Coûts](docs/unlocks/costs.md)      [Statistiques](docs/stats.md)
+[Simulation](docs/unlocks/simulation.md)      [Mesure du Temps](docs/unlocks/timing.md)      [Déblocages Auto](docs/unlocks/auto_unlock.md)      [Coûts](docs/unlocks/costs.md)      [Statistiques](docs/stats.md)
 
 [get_cost()](functions/get_cost)      [num_unlocked()](functions/num_unlocked)      [leaderboard_run()](functions/leaderboard_run)

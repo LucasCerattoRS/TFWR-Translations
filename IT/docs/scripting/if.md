@@ -126,4 +126,4 @@ else:
 
 ---
 
-[Ciclo While](docs/scripting/while.md)      [Operatori](docs/scripting/operators.md)      [Sensi](docs/unlocks/senses.md)
+[Ciclo While](docs/scripting/while.md)      [Operatori](docs/scripting/operators.md)      [Sensori](docs/unlocks/senses.md)

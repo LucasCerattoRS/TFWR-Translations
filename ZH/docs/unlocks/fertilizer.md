@@ -87,6 +87,6 @@ for _ in range(6):
 
 ---
 
-[统计](docs/stats.md)      [浇水](docs/unlocks/watering.md)      [迷宫](docs/unlocks/mazes.md)
+[统计数据](docs/stats.md)      [浇水](docs/unlocks/watering.md)      [迷宫](docs/unlocks/mazes.md)
 
 [use_item()](functions/use_item)

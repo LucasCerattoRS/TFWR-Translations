@@ -256,4 +256,4 @@ f(use_item, Items.Fertilizer)
 
 ---
 
-[Переменные](docs/scripting/variables.md)      [Области видимости](docs/scripting/scopes.md)      [Кортежи](docs/scripting/tuples.md)      [Импорт](docs/scripting/import.md)
+[Переменные](docs/scripting/variables.md)      [Области видимости имен](docs/scripting/scopes.md)      [Кортежи](docs/scripting/tuples.md)      [Импорт](docs/scripting/import.md)

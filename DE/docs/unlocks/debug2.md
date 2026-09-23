@@ -1,4 +1,4 @@
-[<- Debuggen](docs/scripting/debug.md)
+[<- Debug](docs/scripting/debug.md)
 ---
 # Debug 2
 Wenn deine Drohne zu schnell und das Gitter zu groß wird, kann es schwierig werden, den Überblick zu behalten.
@@ -10,6 +10,6 @@ Die Farmgröße und die Ausführungsgeschwindigkeit werden am Ende der Ausführu
 
 ---
 
-[Debuggen](docs/scripting/debug.md)      [Ausgabe](docs/output.md)      [Blöcke zum Debuggen platzieren](docs/unlocks/debug_place.md)      [Zeitmessung](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
+[Debug](docs/scripting/debug.md)      [Ausgabe](docs/output.md)      [Farbige Blöcke](docs/unlocks/debug_place.md)      [Zeitmessung](docs/unlocks/timing.md)      [Simulation](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

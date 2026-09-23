@@ -61,6 +61,6 @@ The speedup does not affect the result of the simulation in any way. It exists o
 
 ---
 
-[Dictionaries](docs/scripting/dicts.md)      [Timing](docs/unlocks/timing.md)      [Debug](docs/scripting/debug.md)      [Leaderboards](docs/unlocks/leaderboard.md)
+[Dictionaries](docs/scripting/dicts.md)      [Timing](docs/unlocks/timing.md)      [Debug](docs/scripting/debug.md)      [Leaderboard](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

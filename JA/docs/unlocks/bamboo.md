@@ -1,4 +1,4 @@
-[<- 稲](docs/unlocks/rice.md) <right>[デバッグ用のブロック配置 ->](docs/unlocks/debug_place.md)
+[<- 稲](docs/unlocks/rice.md) <right>[カラフルなブロック ->](docs/unlocks/debug_place.md)
 <right>[ピラミッド ->](docs/unlocks/pyramid.md)
 ---
 # 竹
@@ -81,6 +81,6 @@ harvest()
 
 ---
 
-[統計](docs/stats.md)      [forループ](docs/scripting/for.md)      [変数](docs/scripting/variables.md)      [if](docs/scripting/if.md)      [関数](docs/scripting/functions.md)      [稲](docs/unlocks/rice.md)
+[統計](docs/stats.md)      [forループ](docs/scripting/for.md)      [変数](docs/scripting/variables.md)      [If文](docs/scripting/if.md)      [関数](docs/scripting/functions.md)      [稲](docs/unlocks/rice.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [till()](functions/till)      [place()](functions/place)      [measure()](functions/measure)

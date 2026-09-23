@@ -76,6 +76,6 @@ print("is_even(x): ", is_even(get_pos_x()))
 
 ---
 
-[통계](docs/stats.md)      [연산자](docs/scripting/operators.md)      [If](docs/scripting/if.md)      [For 루프](docs/scripting/for.md)      [혼합 재배](docs/unlocks/polyculture.md)
+[통계](docs/stats.md)      [연산자](docs/scripting/operators.md)      [If문](docs/scripting/if.md)      [For 루프](docs/scripting/for.md)      [혼합 재배](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)

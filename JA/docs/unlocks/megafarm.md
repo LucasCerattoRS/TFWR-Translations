@@ -355,6 +355,6 @@ print(l)
 
 ---
 
-[関数](docs/scripting/functions.md)      [スコープ](docs/scripting/scopes.md)      [シミュレーション](docs/unlocks/simulation.md)
+[関数](docs/scripting/functions.md)      [名前スコープ](docs/scripting/scopes.md)      [シミュレーション](docs/unlocks/simulation.md)
 
 [spawn_drone()](functions/spawn_drone)      [num_drones()](functions/num_drones)      [max_drones()](functions/max_drones)      [wait_for()](functions/wait_for)      [has_finished()](functions/has_finished)

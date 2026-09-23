@@ -129,4 +129,4 @@ Isso imprimirá `2` porque a última iteração do loop `for` atribuiu `2` a `i`
 
 ---
 
-[Variáveis](docs/scripting/variables.md)      [Funções](docs/scripting/functions.md)      [Importação](docs/scripting/import.md)      [Megafazenda](docs/unlocks/megafarm.md)
+[Variáveis](docs/scripting/variables.md)      [Funções](docs/scripting/functions.md)      [Import](docs/scripting/import.md)      [Megafazenda](docs/unlocks/megafarm.md)

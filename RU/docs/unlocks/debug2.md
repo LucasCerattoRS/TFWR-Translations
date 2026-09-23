@@ -10,6 +10,6 @@
 
 ---
 
-[Отладка](docs/scripting/debug.md)      [Вывод](docs/output.md)      [Отладка с помощью блоков](docs/unlocks/debug_place.md)      [Время](docs/unlocks/timing.md)      [Симуляция](docs/unlocks/simulation.md)
+[Отладка](docs/scripting/debug.md)      [Вывод](docs/output.md)      [Цветные блоки](docs/unlocks/debug_place.md)      [Время](docs/unlocks/timing.md)      [Симуляция](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

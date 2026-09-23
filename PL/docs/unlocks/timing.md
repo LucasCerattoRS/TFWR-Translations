@@ -57,6 +57,6 @@ Liczba ticków potrzebnych do wykonania funkcji wbudowanej jest podana na stroni
 
 ---
 
-[Debugowanie](docs/scripting/debug.md)      [Symulacja](docs/unlocks/simulation.md)      [Tabele wyników](docs/unlocks/leaderboard.md)
+[Debugowanie](docs/scripting/debug.md)      [Symulacja](docs/unlocks/simulation.md)      [Tabela wyników](docs/unlocks/leaderboard.md)
 
 [get_time()](functions/get_time)      [get_tick_count()](functions/get_tick_count)      [quick_print()](functions/quick_print)

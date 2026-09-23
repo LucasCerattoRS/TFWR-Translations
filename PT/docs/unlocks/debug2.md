@@ -13,6 +13,6 @@ O tamanho da fazenda e a velocidade de execução serão redefinidos para os val
 
 ---
 
-[Depuração](docs/scripting/debug.md)      [Saída](docs/output.md)      [Colocando Blocos para Depurar](docs/unlocks/debug_place.md)      [Cronometragem](docs/unlocks/timing.md)      [Simulação](docs/unlocks/simulation.md)
+[Depuração](docs/scripting/debug.md)      [Saída](docs/output.md)      [Blocos Coloridos](docs/unlocks/debug_place.md)      [Medição de Tempo](docs/unlocks/timing.md)      [Simulação](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

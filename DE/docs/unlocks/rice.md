@@ -1,6 +1,6 @@
 [<- Bergbau](docs/unlocks/mining.md) <right>[Bambus ->](docs/unlocks/bamboo.md)
 <right>[Versteinerte Kürbisse ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Spezialböden ->](docs/unlocks/special_soils.md)
+<right>[Perlit und Lehmboden ->](docs/unlocks/special_soils.md)
 ---
 # Reis
 
@@ -41,6 +41,6 @@ do_a_flip()
 
 ---
 
-[Statistiken](docs/stats.md)      [Bergbau](docs/unlocks/mining.md)      [Unterirdische Sinne](docs/unlocks/underground_senses.md)      [If](docs/scripting/if.md)      [For-Schleifen](docs/scripting/for.md)
+[Statistiken](docs/stats.md)      [Bergbau](docs/unlocks/mining.md)      [Unterirdische Sinne](docs/unlocks/underground_senses.md)      [If](docs/scripting/if.md)      [For-Schleife](docs/scripting/for.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)      [move()](functions/move)      [dig()](functions/dig)      [get_ground_type()](functions/get_ground_type)

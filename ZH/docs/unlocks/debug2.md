@@ -10,6 +10,6 @@
 
 ---
 
-[调试](docs/scripting/debug.md)      [输出](docs/output.md)      [放置地块辅助调试](docs/unlocks/debug_place.md)      [计时](docs/unlocks/timing.md)      [模拟](docs/unlocks/simulation.md)
+[调试](docs/scripting/debug.md)      [输出](docs/output.md)      [彩色地块](docs/unlocks/debug_place.md)      [计时](docs/unlocks/timing.md)      [模拟](docs/unlocks/simulation.md)
 
 [set_execution_speed()](functions/set_execution_speed)      [set_world_size()](functions/set_world_size)

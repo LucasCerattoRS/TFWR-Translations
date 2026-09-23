@@ -1,4 +1,4 @@
-[<- Expandir 2](docs/unlocks/expand_2.md)
+[<- Expansión 2](docs/unlocks/expand_2.md)
 ---
 # Bucle For
 El bucle `for` funciona como en Python. En algunos lenguajes se llama bucle foreach y no debe confundirse con el bucle for de estilo C, que funciona de otra manera.

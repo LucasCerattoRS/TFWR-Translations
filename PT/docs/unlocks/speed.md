@@ -1,6 +1,6 @@
-[<- Loop While](docs/scripting/while.md) <right>[Expandir 1 ->](docs/unlocks/expand_1.md)
+[<- Loop While](docs/scripting/while.md) <right>[Expansão 1 ->](docs/unlocks/expand_1.md)
 
-<right>[Plantio ->](docs/unlocks/plant.md)
+<right>[Plantar ->](docs/unlocks/plant.md)
 
 ---
 

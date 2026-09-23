@@ -1,4 +1,4 @@
-[<- 拡大 2](docs/unlocks/expand_2.md)
+[<- 拡張 2](docs/unlocks/expand_2.md)
 ---
 # Forループ
 `for` ループはPythonのように動作します。（一部の言語ではforeachループと呼ばれますが、C言語スタイルのforループとは異なるものです）。

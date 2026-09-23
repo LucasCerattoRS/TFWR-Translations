@@ -1,4 +1,4 @@
-[<- Chronométrage](docs/unlocks/timing.md) <right>[Classement ->](docs/unlocks/leaderboard.md)
+[<- Mesure du Temps](docs/unlocks/timing.md) <right>[Classement ->](docs/unlocks/leaderboard.md)
 ---
 # Simulation
 
@@ -60,6 +60,6 @@ Le sixième argument est l'accélération de départ de la simulation. Cela te p
 L'accélération n'affecte en rien le résultat de la simulation. Elle n'existe que pour réduire le temps d'attente.
 ---
 
-[Dictionnaires](docs/scripting/dicts.md)      [Chronométrage](docs/unlocks/timing.md)      [Débogage](docs/scripting/debug.md)      [Classements](docs/unlocks/leaderboard.md)
+[Dictionnaires](docs/scripting/dicts.md)      [Mesure du Temps](docs/unlocks/timing.md)      [Débogage](docs/scripting/debug.md)      [Classement](docs/unlocks/leaderboard.md)
 
 [simulate()](functions/simulate)

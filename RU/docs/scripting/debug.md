@@ -93,6 +93,6 @@ print(get_pos_x(), get_pos_y())
 Когда выполнение кода останавливается, вывод также записывается в файл output.txt в папке игры: [output.txt](persistent_data_path/output.txt).
 ---
 
-[Вывод](docs/output.md)      [Комментарии](docs/scripting/comments.md)      [Отладка 2](docs/unlocks/debug2.md)      [Отладка с помощью блоков](docs/unlocks/debug_place.md)      [Симуляция](docs/unlocks/simulation.md)
+[Вывод](docs/output.md)      [Комментарии](docs/scripting/comments.md)      [Отладка 2](docs/unlocks/debug2.md)      [Цветные блоки](docs/unlocks/debug_place.md)      [Симуляция](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

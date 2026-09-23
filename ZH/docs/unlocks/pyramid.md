@@ -92,6 +92,6 @@ place(Grounds.Sand)
 
 ---
 
-[统计](docs/stats.md)      [地下感官](docs/unlocks/underground_senses.md)
+[统计数据](docs/stats.md)      [地下感官](docs/unlocks/underground_senses.md)
 
 [move()](functions/move)      [dig()](functions/dig)      [use_item()](functions/use_item)      [place()](functions/place)

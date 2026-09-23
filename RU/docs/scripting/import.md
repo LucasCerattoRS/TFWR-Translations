@@ -99,4 +99,4 @@ def f():
 
 ---
 
-[Функции](docs/scripting/functions.md)      [Области видимости](docs/scripting/scopes.md)
+[Функции](docs/scripting/functions.md)      [Области видимости имен](docs/scripting/scopes.md)

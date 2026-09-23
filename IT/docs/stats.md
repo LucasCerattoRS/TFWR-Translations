@@ -6,4 +6,4 @@ I tuoi record personali per risorsa sono: {{itemblock stats_best}}
 
 ---
 
-[Classifiche](docs/unlocks/leaderboard.md)      [Tempi](docs/unlocks/timing.md)      [Simulazione](docs/unlocks/simulation.md)
+[Classifica](docs/unlocks/leaderboard.md)      [Tempi](docs/unlocks/timing.md)      [Simulazione](docs/unlocks/simulation.md)

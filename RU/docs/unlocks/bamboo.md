@@ -1,4 +1,4 @@
-[<- Рис](docs/unlocks/rice.md) <right>[Отладка с помощью блоков ->](docs/unlocks/debug_place.md)
+[<- Рис](docs/unlocks/rice.md) <right>[Цветные блоки ->](docs/unlocks/debug_place.md)
 <right>[Пирамиды ->](docs/unlocks/pyramid.md)
 ---
 # Бамбук

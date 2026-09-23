@@ -4,7 +4,6 @@
 @cancel = キャンセル
 @popup_warning_exit_game = 終了する前にセーブしますか？
 @popup_warning_load_game = ロードする前にセーブしますか？
-@save = セーブ
 @don't save = セーブしない
 @popup_warning_corrupted_save = {0} のロード中に問題が発生したようです。詳細については、バックアップに関するセクションを確認してください。
 @popup_warning_failed_read_save = {0} のセーブファイルの読み込みに失敗しました。ファイルにアクセスしている他のすべてのプログラムを閉じて、もう一度試してください。

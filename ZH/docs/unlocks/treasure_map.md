@@ -28,6 +28,6 @@ for letter in path:
 
 ---
 
-[统计](docs/stats.md)      [For 循环](docs/scripting/for.md)      [元组](docs/scripting/tuples.md)      [地下感官](docs/unlocks/underground_senses.md)
+[统计数据](docs/stats.md)      [For 循环](docs/scripting/for.md)      [元组](docs/scripting/tuples.md)      [地下感官](docs/unlocks/underground_senses.md)
 
 [harvest()](functions/harvest)      [move()](functions/move)      [dig()](functions/dig)      [measure()](functions/measure)

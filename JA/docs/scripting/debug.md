@@ -1,4 +1,4 @@
-[<- 植え付け](docs/unlocks/plant.md) <right>[デバッグ 2 ->](docs/unlocks/debug2.md)
+[<- 植える](docs/unlocks/plant.md) <right>[デバッグ 2 ->](docs/unlocks/debug2.md)
 <right>[タイミング ->](docs/unlocks/timing.md)
 ---
 # デバッグ
@@ -94,6 +94,6 @@ print(get_pos_x(), get_pos_y())
 
 ---
 
-[出力](docs/output.md)      [コメント](docs/scripting/comments.md)      [デバッグ 2](docs/unlocks/debug2.md)      [デバッグ用のブロック配置](docs/unlocks/debug_place.md)      [シミュレーション](docs/unlocks/simulation.md)
+[出力](docs/output.md)      [コメント](docs/scripting/comments.md)      [デバッグ 2](docs/unlocks/debug2.md)      [カラフルなブロック](docs/unlocks/debug_place.md)      [シミュレーション](docs/unlocks/simulation.md)
 
 [print()](functions/print)      [quick_print()](functions/quick_print)

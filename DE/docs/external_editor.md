@@ -31,4 +31,4 @@ Das war's! Jetzt kannst du deinen Code in einem professionellen Code-Editor schr
 
 ---
 
-[Erstes Programm](docs/first_program.md)      [Backups laden](docs/backup.md)
+[Erstes Programm](docs/first_program.md)      [Laden von Backups](docs/backup.md)

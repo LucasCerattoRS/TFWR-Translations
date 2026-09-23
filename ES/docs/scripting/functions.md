@@ -1,4 +1,4 @@
-[<- Variables](docs/scripting/variables.md) <right>[Importar ->](docs/scripting/import.md)
+[<- Variables](docs/scripting/variables.md) <right>[Import ->](docs/scripting/import.md)
 ---
 # Funciones
 Usa la palabra clave `def` para definir una nueva función:
@@ -256,4 +256,4 @@ f(use_item, Items.Fertilizer)
 
 ---
 
-[Variables](docs/scripting/variables.md)      [Ámbitos de nombres](docs/scripting/scopes.md)      [Tuplas](docs/scripting/tuples.md)      [Importar](docs/scripting/import.md)
+[Variables](docs/scripting/variables.md)      [Ámbitos de nombres](docs/scripting/scopes.md)      [Tuplas](docs/scripting/tuples.md)      [Import](docs/scripting/import.md)

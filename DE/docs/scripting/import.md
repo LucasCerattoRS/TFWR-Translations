@@ -100,4 +100,4 @@ Wenn jetzt jemand `b.f()` aufruft, erhält er einen Fehler, dass `x` im aktuelle
 
 ---
 
-[Funktionen](docs/scripting/functions.md)      [Geltungsbereiche](docs/scripting/scopes.md)
+[Funktionen](docs/scripting/functions.md)      [Namensbereiche (Scopes)](docs/scripting/scopes.md)

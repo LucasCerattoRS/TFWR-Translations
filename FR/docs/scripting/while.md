@@ -1,4 +1,4 @@
-[<- Premier programme](docs/first_program.md) <right>[Amélioration de la vitesse ->](docs/unlocks/speed.md)
+[<- Premier programme](docs/first_program.md) <right>[Amélioration de Vitesse ->](docs/unlocks/speed.md)
 ---
 # Boucle While
 Tu as débloqué la boucle `while` et les valeurs `True` et `False`. La boucle `while` continue d'exécuter le corps de la boucle tant que la condition est `True`.

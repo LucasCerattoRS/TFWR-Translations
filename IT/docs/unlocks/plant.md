@@ -40,6 +40,6 @@ Sembra che coltivare contemporaneamente più tipi di piante nella fattoria possa
 
 ---
 
-[Statistiche](docs/stats.md)      [If](docs/scripting/if.md)      [Sensi](docs/unlocks/senses.md)      [Policoltura](docs/unlocks/polyculture.md)
+[Statistiche](docs/stats.md)      [If](docs/scripting/if.md)      [Sensori](docs/unlocks/senses.md)      [Policoltura](docs/unlocks/polyculture.md)
 
 [harvest()](functions/harvest)      [plant()](functions/plant)

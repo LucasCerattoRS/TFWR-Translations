@@ -1,4 +1,4 @@
-[<- Expandir 1](docs/unlocks/expand_1.md) <right>[Sentidos subterráneos ->](docs/unlocks/underground_senses.md)
+[<- Expansión 1](docs/unlocks/expand_1.md) <right>[Sentidos subterráneos ->](docs/unlocks/underground_senses.md)
 <right>[Arroz ->](docs/unlocks/rice.md)
 <right>[Carbón ->](docs/unlocks/coal.md)
 ---

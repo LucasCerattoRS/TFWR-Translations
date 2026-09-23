@@ -1,4 +1,4 @@
-[<- Agrandir 1](docs/unlocks/expand_1.md)
+[<- Expansion 1](docs/unlocks/expand_1.md)
 ---
 # Expansion 2
 Ta ferme s'est encore agrandie ! Maintenant, les cases ne sont plus en une belle rangée, tu dois donc trouver un moyen de parcourir une grille carrée.

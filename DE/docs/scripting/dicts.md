@@ -158,6 +158,6 @@ Siehe auch [Sets](docs/scripting/sets.md)
 
 ---
 
-[Listen](docs/scripting/lists.md)      [Mengen](docs/scripting/sets.md)      [Tupel](docs/scripting/tuples.md)      [Kosten](docs/unlocks/costs.md)
+[Listen](docs/scripting/lists.md)      [Sets](docs/scripting/sets.md)      [Tupel](docs/scripting/tuples.md)      [Kosten](docs/unlocks/costs.md)
 
 [len()](functions/len)

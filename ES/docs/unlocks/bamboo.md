@@ -1,4 +1,4 @@
-[<- Arroz](docs/unlocks/rice.md) <right>[Colocar bloques para depurar ->](docs/unlocks/debug_place.md)
+[<- Arroz](docs/unlocks/rice.md) <right>[Bloques de colores ->](docs/unlocks/debug_place.md)
 <right>[Pirámides ->](docs/unlocks/pyramid.md)
 ---
 # Bambú

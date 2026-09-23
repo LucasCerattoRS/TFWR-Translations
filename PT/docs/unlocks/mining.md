@@ -1,4 +1,4 @@
-[<- Expandir 1](docs/unlocks/expand_1.md) <right>[Sentidos Subterrâneos ->](docs/unlocks/underground_senses.md)
+[<- Expansão 1](docs/unlocks/expand_1.md) <right>[Sentidos Subterrâneos ->](docs/unlocks/underground_senses.md)
 <right>[Arroz ->](docs/unlocks/rice.md)
 <right>[Carvão ->](docs/unlocks/coal.md)
 ---
@@ -72,4 +72,3 @@ Quando um bloco desmorona, todos os blocos acima dele também são removidos. Vo
 [Sentidos Subterrâneos](docs/unlocks/underground_senses.md)      [Loop While](docs/scripting/while.md)
 
 [move()](functions/move)      [dig()](functions/dig)
-

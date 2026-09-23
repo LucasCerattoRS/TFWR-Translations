@@ -1,4 +1,4 @@
-[<- Riz](docs/unlocks/rice.md) <right>[Placer des blocs pour déboguer ->](docs/unlocks/debug_place.md)
+[<- Riz](docs/unlocks/rice.md) <right>[Blocs colorés ->](docs/unlocks/debug_place.md)
 <right>[Pyramides ->](docs/unlocks/pyramid.md)
 ---
 # Bambou

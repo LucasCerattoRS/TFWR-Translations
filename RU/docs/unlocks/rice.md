@@ -1,6 +1,6 @@
 [<- Горное дело](docs/unlocks/mining.md) <right>[Бамбук ->](docs/unlocks/bamboo.md)
 <right>[Окаменевшие тыквы ->](docs/unlocks/petrified_pumpkins.md)
-<right>[Особые грунты ->](docs/unlocks/special_soils.md)
+<right>[Перлит и суглинок ->](docs/unlocks/special_soils.md)
 ---
 # Рис
 
