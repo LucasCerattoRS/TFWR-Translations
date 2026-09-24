@@ -42,6 +42,22 @@ Calling `measure()` on a soot block returns the number of mines in the eight nei
 
 The first dig into the dynamite stratum is always a dud. Every mined block of dynamite yields a bit of dynamite. When the dynamite stratum is destroyed, either through successfully digging up all the duds or by inadvertently digging into live dynamite, you also gain dynamite equal to the number of fully uncovered live blocks, squared.
 
+If dig into live dynamite, the two strata explode. You can check for this using `get_ground_type()` after digging into `Grounds.Dynamite`. If the ground is not `Grounds.Soot`, you failed solving the puzzle. On the other hand, if the last non-live dynamite block is dug up, all dynamite blocks disappear and you earn the max amount of yield for the puzzle. The soot stratum remains but `measure()` returns `None`, indicating the puzzle was solved successfully.
+
+`# Dig into a dynamite block and check the puzzle state
+def dig_dynamite():
+    dig()
+    if get_ground_type() != Grounds.Soot:
+        # Dug into live dynamite, puzzle failed
+        return False
+    elif measure() == None:
+        # Dug up final dud block, puzzle solved
+        return True
+    else:
+        # Got a count from measuring, puzzle still ongoing
+        return None
+`
+
 The number of live mines in the dynamite stratum and therefore the difficulty of finding them increases with depth.
 
 Collected dynamite can be used with `use_item(Items.Dynamite)` and explodes immediately below the drone.

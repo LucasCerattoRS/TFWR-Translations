@@ -4,6 +4,34 @@
 The drone can see now! 
 
 The functions `get_pos_x()` and `get_pos_y()` return the drone's current x- and y-coordinates. At the starting position, both are `0`. The x-coordinate increases by `1` for each tile toward `East`, and the y-coordinate increases by `1` for each tile toward `North`.
+{{codeexample 
+{
+    "camera_position": {"x": -1, "y": 1.8, "z": 4},
+    "show_image": true,
+    "image_size": {"x": 800, "y": 300},
+    "show_code": true,
+    "show_inventory": true,
+    "show_output": true,
+    "collapsing": true,
+    "autoplay": false,
+    "items": [],
+    "world_size": {"x": 2, "y": 2},
+    "execution_speed": 1,
+    "digging_speed": 1,
+    "action_ticks": 200,
+    "operation_ticks": 100,
+    "seed": 1,
+    "exclude_unlocks": ["watering", "fertilizer"],
+    "starting_chunk": 0,
+    "dlc_enabled": false
+}
+#SETUP
+move(East)
+#CODE
+print("x =", get_pos_x(), "y =", get_pos_y())
+if get_pos_x() == 1 and get_pos_y() == 0:
+    do_a_flip()
+}}
 
 `num_items(item)` returns how many of an item you have.
 {{codeexample 
@@ -21,7 +49,7 @@ The functions `get_pos_x()` and `get_pos_y()` return the drone's current x- and 
     "execution_speed": 1,
     "digging_speed": 1,
     "action_ticks": 200,
-    "operation_ticks": 1,
+    "operation_ticks": 100,
     "seed": 1,
     "exclude_unlocks": ["watering", "fertilizer"],
     "starting_chunk": 0,
@@ -35,7 +63,7 @@ print(num_items(Items.Hay))
 `get_entity_type()` and `get_ground_type()` return the type of entity or ground that is under the drone.
 {{codeexample 
 {
-    "camera_position": {"x": 0, "y": 1.5, "z": 4},
+    "camera_position": {"x": 0, "y": 1.5, "z": 6},
     "show_image": true,
     "image_size": {"x": 800, "y": 300},
     "show_code": true,
@@ -48,7 +76,7 @@ print(num_items(Items.Hay))
     "execution_speed": 1,
     "digging_speed": 1,
     "action_ticks": 200,
-    "operation_ticks": 1,
+    "operation_ticks": 100,
     "seed": 1,
     "exclude_unlocks": ["watering", "fertilizer"],
     "starting_chunk": 0,
@@ -62,7 +90,7 @@ if get_entity_type() == Entities.Bush:
 	do_a_flip()
 
 print(get_ground_type())
-if get_entity_type() != Grounds.Soil:
+if get_ground_type() != Grounds.Soil:
 	do_a_flip()
 }}
 

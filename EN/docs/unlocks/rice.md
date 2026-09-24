@@ -8,7 +8,7 @@ Underneath the surface you have noticed a thin sheet of clay. As it turns out, t
 
 Rice will dry out the clay it was planted on. You can only use each clay block once. Luckily, the sheet is a few blocks thick. And of course, you can always just `clear()` the world to get the clay sheet back.
 
-You might find the following code useful as a starting point.
+You might find the following code useful to dig down until you find clay.
 
 {{codeexample 
 {

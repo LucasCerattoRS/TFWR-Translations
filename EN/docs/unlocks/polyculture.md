@@ -43,7 +43,7 @@ A plant's companion preference can be `Entities.Grass`, `Entities.Bush`, `Entiti
 
 If there is no plant with a companion preference under the drone, `get_companion()` returns `None`.
 
-When polyculture is first unlocked, the yield multiplier is `5`. It doubles every time you upgrade it.
+Before polyculture is first unlocked, the yield multiplier is `5`. It doubles every time you upgrade it.
 
 ---
 
