@@ -13,7 +13,7 @@ Operadores booleanos: `not, and, or`
 Observação: todos os números do jogo são números de ponto flutuante, portanto todos os operadores aritméticos operam com ponto flutuante.
 `//` é definido para arredondar o número para baixo após a divisão.
 
-Para usar operadores de atribuição, você precisa desbloquear "Variáveis".
+Para usar operadores de atribuição, você precisa desbloquear "Variables".
 
 ## Introdução
 
