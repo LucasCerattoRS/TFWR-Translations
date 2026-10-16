@@ -67,7 +67,12 @@ CZ/Strings/object_tooltips.txt @runtime_ground_tooltip: placeholder missing {{it
 CZ/Strings/options.txt: missing key @Custom
 CZ/Strings/options.txt: missing key @Default
 CZ/Strings/options.txt: missing key @Light
+CZ/Strings/options.txt: missing key @Lunar New Year
 CZ/Strings/options.txt: missing key @Night
+CZ/Strings/options.txt: missing key @allow locked features
+CZ/Strings/options.txt: missing key @autosave progress
+CZ/Strings/options.txt: missing key @avalanche particles
+CZ/Strings/options.txt: missing key @color theme
 CZ/Strings/options.txt: missing key @language
 CZ/Strings/other.txt: missing key @latest_news
 CZ/Strings/other.txt: missing key @missing_unlock_page
@@ -241,6 +246,7 @@ TW/Strings/object_tooltips.txt: missing key @runtime_ground_stability_tooltip
 TW/Strings/object_tooltips.txt: missing key @runtime_ground_water_tooltip
 TW/Strings/object_tooltips.txt: missing key @runtime_mushroom_tooltip
 TW/Strings/object_tooltips.txt @runtime_ground_tooltip: placeholder missing {{itemblock}}; unexpected {0}
+TW/Strings/options.txt: missing key @avalanche particles
 TW/Strings/other.txt: missing key @latest_news
 TW/Strings/other.txt: missing key @missing_unlock_page
 TW/Strings/other.txt: unexpected key @table_of_contents_section_builtins
@@ -402,6 +408,7 @@ UA/Strings/object_tooltips.txt: missing key @runtime_ground_stability_tooltip
 UA/Strings/object_tooltips.txt: missing key @runtime_ground_water_tooltip
 UA/Strings/object_tooltips.txt: missing key @runtime_mushroom_tooltip
 UA/Strings/object_tooltips.txt @runtime_ground_tooltip: placeholder missing {{itemblock}}; unexpected {0}
+UA/Strings/options.txt: missing key @avalanche particles
 UA/Strings/other.txt: missing key @latest_news
 UA/Strings/other.txt: missing key @missing_unlock_page
 UA/Strings/other.txt: unexpected key @table_of_contents_section_builtins

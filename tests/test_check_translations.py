@@ -17,6 +17,11 @@ class CheckTranslations(unittest.TestCase):
         errs = ct.check(FIX / "bad_key")
         self.assertEqual(errs, ["XX/Strings/a.txt: missing key @bye"])
 
+    def test_lost_key_with_space_fails(self):
+        # o jogo usa chaves com espaço (ex.: "@screen mode" em options.txt)
+        errs = ct.check(FIX / "bad_spaced_key")
+        self.assertEqual(errs, ["XX/Strings/a.txt: missing key @screen mode"])
+
     def test_lost_placeholder_fails(self):
         errs = ct.check(FIX / "bad_placeholder")
         self.assertEqual(len(errs), 1)
