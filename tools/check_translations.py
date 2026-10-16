@@ -17,7 +17,7 @@ from collections import Counter
 from pathlib import Path
 
 REF = "EN"
-KEY_RE = re.compile(r"^@([^\s=]+)[ \t]*=", re.M)
+KEY_RE = re.compile(r"^@([^=\n]*?)[ \t]*=", re.M)  # keys may contain spaces ("@screen mode")
 # {{ ... }} (possibly nested) or {digits} / {}
 PH_RE = re.compile(r"\{\{.*?\}\}|\{\d*\}", re.S)
 

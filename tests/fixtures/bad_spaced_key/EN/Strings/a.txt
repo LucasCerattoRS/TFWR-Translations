@@ -1,0 +1,2 @@
+@play = Start
+@screen mode = Screen Mode
