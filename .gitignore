@@ -1,2 +1,4 @@
 *.meta
 /.vs
+__pycache__/
+*.pyc
