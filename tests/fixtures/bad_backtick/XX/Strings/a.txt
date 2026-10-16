@@ -1,0 +1,3 @@
+@hello = Olá {0}, you have {1} `items
+@bye = Tchau
+@tip = See {{@trees}}
