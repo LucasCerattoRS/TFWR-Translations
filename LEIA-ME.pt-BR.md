@@ -27,6 +27,14 @@ Mandar correções da tradução pt-BR para o upstream. O histórico até aqui:
   `{{ ... }}` quebrado, nenhuma crase desbalanceada em `PT/Strings/`.
   (`languages.txt` só existe em EN, de propósito.)
 
+## Validação das traduções
+
+`python3 tools/check_translations.py --baseline tools/known_issues.txt` compara cada idioma com
+`EN` (chaves `@`, placeholders `{0}`/`{}`/`{{...}}`, crases) e roda no CI
+(`.github/workflows/check-translations.yml`). Testes com fixtures sintéticas: `python3 -m unittest discover -s tests`.
+`tools/known_issues.txt` guarda a dívida existente (CZ/TW/UA desatualizados, uma crase em DE);
+só problema novo falha. Nenhum texto traduzido foi alterado.
+
 ## Como usar
 
 Não há código para rodar. Para ver uma correção dentro do jogo, substitua a pasta `Languages`
