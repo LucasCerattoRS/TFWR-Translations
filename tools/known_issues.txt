@@ -1,0 +1,502 @@
+CZ/Strings/button_tooltips.txt: missing key @button_tooltip_docs_back
+CZ/Strings/button_tooltips.txt: missing key @button_tooltip_docs_home
+CZ/Strings/button_tooltips.txt: missing key @option_tooltip_allow_locked_features
+CZ/Strings/button_tooltips.txt: missing key @option_tooltip_autosave_progress
+CZ/Strings/button_tooltips.txt: missing key @option_tooltip_avalanche_particles
+CZ/Strings/button_tooltips.txt: missing key @option_tooltip_color_theme
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_can_push
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_dig
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_get_hardness
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_get_pos_z
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_get_stability
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_jump
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_place
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_prospect_iron
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_prospect_quartz
+CZ/Strings/code_tooltips.txt: missing key @code_tooltip_push
+CZ/Strings/code_tooltips.txt @code_tooltip_wait_for: unbalanced backticks
+CZ/Strings/execute_errors.txt: missing key @error_can_only_jump_once
+CZ/Strings/execute_errors.txt: missing key @error_dynamite_hat_already_used
+CZ/Strings/execute_errors.txt: missing key @error_non_jumpable_unlock
+CZ/Strings/execute_errors.txt: missing key @error_only_first_drone_can_jump
+CZ/Strings/execute_errors.txt @error_wrong_number_args: placeholder missing {2}
+CZ/Strings/hat_tooltips.txt: missing key @hat_descr_dynamite_hat
+CZ/Strings/hat_tooltips.txt: missing key @hat_descr_golden_cactus_hat
+CZ/Strings/hat_tooltips.txt: missing key @hat_descr_golden_pumpkin_hat
+CZ/Strings/hat_tooltips.txt: missing key @hat_descr_golden_sunflower_hat
+CZ/Strings/hat_tooltips.txt: missing key @hat_descr_the_farmers_remains
+CZ/Strings/item_tooltips.txt: missing key @item_descr_bamboo
+CZ/Strings/item_tooltips.txt: missing key @item_descr_block
+CZ/Strings/item_tooltips.txt: missing key @item_descr_coal
+CZ/Strings/item_tooltips.txt: missing key @item_descr_dynamite
+CZ/Strings/item_tooltips.txt: missing key @item_descr_iron
+CZ/Strings/item_tooltips.txt: missing key @item_descr_mushroom
+CZ/Strings/item_tooltips.txt: missing key @item_descr_quartz
+CZ/Strings/item_tooltips.txt: missing key @item_descr_rice
+CZ/Strings/object_tooltips.txt: missing key @object_descr_bamboo
+CZ/Strings/object_tooltips.txt: missing key @object_descr_basalt
+CZ/Strings/object_tooltips.txt: missing key @object_descr_bedrock
+CZ/Strings/object_tooltips.txt: missing key @object_descr_blue_block
+CZ/Strings/object_tooltips.txt: missing key @object_descr_clay
+CZ/Strings/object_tooltips.txt: missing key @object_descr_coal
+CZ/Strings/object_tooltips.txt: missing key @object_descr_dirt
+CZ/Strings/object_tooltips.txt: missing key @object_descr_dynamite
+CZ/Strings/object_tooltips.txt: missing key @object_descr_dynamite_ground
+CZ/Strings/object_tooltips.txt: missing key @object_descr_green_block
+CZ/Strings/object_tooltips.txt: missing key @object_descr_iron
+CZ/Strings/object_tooltips.txt: missing key @object_descr_limestone
+CZ/Strings/object_tooltips.txt: missing key @object_descr_loam
+CZ/Strings/object_tooltips.txt: missing key @object_descr_mushroom
+CZ/Strings/object_tooltips.txt: missing key @object_descr_perlite
+CZ/Strings/object_tooltips.txt: missing key @object_descr_petrified_pumpkin
+CZ/Strings/object_tooltips.txt: missing key @object_descr_quartz
+CZ/Strings/object_tooltips.txt: missing key @object_descr_red_block
+CZ/Strings/object_tooltips.txt: missing key @object_descr_rice
+CZ/Strings/object_tooltips.txt: missing key @object_descr_rock
+CZ/Strings/object_tooltips.txt: missing key @object_descr_sand
+CZ/Strings/object_tooltips.txt: missing key @object_descr_soot
+CZ/Strings/object_tooltips.txt: missing key @object_descr_treasure_goal_ground
+CZ/Strings/object_tooltips.txt: missing key @object_descr_treasure_map_ground
+CZ/Strings/object_tooltips.txt: missing key @object_descr_treasure_path_ground
+CZ/Strings/object_tooltips.txt: missing key @object_descr_underground_treasure
+CZ/Strings/object_tooltips.txt: missing key @runtime_ground_hardness_tooltip
+CZ/Strings/object_tooltips.txt: missing key @runtime_ground_stability_tooltip
+CZ/Strings/object_tooltips.txt: missing key @runtime_ground_water_tooltip
+CZ/Strings/object_tooltips.txt: missing key @runtime_mushroom_tooltip
+CZ/Strings/object_tooltips.txt @runtime_ground_tooltip: placeholder missing {{itemblock}}; unexpected {0}
+CZ/Strings/options.txt: missing key @Custom
+CZ/Strings/options.txt: missing key @Default
+CZ/Strings/options.txt: missing key @Light
+CZ/Strings/options.txt: missing key @Night
+CZ/Strings/options.txt: missing key @language
+CZ/Strings/other.txt: missing key @latest_news
+CZ/Strings/other.txt: missing key @missing_unlock_page
+CZ/Strings/other.txt: missing key @right_click_for_more_info
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_builtins
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_entities
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_general_info
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_grounds
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_items
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_programming
+CZ/Strings/other.txt: unexpected key @table_of_contents_section_unlocks
+CZ/Strings/parse_errors.txt: missing key @error_compared_entity_with_number
+CZ/Strings/parse_errors.txt: missing key @error_compared_item_with_number
+CZ/Strings/parse_errors.txt: missing key @error_compared_unlock_with_number
+CZ/Strings/parse_errors.txt: missing key @error_entity_condition
+CZ/Strings/parse_errors.txt: missing key @error_ground_condition
+CZ/Strings/parse_errors.txt: missing key @error_invalid_number_format
+CZ/Strings/parse_errors.txt: missing key @error_item_condition
+CZ/Strings/parse_errors.txt: missing key @error_nonsensical_or
+CZ/Strings/parse_errors.txt: missing key @error_unlock_condition
+CZ/Strings/popup_warnings.txt: missing key @popup_warning_unofficial_language
+CZ/Strings/unlock_tooltips.txt: missing key @bamboo
+CZ/Strings/unlock_tooltips.txt: missing key @coal
+CZ/Strings/unlock_tooltips.txt: missing key @debug_place
+CZ/Strings/unlock_tooltips.txt: missing key @drill
+CZ/Strings/unlock_tooltips.txt: missing key @dynamite
+CZ/Strings/unlock_tooltips.txt: missing key @expand_2
+CZ/Strings/unlock_tooltips.txt: missing key @iron
+CZ/Strings/unlock_tooltips.txt: missing key @jump
+CZ/Strings/unlock_tooltips.txt: missing key @mining
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_bamboo
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_coal
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_drill
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_dynamite
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_iron
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_mushrooms
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_ore_boost
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_petrified_pumpkins
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_pyramid
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_quartz
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_rice
+CZ/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_treasure_map
+CZ/Strings/unlock_tooltips.txt: missing key @mushrooms
+CZ/Strings/unlock_tooltips.txt: missing key @ore_boost
+CZ/Strings/unlock_tooltips.txt: missing key @petrified_pumpkins
+CZ/Strings/unlock_tooltips.txt: missing key @prospecting
+CZ/Strings/unlock_tooltips.txt: missing key @pyramid
+CZ/Strings/unlock_tooltips.txt: missing key @quartz
+CZ/Strings/unlock_tooltips.txt: missing key @rice
+CZ/Strings/unlock_tooltips.txt: missing key @special_soils
+CZ/Strings/unlock_tooltips.txt: missing key @treasure_map
+CZ/Strings/unlock_tooltips.txt: missing key @underground_senses
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_bamboo
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_coal
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_debug_place
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_drill
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_dynamite
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_iron
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_jump
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_mining
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_mushrooms
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_ore_boost
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_petrified_pumpkins
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_prospecting
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_pyramid
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_quartz
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_rice
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_special_soils
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_treasure_map
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_descr_underground_senses
+CZ/Strings/unlock_tooltips.txt: missing key @unlock_tooltip_template_additional_requirement
+CZ/Strings/warnings.txt: missing key @warning_cannot_place_ground
+CZ/Strings/warnings.txt: missing key @warning_not_enough_coal
+CZ/Strings/warnings.txt: missing key @warning_not_enough_iron
+CZ/docs/first_program.md: placeholder missing {{codeexample}}
+CZ/docs/home.md: placeholder missing {{@auto_unlock}}, {{@bamboo}}, {{@cactus}}, {{@carrots}}, {{@coal}}, {{@costs}}, {{@debug_2}}, {{@debug_place}}, {{@debug}}, {{@dictionaries}}, {{@dinosaurs}}, {{@dynamite}}, {{@expand_2}}, {{@expand}}, {{@fertilizer}}, {{@functions}}, {{@grass}}, {{@hats}}, {{@import}}, {{@iron}}, {{@leaderboard}}, {{@lists}}, {{@loops}}, {{@mazes}}, {{@megafarm}}, {{@mining}}, {{@mushrooms}}, {{@operators}}, {{@ore_boost}}, {{@petrified_pumpkins}}, {{@plant}}, {{@polyculture}}, {{@prospecting}}, {{@pumpkins}}, {{@pyramid}}, {{@quartz}}, {{@rice}}, {{@senses}}, {{@simulation}}, {{@special_soils}}, {{@speed}}, {{@sunflowers}}, {{@the_farmers_remains}}, {{@timing}}, {{@top_hat}}, {{@treasure_map}}, {{@trees}}, {{@underground_senses}}, {{@utilities}}, {{@variables}}, {{@watering}}; unexpected {{@table_of_contents_section_builtins}}, {{@table_of_contents_section_entities}}, {{@table_of_contents_section_general_info}}, {{@table_of_contents_section_grounds}}, {{@table_of_contents_section_items}}, {{@table_of_contents_section_programming}}, {{@table_of_contents_section_unlocks}}, {{builtinsTOC}}, {{entitiesTOC}}, {{groundsTOC}}, {{itemsTOC}}, {{unlocksTOC}}
+CZ/docs/scripting/break.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/comments.md: placeholder missing {{codeexample}}
+CZ/docs/scripting/continue.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/debug.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/dicts.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/for.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/functions.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/if.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/lists.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/operators.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/scopes.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/sets.md: placeholder missing {{codeexample}}
+CZ/docs/scripting/tuples.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/variables.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/scripting/while.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/auto_unlock.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/cactus.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/carrots.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/costs.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/dinosaurs.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/expand_1.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/expand_2.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/fertilizer.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/hats.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/mazes.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/megafarm.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/plant.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/polyculture.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/pumpkins.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/senses.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/speed.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/sunflowers.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/timing.md: placeholder missing {{codeexample}}
+CZ/docs/unlocks/trees.md: placeholder missing {{codeexample}}, {{codeexample}}
+CZ/docs/unlocks/watering.md: placeholder missing {{codeexample}}
+DE/Strings/parse_errors.txt @error_nonsensical_or: unbalanced backticks
+TW/Strings/button_tooltips.txt: missing key @button_tooltip_docs_back
+TW/Strings/button_tooltips.txt: missing key @button_tooltip_docs_home
+TW/Strings/button_tooltips.txt: missing key @option_tooltip_avalanche_particles
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_can_push
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_dig
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_get_hardness
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_get_pos_z
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_get_stability
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_jump
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_place
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_prospect_iron
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_prospect_quartz
+TW/Strings/code_tooltips.txt: missing key @code_tooltip_push
+TW/Strings/execute_errors.txt: missing key @error_can_only_jump_once
+TW/Strings/execute_errors.txt: missing key @error_dynamite_hat_already_used
+TW/Strings/execute_errors.txt: missing key @error_non_jumpable_unlock
+TW/Strings/execute_errors.txt: missing key @error_only_first_drone_can_jump
+TW/Strings/hat_tooltips.txt: missing key @hat_descr_dynamite_hat
+TW/Strings/hat_tooltips.txt: missing key @hat_descr_golden_cactus_hat
+TW/Strings/hat_tooltips.txt: missing key @hat_descr_golden_pumpkin_hat
+TW/Strings/hat_tooltips.txt: missing key @hat_descr_golden_sunflower_hat
+TW/Strings/hat_tooltips.txt: missing key @hat_descr_the_farmers_remains
+TW/Strings/item_tooltips.txt: missing key @item_descr_bamboo
+TW/Strings/item_tooltips.txt: missing key @item_descr_block
+TW/Strings/item_tooltips.txt: missing key @item_descr_coal
+TW/Strings/item_tooltips.txt: missing key @item_descr_dynamite
+TW/Strings/item_tooltips.txt: missing key @item_descr_iron
+TW/Strings/item_tooltips.txt: missing key @item_descr_mushroom
+TW/Strings/item_tooltips.txt: missing key @item_descr_quartz
+TW/Strings/item_tooltips.txt: missing key @item_descr_rice
+TW/Strings/object_tooltips.txt: missing key @object_descr_bamboo
+TW/Strings/object_tooltips.txt: missing key @object_descr_basalt
+TW/Strings/object_tooltips.txt: missing key @object_descr_bedrock
+TW/Strings/object_tooltips.txt: missing key @object_descr_blue_block
+TW/Strings/object_tooltips.txt: missing key @object_descr_clay
+TW/Strings/object_tooltips.txt: missing key @object_descr_coal
+TW/Strings/object_tooltips.txt: missing key @object_descr_dirt
+TW/Strings/object_tooltips.txt: missing key @object_descr_dynamite
+TW/Strings/object_tooltips.txt: missing key @object_descr_dynamite_ground
+TW/Strings/object_tooltips.txt: missing key @object_descr_green_block
+TW/Strings/object_tooltips.txt: missing key @object_descr_iron
+TW/Strings/object_tooltips.txt: missing key @object_descr_limestone
+TW/Strings/object_tooltips.txt: missing key @object_descr_loam
+TW/Strings/object_tooltips.txt: missing key @object_descr_mushroom
+TW/Strings/object_tooltips.txt: missing key @object_descr_perlite
+TW/Strings/object_tooltips.txt: missing key @object_descr_petrified_pumpkin
+TW/Strings/object_tooltips.txt: missing key @object_descr_quartz
+TW/Strings/object_tooltips.txt: missing key @object_descr_red_block
+TW/Strings/object_tooltips.txt: missing key @object_descr_rice
+TW/Strings/object_tooltips.txt: missing key @object_descr_rock
+TW/Strings/object_tooltips.txt: missing key @object_descr_sand
+TW/Strings/object_tooltips.txt: missing key @object_descr_soot
+TW/Strings/object_tooltips.txt: missing key @object_descr_treasure_goal_ground
+TW/Strings/object_tooltips.txt: missing key @object_descr_treasure_map_ground
+TW/Strings/object_tooltips.txt: missing key @object_descr_treasure_path_ground
+TW/Strings/object_tooltips.txt: missing key @object_descr_underground_treasure
+TW/Strings/object_tooltips.txt: missing key @runtime_ground_hardness_tooltip
+TW/Strings/object_tooltips.txt: missing key @runtime_ground_stability_tooltip
+TW/Strings/object_tooltips.txt: missing key @runtime_ground_water_tooltip
+TW/Strings/object_tooltips.txt: missing key @runtime_mushroom_tooltip
+TW/Strings/object_tooltips.txt @runtime_ground_tooltip: placeholder missing {{itemblock}}; unexpected {0}
+TW/Strings/other.txt: missing key @latest_news
+TW/Strings/other.txt: missing key @missing_unlock_page
+TW/Strings/other.txt: unexpected key @table_of_contents_section_builtins
+TW/Strings/other.txt: unexpected key @table_of_contents_section_entities
+TW/Strings/other.txt: unexpected key @table_of_contents_section_general_info
+TW/Strings/other.txt: unexpected key @table_of_contents_section_grounds
+TW/Strings/other.txt: unexpected key @table_of_contents_section_items
+TW/Strings/other.txt: unexpected key @table_of_contents_section_programming
+TW/Strings/other.txt: unexpected key @table_of_contents_section_unlocks
+TW/Strings/unlock_tooltips.txt: missing key @bamboo
+TW/Strings/unlock_tooltips.txt: missing key @coal
+TW/Strings/unlock_tooltips.txt: missing key @debug_place
+TW/Strings/unlock_tooltips.txt: missing key @drill
+TW/Strings/unlock_tooltips.txt: missing key @dynamite
+TW/Strings/unlock_tooltips.txt: missing key @iron
+TW/Strings/unlock_tooltips.txt: missing key @jump
+TW/Strings/unlock_tooltips.txt: missing key @mining
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_bamboo
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_coal
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_drill
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_dynamite
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_iron
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_mushrooms
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_ore_boost
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_petrified_pumpkins
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_pyramid
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_quartz
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_rice
+TW/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_treasure_map
+TW/Strings/unlock_tooltips.txt: missing key @mushrooms
+TW/Strings/unlock_tooltips.txt: missing key @ore_boost
+TW/Strings/unlock_tooltips.txt: missing key @petrified_pumpkins
+TW/Strings/unlock_tooltips.txt: missing key @prospecting
+TW/Strings/unlock_tooltips.txt: missing key @pyramid
+TW/Strings/unlock_tooltips.txt: missing key @quartz
+TW/Strings/unlock_tooltips.txt: missing key @rice
+TW/Strings/unlock_tooltips.txt: missing key @special_soils
+TW/Strings/unlock_tooltips.txt: missing key @treasure_map
+TW/Strings/unlock_tooltips.txt: missing key @underground_senses
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_bamboo
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_coal
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_debug_place
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_drill
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_dynamite
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_iron
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_jump
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_mining
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_mushrooms
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_ore_boost
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_petrified_pumpkins
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_prospecting
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_pyramid
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_quartz
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_rice
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_special_soils
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_treasure_map
+TW/Strings/unlock_tooltips.txt: missing key @unlock_descr_underground_senses
+TW/Strings/unlock_tooltips.txt: missing key @unlock_tooltip_template_additional_requirement
+TW/Strings/warnings.txt: missing key @warning_cannot_place_ground
+TW/Strings/warnings.txt: missing key @warning_not_enough_coal
+TW/Strings/warnings.txt: missing key @warning_not_enough_iron
+TW/docs/first_program.md: placeholder missing {{codeexample}}
+TW/docs/home.md: placeholder missing {{@auto_unlock}}, {{@bamboo}}, {{@cactus}}, {{@carrots}}, {{@coal}}, {{@costs}}, {{@debug_2}}, {{@debug_place}}, {{@debug}}, {{@dictionaries}}, {{@dinosaurs}}, {{@dynamite}}, {{@expand_2}}, {{@expand}}, {{@fertilizer}}, {{@functions}}, {{@grass}}, {{@hats}}, {{@import}}, {{@iron}}, {{@leaderboard}}, {{@lists}}, {{@loops}}, {{@mazes}}, {{@megafarm}}, {{@mining}}, {{@mushrooms}}, {{@operators}}, {{@ore_boost}}, {{@petrified_pumpkins}}, {{@plant}}, {{@polyculture}}, {{@prospecting}}, {{@pumpkins}}, {{@pyramid}}, {{@quartz}}, {{@rice}}, {{@senses}}, {{@simulation}}, {{@special_soils}}, {{@speed}}, {{@sunflowers}}, {{@the_farmers_remains}}, {{@timing}}, {{@top_hat}}, {{@treasure_map}}, {{@trees}}, {{@underground_senses}}, {{@utilities}}, {{@variables}}, {{@watering}}; unexpected {{@table_of_contents_section_builtins}}, {{@table_of_contents_section_entities}}, {{@table_of_contents_section_general_info}}, {{@table_of_contents_section_grounds}}, {{@table_of_contents_section_items}}, {{@table_of_contents_section_programming}}, {{@table_of_contents_section_unlocks}}, {{builtinsTOC}}, {{entitiesTOC}}, {{groundsTOC}}, {{itemsTOC}}, {{unlocksTOC}}
+TW/docs/scripting/break.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/comments.md: placeholder missing {{codeexample}}
+TW/docs/scripting/continue.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/continue.md: unbalanced backticks
+TW/docs/scripting/debug.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/dicts.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/for.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/scripting/functions.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/if.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/lists.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/operators.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/scopes.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/sets.md: placeholder missing {{codeexample}}
+TW/docs/scripting/tuples.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/scripting/variables.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/scripting/while.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/auto_unlock.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/cactus.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/carrots.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/costs.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/dinosaurs.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/expand_1.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/expand_2.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/fertilizer.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/hats.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/mazes.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/megafarm.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/plant.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/polyculture.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/pumpkins.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/senses.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/speed.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/sunflowers.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/timing.md: placeholder missing {{codeexample}}
+TW/docs/unlocks/timing.md: unbalanced backticks
+TW/docs/unlocks/trees.md: placeholder missing {{codeexample}}, {{codeexample}}
+TW/docs/unlocks/watering.md: placeholder missing {{codeexample}}
+UA/Strings/button_tooltips.txt: missing key @button_tooltip_docs_back
+UA/Strings/button_tooltips.txt: missing key @button_tooltip_docs_home
+UA/Strings/button_tooltips.txt: missing key @option_tooltip_avalanche_particles
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_can_push
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_dig
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_get_hardness
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_get_pos_z
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_get_stability
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_jump
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_place
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_prospect_iron
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_prospect_quartz
+UA/Strings/code_tooltips.txt: missing key @code_tooltip_push
+UA/Strings/execute_errors.txt: missing key @error_can_only_jump_once
+UA/Strings/execute_errors.txt: missing key @error_dynamite_hat_already_used
+UA/Strings/execute_errors.txt: missing key @error_non_jumpable_unlock
+UA/Strings/execute_errors.txt: missing key @error_only_first_drone_can_jump
+UA/Strings/hat_tooltips.txt: missing key @hat_descr_dynamite_hat
+UA/Strings/hat_tooltips.txt: missing key @hat_descr_golden_cactus_hat
+UA/Strings/hat_tooltips.txt: missing key @hat_descr_golden_pumpkin_hat
+UA/Strings/hat_tooltips.txt: missing key @hat_descr_golden_sunflower_hat
+UA/Strings/hat_tooltips.txt: missing key @hat_descr_the_farmers_remains
+UA/Strings/item_tooltips.txt: missing key @item_descr_bamboo
+UA/Strings/item_tooltips.txt: missing key @item_descr_block
+UA/Strings/item_tooltips.txt: missing key @item_descr_coal
+UA/Strings/item_tooltips.txt: missing key @item_descr_dynamite
+UA/Strings/item_tooltips.txt: missing key @item_descr_iron
+UA/Strings/item_tooltips.txt: missing key @item_descr_mushroom
+UA/Strings/item_tooltips.txt: missing key @item_descr_quartz
+UA/Strings/item_tooltips.txt: missing key @item_descr_rice
+UA/Strings/object_tooltips.txt: missing key @object_descr_bamboo
+UA/Strings/object_tooltips.txt: missing key @object_descr_basalt
+UA/Strings/object_tooltips.txt: missing key @object_descr_bedrock
+UA/Strings/object_tooltips.txt: missing key @object_descr_blue_block
+UA/Strings/object_tooltips.txt: missing key @object_descr_clay
+UA/Strings/object_tooltips.txt: missing key @object_descr_coal
+UA/Strings/object_tooltips.txt: missing key @object_descr_dirt
+UA/Strings/object_tooltips.txt: missing key @object_descr_dynamite
+UA/Strings/object_tooltips.txt: missing key @object_descr_dynamite_ground
+UA/Strings/object_tooltips.txt: missing key @object_descr_green_block
+UA/Strings/object_tooltips.txt: missing key @object_descr_iron
+UA/Strings/object_tooltips.txt: missing key @object_descr_limestone
+UA/Strings/object_tooltips.txt: missing key @object_descr_loam
+UA/Strings/object_tooltips.txt: missing key @object_descr_mushroom
+UA/Strings/object_tooltips.txt: missing key @object_descr_perlite
+UA/Strings/object_tooltips.txt: missing key @object_descr_petrified_pumpkin
+UA/Strings/object_tooltips.txt: missing key @object_descr_quartz
+UA/Strings/object_tooltips.txt: missing key @object_descr_red_block
+UA/Strings/object_tooltips.txt: missing key @object_descr_rice
+UA/Strings/object_tooltips.txt: missing key @object_descr_rock
+UA/Strings/object_tooltips.txt: missing key @object_descr_sand
+UA/Strings/object_tooltips.txt: missing key @object_descr_soot
+UA/Strings/object_tooltips.txt: missing key @object_descr_treasure_goal_ground
+UA/Strings/object_tooltips.txt: missing key @object_descr_treasure_map_ground
+UA/Strings/object_tooltips.txt: missing key @object_descr_treasure_path_ground
+UA/Strings/object_tooltips.txt: missing key @object_descr_underground_treasure
+UA/Strings/object_tooltips.txt: missing key @runtime_ground_hardness_tooltip
+UA/Strings/object_tooltips.txt: missing key @runtime_ground_stability_tooltip
+UA/Strings/object_tooltips.txt: missing key @runtime_ground_water_tooltip
+UA/Strings/object_tooltips.txt: missing key @runtime_mushroom_tooltip
+UA/Strings/object_tooltips.txt @runtime_ground_tooltip: placeholder missing {{itemblock}}; unexpected {0}
+UA/Strings/other.txt: missing key @latest_news
+UA/Strings/other.txt: missing key @missing_unlock_page
+UA/Strings/other.txt: unexpected key @table_of_contents_section_builtins
+UA/Strings/other.txt: unexpected key @table_of_contents_section_entities
+UA/Strings/other.txt: unexpected key @table_of_contents_section_general_info
+UA/Strings/other.txt: unexpected key @table_of_contents_section_grounds
+UA/Strings/other.txt: unexpected key @table_of_contents_section_items
+UA/Strings/other.txt: unexpected key @table_of_contents_section_programming
+UA/Strings/other.txt: unexpected key @table_of_contents_section_unlocks
+UA/Strings/unlock_tooltips.txt: missing key @bamboo
+UA/Strings/unlock_tooltips.txt: missing key @coal
+UA/Strings/unlock_tooltips.txt: missing key @debug_place
+UA/Strings/unlock_tooltips.txt: missing key @drill
+UA/Strings/unlock_tooltips.txt: missing key @dynamite
+UA/Strings/unlock_tooltips.txt: missing key @iron
+UA/Strings/unlock_tooltips.txt: missing key @jump
+UA/Strings/unlock_tooltips.txt: missing key @mining
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_bamboo
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_coal
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_drill
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_dynamite
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_iron
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_mushrooms
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_ore_boost
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_petrified_pumpkins
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_pyramid
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_quartz
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_rice
+UA/Strings/unlock_tooltips.txt: missing key @multi_unlock_descr_treasure_map
+UA/Strings/unlock_tooltips.txt: missing key @mushrooms
+UA/Strings/unlock_tooltips.txt: missing key @ore_boost
+UA/Strings/unlock_tooltips.txt: missing key @petrified_pumpkins
+UA/Strings/unlock_tooltips.txt: missing key @prospecting
+UA/Strings/unlock_tooltips.txt: missing key @pyramid
+UA/Strings/unlock_tooltips.txt: missing key @quartz
+UA/Strings/unlock_tooltips.txt: missing key @rice
+UA/Strings/unlock_tooltips.txt: missing key @special_soils
+UA/Strings/unlock_tooltips.txt: missing key @treasure_map
+UA/Strings/unlock_tooltips.txt: missing key @underground_senses
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_bamboo
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_coal
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_debug_place
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_drill
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_dynamite
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_iron
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_jump
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_mining
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_mushrooms
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_ore_boost
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_petrified_pumpkins
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_prospecting
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_pyramid
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_quartz
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_rice
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_special_soils
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_treasure_map
+UA/Strings/unlock_tooltips.txt: missing key @unlock_descr_underground_senses
+UA/Strings/unlock_tooltips.txt: missing key @unlock_tooltip_template_additional_requirement
+UA/Strings/warnings.txt: missing key @warning_cannot_place_ground
+UA/Strings/warnings.txt: missing key @warning_not_enough_coal
+UA/Strings/warnings.txt: missing key @warning_not_enough_iron
+UA/docs/first_program.md: placeholder missing {{codeexample}}
+UA/docs/home.md: placeholder missing {{@auto_unlock}}, {{@bamboo}}, {{@cactus}}, {{@carrots}}, {{@coal}}, {{@costs}}, {{@debug_2}}, {{@debug_place}}, {{@debug}}, {{@dictionaries}}, {{@dinosaurs}}, {{@dynamite}}, {{@expand_2}}, {{@expand}}, {{@fertilizer}}, {{@functions}}, {{@grass}}, {{@hats}}, {{@import}}, {{@iron}}, {{@leaderboard}}, {{@lists}}, {{@loops}}, {{@mazes}}, {{@megafarm}}, {{@mining}}, {{@mushrooms}}, {{@operators}}, {{@ore_boost}}, {{@petrified_pumpkins}}, {{@plant}}, {{@polyculture}}, {{@prospecting}}, {{@pumpkins}}, {{@pyramid}}, {{@quartz}}, {{@rice}}, {{@senses}}, {{@simulation}}, {{@special_soils}}, {{@speed}}, {{@sunflowers}}, {{@the_farmers_remains}}, {{@timing}}, {{@top_hat}}, {{@treasure_map}}, {{@trees}}, {{@underground_senses}}, {{@utilities}}, {{@variables}}, {{@watering}}; unexpected {{@table_of_contents_section_builtins}}, {{@table_of_contents_section_entities}}, {{@table_of_contents_section_general_info}}, {{@table_of_contents_section_grounds}}, {{@table_of_contents_section_items}}, {{@table_of_contents_section_programming}}, {{@table_of_contents_section_unlocks}}, {{builtinsTOC}}, {{entitiesTOC}}, {{groundsTOC}}, {{itemsTOC}}, {{unlocksTOC}}
+UA/docs/scripting/break.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/comments.md: placeholder missing {{codeexample}}
+UA/docs/scripting/continue.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/debug.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/dicts.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/for.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/scripting/functions.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/if.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/lists.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/operators.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/scopes.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/sets.md: placeholder missing {{codeexample}}
+UA/docs/scripting/tuples.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/scripting/variables.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/scripting/while.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/auto_unlock.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/cactus.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/carrots.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/costs.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/dinosaurs.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/expand_1.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/expand_2.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/fertilizer.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/hats.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/mazes.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/megafarm.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/plant.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/polyculture.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/pumpkins.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/senses.md: placeholder missing {{codeexample}}, {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/speed.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/sunflowers.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/timing.md: placeholder missing {{codeexample}}
+UA/docs/unlocks/trees.md: placeholder missing {{codeexample}}, {{codeexample}}
+UA/docs/unlocks/watering.md: placeholder missing {{codeexample}}
