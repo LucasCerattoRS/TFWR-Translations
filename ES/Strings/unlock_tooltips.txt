@@ -72,7 +72,7 @@ for item in cost:
     harvest()`
 @unlock_descr_debug = Herramientas para ayudar a depurar programas.
 
-`print("hi")`
+`print("hola")`
 @unlock_descr_debug2 = Funciones para ralentizar temporalmente la ejecución y hacer la granja más pequeña.
 
 `set_world_size(3)
@@ -88,6 +88,9 @@ set_execution_speed(1)`
 
 `plant(Entities.Sunflowers)`
 @unlock_descr_leaderboard = Únete a la tabla de clasificación para los tiempos más rápidos.\n\n`leaderboard_run(Leaderboards.Hay, "hay_file", speedup)`
+@unlock_descr_underground_leaderboard = Compite en la clasificación subterránea por los mejores tiempos.
+
+`leaderboard_run(Leaderboards.Rice, "rice_file", speedup)`
 @unlock_descr_dicts = Obtén acceso a diccionarios y conjuntos.
 
 `right_of = {North:East, East:South, South:West, West:North}`
@@ -126,14 +129,10 @@ other_file.function()`
 @unlock_descr_drill = Mejora la potencia del taladro.
 @unlock_descr_debug_place = Coloca bloques de colores.
 
-`place(Grounds.Red_Block)`
+`place(Grounds.Block_Blue)`
 @unlock_descr_underground_senses = Sensores para que el dron interactúe con casillas subterráneas.
 
 `while get_pos_z() < 100:
-    while get_hardness() > 5:
-        while get_hardness(North):
-            dig(North)
-        move(North)
     dig()`
 @unlock_descr_petrified_pumpkins = Las calabazas petrificadas aparecen bajo tierra.
 @unlock_descr_special_soils = Descubre capas de suelo franco y perlita para aumentar el rendimiento de las plantas.
@@ -163,6 +162,7 @@ other_file.function()`
 @multi_unlock_descr_quartz = Aumenta el rendimiento del mineral de cuarzo.
 @multi_unlock_descr_petrified_pumpkins = Aumenta el rendimiento de las calabazas petrificadas.
 @multi_unlock_descr_dynamite = Aumenta el rendimiento de la dinamita y la energía de las explosiones.
+@unlock_descr_explosive_drill = El taladro más potente.
 @multi_unlock_descr_treasure_map = Aumenta la profundidad del camino del tesoro y, por tanto, la cantidad de oro que obtienes del tesoro.
 @multi_unlock_descr_ore_boost = Aumenta aún más el rendimiento del carbón. Aumenta aún más el tamaño de las vetas de hierro y cuarzo.
 @multi_unlock_descr_bamboo = Aumenta el rendimiento y el coste del bambú.
@@ -184,6 +184,7 @@ other_file.function()`
 @hats = Sombreros
 @import = Importar
 @leaderboard = Tabla de Clasificación
+@underground_leaderboard = Clasificación subterránea
 @lists = Listas
 @loops = Bucles
 @mazes = Laberintos
@@ -216,6 +217,7 @@ other_file.function()`
 @quartz = Cuarzo
 @prospecting = Prospección de hierro
 @dynamite = Dinamita
+@explosive_drill = Taladro explosivo
 @bamboo = Bambú
 @treasure_map = Mapa del tesoro
 @mushrooms = Hongo

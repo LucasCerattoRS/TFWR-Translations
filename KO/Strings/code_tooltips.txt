@@ -112,11 +112,11 @@ y 위치는 남쪽에서 `0`으로 시작해서 북쪽 방향으로 증가합니
 `x, y = get_pos_x(), get_pos_y()`
 @code_tooltip_get_pos_z = `get_pos_z()` 
 드론의 현재 z 위치를 가져옵니다.
-z 위치는 `0`에서 시작하며 아래로 파내려갈수록 감소합니다.
+z 위치는 `0`에서 시작하며 아래로 굴착할수록 감소합니다.
 
 드론의 현재 z 좌표를 나타내는 숫자를 반환합니다.
 
-실행하는 데 `1` tick이 필요합니다.
+실행하는 데 `1`틱이 필요합니다.
 
 예시:
 `x, y, z = get_pos_x(), get_pos_y(), get_pos_z()`
@@ -130,20 +130,24 @@ z 위치는 `0`에서 시작하며 아래로 파내려갈수록 감소합니다.
 예시:
 `for i in range(get_world_size()):
     move(North)`
-@code_tooltip_get_entity_type = `get_entity_type()` 
+@code_tooltip_get_entity_type = `get_entity_type(direction = None)`
 드론 아래에 어떤 종류의 엔터티가 있는지 알아냅니다.
 
-타일이 비어 있으면 `None`을 반환하고, 그렇지 않으면 드론 아래에 있는 엔터티의 종류를 반환합니다.
+`direction`이 `None`이 아니면 지정한 방향의 인접 타일을 대신 확인합니다.
+
+확인한 타일이 비어 있으면 `None`을, 그렇지 않으면 해당 타일의 개체 종류를 반환합니다.
 
 실행하는 데 `1`틱이 필요합니다.
 
 예시:
 `if get_entity_type() == Entities.Grass:
     harvest()`
-@code_tooltip_get_ground_type = `get_ground_type()` 
+@code_tooltip_get_ground_type = `get_ground_type(direction = None)`
 드론 아래에 어떤 종류의 땅이 있는지 알아냅니다.
 
-드론 아래에 있는 땅의 종류를 반환합니다.
+`direction`이 `None`이 아니면 지정한 방향의 인접 타일을 대신 확인합니다.
+
+확인한 타일의 땅 종류를 반환합니다.
 
 실행하는 데 `1`틱이 필요합니다.
 
@@ -155,17 +159,17 @@ z 위치는 `0`에서 시작하며 아래로 파내려갈수록 감소합니다.
 
 드론 아래 땅의 경도를 반환합니다.
 
-실행하는 데 `1` tick이 필요합니다.
+실행하는 데 `1`틱이 필요합니다.
 
 예시:
 `if get_hardness() < 5:
     dig()`
 @code_tooltip_get_stability = `get_stability()` 
-드론 아래의 땅이 얼마나 안정적인지 확인합니다.
+드론 아래의 땅이 얼마나 안정적인지 알아냅니다.
 
-드론 아래 땅의 안정성을 반환합니다.
+드론 아래에 있는 땅의 안정성을 반환합니다.
 
-실행하는 데 `1` tick이 필요합니다.
+실행하는 데 `1`틱이 필요합니다.
 
 예시:
 `if get_stability() > 3:
@@ -271,7 +275,7 @@ print(get_tick_count())`
 
 딕셔너리를 반환합니다.
 
-실행하는 데 `1 + len(dictionary)`틱이 필요합니다.
+실행하는 데 `1 + 2*len(dictionary)`틱이 필요합니다.
 
 예시:
 `new_dict = dict()`
@@ -314,11 +318,11 @@ print(get_tick_count())`
 `set_execution_speed(1)`
 @code_tooltip_set_world_size = `set_world_size(size)`
 무슨 일이 일어나는지 더 잘 볼 수 있도록 농장 크기를 제한합니다.
-또한 농장을 비우고 드론 위치를 초기화합니다.
 농장을 `size` x `size` 그리드로 설정합니다.
 가능한 가장 작은 `size`는 `3`입니다.
 `size`가 `3`보다 작으면 그리드가 다시 원래 크기로 돌아갑니다.
 이 효과는 실행이 멈추면 사라집니다.
+또한 크기가 실제로 변경된 경우에만 농장을 비우고 드론 위치를 초기화합니다.
 
 `None`을 반환합니다.
 
@@ -548,7 +552,7 @@ result = wait_for(drone)`
 `max(a,b,c)`: `a`, `b`, `c`의 최댓값을 반환합니다.
 `max(sequence)`: 시퀀스의 모든 값 중 최댓값을 반환합니다.
 
-실행하는 데 #comparisons 만큼의 틱이 필요합니다.
+실행하는 데 비교 횟수 만큼의 틱이 필요합니다.
 
 예시:
 `max([3,6,34,16])`
@@ -559,7 +563,7 @@ result = wait_for(drone)`
 `min(a,b,c)`: `a`, `b`, `c`의 최솟값을 반환합니다.
 `min(sequence)`: 시퀀스의 모든 값 중 최솟값을 반환합니다.
 
-실행하는 데 #comparisons 만큼의 틱이 필요합니다.
+실행하는 데 비교 횟수 만큼의 틱이 필요합니다.
 
 예시:
 `min([3,6,34,16])`
@@ -598,7 +602,7 @@ list.append(1)`
 
 `None`을 반환합니다.
 
-실행하는 데 `element size`틱이 필요합니다.
+실행하는 데 `요소 크기`틱이 필요합니다.
 
 예시:
 `set = {0}
@@ -608,7 +612,7 @@ set.add(1)`
 
 `None`을 반환합니다.
 
-세트에서는 `element size`틱, 리스트에서는 #comparisons + #shifts 만큼의 틱이 필요합니다.
+세트에서는 `요소 크기`틱, 리스트에서는 비교 횟수 + 이동 횟수 만큼의 틱이 필요합니다.
 
 예시:
 `list = [True, False, None]
@@ -619,7 +623,7 @@ list.remove(False)`
 
 제거된 요소를 반환합니다.
 
-딕셔너리에서는 `key size`틱, 리스트에서는 `len(list) - i + 1`틱이 필요합니다.
+딕셔너리에서는 `키 크기`틱, 리스트에서는 `len(list) - i + 1`틱이 필요합니다.
 
 예시:
 `list = [True, False, None]
@@ -663,9 +667,11 @@ list.insert(0, 0)`
 @code_tooltip_return = 함수에서 값을 반환할 때 사용합니다.
 @code_tooltip_pass = 아무것도 하지 않습니다. 빈 코드 블록은 허용되지 않으므로 유용할 수 있습니다.
 @code_tooltip_dig = `dig()`
-한 타일을 아래쪽으로 파냅니다.
+아래쪽 타일 하나를 굴착합니다.
 
-파는 속도는 블록의 경도와 드론의 드릴 강도에 따라 달라집니다.
+굴착 속도는 블록의 경도와 드론의 드릴 강도에 따라 달라집니다.
+
+블록을 굴착하는 데 `hardness / drill strength`초가 걸립니다. 굴착 시간은 속도 업그레이드의 영향을 받지 않습니다.
 
 예시:
 `dig()`
@@ -674,17 +680,21 @@ list.insert(0, 0)`
 
 근처에 철광석이 있으면 가장 가까운 철광석의 방향(`North`, `East`, `South`, `West` 중 하나)을 반환합니다. 근처에 철이 없거나, 석탄이 부족하거나, 드론이 이미 철 조각 위에 있으면 `None`을 반환합니다.
 
-실행하는 데 석탄 1개가 필요합니다.
+실행 비용은 석탄 1개입니다.
+
+실행하는 데 `1`tick이 필요합니다.
 
 예시:
 `while prospect_iron() != None:
     move(prospect_iron())`
 @code_tooltip_prospect_quartz = `prospect_quartz()`
-철을 사용해 수정을 탐사합니다.
+철을 사용해 석영을 탐사합니다.
 
-드론에서 다음 수정 블록까지의 유클리드 거리(3차원 거리)를 반환하며, 근처에 수정이 없으면 `None`을 반환합니다.
+드론에서 다음 석영 블록까지의 유클리드 거리(3차원 거리)를 반환하며, 근처에 석영이 없으면 `None`을 반환합니다.
 
-실행하는 데 철 1개가 필요합니다.
+실행 비용은 철 1개입니다.
+
+실행하는 데 `1`tick이 필요합니다.
 
 예시:
 `print(prospect_quartz())`
@@ -692,6 +702,10 @@ list.insert(0, 0)`
 블록을 배치합니다.
 
 배치할 블록을 지정할 수 있습니다. 특수 기능이 없는 블록만 배치할 수 있습니다. 예를 들어 `place(Grounds.Rock)`은 가능하지만 `place(Grounds.Clay)`는 불가능합니다.
+
+블록을 놓았으면 `True`를, 아니면 `False`를 반환합니다.
+
+성공하면 `200`tick, 그렇지 않으면 `1`tick이 필요합니다.
 
 예시:
 `place(Grounds.Rock)`
@@ -702,6 +716,8 @@ list.insert(0, 0)`
 
 블록을 밀었으면 `True`를, 그렇지 않으면 `False`를 반환합니다.
 
+블록을 밀었으면 `200` tick, 아니면 `1` tick이 걸립니다.
+
 예시:
 `push(North)`
 @code_tooltip_can_push = `can_push(direction)`
@@ -709,12 +725,32 @@ list.insert(0, 0)`
 
 드론 아래의 블록을 밀 수 있으면 `True`를, 그렇지 않으면 `False`를 반환합니다.
 
+실행하는 데 `1`tick이 필요합니다.
+
 예시:
 `can_push(North)`
 @code_tooltip_jump = `jump(unlock)` 
-`unlock`과 연관된 지하 기능으로 점프합니다.
+`unlock`과 연관된 지하 요소로 점프합니다.
 
 스크립트당 `jump`는 한 번만 실행할 수 있습니다.
 
+실행하는 데 `200`tick이 필요합니다.
+
 예시:
 `jump(Unlocks.Iron)`
+@code_tooltip_hover = `hover(height)`
+드론이 지면 위에 떠 있는 높이를 변경합니다.
+
+기본 높이는 `1`이며, 대부분의 드론 동작은 떠 있는 높이를 기본값으로 되돌립니다.
+
+성공하면 `200`tick, 그렇지 않으면 `1`tick이 필요합니다.
+
+예시:
+`hover(5)`
+@code_tooltip_get_hover = `get_hover()`
+드론이 현재 지면 위에 떠 있는 높이를 가져옵니다.
+
+실행하는 데 `1`tick이 필요합니다.
+
+예시:
+`height = get_hover()`

@@ -187,7 +187,7 @@ included:
 
 # 	dict(dictionary[keys, values]) -> new dictionary initialized from an existing `dictionary`
 
-# 	takes `1 + len(keys) + len(values)` ticks to execute if a dictionary is given.
+# 	takes `1 + 2 * len(dictionary)` ticks to execute if a dictionary is given.
 # 	takes `1` tick to execute if no input is given.
 
 # 	Consider using `DictTFWR` to help with type hints involving dicts.
@@ -1085,9 +1085,19 @@ class Grounds(_Enum):
 	Indestructible ground.
 	"""
 
-	Blue_Block: Ground
+	Block_Blue: Ground
 	"""
 	A blue block that can be placed manually.
+	"""
+
+	Block_Green: Ground
+	"""
+	A green block that can be placed manually.
+	"""
+
+	Block_Red: Ground
+	"""
+	A red block that can be placed manually.
 	"""
 
 	Clay: Ground
@@ -1119,11 +1129,6 @@ class Grounds(_Enum):
 	Grassland: Ground
 	"""
 	The default ground. Grass will automatically grow on it.
-	"""
-
-	Green_Block: Ground
-	"""
-	A green block that can be placed manually.
 	"""
 
 	Iron: Ground
@@ -1160,11 +1165,6 @@ class Grounds(_Enum):
 	Quartz: Ground
 	"""
 	A block encasing crystalline quartz.
-	"""
-
-	Red_Block: Ground
-	"""
-	A red block that can be placed manually.
 	"""
 
 	Rice_Terrace: Ground
@@ -1484,6 +1484,16 @@ class Leaderboard:
 
 # --------------------------------------------------
 class Leaderboards(_Enum):
+	Bamboo: Leaderboard
+	"""
+	Farm 500_000_000 bamboo with multiple drones.
+	"""
+
+	Bamboo_Single: Leaderboard
+	"""
+	Farm 25_000_000 bamboo with a single drone on an 8x8 farm.
+	"""
+
 	Cactus: Leaderboard
 	"""
 	Farm 33_554_432 cacti with multiple drones.
@@ -1509,9 +1519,24 @@ class Leaderboards(_Enum):
 	Farm 33_488_928 bones with multiple drones.
 	"""
 
+	Dynamite: Leaderboard
+	"""
+	Farm 10_000_000 dynamite with multiple drones.
+	"""
+
+	Dynamite_Single: Leaderboard
+	"""
+	Farm 100_000 dynamite with a single drone on an 8x8 farm.
+	"""
+
 	Fastest_Reset: Leaderboard
 	"""
 	The most prestigious category. Completely automate the game from a single farm plot to unlocking the leaderboards again.
+	"""
+
+	Fastest_Underground_Reset: Leaderboard
+	"""
+	The other most prestigious category. Completely automate the game from a single farm plot to unlocking the underground leaderboards again.
 	"""
 
 	Hay: Leaderboard
@@ -1534,6 +1559,26 @@ class Leaderboards(_Enum):
 	Farm 616_448 gold with a single drone on an 8x8 farm.
 	"""
 
+	Mushrooms: Leaderboard
+	"""
+	Farm 240_000 mushrooms with multiple drones.
+	"""
+
+	Mushrooms_Single: Leaderboard
+	"""
+	Farm 30_000 mushrooms with a single drone on an 8x8 farm.
+	"""
+
+	Ores: Leaderboard
+	"""
+	Farm 20_000 quartz with multiple drones.
+	"""
+
+	Ores_Single: Leaderboard
+	"""
+	Farm 4_000 quartz with a single drone on an 8x8 farm.
+	"""
+
 	Pumpkins: Leaderboard
 	"""
 	Farm 200_000_000 pumpkins with multiple drones.
@@ -1542,6 +1587,26 @@ class Leaderboards(_Enum):
 	Pumpkins_Single: Leaderboard
 	"""
 	Farm 10_000_000 pumpkins with a single drone on an 8x8 farm.
+	"""
+
+	Pyramids: Leaderboard
+	"""
+	Farm 150_000 power with multiple drones.
+	"""
+
+	Pyramids_Single: Leaderboard
+	"""
+	Farm 30_000 power with a single drone on an 8x8 farm.
+	"""
+
+	Rice: Leaderboard
+	"""
+	Farm 2_000_000 rice with multiple drones.
+	"""
+
+	Rice_Single: Leaderboard
+	"""
+	Farm 100_000 rice with a single drone on an 8x8 farm.
 	"""
 
 	Sunflowers: Leaderboard
@@ -1890,6 +1955,10 @@ def plant(entity: Entity | Entities, /) -> _bool:
 	Spends the cost of the specified `entity` and plants it under the drone.
 	It fails if you can't afford the plant, the ground type is wrong or there's already a plant there.
 
+	Notes:
+	- A maze will not expand across different z positions.
+	- Pumpkins will not merge across different z positions.
+
 	returns `True` if it succeeded, `False` otherwise.
 
 	takes `200` ticks to execute if it succeeded, `1` tick otherwise.
@@ -1907,9 +1976,21 @@ def plant(entity: Entity | Entities, /) -> _bool:
 def swap(direction: Direction, /) -> _bool:
 	"""
 	Swaps the entity under the drone with the entity next to the drone in the specified `direction`.
+	Entities cannot be swapped across the world border.
 
-	- Doesn't work on all entities.
+	Notes:
+	- Only works with cacti.
 	- Also works if one (or both) of the entities are `None`.
+	- Entities will not swap across different z positions.
+
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A direction that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
 
 	returns `True` if it succeeded, `False` otherwise.
 
@@ -1946,6 +2027,10 @@ def till() -> None:
 def use_item(item: Item | Items, n: _int = 1, /) -> _bool:
 	"""
 	Attempts to use the specified `item` `n` times. Can only be used with some items including `Items.Water`, `Items.Fertilizer`, `Items.Weird_Substance`, and `Items.Dynamite`.
+	When using `Items.Weird_Substance` the weirdness will not wrap across the border.
+
+	Notes:
+	- A maze will not expand across different z positions.
 
 	returns `True` if an item was used, `False` if the item can't be used or you don't have enough.
 
@@ -1984,7 +2069,11 @@ def place(ground: Ground | Grounds, /) -> _bool:
 # --------------------------------------------------
 def clear() -> None:
 	"""
-	Removes everything from the farm, moves the drone back to position `(0,0)` and changes the hat back to the default.
+	Removes everything from the world, destroys all drones (`has_finished` will return `False`),
+	moves the drone back to position `(0,0)` and changes the hat back to the default.
+
+	Notes:
+	- Water levels will retain their previous water level before a call to `clear`.
 
 	returns `None`
 
@@ -2027,8 +2116,13 @@ def change_hat(hat: Hat | Hats, /) -> None:
 def move(direction: Direction, /) -> _bool:
 	"""
 	Moves the drone into the specified `direction` by one tile.
-	If the drone moves over the edge of the farm it wraps back to the other side of the farm.
+	A `direction` can point into a world border. If the drone moves over the edge of the world
+	it wraps back to the other side of the world.
 
+	Note: If the drone is wearing `Hats.Dinosaur_Hat` it cannot move across the world border.
+	It will also not be able to move to a different z position.
+
+	Value of `direction`:
 	- `East ` = right
 	- `West ` = left
 	- `North` = up
@@ -2051,6 +2145,13 @@ def move(direction: Direction, /) -> _bool:
 def can_move(direction: Direction, /) -> _bool:
 	"""
 	Checks if the drone can move in the specified `direction`.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
 
 	returns `True` if the drone can move, `False` otherwise.
 
@@ -2072,7 +2173,7 @@ def get_pos_x() -> _int:
 	Gets the current x position of the drone.
 	The x position starts at `0` in the `West` and increases in the `East` direction.
 
-	returns a number representing the current x coordinate of the drone.
+	returns a number representing the current x position of the drone.
 
 	takes `1` tick to execute.
 
@@ -2091,7 +2192,13 @@ def get_pos_y() -> _int:
 	Gets the current y position of the drone.
 	The y position starts at `0` in the `South` and increases in the `North` direction.
 
-	returns a number representing the current y coordinate of the drone.
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
+	returns a number representing the current y position of the drone.
 
 	takes `1` tick to execute.
 
@@ -2105,13 +2212,61 @@ def get_pos_y() -> _int:
 
 
 # --------------------------------------------------
+def hover(height: _float, /) -> _bool:
+	"""
+	Changes the height the drone hovers above ground.
+
+	The default height is `1` and most drone actions will reset the hover height
+	back to the default.
+
+	returns `True` if it succeeded, `False` otherwise.
+
+	takes `200` ticks to execute if it succeeded, `1` tick otherwise.
+
+	example usage:
+
+	```
+	hover(5)
+	```
+	"""
+	...
+
+
+# --------------------------------------------------
+def get_hover() -> _int:
+	"""
+	Gets the current height the drone hovers above ground.
+
+	returns the current hover height as an integer.
+
+	takes `1` tick to execute.
+
+	example usage:
+
+	```
+	height = get_hover()
+	```
+	"""
+	...
+
+
+# --------------------------------------------------
 def get_pos_z(direction: Direction | None = None, /) -> _int:
 	"""
 	Gets the current z position of the drone, or the z position of the neighboring
 	tile in `direction`. The z position starts at `0` and decreases while digging
 	downward.
 
-	returns the z coordinate as an integer.
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
+	returns the z position as an integer.
 
 	takes `1` tick to execute.
 
@@ -2134,7 +2289,7 @@ type WorldSizes = Literal[
 
 def get_world_size() -> WorldSizes:
 	"""
-	Get the current size of the farm.
+	Get the current size of the world.
 
 	returns the side length of the grid in the north to south direction.
 
@@ -2162,7 +2317,16 @@ def get_entity_type(direction: Direction | None = None, /) -> Entity:
 	Find out what kind of entity is under the drone, or on the neighboring tile in
 	`direction`.
 
-	returns `None` if the tile is empty, otherwise returns the type of the entity under the drone.
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
+	returns `None` if the checked tile is empty, otherwise returns the type of the entity on that tile.
 	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept a `Entity`.
 
 	takes `1` tick to execute.
@@ -2183,7 +2347,16 @@ def get_ground_type(direction: Direction | None = None, /) -> Ground:
 	Find out what kind of ground is under the drone, or on the neighboring tile in
 	`direction`.
 
-	returns the type of the ground under the drone.
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
+	returns the type of the ground on the checked tile.
 
 	takes `1` tick to execute.
 
@@ -2202,7 +2375,8 @@ def get_water() -> _float:
 	"""
 	Get the current water level under the drone.
 
-	returns the water level under the drone as a number between `0` and `1`.
+	returns the water level under the drone as a number between `0` and `1`. The water
+	level will not be `0` or `1` due to how water decay functions.
 
 	takes `1` tick to execute.
 
@@ -2220,6 +2394,9 @@ def get_water() -> _float:
 def num_items(item: Item | Items, /) -> _float:
 	"""
 	Find out how much of `item` you currently have.
+
+	Notes:
+	- When using water a tile cannot have a water level above `1`
 
 	returns the number of `item` currently in your inventory.
 	`Items.Power` may return a number as float
@@ -2244,7 +2421,9 @@ Special type that helps with type hinting the return of the `get_companion` func
 
 def get_companion() -> _tuple[Entity, _tuple[_int, _int]]:
 	"""
-	Get the companion preference of the plant under the drone.
+	Get the companion preference of the plant under the drone. Companions can wrap across the world.
+
+	Crops that can have a companion include: `Entities.Grass`, `Entities.Bush`, `Entities.Tree`, and `Entities.Carrot`
 
 	returns a tuple of the form `(companion_type, (companion_x_position, companion_y_position))` or `None` if there is no companion.
 	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept companion tuple.
@@ -2275,18 +2454,24 @@ def measure(direction: Direction | None = None, /) -> Measure:
 	Measures certain entities and underground ground types. The result depends on
 	what is being measured.
 
-	overloads:
-	`measure()`: measures the entity under the drone.
-	`measure(direction)`: measures the neighboring entity in the `direction` of the drone.
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
 
 	Sunflower: returns the number of petals.
 	Maze: returns the position of the current treasure from anywhere in the maze.
 	Cactus: returns the size.
-	Dinosaur: returns the number corresponding to the type.
+	Dinosaur: returns the position of the next apple (must be used on current apple).
+	Bamboo: return the height of the flower.
 	Mushroom: returns the mushroom type as a number.
-	Basalt: returns the `(x, y)` position of the treasure map below.
-	Treasure map: returns a string of direction letters describing the path.
-	Soot: returns the number of live dynamite blocks in the stratum above.
+	Basalt: returns the `(x, y)` position of the `Entities.Treasure_Map` below.
+	Treasure_Map: returns a string of `direction` or `dig` letters describing the path (`N` = `North, `E` = `East`, `S` = `South`, `W` = `West`, `D` = `dig()`).
+	Soot: returns the number of live `Grounds.Dynamite` blocks in the stratum above.
 	All other entities and ground types: returns `None`.
 	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept either of the other return types.
 
@@ -2296,7 +2481,14 @@ def measure(direction: Direction | None = None, /) -> Measure:
 
 	```
 	num_petals = measure()
-	treasure_pos = measure()
+	treasure_pos_x, treasure_pos_y = measure()
+	cactus_size = measure()
+	next_apple_x, next_apple_y = measure()
+	bamboo_height = measure()
+	mushroom_type = measure()
+	treasure_map_pos_x, treasure_map_pos_y = measure() # On `Grounds.Basalt`
+	treasure_map_directions = measure() # On `Grounds.Treasure_Map`
+	dynamite_number = measure()
 	```
 	"""
 	...
@@ -2312,12 +2504,13 @@ def measure(direction: Direction | None = None, /) -> Measure:
 # -------------------------------------------------------------------------------
 def dig() -> _bool:
 	"""
-	Digs one tile downward. Whether the block is destroyed depends on its hardness
+	Digs `1` block downward. Whether the block is destroyed depends on its hardness
 	and the drone's drill strength.
 
 	returns `True` if the block was destroyed, `False` otherwise.
 
-	takes 0.5 seconds to execute.
+	takes `hardness / drill strength` seconds to dig a block. This time is
+	independent of execution speed and can be reduced by the explosive drill.
 
 	example usage:
 
@@ -2329,13 +2522,23 @@ def dig() -> _bool:
 
 
 # --------------------------------------------------
-def get_hardness(direction: Direction | None = None, /) -> _float | None:
+def get_hardness(direction: Direction | None = None, /) -> _float:
 	"""
-	Gets the hardness of the ground below the drone, or of the neighboring ground
+	Gets the hardness of the block below the drone, or of the neighboring block
 	in `direction`. Harder blocks take longer to dig.
 
-	returns the ground hardness, or `None` if the requested tile is outside the
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
+	returns the block hardness, or `None` if the requested tile is outside the
 	world.
+	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept a `float`.
 
 	takes `1` tick to execute.
 
@@ -2350,14 +2553,23 @@ def get_hardness(direction: Direction | None = None, /) -> _float | None:
 
 
 # --------------------------------------------------
-def get_stability(direction: Direction | None = None, /) -> _float | None:
+def get_stability(direction: Direction | None = None, /) -> _float:
 	"""
-	Gets the stability of the ground below the drone, or of the neighboring ground
+	Gets the stability of the block below the drone, or of the neighboring block
 	in `direction`. Stability controls how much height difference a block can
 	withstand before it caves in.
 
-	returns the ground stability, or `None` if the requested tile is outside the
-	world.
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
+	returns the block stability, or `None` if the requested block is outside the world.
+	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept a `float`.
 
 	takes `1` tick to execute.
 
@@ -2372,12 +2584,15 @@ def get_stability(direction: Direction | None = None, /) -> _float | None:
 
 
 # --------------------------------------------------
-def prospect_iron() -> Direction | None:
+def prospect_iron() -> Direction:
 	"""
-	Uses one `Items.Coal` to look for nearby iron.
+	Uses `1` `Items.Coal` to look for nearby iron.
 
 	returns the direction toward the nearest iron ore, or `None` if the drone is
 	already above it, no iron is in range, or there is not enough coal.
+	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept a `Direction`.
+
+	takes `1` tick to execute.
 
 	example usage:
 
@@ -2391,12 +2606,15 @@ def prospect_iron() -> Direction | None:
 
 
 # --------------------------------------------------
-def prospect_quartz() -> _float | None:
+def prospect_quartz() -> _float:
 	"""
-	Uses one `Items.Iron` to look for nearby quartz.
+	Uses `1` `Items.Iron` to look for nearby quartz.
 
 	returns the Euclidean 3D distance to the nearest quartz block, or `None` if no
 	quartz is in range or there is not enough iron.
+	Note: `None` is not type hinted to reduce complexity when using variables with functions that accept a `float`.
+
+	takes `1` tick to execute.
 
 	example usage:
 
@@ -2410,10 +2628,20 @@ def prospect_quartz() -> _float | None:
 # --------------------------------------------------
 def push(direction: Direction, /) -> _bool:
 	"""
-	Pushes the mushroom block below the drone in `direction`. Blocks cannot be
-	pushed upward.
+	Pushes the mushroom block below the drone in `direction`. Blocks cannot be pushed upward.
+
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
 
 	returns `True` if the block was pushed, `False` otherwise.
+
+	takes `200` ticks to execute if the block was pushed, `1` tick otherwise.
 
 	example usage:
 
@@ -2430,7 +2658,18 @@ def can_push(direction: Direction, /) -> _bool:
 	Checks whether the block below the drone can be pushed in `direction` and
 	whether anything blocks it.
 
+	If `direction` is not `None` it checks the neighboring tile in the given direction instead.
+	A `direction` that points into the world border will evaluate the tile on the other side of the world.
+
+	Value of `direction`:
+	- `East ` = right
+	- `West ` = left
+	- `North` = up
+	- `South` = down
+
 	returns `True` if the block can be pushed, `False` otherwise.
+
+	takes `1` tick to execute.
 
 	example usage:
 
@@ -2450,6 +2689,8 @@ def jump(unlock: Unlock | Unlocks, /) -> None:
 	You can only execute `jump` once per script.
 
 	returns `None`.
+
+	takes `200` ticks to execute.
 
 	example usage:
 
@@ -2545,6 +2786,7 @@ def has_finished[R: Any](drone: Drone[R], /) -> _bool:
 	`R` - the return type of your drone. Must must the return type of of the `task` you provided with `spawn_drone`.
 
 	returns `True` if the drone has finished, `False` otherwise.
+	Note: If a `drone` was destroyed because of a call to `clear` will also return `False`
 
 	takes `1` tick to execute.
 
@@ -2563,9 +2805,9 @@ def has_finished[R: Any](drone: Drone[R], /) -> _bool:
 # --------------------------------------------------
 def max_drones() -> _int:
 	"""
-	Gets the maximum number of drones available on the farm.
+	Gets the maximum number of drones available to use.
 
-	returns the maximum number of drones that you can have in the farm.
+	returns the maximum number of drones that you can use.
 
 	takes `1` tick to execute.
 
@@ -2583,9 +2825,9 @@ def max_drones() -> _int:
 # --------------------------------------------------
 def num_drones() -> _int:
 	"""
-	Gets the current number of drones running a task on the farm.
+	Gets the current number of drones currently running a task.
 
-	returns the number of drones currently in the farm.
+	returns the number of drones currently in use..
 
 	takes `1` tick to execute.
 
@@ -2609,7 +2851,7 @@ def num_drones() -> _int:
 # -------------------------------------------------------------------------------
 def get_time() -> _float:
 	"""
-	Get the current game time.
+	Get the current game time. Time is shared across all drones.
 
 	returns the time in seconds since the start of the game.
 
@@ -2629,7 +2871,7 @@ def get_time() -> _float:
 # --------------------------------------------------
 def get_tick_count() -> _int:
 	"""
-	Used to measure the number of ticks performed.
+	Used to measure the number of ticks performed. Each drone has its own tick count.
 
 	returns the number of ticks performed since the start of execution.
 
@@ -2675,10 +2917,10 @@ def set_execution_speed(speed: _float, /) -> None:
 # --------------------------------------------------
 def set_world_size(size: WorldSizes, /) -> None:
 	"""
-	Limits the size of the farm to better see what's happening.
-	Also clears the farm and resets the drone position.
+	Limits the size of the world to better see what's happening.
+	Also clears the world and resets the drone's position, but only if the size has actually changed.
 
-	- Sets the farm to a `size` x `size` grid.
+	- Sets the world to a `size` x `size` grid.
 	- The smallest `size` possible is `3` and maximum `size` is `32`
 	- A `size` smaller than `3` will change the grid back to its full size.
 	- The effect will also stop when the execution stops.

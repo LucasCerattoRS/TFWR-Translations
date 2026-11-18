@@ -9,7 +9,7 @@ Pode crescer em {3}.
 @object_descr_tree = Árvores soltam mais madeira que arbustos. Elas demoram mais para crescer se outras árvores crescerem ao lado delas.
 @object_descr_carrot = Cenouras!
 @object_descr_rice = O arroz pode ser plantado na camada de argila encontrada no subsolo.
-@object_descr_bamboo = O bambu pode crescer bastante, mas floresce em uma altura específica. A produção é maior se você o colher exatamente na altura em que floresce.
+@object_descr_bamboo = O bambu pode crescer bastante, mas só depois que os frutos são colhidos.
 @object_descr_pumpkin = Abóboras crescem juntas quando estão ao lado de outras abóboras totalmente crescidas. Cerca de 1 em 5 abóboras morre quando cresce.
 @object_descr_dead_pumpkin = Uma em cada cinco abóboras morre ao crescer, deixando para trás uma abóbora morta. Abóboras mortas são inúteis e desaparecem quando algo novo é plantado.
 @object_descr_sunflower = Girassóis coletam a energia do sol. Colhê-los lhe dará `Items.Power`.
@@ -23,9 +23,9 @@ Se você colher um girassol com o número máximo de pétalas, você ganha energ
 @object_descr_dirt = É terra.
 @object_descr_rock = É uma rocha dura.
 @object_descr_clay = Um bloco de argila. Solo fértil e perfeito para arroz. Quando uma planta de arroz amadurece, ela transforma a argila abaixo dela novamente em terra.
-@object_descr_blue_block = Um bloco azul.
-@object_descr_red_block = Um bloco vermelho.
-@object_descr_green_block = Um bloco verde.
+@object_descr_block_blue = Um bloco azul.
+@object_descr_block_red = Um bloco vermelho.
+@object_descr_block_green = Um bloco verde.
 @object_descr_coal = Um bloco rico em carvão sedimentar.
 @object_descr_iron = Um bloco contendo magnetita bruta.
 @object_descr_quartz = Um bloco que contém quartzo cristalino.

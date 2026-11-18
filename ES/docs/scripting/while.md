@@ -6,7 +6,7 @@ Has desbloqueado el bucle `while` y los valores `True` y `False`. El bucle `whil
 `while condition:
 	#cuerpo del bucle`
 
-No te preocupes por crear bucles infinitos. Los retrasos en la ejecución evitarán que el programa se congele.
+No te preocupes por crear bucles infinitos. El dron podría quedarse atascado, pero no se bloqueará todo el juego: basta con detener el programa e intentarlo de nuevo.
 
 ## Para Principiantes
 Quizás ya has intentado poner varias llamadas a `harvest()` seguidas:
@@ -40,7 +40,7 @@ harvest()
 harvest()
 }}
 Esto te permite cosechar varias veces en una sola ejecución del programa.
-Sin embargo, estaría bien cosechar más de tres veces, y escribir el mismo código varias veces es una mala práctica.
+Sin embargo, estaría bien cosechar más de tres veces, y repetir el mismo código acaba convirtiendo el programa en un lío.
 La solución es un bucle.
 Un bucle te permite ejecutar el mismo código varias veces.
 
@@ -54,7 +54,7 @@ El bucle `while` se ve así:
 	#cuerpo del bucle
 	#cuerpo del bucle
 	#...`
-	
+
 Donde tienes que reemplazar "condition" por un valor booleano y `#cuerpo del bucle` por lo que quieras hacer en el bucle.
 
 Hay dos valores booleanos constantes disponibles. Las constantes son valores que nunca cambian durante el programa.

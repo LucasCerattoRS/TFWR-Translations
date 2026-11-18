@@ -2,8 +2,12 @@
 @button_tooltip_save = Guarda la partida.
 @button_tooltip_options = Abre el menú de opciones.
 @button_tooltip_discord = Únete al Discord para chatear con otros jugadores y el desarrollador, reportar bugs u obtener ayuda.
-@button_tooltip_execute = Inicia o detiene la ejecución del código en esta ventana.
-@button_tooltip_step_by_step = Ejecuta un paso del código.
+@button_tooltip_execute = Inicia la ejecución del código en esta ventana.
+@button_tooltip_step_by_step = Inicia la ejecución del código de esta ventana paso a paso.
+@button_tooltip_stop_execution = Detiene la ejecución.
+@button_tooltip_pause_execution = Pausa la ejecución.
+@button_tooltip_resume_execution = Reanuda la ejecución.
+@button_tooltip_next_step = Ejecuta el siguiente paso.
 @button_tooltip_new_function = Crea un nuevo archivo de código.
 @button_tooltip_new_info_window = Abre una nueva ventana de información.
 @button_tooltip_minimize = Minimiza esta ventana.
@@ -20,6 +24,7 @@
 @button_tooltip_previous_search = Ir a la coincidencia anterior del término de búsqueda.
 @button_tooltip_close_search = Cierra el menú de búsqueda.
 @button_tooltip_open_unlock_menu = Abre el árbol de desbloqueos.
+@button_tooltip_open_farm = Vuelve a la granja.
 @warning_icon_tooltip = Tu código generó una advertencia. Haz clic en el ícono para ver los detalles en la ventana de Salida.
 @option_tooltip_graphics = Afecta varias configuraciones del renderizado como sombras, oclusión ambiental y bloom.
 @option_tooltip_vfx_limit = Limita el número de efectos visuales que se pueden reproducir por segundo.
@@ -29,6 +34,7 @@
 @option_tooltip_drone_volume = Ajusta el volumen del zumbido de los drones.
 @option_tooltip_SFX_volume = Ajusta el volumen de los efectos de sonido de la granja.
 @option_tooltip_UI_volume = Ajusta el volumen de los sonidos de la interfaz, como los clics de los botones.
+@option_tooltip_mute_in_background = Silencia todo el audio del juego cuando su ventana no está en primer plano.
 @option_tooltip_ambience_volume = Ajusta el volumen de los sonidos ambientales, como el viento y los pájaros.
 @option_tooltip_volume_damping = El volumen se multiplica por este factor por cada efecto de sonido que se reproduce simultáneamente para que no te exploten los oídos a altas velocidades del dron.
 @option_tooltip_sfx_limit = Limita el número de sonidos que se pueden reproducir por segundo.
@@ -64,3 +70,7 @@
 @keybind_tooltip_next_step = Realiza un paso si la ejecución está en pausa.
 @keybind_tooltip_pause_execution = Pausa la ejecución.
 @keybind_tooltip_hide_UI = Oculta o muestra el HUD.
+@option_tooltip_automatic_autocomplete = Muestra sugerencias de autocompletado automáticamente al escribir. El atajo de autocompletado sigue funcionando si se desactiva esta opción.
+@option_tooltip_focus_errors = Mueve la cámara hasta los errores que aparecen fuera de la pantalla para que no te los pierdas.
+@option_tooltip_window_docking = Permite acoplar ventanas al arrastrarlas unas junto a otras.
+@keybind_tooltip_autocomplete = Abre la ventana de autocompletado de código.

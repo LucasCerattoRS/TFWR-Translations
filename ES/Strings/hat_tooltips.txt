@@ -18,8 +18,16 @@
 @hat_descr_gold_trophy_hat = Solo para el mejor granjero.
 @hat_descr_silver_trophy_hat = Para el segundo mejor granjero.
 @hat_descr_wood_trophy_hat = Para el tercer mejor granjero.
-@hat_descr_dynamite_hat = El sombrero del artificiero jefe. Cada excavación provoca una explosión y cuesta una dinamita. Solo puede haber un dron artificiero jefe.
+@hat_descr_explosive_drill = Cada excavación consume una dinamita y provoca una explosión normal. Los bloques destruidos directamente por la explosión producen los mismos ítems que si los excavaras. Solo un dron puede equipar el taladro explosivo.
 @hat_descr_golden_cactus_hat = Una versión dorada del sombrero de cactus.
 @hat_descr_golden_pumpkin_hat = Una versión dorada del sombrero de calabaza.
 @hat_descr_golden_sunflower_hat = Una versión dorada del sombrero de girasol.
 @hat_descr_the_farmers_remains = ¿Qué pasó?
+@hat_descr_bucket = Un cubo de hierro para la cabeza.
+@hat_descr_coal_hat = Lleva carbón contigo vayas donde vayas.
+@hat_descr_rice_hat = Una comida para llevar puesta.
+@hat_descr_quartz_hat = Un reluciente sombrero de cuarzo.
+@hat_descr_bamboo_hat = Un clásico sombrero de bambú.
+@hat_descr_dynamite_hat = Un estilo explosivo.
+@hat_descr_mushroom_hat = Un simpático sombrero de hongo.
+@hat_descr_mining_hat = Un casco que protege al dron de las rocas que caen.

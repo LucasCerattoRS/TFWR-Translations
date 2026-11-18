@@ -43,8 +43,8 @@ Se l'hai importato, probabilmente hai un ciclo di importazione (Vedi la pagina d
 @error_max_stack_size_reached = È stata raggiunta la dimensione massima della call stack. Probabilmente ciò è dovuto a troppe chiamate ricorsive di funzione.
 @error_max_comparison_depth = È stata raggiunta la profondità massima di confronto. Questo può accadere, ad esempio, se stai confrontando liste che contengono se stesse.
 @error_assign_type_mismatch = Il lato sinistro dell'assegnazione non corrispondeva al lato destro.
-@error_too_many_values_to_unpack = Il lato destro non contiene abbastanza valori da decomprimere.
-@error_not_enough_values = Il lato destro contiene troppi valori per essere spacchettati nel lato sinistro.
+@error_too_many_values_to_unpack = Il lato destro contiene troppi valori per essere spacchettati nel lato sinistro.
+@error_not_enough_values = Il lato destro non contiene abbastanza valori da decomprimere.
 @error_empty_print = `print()` richiede almeno un argomento.
 @error_in_string = Impossibile verificare se {0} è in una stringa.
 @error_collection_changed_size_during_iteration = La dimensione di questa collezione non può essere modificata all'interno di un ciclo for che la scorre. Questo perché cambiare la dimensione della collezione invaliderebbe l'oggetto iteratore che il ciclo for sta utilizzando.
@@ -74,10 +74,15 @@ x += 1`
 @error_file_not_found = Il file {0} non esiste.
 @error_max_drones_reached = Il limite del drone è stato superato.
 @error_dino_hat_already_used = C'è solo un cappello da dinosauro ed è già in uso. Non puoi usarlo su un secondo drone.
-@error_dynamite_hat_already_used = C'è un solo cappello da dinamite ed è già in uso. Non puoi usarlo su un secondo drone.
+@error_explosive_drill_already_used = C'è una sola trivella esplosiva ed è già in uso. Non puoi equipaggiarla su un secondo drone.
 @error_invalid_drone_id = Non c'è nessun drone con ID {0}.
 @error_invalid_handle = {0} non esiste più.
 @error_spawn_drone_builtin = Non puoi usare `spawn_drone()` direttamente con le funzioni predefinite. Devi definire una tua funzione.
 @error_non_jumpable_unlock = Non puoi saltare a questo sblocco.
 @error_only_first_drone_can_jump = Solo il primo drone può eseguire `jump()`.
 @error_can_only_jump_once = Puoi eseguire `jump()` una sola volta per programma.
+@error_dig_not_allowed = Non è consentito usare `dig()` in questa classifica.
+@error_plant_not_allowed = Non è consentito usare `plant()` in questa classifica.
+@error_jump_not_allowed = Non è consentito usare `jump()` nelle classifiche.
+@error_place_too_high = Non puoi posizionare un blocco a questa altezza: è troppo al di sopra della profondità media dei blocchi.
+Posiziona i blocchi in modo uniforme su tutta la fattoria per aumentare la media e poterli posizionare più in alto.

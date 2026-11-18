@@ -43,8 +43,8 @@
 @error_max_stack_size_reached = 调用栈大小已达上限。这很可能是由于递归函数调用过多。
 @error_max_comparison_depth = 比较深度已达上限。这可能是因为你正在比较包含自身的列表。
 @error_assign_type_mismatch = 赋值的左侧与右侧不匹配。
-@error_too_many_values_to_unpack = 右侧没有足够的值来进行解包。
-@error_not_enough_values = 右侧包含的值太多，无法解包到左侧。
+@error_too_many_values_to_unpack = 右侧包含的值太多，无法解包到左侧。
+@error_not_enough_values = 右侧没有足够的值来进行解包。
 @error_empty_print = `print()` 至少需要一个参数。
 @error_in_string = 无法检查 {0} 是否在字符串中。
 @error_collection_changed_size_during_iteration = 不能在迭代集合的 for 循环中更改集合大小。这是因为更改其大小会使 for 循环正在使用的迭代器对象失效。
@@ -74,10 +74,15 @@ x += 1`
 @error_file_not_found = 文件 {0} 不存在。
 @error_max_drones_reached = 已超出无人机数量限制。
 @error_dino_hat_already_used = 恐龙帽只有一个，而且已在使用中。无法将其用于第二架无人机上。
-@error_dynamite_hat_already_used = 爆破帽只有一顶，而且已经有人戴着了。不能让第二架无人机使用。
+@error_explosive_drill_already_used = 爆破钻头只有一个，而且已在使用中。无法让第二架无人机装备。
 @error_invalid_drone_id = 不存在 ID 为 {0} 的无人机。
 @error_invalid_handle = {0} 已不复存在。
 @error_spawn_drone_builtin = 你不能直接用 `spawn_drone()` 运行内置函数。你必须定义自己的函数。
 @error_non_jumpable_unlock = 无法跳转到此解锁项。
 @error_only_first_drone_can_jump = 只有第一架无人机可以执行 `jump()`。
 @error_can_only_jump_once = 每次运行程序只能执行一次 `jump()`。
+@error_dig_not_allowed = 此排行榜中不允许使用 `dig()`。
+@error_plant_not_allowed = 此排行榜中不允许使用 `plant()`。
+@error_jump_not_allowed = 排行榜中不允许使用 `jump()`。
+@error_place_too_high = 无法在此高度放置地块：此处比地块的平均深度高出太多。
+在整个农场均匀放置地块，提高平均值后就能在更高处放置地块。

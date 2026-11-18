@@ -104,7 +104,7 @@ Riutilizzare un labirinto non ti dà più oro che semplicemente raccogliere e cr
 Questa è al 100% una sfida extra che puoi semplicemente saltare.
 Vale la pena solo se le informazioni extra e le scorciatoie ti aiutano a risolvere il labirinto più velocemente.
 
-Il tesoro può essere spostato fino a 300 volte. Dopodiché, usare la Sostanza Strana su di esso non aumenterà più l'oro contenuto né lo sposterà.
+Il tesoro può essere spostato fino a 300 volte. Dopodiché, usare la Sostanza Strana su di esso non ti darà più oro né sposterà il tesoro.
 
 <spoiler=mostra suggerimento 1>
 Ecco un approccio generale per risolvere il problema:
@@ -190,11 +190,11 @@ directions = [North, East, South, West]
 index = 0
 move(directions[index])
 
-# gira a destra
+#gira a destra
 index = (index + 1) % 4
 move(directions[index])
 
-# gira a sinistra
+#gira a sinistra
 index = (index - 1) % 4
 move(directions[index])
 }}
