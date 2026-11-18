@@ -18,8 +18,16 @@
 @hat_descr_gold_trophy_hat = Solo per il miglior contadino.
 @hat_descr_silver_trophy_hat = Per il secondo miglior contadino.
 @hat_descr_wood_trophy_hat = Per il terzo miglior contadino.
-@hat_descr_dynamite_hat = Il cappello del capo artificiere. Ogni scavo provoca un'esplosione e costa una dinamite. Può esserci un solo drone capo artificiere.
+@hat_descr_explosive_drill = Ogni scavo consuma una dinamite e provoca una normale esplosione. I blocchi distrutti direttamente dall'esplosione producono oggetti come se fossero stati estratti. Solo un drone può equipaggiare la trivella esplosiva.
 @hat_descr_golden_cactus_hat = Una versione dorata del cappello da cactus.
 @hat_descr_golden_pumpkin_hat = Una versione dorata del cappello da zucca.
 @hat_descr_golden_sunflower_hat = Una versione dorata del cappello da girasole.
 @hat_descr_the_farmers_remains = Che cosa è successo?
+@hat_descr_bucket = Un secchio di ferro per la tua testa.
+@hat_descr_coal_hat = Porta il carbone con te ovunque tu vada.
+@hat_descr_rice_hat = Un pasto da indossare.
+@hat_descr_quartz_hat = Un cappello di quarzo scintillante.
+@hat_descr_bamboo_hat = Un classico cappello di bambù.
+@hat_descr_dynamite_hat = Un look esplosivo.
+@hat_descr_mushroom_hat = Un grazioso cappello a fungo.
+@hat_descr_mining_hat = Un casco che protegge il drone dalle rocce che cadono.

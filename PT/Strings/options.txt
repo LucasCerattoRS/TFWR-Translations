@@ -20,12 +20,14 @@
 @UI volume = Volume da UI
 @ambience volume = Volume do Ambiente
 @drone volume = Volume do Drone
+@mute in background = Silenciar em segundo plano
 @fps limit = FPS Máximo
 @autosave = Autosalvar Código
 @autosave progress = Autosalvar Progresso
 @enabled = Ativado
 @disabled = Desativado
 @language = Idioma
+@unofficial_translations_separator = ---- Trad. não oficiais ----
 @frames = Quadros
 @full vsync = Vsync Completo
 @half vsync = Meio Vsync
@@ -62,3 +64,7 @@
 @Light = Claro
 @Lunar New Year = Ano Novo Lunar
 @Custom = Personalizado
+@automatic autocomplete = Autocompletar automaticamente
+@focus errors = Revelar erros
+@window docking = Encaixar janelas
+@autocomplete = Autocompletar

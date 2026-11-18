@@ -18,8 +18,16 @@
 @hat_descr_gold_trophy_hat = 只属于最棒的农民。
 @hat_descr_silver_trophy_hat = 属于第二棒的农民。
 @hat_descr_wood_trophy_hat = 属于第三棒的农民。
-@hat_descr_dynamite_hat = 首席爆破手的帽子。每次挖掘都会引发爆炸，并消耗 1 份炸药。只能有一架无人机担任首席爆破手。
+@hat_descr_explosive_drill = 每次挖掘都会消耗 1 份炸药，并引发一次普通爆炸。被爆炸直接摧毁的地块会像正常开采一样产出物品。只能有一架无人机装备爆破钻头。
 @hat_descr_golden_cactus_hat = 金色版仙人掌帽。
 @hat_descr_golden_pumpkin_hat = 金色版南瓜帽。
 @hat_descr_golden_sunflower_hat = 金色版向日葵帽。
 @hat_descr_the_farmers_remains = 发生了什么？
+@hat_descr_bucket = 戴在头上的铁桶。
+@hat_descr_coal_hat = 走到哪里，都有煤炭相伴。
+@hat_descr_rice_hat = 可以戴在头上的一餐。
+@hat_descr_quartz_hat = 闪闪发亮的石英帽。
+@hat_descr_bamboo_hat = 经典的竹帽。
+@hat_descr_dynamite_hat = 充满爆炸感的造型。
+@hat_descr_mushroom_hat = 可爱的蘑菇帽。
+@hat_descr_mining_hat = 保护无人机免受落石伤害的安全帽。

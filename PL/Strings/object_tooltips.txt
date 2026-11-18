@@ -9,7 +9,7 @@ Może rosnąć na {3}.
 @object_descr_tree = Z drzew wypada więcej drewna niż z krzaków. Rosną dłużej, jeśli obok nich rosną inne drzewa.
 @object_descr_carrot = Marchewki!
 @object_descr_rice = Ryż można sadzić na warstwie gliny znalezionej pod ziemią.
-@object_descr_bamboo = Bambus może urosnąć bardzo wysoko, ale zakwita na określonej wysokości. Największy plon otrzymasz, jeśli zbierzesz go dokładnie na wysokości, na której kwitnie.
+@object_descr_bamboo = Bambus może urosnąć bardzo wysoko, ale dopiero po zebraniu owoców.
 @object_descr_pumpkin = Dynie rosną razem, gdy znajdują się obok innych w pełni wyrośniętych dyń. Około 1 na 5 dyń umiera, gdy dorośnie.
 @object_descr_dead_pumpkin = Jedna na pięć dyń umiera, gdy dorośnie, pozostawiając po sobie martwą dynię. Martwe dynie są bezużyteczne i znikają, gdy posadzi się coś nowego.
 @object_descr_sunflower = Słoneczniki zbierają moc ze słońca. Zbieranie ich da ci `Items.Power`.
@@ -23,9 +23,9 @@ Jeśli zbierzesz słonecznik z maksymalną liczbą płatków, otrzymasz dodatkow
 @object_descr_dirt = To ziemia.
 @object_descr_rock = To twarda skała.
 @object_descr_clay = Blok gliny. Żyzne podłoże, idealne dla ryżu. Gdy ryż dojrzeje, zamienia glinę pod sobą z powrotem w ziemię.
-@object_descr_blue_block = Niebieski blok.
-@object_descr_red_block = Czerwony blok.
-@object_descr_green_block = Zielony blok.
+@object_descr_block_blue = Niebieski blok.
+@object_descr_block_red = Czerwony blok.
+@object_descr_block_green = Zielony blok.
 @object_descr_coal = Blok bogaty w węgiel osadowy.
 @object_descr_iron = Blok zawierający surowy magnetyt.
 @object_descr_quartz = Blok otaczający krystaliczny kwarc.

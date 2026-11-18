@@ -43,8 +43,8 @@ Wenn du sie importiert hast, hast du wahrscheinlich einen Importzyklus (siehe di
 @error_max_stack_size_reached = Die maximale Aufrufstapelgröße wurde erreicht. Dies liegt höchstwahrscheinlich an zu vielen rekursiven Funktionsaufrufen.
 @error_max_comparison_depth = Die maximale Vergleichstiefe wurde erreicht. Dies kann zum Beispiel passieren, wenn du Listen vergleichst, die sich selbst enthalten.
 @error_assign_type_mismatch = Die linke Seite der Zuweisung stimmte nicht mit der rechten Seite überein.
-@error_too_many_values_to_unpack = Die rechte Seite enthält nicht genügend Werte zum Entpacken.
-@error_not_enough_values = Die rechte Seite enthält zu viele Werte, um sie auf der linken Seite zu entpacken.
+@error_too_many_values_to_unpack = Die rechte Seite enthält zu viele Werte, um sie auf der linken Seite zu entpacken.
+@error_not_enough_values = Die rechte Seite enthält nicht genügend Werte zum Entpacken.
 @error_empty_print = `print()` benötigt mindestens ein Argument.
 @error_in_string = Kann nicht prüfen, ob {0} in einem String enthalten ist.
 @error_collection_changed_size_during_iteration = Die Größe dieser Sammlung kann nicht innerhalb einer for-Schleife geändert werden, die darüber iteriert. Das liegt daran, dass eine Größenänderung der Sammlung das Iterator-Objekt ungültig machen würde, das die for-Schleife verwendet.
@@ -74,10 +74,15 @@ x += 1`
 @error_file_not_found = Die Datei {0} existiert nicht.
 @error_max_drones_reached = Das Drohnenlimit wurde überschritten.
 @error_dino_hat_already_used = Es gibt nur einen Dinosaurierhut und er ist bereits in Gebrauch. Du kannst ihn nicht für eine zweite Drohne verwenden.
-@error_dynamite_hat_already_used = Es gibt nur einen Dynamithut und er ist bereits in Gebrauch. Du kannst ihn nicht für eine zweite Drohne verwenden.
+@error_explosive_drill_already_used = Es gibt nur einen Sprengbohrer und er ist bereits in Gebrauch. Du kannst keine zweite Drohne damit ausrüsten.
 @error_invalid_drone_id = Es gibt keine Drohne mit der ID {0}.
 @error_invalid_handle = {0} existiert nicht mehr.
 @error_spawn_drone_builtin = Du kannst `spawn_drone()` nicht direkt mit eingebauten Funktionen verwenden. Du musst deine eigene Funktion definieren.
 @error_non_jumpable_unlock = Zu dieser Freischaltung kann nicht gesprungen werden.
 @error_only_first_drone_can_jump = Nur die erste Drohne kann `jump()` ausführen.
 @error_can_only_jump_once = Du kannst `jump()` nur einmal pro Programm ausführen.
+@error_dig_not_allowed = Die Verwendung von `dig()` ist in dieser Bestenliste nicht erlaubt.
+@error_plant_not_allowed = Die Verwendung von `plant()` ist in dieser Bestenliste nicht erlaubt.
+@error_jump_not_allowed = Die Verwendung von `jump()` ist in Bestenlisten nicht erlaubt.
+@error_place_too_high = Auf dieser Höhe kann kein Block platziert werden, da sie zu weit über der durchschnittlichen Blocktiefe liegt.
+Platziere Blöcke gleichmäßig auf der gesamten Farm, um den Durchschnitt zu erhöhen und Blöcke höher platzieren zu können.

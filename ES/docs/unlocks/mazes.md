@@ -104,7 +104,7 @@ Reutilizar un laberinto no te da más oro que simplemente cosechar y generar un 
 Este es un desafío 100% extra que puedes omitir.
 Solo vale la pena si la información extra y los atajos te ayudan a resolver el laberinto más rápido.
 
-El tesoro se puede reubicar hasta 300 veces. Después, usar Sustancia Extraña sobre él ya no aumentará el oro que contiene ni lo moverá.
+El tesoro se puede reubicar hasta 300 veces. Después, usar Sustancia Extraña sobre él ya no te dará oro ni moverá el tesoro.
 
 <spoiler=mostrar pista 1>
 Este es un enfoque general para resolver el problema:
@@ -190,11 +190,11 @@ directions = [North, East, South, West]
 index = 0
 move(directions[index])
 
-# girar a la derecha
+#girar a la derecha
 index = (index + 1) % 4
 move(directions[index])
 
-# girar a la izquierda
+#girar a la izquierda
 index = (index - 1) % 4
 move(directions[index])
 }}
