@@ -22,7 +22,17 @@ Mandar correções da tradução pt-BR para o upstream. O histórico até aqui:
 
 ## Estado
 
-- `main` sincronizado com `upstream/main` em 08/10/2026.
+- `main` sincronizado com `upstream/main` em 08/10/2026. Em 18/11/2026 o upstream estava 32
+  commits à frente; a mescla está na branch `noturno/sync-upstream-nov` (sem conflito), com a
+  lista de dívida (`tools/known_issues.txt`) regenerada: saíram 170 problemas que o upstream
+  resolveu (TW foi atualizado) e entraram 126, todos de idioma desatualizado (CZ/UA, 53 cada)
+  ou da lacuna abaixo.
+- **Lacuna no EN do upstream (18/11):** o commit `104b014` (17/10) pôs `@run_completed` e
+  `@leaderboard_time_limit` em `other.txt` dos dez idiomas traduzidos, mas não no `EN`. O
+  validador acusa "unexpected key" nesses dez. Não é erro de tradução; quem conserta é o
+  upstream (texto inglês original). Registrado como dívida conhecida.
+- A regressão "Variables" continua no `upstream/main` (18/11) e a branch
+  `fix/pt-variables-unlock-regressao` ainda aplica sem conflito sobre ele.
 - Checagem mecânica PT × EN (08/10): nenhuma chave `@...` faltando, nenhum placeholder `{0}` /
   `{{ ... }}` quebrado, nenhuma crase desbalanceada em `PT/Strings/`.
   (`languages.txt` só existe em EN, de propósito.)
